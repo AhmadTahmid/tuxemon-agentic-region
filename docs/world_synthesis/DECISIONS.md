@@ -19,3 +19,18 @@ The compiler emits merged collision rectangles from semantic blocked cells. Visu
 ## D005 — Static critic first
 
 The initial critic is a reproducible rubric fed by map metrics and authored evidence. It does not pretend to be a perceptual model. Visual screenshots remain required for human/agent revision.
+
+## D006 — Freeze compiler behavior during A/B/C authoring
+
+Glasswind-specific defaults were first converted into narrow reusable outdoor
+primitives: typed boundary/base terrain, forest and safe zones, explicit props
+and fence entrances, encounter tables, starter metadata, and generic database
+exports. After this preparation commit, all Deep Forest variants must be made
+through content. Any later compiler change invalidates the code-free claim and
+must be recorded in `artifacts/world_synthesis/generalization_log.json`.
+
+## D007 — Separate structural heuristics from human evaluation
+
+The deterministic critic reports a `structural_design_score`; it is neither a
+visual-quality rating nor evidence that a map is enjoyable. Blind human
+playtest answers are stored separately and are never averaged into that score.

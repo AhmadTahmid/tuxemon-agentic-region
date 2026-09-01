@@ -1,0 +1,17 @@
+id: coastal_route
+title: Coastal Route
+archetype: geography_shaped_coastal_route
+status: canonical_not_executed
+scope:
+  target_dimensions: approximately 40 by 44 cells
+  npcs_or_trainers: 3
+  encounter_zones: 2
+requirements:
+  - The critical path responds to a coast or the closest honest visual analogue supported by frozen assets.
+  - One overlook or coastal landmark, one optional branch and one secret.
+  - Water acts as geography, not a decorative rectangle placed independently of circulation.
+  - Two valid paired exits.
+constraints:
+  - Use only the frozen benchmark asset vocabulary.
+  - If coast semantics are visually unconvincing, record the asset limitation before substituting an estuary or lakeshore analogue.
+  - Do not specify tile coordinates in this brief.

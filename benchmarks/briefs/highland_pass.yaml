@@ -1,0 +1,17 @@
+id: highland_pass
+title: Highland Pass
+archetype: constrained_rocky_pass
+status: canonical_not_executed
+scope:
+  target_dimensions: approximately 40 by 44 cells
+  npcs_or_trainers: 3
+  encounter_zones: 2
+requirements:
+  - Constrained corridors, rocks and switchback-like circulation must distinguish the pass from meadow and forest routes.
+  - One dominant landmark, one optional branch or loop and one secret.
+  - Elevation may be represented semantically through walls, rocks, stairs or retaining edges rather than general 3D terrain.
+  - Two valid paired exits.
+constraints:
+  - Use only the frozen benchmark asset vocabulary.
+  - Record honestly if current cliff semantics are inadequate.
+  - Do not specify tile coordinates in this brief.

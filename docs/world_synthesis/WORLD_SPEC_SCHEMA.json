@@ -1,5 +1,44 @@
 {
   "$defs": {
+    "BoundarySpec": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "enum": [
+            "forest",
+            "none"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "depth": {
+          "maximum": 10,
+          "minimum": 0,
+          "title": "Depth",
+          "type": "integer"
+        },
+        "density": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Density",
+          "type": "number"
+        },
+        "falloff_per_cell": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Falloff Per Cell",
+          "type": "number"
+        }
+      },
+      "required": [
+        "kind",
+        "depth",
+        "density",
+        "falloff_per_cell"
+      ],
+      "title": "BoundarySpec",
+      "type": "object"
+    },
     "Character": {
       "additionalProperties": false,
       "properties": {
@@ -22,6 +61,18 @@
         "dialogue": {
           "title": "Dialogue",
           "type": "string"
+        },
+        "post_battle_dialogue": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Post Battle Dialogue"
         },
         "trainer": {
           "default": false,
@@ -49,6 +100,64 @@
         "dialogue"
       ],
       "title": "Character",
+      "type": "object"
+    },
+    "EncounterEntry": {
+      "additionalProperties": false,
+      "properties": {
+        "monster": {
+          "title": "Monster",
+          "type": "string"
+        },
+        "encounter_rate": {
+          "exclusiveMinimum": 0,
+          "title": "Encounter Rate",
+          "type": "integer"
+        },
+        "level_min": {
+          "maximum": 100,
+          "minimum": 1,
+          "title": "Level Min",
+          "type": "integer"
+        },
+        "level_max": {
+          "maximum": 100,
+          "minimum": 1,
+          "title": "Level Max",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "monster",
+        "encounter_rate",
+        "level_min",
+        "level_max"
+      ],
+      "title": "EncounterEntry",
+      "type": "object"
+    },
+    "EncounterTable": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "pattern": "^[a-z][a-z0-9_]*$",
+          "title": "Id",
+          "type": "string"
+        },
+        "entries": {
+          "items": {
+            "$ref": "#/$defs/EncounterEntry"
+          },
+          "minItems": 1,
+          "title": "Entries",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "entries"
+      ],
+      "title": "EncounterTable",
       "type": "object"
     },
     "EncounterZone": {
@@ -106,6 +215,13 @@
         "blocks_movement": {
           "title": "Blocks Movement",
           "type": "boolean"
+        },
+        "entrances": {
+          "items": {
+            "$ref": "#/$defs/Point"
+          },
+          "title": "Entrances",
+          "type": "array"
         },
         "notes": {
           "default": "",
@@ -208,8 +324,24 @@
           "title": "Height",
           "type": "integer"
         },
+        "base_terrain": {
+          "enum": [
+            "grass",
+            "forest_floor"
+          ],
+          "title": "Base Terrain",
+          "type": "string"
+        },
+        "boundary": {
+          "$ref": "#/$defs/BoundarySpec"
+        },
         "player_spawn": {
           "$ref": "#/$defs/Point"
+        },
+        "grant_starter": {
+          "default": false,
+          "title": "Grant Starter",
+          "type": "boolean"
         },
         "primary_path": {
           "$ref": "#/$defs/PathSpec"
@@ -270,6 +402,13 @@
           "title": "Environmental Features",
           "type": "array"
         },
+        "props": {
+          "items": {
+            "$ref": "#/$defs/Prop"
+          },
+          "title": "Props",
+          "type": "array"
+        },
         "events": {
           "items": {
             "$ref": "#/$defs/StoryEvent"
@@ -299,6 +438,8 @@
         "visual_identity",
         "width",
         "height",
+        "base_terrain",
+        "boundary",
         "player_spawn",
         "primary_path",
         "revision"
@@ -341,12 +482,34 @@
           ],
           "title": "Authoring Status",
           "type": "string"
+        },
+        "campaign_name": {
+          "title": "Campaign Name",
+          "type": "string"
+        },
+        "starter_monster": {
+          "title": "Starter Monster",
+          "type": "string"
+        },
+        "starter_level": {
+          "maximum": 100,
+          "minimum": 1,
+          "title": "Starter Level",
+          "type": "integer"
+        },
+        "trainer_post_battle_dialogue": {
+          "title": "Trainer Post Battle Dialogue",
+          "type": "string"
         }
       },
       "required": [
         "experiment_id",
         "seed",
-        "authoring_status"
+        "authoring_status",
+        "campaign_name",
+        "starter_monster",
+        "starter_level",
+        "trainer_post_battle_dialogue"
       ],
       "title": "Metadata",
       "type": "object"
@@ -409,6 +572,48 @@
         "y"
       ],
       "title": "Point",
+      "type": "object"
+    },
+    "Prop": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "pattern": "^[a-z][a-z0-9_]*$",
+          "title": "Id",
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "tree",
+            "shrub",
+            "flower",
+            "rock",
+            "boulder",
+            "sign"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "at": {
+          "$ref": "#/$defs/Point"
+        },
+        "blocks_movement": {
+          "title": "Blocks Movement",
+          "type": "boolean"
+        },
+        "semantic_role": {
+          "title": "Semantic Role",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "kind",
+        "at",
+        "blocks_movement",
+        "semantic_role"
+      ],
+      "title": "Prop",
       "type": "object"
     },
     "Quest": {
@@ -804,11 +1009,19 @@
     },
     "region": {
       "$ref": "#/$defs/Region"
+    },
+    "encounter_tables": {
+      "items": {
+        "$ref": "#/$defs/EncounterTable"
+      },
+      "title": "Encounter Tables",
+      "type": "array"
     }
   },
   "required": [
     "metadata",
-    "region"
+    "region",
+    "encounter_tables"
   ],
   "title": "WorldSpec",
   "type": "object"

@@ -1,0 +1,32 @@
+id: deep_forest
+title: Deep Forest Passage
+archetype: dense_woodland_route
+status: active_benchmark
+scope:
+  target_dimensions: approximately 40 by 44 cells
+  npcs_or_trainers: 3
+  encounter_zones: 2
+functional_allowances:
+  trainers: 2
+  non_trainer_npcs: 1
+  secrets: 1
+  rewards: 1 existing item
+  dominant_landmarks: 1
+requirements:
+  - Dense woodland should create compression and uncertainty without frustrating navigation.
+  - The critical path must connect two paired exits.
+  - At least two identifiable sub-areas must differ in spatial character.
+  - Include one optional clearing or side route that reconnects where appropriate.
+  - Include one meaningful landmark and one discoverable secret.
+  - Encounter spaces should feel ecologically plausible and avoid the safest rest area.
+  - NPCs need local roles rather than uniform spacing.
+  - Use negative space, density gradients and path-width variation to retain readability.
+constraints:
+  - Use only the frozen prototyping_outdoor tiles and existing Tuxemon NPC/monster/item data.
+  - Use a 40 by 44 main map for every A/B/C variant.
+  - Use exactly the same functional allowances for A/B/C.
+  - Do not specify exact tile coordinates or exact geometry in this brief.
+evaluation_focus:
+  - Whether the forest feels intentionally composed rather than uniformly scattered.
+  - Whether the optional content is inviting but not confused with the critical path.
+  - Whether the landmark remains memorable within dense repeated vegetation.

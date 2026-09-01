@@ -60,6 +60,16 @@ def validate_layout(
                 "error", "spawn_blocked", spec.id, "Player spawn is blocked."
             )
         )
+    path_collisions = sorted(layout.path_cells & layout.blocked)
+    if path_collisions:
+        issues.append(
+            Diagnostic(
+                "error",
+                "path_blocked",
+                spec.id,
+                f"Authored paths overlap collision at {path_collisions[:8]}.",
+            )
+        )
     critical: list[tuple[str, tuple[int, int]]] = []
     critical.extend(
         (f"warp:{item.id}", (item.at.x, item.at.y))
@@ -255,7 +265,10 @@ def validate_compiled_tmx(path: Path) -> list[Diagnostic]:
 
 
 def write_report(
-    world: WorldSpec, layouts: dict[str, CompiledLayout], repo: Path
+    world: WorldSpec,
+    layouts: dict[str, CompiledLayout],
+    repo: Path,
+    reports_dir: Path | None = None,
 ) -> tuple[Path, list[Diagnostic]]:
     diagnostics = validate_warp_pairs(world) + validate_quest_references(world)
     for layout in layouts.values():
@@ -269,7 +282,7 @@ def write_report(
                 / f"{layout.map_spec.id}.tmx"
             )
         )
-    reports = repo / "artifacts" / "world_synthesis" / "reports"
+    reports = reports_dir or repo / "artifacts" / "world_synthesis" / "reports"
     reports.mkdir(parents=True, exist_ok=True)
     payload: dict[str, Any] = {
         "format_version": "1.0",

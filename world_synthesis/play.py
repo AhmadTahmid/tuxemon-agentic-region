@@ -25,11 +25,11 @@ def main() -> None:
     from tuxemon.locale.locale import T
 
     base_translation = T._translators["base"]._real_translate
-    experiment_translation = T._translators["world_synthesis"]._real_translate
-    if hasattr(base_translation, "_catalog") and hasattr(
-        experiment_translation, "_catalog"
-    ):
-        base_translation._catalog.update(experiment_translation._catalog)
+    if hasattr(base_translation, "_catalog"):
+        for domain, translator in T._translators.items():
+            experiment_translation = translator._real_translate
+            if domain != "base" and hasattr(experiment_translation, "_catalog"):
+                base_translation._catalog.update(experiment_translation._catalog)
 
     # Upstream intentionally keeps its database activation in mods/db_config.yaml.
     # Build an in-memory derivative so the experiment contributes only NPC and

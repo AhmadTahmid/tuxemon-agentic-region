@@ -4,7 +4,7 @@
       default:
         pre_battle: glasswind_warden_dialog
         post_battle_win: null
-        post_battle_lose: glasswind_trainer_post_battle
+        post_battle_lose: null
         post_battle_draw: null
   combat: {}
   audio: {}
@@ -18,7 +18,7 @@
       default:
         pre_battle: glasswind_fisher_dialog
         post_battle_win: null
-        post_battle_lose: glasswind_trainer_post_battle
+        post_battle_lose: null
         post_battle_draw: null
   combat: {}
   audio: {}
@@ -32,7 +32,7 @@
       default:
         pre_battle: glasswind_scout_dialog
         post_battle_win: null
-        post_battle_lose: glasswind_trainer_post_battle
+        post_battle_lose: glasswind_scout_post_battle
         post_battle_draw: null
   combat: {}
   audio: {}
@@ -46,7 +46,7 @@
       default:
         pre_battle: glasswind_gardener_dialog
         post_battle_win: null
-        post_battle_lose: glasswind_trainer_post_battle
+        post_battle_lose: glasswind_gardener_post_battle
         post_battle_draw: null
   combat: {}
   audio: {}

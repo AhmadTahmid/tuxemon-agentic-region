@@ -62,6 +62,9 @@ class TilePalette:
 class CompiledLayout:
     map_spec: MapSpec
     layers: dict[str, list[list[int]]]
+    experiment_id: str
+    starter_monster: str
+    starter_level: int
     blocked: set[tuple[int, int]] = field(default_factory=set)
     path_cells: set[tuple[int, int]] = field(default_factory=set)
     bridge_cells: set[tuple[int, int]] = field(default_factory=set)
@@ -139,13 +142,21 @@ def compile_layout(world: WorldSpec, map_spec: MapSpec) -> CompiledLayout:
         "Above Player": above,
     }
 
+    base_tile = (
+        palette.grass_dark
+        if map_spec.base_terrain == "forest_floor"
+        else palette.grass
+    )
+    alternate_tile = (
+        palette.grass
+        if map_spec.base_terrain == "forest_floor"
+        else palette.grass_dark
+    )
     # A quiet, deterministic variation underlies composition, without explicit coordinates.
     for y in range(map_spec.height):
         for x in range(map_spec.width):
             noise = rng.random()
-            ground[y][x] = (
-                palette.grass_dark if noise < 0.035 else palette.grass
-            )
+            ground[y][x] = alternate_tile if noise < 0.035 else base_tile
             if noise > 0.975:
                 ground[y][x] = palette.grass_flower
 
@@ -186,23 +197,53 @@ def compile_layout(world: WorldSpec, map_spec: MapSpec) -> CompiledLayout:
     protected = path_cells | bridge_cells | warp_cells
     protected |= {(npc.at.x, npc.at.y) for npc in map_spec.npcs}
     protected |= {(secret.at.x, secret.at.y) for secret in map_spec.secrets}
+    protected |= {(prop.at.x, prop.at.y) for prop in map_spec.props}
+    protected |= set().union(
+        *(
+            _rect_cells(zone.bounds)
+            for zone in map_spec.zones
+            if zone.kind == "safe"
+        )
+    )
     blocked = river_cells - bridge_cells
     generated: list[dict[str, object]] = []
 
-    for y in range(map_spec.height):
-        for x in range(map_spec.width):
-            distance = _edge_distance(x, y, map_spec.width, map_spec.height)
-            should_tree = distance == 0 or (
-                distance <= 3 and rng.random() < (0.67 - 0.14 * distance)
-            )
-            if not should_tree or (x, y) in protected or y == 0:
-                continue
-            objects[y][x] = palette.pine_base
-            above[y - 1][x] = palette.pine_top
-            blocked.add((x, y))
-            generated.append(
-                {"kind": "pine", "at": [x, y], "rule": "forest_edge_density"}
-            )
+    boundary = map_spec.boundary
+    if boundary.kind == "forest":
+        boundary_rng = random.Random(
+            stable_seed(world.metadata.seed, map_spec.id, "boundary")
+        )
+        for y in range(map_spec.height):
+            for x in range(map_spec.width):
+                distance = _edge_distance(
+                    x, y, map_spec.width, map_spec.height
+                )
+                if distance >= boundary.depth or y == 0:
+                    continue
+                probability = (
+                    1.0
+                    if distance == 0
+                    else max(
+                        0,
+                        boundary.density
+                        - boundary.falloff_per_cell * distance,
+                    )
+                )
+                if (
+                    boundary_rng.random() >= probability
+                    or (x, y) in protected
+                ):
+                    continue
+                objects[y][x] = palette.pine_base
+                above[y - 1][x] = palette.pine_top
+                blocked.add((x, y))
+                generated.append(
+                    {
+                        "kind": "pine",
+                        "at": [x, y],
+                        "rule": "boundary",
+                    }
+                )
 
     # Dense grass and flowers are zone rules; road/river/landmark clearance is explicit.
     landmark_cells = (
@@ -213,6 +254,34 @@ def compile_layout(world: WorldSpec, map_spec: MapSpec) -> CompiledLayout:
         else set()
     )
     reserved = protected | blocked | river_cells | landmark_cells
+    for zone in map_spec.zones:
+        if zone.kind != "forest":
+            continue
+        zone_rng = random.Random(
+            stable_seed(
+                world.metadata.seed,
+                map_spec.id,
+                zone.id,
+                str(map_spec.revision),
+            )
+        )
+        for x, y in sorted(
+            _rect_cells(zone.bounds), key=lambda cell: (cell[1], cell[0])
+        ):
+            if (
+                y == 0
+                or (x, y) in reserved
+                or zone_rng.random() >= zone.density
+            ):
+                continue
+            objects[y][x] = palette.pine_base
+            above[y - 1][x] = palette.pine_top
+            blocked.add((x, y))
+            reserved.add((x, y))
+            generated.append(
+                {"kind": "pine", "at": [x, y], "rule": zone.id}
+            )
+
     for zone in map_spec.zones:
         if zone.kind not in {"meadow", "encounter", "secret"}:
             continue
@@ -271,15 +340,12 @@ def compile_layout(world: WorldSpec, map_spec: MapSpec) -> CompiledLayout:
                     }
                 )
 
-    # The grove receives a legible fence with a southwest opening and a sign.
+    # Fence geometry is mechanical; entrances are authored content.
     for feature in map_spec.environmental_features:
         if feature.kind != "fence":
             continue
         rect = feature.bounds
-        opening = {
-            (rect.x, rect.y + rect.height - 1),
-            (rect.x + 1, rect.y + rect.height - 1),
-        }
+        opening = {(point.x, point.y) for point in feature.entrances}
         perimeter = {
             (x, y)
             for y in range(rect.y, rect.y + rect.height)
@@ -287,7 +353,7 @@ def compile_layout(world: WorldSpec, map_spec: MapSpec) -> CompiledLayout:
             if x in {rect.x, rect.x + rect.width - 1}
             or y in {rect.y, rect.y + rect.height - 1}
         } - opening
-        for x, y in perimeter - protected:
+        for x, y in perimeter:
             objects[y][x] = (
                 palette.fence_vertical
                 if x in {rect.x, rect.x + rect.width - 1}
@@ -297,49 +363,40 @@ def compile_layout(world: WorldSpec, map_spec: MapSpec) -> CompiledLayout:
             generated.append(
                 {"kind": "fence", "at": [x, y], "rule": feature.id}
             )
-        sign_x, sign_y = rect.x, rect.y + rect.height - 2
-        if sign_y >= 2:
-            above[sign_y - 2][sign_x] = palette.sign_top
-            above[sign_y - 1][sign_x] = palette.sign_middle
-            objects[sign_y][sign_x] = palette.sign_bottom
 
-    # A few deliberate trunks make the secondary grove read as a place rather
-    # than an empty fenced rectangle. Positions derive from its authored bounds.
-    for landmark in map_spec.landmarks:
-        if landmark.kind != "grove":
-            continue
-        rect = landmark.footprint
-        grove_points = {
-            (rect.x + 1, rect.y + 1),
-            (rect.x + rect.width - 2, rect.y + 1),
-            (rect.x + rect.width - 2, rect.y + rect.height - 2),
-        }
-        for x, y in sorted(grove_points):
-            if (x, y) in protected or y < 1:
-                continue
+    prop_tiles = {
+        "shrub": palette.shrub,
+        "flower": palette.flower,
+        "rock": palette.rock,
+        "boulder": palette.boulder,
+    }
+    for prop in map_spec.props:
+        x, y = prop.at.x, prop.at.y
+        if prop.kind == "tree":
             objects[y][x] = palette.pine_base
             above[y - 1][x] = palette.pine_top
+        elif prop.kind == "sign":
+            above[y - 2][x] = palette.sign_top
+            above[y - 1][x] = palette.sign_middle
+            objects[y][x] = palette.sign_bottom
+        else:
+            objects[y][x] = prop_tiles[prop.kind]
+        if prop.blocks_movement:
             blocked.add((x, y))
-            generated.append(
-                {"kind": "grove_tree", "at": [x, y], "rule": landmark.id}
-            )
-
-    # Authored coordinates always win over generated decoration.
-    blocked -= protected
-    for x, y in protected:
-        if (x, y) not in river_cells or (x, y) in bridge_cells:
-            if objects[y][x] in {
-                palette.pine_base,
-                palette.rock,
-                palette.boulder,
-                palette.shrub,
-            }:
-                objects[y][x] = 0
-            if y > 0 and above[y - 1][x] == palette.pine_top:
-                above[y - 1][x] = 0
+        generated.append(
+            {"kind": prop.kind, "at": [x, y], "rule": f"prop:{prop.id}"}
+        )
 
     return CompiledLayout(
-        map_spec, layers, blocked, path_cells, bridge_cells, generated
+        map_spec=map_spec,
+        layers=layers,
+        experiment_id=world.metadata.experiment_id,
+        starter_monster=world.metadata.starter_monster,
+        starter_level=world.metadata.starter_level,
+        blocked=blocked,
+        path_cells=path_cells,
+        bridge_cells=bridge_cells,
+        generated_objects=generated,
     )
 
 
@@ -582,7 +639,8 @@ def layout_to_tmx(layout: CompiledLayout) -> str:
             ("cond1", "not environment_is grass"),
         ],
     )
-    if spec.id == "glasswind_causeway":
+    if spec.grant_starter:
+        starter_variable = f"{layout.experiment_id}_starter_given:yes"
         _event(
             events,
             next_id,
@@ -590,9 +648,12 @@ def layout_to_tmx(layout: CompiledLayout) -> str:
             0,
             0,
             [
-                ("act1", "add_monster cardiling,7"),
-                ("act2", "set_variable glasswind_starter_given:yes"),
-                ("cond1", "not variable_set glasswind_starter_given:yes"),
+                (
+                    "act1",
+                    f"add_monster {layout.starter_monster},{layout.starter_level}",
+                ),
+                ("act2", f"set_variable {starter_variable}"),
+                ("cond1", f"not variable_set {starter_variable}"),
             ],
         )
 
@@ -620,7 +681,11 @@ def _npc_records(world: WorldSpec) -> list[dict[str, object]]:
                             "default": {
                                 "pre_battle": f"{npc.id}_dialog",
                                 "post_battle_win": None,
-                                "post_battle_lose": "glasswind_trainer_post_battle",
+                                "post_battle_lose": (
+                                    f"{npc.id}_post_battle"
+                                    if npc.trainer
+                                    else None
+                                ),
                                 "post_battle_draw": None,
                             }
                         }
@@ -637,43 +702,23 @@ def _npc_records(world: WorldSpec) -> list[dict[str, object]]:
     return records
 
 
-def _encounter_records() -> dict[str, object]:
+def _encounter_records(world: WorldSpec) -> dict[str, dict[str, object]]:
     return {
-        "monsters": [
-            {
-                "encounter_rate": 4,
-                "exp_req_mod": 3,
-                "held_items": [],
-                "level_range": [4, 6],
-                "monster": "cardiling",
-                "variables": [],
-            },
-            {
-                "encounter_rate": 3,
-                "exp_req_mod": 3,
-                "held_items": [],
-                "level_range": [4, 6],
-                "monster": "elofly",
-                "variables": [],
-            },
-            {
-                "encounter_rate": 2,
-                "exp_req_mod": 3,
-                "held_items": [],
-                "level_range": [5, 7],
-                "monster": "squabbit",
-                "variables": [],
-            },
-            {
-                "encounter_rate": 3,
-                "exp_req_mod": 3,
-                "held_items": [],
-                "level_range": [4, 6],
-                "monster": "shybulb",
-                "variables": [],
-            },
-        ],
-        "slug": "glasswind_meadow",
+        table.id: {
+            "monsters": [
+                {
+                    "encounter_rate": entry.encounter_rate,
+                    "exp_req_mod": 3,
+                    "held_items": [],
+                    "level_range": [entry.level_min, entry.level_max],
+                    "monster": entry.monster,
+                    "variables": [],
+                }
+                for entry in table.entries
+            ],
+            "slug": table.id,
+        }
+        for table in world.encounter_tables
     }
 
 
@@ -687,13 +732,17 @@ def _translation_catalog(world: WorldSpec) -> str:
         for map_spec in world.region.maps
         for npc in map_spec.npcs
     }
-    entries["glasswind_trainer_post_battle"] = (
-        "A good crossing teaches both travelers something."
-    )
-    entries["world_synthesis_campaign"] = "Glasswind World Synthesis"
+    for map_spec in world.region.maps:
+        for npc in map_spec.npcs:
+            if npc.trainer:
+                entries[f"{npc.id}_post_battle"] = (
+                    npc.post_battle_dialogue
+                    or world.metadata.trainer_post_battle_dialogue
+                )
+    entries["world_synthesis_campaign"] = world.metadata.campaign_name
     header = (
         'msgid ""\nmsgstr ""\n'
-        '"Project-Id-Version: glasswind-world-synthesis 0.1.0\\n"\n'
+        f'"Project-Id-Version: {world.metadata.experiment_id} 0.1.0\\n"\n'
         '"Language: en_US\\n"\n'
         '"Content-Type: text/plain; charset=UTF-8\\n"\n'
         '"Content-Transfer-Encoding: 8bit\\n"\n\n'
@@ -754,14 +803,16 @@ def build_world(spec_path: Path, repo: Path) -> dict[str, CompiledLayout]:
             json.dumps(manifest, indent=2) + "\n", encoding="utf-8"
         )
 
-    (npc_dir / "glasswind_npcs.yaml").write_text(
+    experiment_id = world.metadata.experiment_id
+    (npc_dir / f"{experiment_id}_npcs.yaml").write_text(
         yaml.safe_dump(_npc_records(world), sort_keys=False), encoding="utf-8"
     )
-    (encounter_dir / "glasswind_meadow.yaml").write_text(
-        yaml.safe_dump(_encounter_records(), sort_keys=False), encoding="utf-8"
-    )
+    for table_id, record in _encounter_records(world).items():
+        (encounter_dir / f"{table_id}.yaml").write_text(
+            yaml.safe_dump(record, sort_keys=False), encoding="utf-8"
+        )
     # A separate gettext domain avoids overwriting upstream's base catalogue.
-    (locale_dir / "world_synthesis.po").write_text(
+    (locale_dir / f"{experiment_id}.po").write_text(
         _translation_catalog(world), encoding="utf-8", newline="\n"
     )
     stale_base = locale_dir / "base.po"

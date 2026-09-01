@@ -1,0 +1,26 @@
+{
+  "format_version": "1.0",
+  "compiler_baseline_commit": "ac937da97",
+  "compiler_freeze_commit": null,
+  "preparation": {
+    "compiler_changed": true,
+    "reason": "The fixture-0 audit found content-independent capabilities required before a fair Deep Forest benchmark.",
+    "missing_primitives": [
+      "explicit_boundary_specification",
+      "forest_density_zones",
+      "safe_clearings",
+      "explicit_significant_props",
+      "configurable_fence_entrances",
+      "typed_encounter_tables",
+      "generic_content_output",
+      "generic_starter_configuration"
+    ],
+    "status": "complete",
+    "fixture_0_findings": [
+      "The alder loop crossed river collision and had relied on a blanket path-cell repair; its authored polyline now remains on the south bank.",
+      "The Warden's Grove path relied on implicit fence holes; all intended entrances are now explicit content.",
+      "A descriptive full-map forest zone became redundant once boundary intent was typed and was removed from fixture content."
+    ]
+  },
+  "maps": []
+}

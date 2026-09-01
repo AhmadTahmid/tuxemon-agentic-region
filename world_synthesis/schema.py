@@ -45,6 +45,10 @@ class Metadata(StrictModel):
     experiment_id: str = Field(pattern=r"^[a-z][a-z0-9_]*$")
     seed: int
     authoring_status: Literal["draft", "reviewed"]
+    campaign_name: str
+    starter_monster: str
+    starter_level: int = Field(ge=1, le=100)
+    trainer_post_battle_dialogue: str
 
 
 class Settlement(StrictModel):
@@ -80,6 +84,21 @@ class Zone(StrictModel):
     tags: list[str] = Field(default_factory=list)
 
 
+class BoundarySpec(StrictModel):
+    kind: Literal["forest", "none"]
+    depth: int = Field(ge=0, le=10)
+    density: float = Field(ge=0, le=1)
+    falloff_per_cell: float = Field(ge=0, le=1)
+
+
+class Prop(StrictModel):
+    id: str = Field(pattern=r"^[a-z][a-z0-9_]*$")
+    kind: Literal["tree", "shrub", "flower", "rock", "boulder", "sign"]
+    at: Point
+    blocks_movement: bool
+    semantic_role: str
+
+
 class Warp(StrictModel):
     id: str
     at: Point
@@ -95,6 +114,7 @@ class Character(StrictModel):
     at: Point
     sprite: str
     dialogue: str
+    post_battle_dialogue: str | None = None
     trainer: bool = False
     party: list[str] = Field(default_factory=list)
     mandatory: bool = False
@@ -119,7 +139,26 @@ class EnvironmentalFeature(StrictModel):
     kind: Literal["river", "bridge", "pond", "grove", "fence", "flowers"]
     bounds: Rect
     blocks_movement: bool
+    entrances: list[Point] = Field(default_factory=list)
     notes: str = ""
+
+
+class EncounterEntry(StrictModel):
+    monster: str
+    encounter_rate: int = Field(gt=0)
+    level_min: int = Field(ge=1, le=100)
+    level_max: int = Field(ge=1, le=100)
+
+    @model_validator(mode="after")
+    def ordered_levels(self) -> EncounterEntry:
+        if self.level_min > self.level_max:
+            raise ValueError("encounter level_min cannot exceed level_max")
+        return self
+
+
+class EncounterTable(StrictModel):
+    id: str = Field(pattern=r"^[a-z][a-z0-9_]*$")
+    entries: list[EncounterEntry] = Field(min_length=1)
 
 
 class StoryEvent(StrictModel):
@@ -151,7 +190,10 @@ class MapSpec(StrictModel):
     visual_identity: str
     width: int = Field(ge=8, le=200)
     height: int = Field(ge=8, le=200)
+    base_terrain: Literal["grass", "forest_floor"]
+    boundary: BoundarySpec
     player_spawn: Point
+    grant_starter: bool = False
     primary_path: PathSpec
     secondary_paths: list[PathSpec] = Field(default_factory=list)
     landmarks: list[Landmark] = Field(default_factory=list)
@@ -163,6 +205,7 @@ class MapSpec(StrictModel):
     environmental_features: list[EnvironmentalFeature] = Field(
         default_factory=list
     )
+    props: list[Prop] = Field(default_factory=list)
     events: list[StoryEvent] = Field(default_factory=list)
     pacing_notes: list[str] = Field(default_factory=list)
     revision: int = Field(ge=1)
@@ -183,6 +226,12 @@ class MapSpec(StrictModel):
         points.extend(item.at for item in self.npcs)
         points.extend(item.at for item in self.secrets)
         points.extend(item.at for item in self.events)
+        points.extend(item.at for item in self.props)
+        points.extend(
+            point
+            for feature in self.environmental_features
+            for point in feature.entrances
+        )
         if any(not point_ok(point) for point in points):
             raise ValueError(
                 f"map {self.id!r} contains a point outside its bounds"
@@ -199,6 +248,39 @@ class MapSpec(StrictModel):
             raise ValueError(
                 f"map {self.id!r} contains a rectangle outside its bounds"
             )
+        for feature in self.environmental_features:
+            for entrance in feature.entrances:
+                rect = feature.bounds
+                on_perimeter = (
+                    rect.x <= entrance.x < rect.x + rect.width
+                    and rect.y <= entrance.y < rect.y + rect.height
+                    and (
+                        entrance.x in {rect.x, rect.x + rect.width - 1}
+                        or entrance.y in {rect.y, rect.y + rect.height - 1}
+                    )
+                )
+                if not on_perimeter:
+                    raise ValueError(
+                        f"map {self.id!r} feature {feature.id!r} has an entrance outside its perimeter"
+                    )
+        for prop in self.props:
+            minimum_y = 2 if prop.kind == "sign" else 1 if prop.kind == "tree" else 0
+            if prop.at.y < minimum_y:
+                raise ValueError(
+                    f"map {self.id!r} prop {prop.id!r} lacks vertical room for its layered tiles"
+                )
+        entity_ids = [
+            *(item.id for item in self.landmarks),
+            *(item.id for item in self.zones),
+            *(item.id for item in self.warps),
+            *(item.id for item in self.npcs),
+            *(item.id for item in self.secrets),
+            *(item.id for item in self.environmental_features),
+            *(item.id for item in self.props),
+            *(item.id for item in self.events),
+        ]
+        if len(entity_ids) != len(set(entity_ids)):
+            raise ValueError(f"map {self.id!r} entity IDs must be unique")
         return self
 
 
@@ -222,6 +304,7 @@ class Region(StrictModel):
 class WorldSpec(StrictModel):
     metadata: Metadata
     region: Region
+    encounter_tables: list[EncounterTable]
 
     @model_validator(mode="after")
     def references_are_unique_and_valid(self) -> WorldSpec:
@@ -239,6 +322,20 @@ class WorldSpec(StrictModel):
                 raise ValueError(
                     f"map {map_spec.id!r} has missing warp targets: {missing}"
                 )
+        table_ids = [table.id for table in self.encounter_tables]
+        if len(table_ids) != len(set(table_ids)):
+            raise ValueError("encounter table IDs must be unique")
+        available_tables = set(table_ids)
+        for map_spec in self.region.maps:
+            missing_tables = [
+                zone.table
+                for zone in map_spec.encounter_zones
+                if zone.table not in available_tables
+            ]
+            if missing_tables:
+                raise ValueError(
+                    f"map {map_spec.id!r} has missing encounter tables: {missing_tables}"
+                )
         return self
 
 
@@ -254,6 +351,7 @@ WorldEntity = Annotated[
     | Character
     | EncounterZone
     | Secret
-    | EnvironmentalFeature,
+    | EnvironmentalFeature
+    | Prop,
     Field(discriminator=None),
 ]

@@ -4,7 +4,7 @@
   "source": "content/world_synthesis/glasswind_region.yaml",
   "source_seed": 24052026,
   "revision": 1,
-  "tmx_sha256": "ee821325b05374e305984db292ba6af09b31c470539b521269f58e8c237eaa11",
+  "tmx_sha256": "6d3de152671556e52328d82b3d47b349de9f9353e04f5086fa97f7abd241cd1f",
   "blocked_cells": [
     [
       0,
@@ -15,7 +15,7 @@
       1
     ],
     [
-      3,
+      2,
       1
     ],
     [
@@ -23,7 +23,11 @@
       1
     ],
     [
-      8,
+      9,
+      1
+    ],
+    [
+      10,
       1
     ],
     [
@@ -35,7 +39,7 @@
       2
     ],
     [
-      2,
+      1,
       2
     ],
     [
@@ -44,6 +48,10 @@
     ],
     [
       9,
+      2
+    ],
+    [
+      10,
       2
     ],
     [
@@ -56,14 +64,6 @@
     ],
     [
       2,
-      3
-    ],
-    [
-      8,
-      3
-    ],
-    [
-      9,
       3
     ],
     [
@@ -79,11 +79,7 @@
       4
     ],
     [
-      2,
-      4
-    ],
-    [
-      9,
+      1,
       4
     ],
     [
@@ -95,7 +91,7 @@
       5
     ],
     [
-      9,
+      8,
       5
     ],
     [
@@ -115,7 +111,7 @@
       6
     ],
     [
-      9,
+      8,
       6
     ],
     [
@@ -135,23 +131,15 @@
       7
     ],
     [
+      10,
+      7
+    ],
+    [
       11,
       7
     ],
     [
       0,
-      8
-    ],
-    [
-      1,
-      8
-    ],
-    [
-      2,
-      8
-    ],
-    [
-      3,
       8
     ],
     [
@@ -211,68 +199,68 @@
     [
       0,
       1,
+      3,
+      1
+    ],
+    [
+      4,
+      1,
+      1,
+      2
+    ],
+    [
+      9,
+      1,
+      3,
+      2
+    ],
+    [
+      0,
+      2,
       2,
       1
     ],
     [
+      0,
       3,
       1,
+      7
+    ],
+    [
+      2,
+      3,
+      1,
+      1
+    ],
+    [
+      10,
+      3,
       2,
       1
     ],
     [
-      8,
       1,
+      4,
       1,
       1
     ],
     [
       11,
-      1,
-      1,
-      9
-    ],
-    [
-      0,
-      2,
-      1,
-      8
-    ],
-    [
-      2,
-      2,
-      1,
-      3
-    ],
-    [
       4,
-      2,
       1,
-      1
-    ],
-    [
-      9,
-      2,
-      1,
-      5
+      6
     ],
     [
       8,
-      3,
+      5,
       1,
-      1
-    ],
-    [
-      10,
-      3,
-      1,
-      1
+      2
     ],
     [
       10,
       5,
       1,
-      2
+      5
     ],
     [
       4,
@@ -284,25 +272,25 @@
       1,
       7,
       1,
-      3
+      1
     ],
     [
-      2,
+      4,
       8,
+      1,
+      2
+    ],
+    [
+      8,
+      8,
+      1,
+      2
+    ],
+    [
+      1,
+      9,
       3,
-      2
-    ],
-    [
-      8,
-      8,
-      1,
-      2
-    ],
-    [
-      10,
-      8,
-      1,
-      2
+      1
     ],
     [
       9,
@@ -440,7 +428,7 @@
         0,
         1
       ],
-      "rule": "forest_edge_density"
+      "rule": "boundary"
     },
     {
       "kind": "pine",
@@ -448,15 +436,15 @@
         1,
         1
       ],
-      "rule": "forest_edge_density"
+      "rule": "boundary"
     },
     {
       "kind": "pine",
       "at": [
-        3,
+        2,
         1
       ],
-      "rule": "forest_edge_density"
+      "rule": "boundary"
     },
     {
       "kind": "pine",
@@ -464,199 +452,191 @@
         4,
         1
       ],
-      "rule": "forest_edge_density"
+      "rule": "boundary"
+    },
+    {
+      "kind": "pine",
+      "at": [
+        9,
+        1
+      ],
+      "rule": "boundary"
+    },
+    {
+      "kind": "pine",
+      "at": [
+        10,
+        1
+      ],
+      "rule": "boundary"
+    },
+    {
+      "kind": "pine",
+      "at": [
+        11,
+        1
+      ],
+      "rule": "boundary"
+    },
+    {
+      "kind": "pine",
+      "at": [
+        0,
+        2
+      ],
+      "rule": "boundary"
+    },
+    {
+      "kind": "pine",
+      "at": [
+        1,
+        2
+      ],
+      "rule": "boundary"
+    },
+    {
+      "kind": "pine",
+      "at": [
+        4,
+        2
+      ],
+      "rule": "boundary"
+    },
+    {
+      "kind": "pine",
+      "at": [
+        9,
+        2
+      ],
+      "rule": "boundary"
+    },
+    {
+      "kind": "pine",
+      "at": [
+        10,
+        2
+      ],
+      "rule": "boundary"
+    },
+    {
+      "kind": "pine",
+      "at": [
+        11,
+        2
+      ],
+      "rule": "boundary"
+    },
+    {
+      "kind": "pine",
+      "at": [
+        0,
+        3
+      ],
+      "rule": "boundary"
+    },
+    {
+      "kind": "pine",
+      "at": [
+        2,
+        3
+      ],
+      "rule": "boundary"
+    },
+    {
+      "kind": "pine",
+      "at": [
+        10,
+        3
+      ],
+      "rule": "boundary"
+    },
+    {
+      "kind": "pine",
+      "at": [
+        11,
+        3
+      ],
+      "rule": "boundary"
+    },
+    {
+      "kind": "pine",
+      "at": [
+        0,
+        4
+      ],
+      "rule": "boundary"
+    },
+    {
+      "kind": "pine",
+      "at": [
+        1,
+        4
+      ],
+      "rule": "boundary"
+    },
+    {
+      "kind": "pine",
+      "at": [
+        11,
+        4
+      ],
+      "rule": "boundary"
+    },
+    {
+      "kind": "pine",
+      "at": [
+        0,
+        5
+      ],
+      "rule": "boundary"
     },
     {
       "kind": "pine",
       "at": [
         8,
-        1
+        5
       ],
-      "rule": "forest_edge_density"
+      "rule": "boundary"
+    },
+    {
+      "kind": "pine",
+      "at": [
+        10,
+        5
+      ],
+      "rule": "boundary"
     },
     {
       "kind": "pine",
       "at": [
         11,
-        1
+        5
       ],
-      "rule": "forest_edge_density"
+      "rule": "boundary"
     },
     {
       "kind": "pine",
       "at": [
         0,
-        2
+        6
       ],
-      "rule": "forest_edge_density"
-    },
-    {
-      "kind": "pine",
-      "at": [
-        2,
-        2
-      ],
-      "rule": "forest_edge_density"
+      "rule": "boundary"
     },
     {
       "kind": "pine",
       "at": [
         4,
-        2
+        6
       ],
-      "rule": "forest_edge_density"
-    },
-    {
-      "kind": "pine",
-      "at": [
-        9,
-        2
-      ],
-      "rule": "forest_edge_density"
-    },
-    {
-      "kind": "pine",
-      "at": [
-        11,
-        2
-      ],
-      "rule": "forest_edge_density"
-    },
-    {
-      "kind": "pine",
-      "at": [
-        0,
-        3
-      ],
-      "rule": "forest_edge_density"
-    },
-    {
-      "kind": "pine",
-      "at": [
-        2,
-        3
-      ],
-      "rule": "forest_edge_density"
+      "rule": "boundary"
     },
     {
       "kind": "pine",
       "at": [
         8,
-        3
-      ],
-      "rule": "forest_edge_density"
-    },
-    {
-      "kind": "pine",
-      "at": [
-        9,
-        3
-      ],
-      "rule": "forest_edge_density"
-    },
-    {
-      "kind": "pine",
-      "at": [
-        10,
-        3
-      ],
-      "rule": "forest_edge_density"
-    },
-    {
-      "kind": "pine",
-      "at": [
-        11,
-        3
-      ],
-      "rule": "forest_edge_density"
-    },
-    {
-      "kind": "pine",
-      "at": [
-        0,
-        4
-      ],
-      "rule": "forest_edge_density"
-    },
-    {
-      "kind": "pine",
-      "at": [
-        2,
-        4
-      ],
-      "rule": "forest_edge_density"
-    },
-    {
-      "kind": "pine",
-      "at": [
-        9,
-        4
-      ],
-      "rule": "forest_edge_density"
-    },
-    {
-      "kind": "pine",
-      "at": [
-        11,
-        4
-      ],
-      "rule": "forest_edge_density"
-    },
-    {
-      "kind": "pine",
-      "at": [
-        0,
-        5
-      ],
-      "rule": "forest_edge_density"
-    },
-    {
-      "kind": "pine",
-      "at": [
-        9,
-        5
-      ],
-      "rule": "forest_edge_density"
-    },
-    {
-      "kind": "pine",
-      "at": [
-        10,
-        5
-      ],
-      "rule": "forest_edge_density"
-    },
-    {
-      "kind": "pine",
-      "at": [
-        11,
-        5
-      ],
-      "rule": "forest_edge_density"
-    },
-    {
-      "kind": "pine",
-      "at": [
-        0,
         6
       ],
-      "rule": "forest_edge_density"
-    },
-    {
-      "kind": "pine",
-      "at": [
-        4,
-        6
-      ],
-      "rule": "forest_edge_density"
-    },
-    {
-      "kind": "pine",
-      "at": [
-        9,
-        6
-      ],
-      "rule": "forest_edge_density"
+      "rule": "boundary"
     },
     {
       "kind": "pine",
@@ -664,7 +644,7 @@
         10,
         6
       ],
-      "rule": "forest_edge_density"
+      "rule": "boundary"
     },
     {
       "kind": "pine",
@@ -672,7 +652,7 @@
         11,
         6
       ],
-      "rule": "forest_edge_density"
+      "rule": "boundary"
     },
     {
       "kind": "pine",
@@ -680,7 +660,7 @@
         0,
         7
       ],
-      "rule": "forest_edge_density"
+      "rule": "boundary"
     },
     {
       "kind": "pine",
@@ -688,7 +668,15 @@
         1,
         7
       ],
-      "rule": "forest_edge_density"
+      "rule": "boundary"
+    },
+    {
+      "kind": "pine",
+      "at": [
+        10,
+        7
+      ],
+      "rule": "boundary"
     },
     {
       "kind": "pine",
@@ -696,7 +684,7 @@
         11,
         7
       ],
-      "rule": "forest_edge_density"
+      "rule": "boundary"
     },
     {
       "kind": "pine",
@@ -704,31 +692,7 @@
         0,
         8
       ],
-      "rule": "forest_edge_density"
-    },
-    {
-      "kind": "pine",
-      "at": [
-        1,
-        8
-      ],
-      "rule": "forest_edge_density"
-    },
-    {
-      "kind": "pine",
-      "at": [
-        2,
-        8
-      ],
-      "rule": "forest_edge_density"
-    },
-    {
-      "kind": "pine",
-      "at": [
-        3,
-        8
-      ],
-      "rule": "forest_edge_density"
+      "rule": "boundary"
     },
     {
       "kind": "pine",
@@ -736,7 +700,7 @@
         4,
         8
       ],
-      "rule": "forest_edge_density"
+      "rule": "boundary"
     },
     {
       "kind": "pine",
@@ -744,7 +708,7 @@
         8,
         8
       ],
-      "rule": "forest_edge_density"
+      "rule": "boundary"
     },
     {
       "kind": "pine",
@@ -752,7 +716,7 @@
         10,
         8
       ],
-      "rule": "forest_edge_density"
+      "rule": "boundary"
     },
     {
       "kind": "pine",
@@ -760,7 +724,7 @@
         11,
         8
       ],
-      "rule": "forest_edge_density"
+      "rule": "boundary"
     },
     {
       "kind": "pine",
@@ -768,7 +732,7 @@
         0,
         9
       ],
-      "rule": "forest_edge_density"
+      "rule": "boundary"
     },
     {
       "kind": "pine",
@@ -776,7 +740,7 @@
         1,
         9
       ],
-      "rule": "forest_edge_density"
+      "rule": "boundary"
     },
     {
       "kind": "pine",
@@ -784,7 +748,7 @@
         2,
         9
       ],
-      "rule": "forest_edge_density"
+      "rule": "boundary"
     },
     {
       "kind": "pine",
@@ -792,7 +756,7 @@
         3,
         9
       ],
-      "rule": "forest_edge_density"
+      "rule": "boundary"
     },
     {
       "kind": "pine",
@@ -800,7 +764,7 @@
         4,
         9
       ],
-      "rule": "forest_edge_density"
+      "rule": "boundary"
     },
     {
       "kind": "pine",
@@ -808,7 +772,7 @@
         8,
         9
       ],
-      "rule": "forest_edge_density"
+      "rule": "boundary"
     },
     {
       "kind": "pine",
@@ -816,7 +780,7 @@
         9,
         9
       ],
-      "rule": "forest_edge_density"
+      "rule": "boundary"
     },
     {
       "kind": "pine",
@@ -824,7 +788,7 @@
         10,
         9
       ],
-      "rule": "forest_edge_density"
+      "rule": "boundary"
     },
     {
       "kind": "pine",
@@ -832,7 +796,7 @@
         11,
         9
       ],
-      "rule": "forest_edge_density"
+      "rule": "boundary"
     }
   ]
 }

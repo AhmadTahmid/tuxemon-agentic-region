@@ -3,6 +3,18 @@ metadata:
   experiment_id: glasswind_route_milestone
   seed: 24052026
   authoring_status: reviewed
+  campaign_name: Glasswind World Synthesis
+  starter_monster: cardiling
+  starter_level: 7
+  trainer_post_battle_dialogue: A good crossing teaches both travelers something.
+
+encounter_tables:
+  - id: glasswind_meadow
+    entries:
+      - {monster: cardiling, encounter_rate: 4, level_min: 4, level_max: 6}
+      - {monster: elofly, encounter_rate: 3, level_min: 4, level_max: 6}
+      - {monster: squabbit, encounter_rate: 2, level_min: 5, level_max: 7}
+      - {monster: shybulb, encounter_rate: 3, level_min: 4, level_max: 6}
 
 region:
   id: glasswind_marches
@@ -50,6 +62,8 @@ region:
       visual_identity: Orchard verge and woven fence.
       width: 12
       height: 10
+      base_terrain: grass
+      boundary: {kind: forest, depth: 4, density: 0.67, falloff_per_cell: 0.14}
       player_spawn: {x: 6, y: 4}
       primary_path:
         id: gate_path
@@ -72,6 +86,8 @@ region:
       visual_identity: Stone apron and trade road.
       width: 12
       height: 10
+      base_terrain: grass
+      boundary: {kind: forest, depth: 4, density: 0.67, falloff_per_cell: 0.14}
       player_spawn: {x: 6, y: 5}
       primary_path:
         id: gate_path
@@ -94,7 +110,10 @@ region:
       visual_identity: A blue river cuts through amber meadow beneath dense asymmetrical pine framing.
       width: 40
       height: 48
+      base_terrain: grass
+      boundary: {kind: forest, depth: 4, density: 0.67, falloff_per_cell: 0.14}
       player_spawn: {x: 15, y: 36}
+      grant_starter: true
       primary_path:
         id: old_trade_road
         role: critical
@@ -117,7 +136,7 @@ region:
             - {x: 15, y: 34}
             - {x: 9, y: 32}
             - {x: 7, y: 26}
-            - {x: 11, y: 23}
+            - {x: 11, y: 26}
             - {x: 17, y: 25}
         - id: glassmakers_spur
           role: optional
@@ -145,7 +164,6 @@ region:
         - {id: south_meadow, kind: meadow, bounds: {x: 8, y: 34, width: 24, height: 12}, density: 0.18, tags: [flowers, open]}
         - {id: west_alder_bank, kind: encounter, bounds: {x: 4, y: 24, width: 10, height: 10}, density: 0.48, tags: [tall_grass, damp]}
         - {id: north_meadow, kind: encounter, bounds: {x: 22, y: 6, width: 12, height: 9}, density: 0.38, tags: [tall_grass, sunny]}
-        - {id: boundary_forest, kind: forest, bounds: {x: 0, y: 0, width: 40, height: 48}, density: 0.72, tags: [edge_only, pine]}
         - {id: hidden_glass_bank, kind: secret, bounds: {x: 5, y: 18, width: 5, height: 4}, density: 0.24, tags: [river_glass]}
       warps:
         - id: south_to_fernwake
@@ -212,11 +230,21 @@ region:
           kind: fence
           bounds: {x: 28, y: 9, width: 8, height: 8}
           blocks_movement: true
-          notes: Compiler leaves an opening at the southwest approach.
+          entrances:
+            - {x: 28, y: 14}
+            - {x: 28, y: 16}
+            - {x: 29, y: 16}
+            - {x: 33, y: 16}
+          notes: Authored openings preserve the southwest entrance and both path crossings.
         - id: south_flowers
           kind: flowers
           bounds: {x: 9, y: 36, width: 15, height: 8}
           blocks_movement: false
+      props:
+        - {id: warden_sign, kind: sign, at: {x: 28, y: 15}, blocks_movement: true, semantic_role: Marks the grove entrance}
+        - {id: grove_tree_west, kind: tree, at: {x: 30, y: 11}, blocks_movement: true, semantic_role: Frames the secluded grove}
+        - {id: grove_tree_east, kind: tree, at: {x: 33, y: 11}, blocks_movement: true, semantic_role: Frames the secluded grove}
+        - {id: grove_tree_south, kind: tree, at: {x: 33, y: 14}, blocks_movement: true, semantic_role: Screens the grove from the road}
       events:
         - id: inspect_singing_span
           at: {x: 21, y: 22}

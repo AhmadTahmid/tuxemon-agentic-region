@@ -33,3 +33,17 @@ def test_out_of_bounds_authored_coordinate_is_rejected() -> None:
     raw["region"]["maps"][2]["player_spawn"] = {"x": 900, "y": 2}
     with pytest.raises(ValidationError, match="outside its bounds"):
         WorldSpec.model_validate(raw)
+
+
+def test_unknown_encounter_table_is_rejected() -> None:
+    raw = yaml.safe_load(SPEC.read_text(encoding="utf-8"))
+    raw["region"]["maps"][2]["encounter_zones"][0]["table"] = "missing"
+    with pytest.raises(ValidationError, match="missing encounter tables"):
+        WorldSpec.model_validate(raw)
+
+
+def test_layered_prop_requires_vertical_room() -> None:
+    raw = yaml.safe_load(SPEC.read_text(encoding="utf-8"))
+    raw["region"]["maps"][2]["props"][0]["at"]["y"] = 1
+    with pytest.raises(ValidationError, match="lacks vertical room"):
+        WorldSpec.model_validate(raw)
