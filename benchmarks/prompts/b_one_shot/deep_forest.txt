@@ -1,0 +1,58 @@
+VERBATIM ONE-SHOT BASELINE PROMPT
+
+You are designing one Tuxemon outdoor map from a fixed legal asset vocabulary.
+Return one complete WorldSpec YAML document that validates against the supplied
+WorldSpec JSON Schema and can be compiled without design revision.
+
+Do this in one response. Do not use a region bible, separate planning stage,
+critic, screenshot feedback, or revision loop. You may choose tile coordinates
+in the result, but the common benchmark brief below is your only map-design
+direction. Do not add assets, monsters, compiler features, or maps beyond the
+two minimal paired thresholds required for valid route warps.
+
+COMMON BRIEF (verbatim)
+
+id: deep_forest
+title: Deep Forest Passage
+archetype: dense_woodland_route
+scope:
+  target_dimensions: approximately 40 by 44 cells
+  npcs_or_trainers: 3
+  encounter_zones: 2
+functional_allowances:
+  trainers: 2
+  non_trainer_npcs: 1
+  secrets: 1
+  rewards: 1 existing item
+  dominant_landmarks: 1
+requirements:
+  - Dense woodland should create compression and uncertainty without frustrating navigation.
+  - The critical path must connect two paired exits.
+  - At least two identifiable sub-areas must differ in spatial character.
+  - Include one optional clearing or side route that reconnects where appropriate.
+  - Include one meaningful landmark and one discoverable secret.
+  - Encounter spaces should feel ecologically plausible and avoid the safest rest area.
+  - NPCs need local roles rather than uniform spacing.
+  - Use negative space, density gradients and path-width variation to retain readability.
+
+FROZEN VISUAL/CONTENT VOCABULARY
+
+Terrain: grass, forest_floor, path. Boundary: forest or none. Zones: meadow,
+forest, encounter, safe, secret. Significant props: tree, shrub, flower, rock,
+boulder, sign. Environmental features: river, bridge, pond, grove, fence,
+flowers. Existing NPC sprites allowed here: scientist, fisher, knight,
+miner_green. Existing monsters allowed here: cardiling, elofly, squabbit,
+shybulb. Existing reward allowed here: potion.
+
+CONTRACT SUMMARY
+
+The route must be exactly 40x44. Paths are polylines with width 1-7. Zones and
+landmark footprints are rectangles. All coordinates must be in bounds. Every
+mandatory warp, dominant landmark, mandatory NPC, and secret must be reachable
+from the player spawn. Paths may not overlap collision. Every warp needs a
+return warp in another map. Use exactly three NPCs: two trainers and one
+non-trainer. Use two encounter zones, one dominant landmark, one optional path,
+and one secret. Set the visible route name to "Mossveil Passage" so blind
+testers do not see the generation method.
+
+Output YAML only.

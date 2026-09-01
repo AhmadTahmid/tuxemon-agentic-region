@@ -1,0 +1,69 @@
+{
+  "format_version": "1.0",
+  "family": "deep_forest",
+  "compiler_freeze_commit": "1ded0461f423639f06adc5fd3990cd2f4b65467f",
+  "results": [
+    {
+      "method": "A",
+      "map_id": "deep_forest_a_route",
+      "dimensions": [
+        40,
+        44
+      ],
+      "npc_count": 3,
+      "trainer_count": 2,
+      "encounter_zone_count": 2,
+      "secret_count": 1,
+      "dominant_landmark_count": 1,
+      "errors": 0,
+      "warnings": 0,
+      "tmx_sha256": "59f6b8d36525880143d9ab90cadc320a271f9ab428b5c6625c3a12f7311b56f1",
+      "structural_design_score": 7.2,
+      "render": "benchmarks/generated/a_procedural/deep_forest/render.png",
+      "debug_render": "benchmarks/generated/a_procedural/deep_forest/debug.png",
+      "validation_report": "benchmarks/generated/a_procedural/deep_forest/validation/validation.json"
+    },
+    {
+      "method": "B",
+      "map_id": "deep_forest_b_route",
+      "dimensions": [
+        40,
+        44
+      ],
+      "npc_count": 3,
+      "trainer_count": 2,
+      "encounter_zone_count": 2,
+      "secret_count": 1,
+      "dominant_landmark_count": 1,
+      "errors": 0,
+      "warnings": 0,
+      "tmx_sha256": "d5d06025218c0dad1ed448641b53cfa94fac4a8cd00fa34be0190326b722497d",
+      "structural_design_score": 7.4,
+      "render": "benchmarks/generated/b_one_shot/deep_forest/render.png",
+      "debug_render": "benchmarks/generated/b_one_shot/deep_forest/debug.png",
+      "validation_report": "benchmarks/generated/b_one_shot/deep_forest/validation/validation.json"
+    },
+    {
+      "method": "C",
+      "map_id": "deep_forest_c_route",
+      "dimensions": [
+        40,
+        44
+      ],
+      "npc_count": 3,
+      "trainer_count": 2,
+      "encounter_zone_count": 2,
+      "secret_count": 1,
+      "dominant_landmark_count": 1,
+      "errors": 0,
+      "warnings": 0,
+      "tmx_sha256": "06917528d8c5d5498a27440e72021adc09d04494b4bb24ca800f2ec5c83864b2",
+      "structural_design_score": 7.5,
+      "render": "benchmarks/generated/c_agentic/deep_forest/final_render.png",
+      "debug_render": "benchmarks/generated/c_agentic/deep_forest/final_debug.png",
+      "validation_report": "benchmarks/generated/c_agentic/deep_forest/final_validation/validation.json"
+    }
+  ],
+  "human_evaluation_status": "pending",
+  "warning": "Structural scores are not visual-quality or enjoyment scores."
+}

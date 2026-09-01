@@ -1,0 +1,32 @@
+{
+  "format_version": "1.0",
+  "map_id": "deep_forest_b_route",
+  "revision": 1,
+  "structural_rubric_scores": {
+    "visual_composition": 7,
+    "navigation_readability": 8,
+    "landmark_quality": 7,
+    "exploration": 7,
+    "environmental_storytelling": 7,
+    "gameplay_pacing": 8,
+    "npc_placement": 8,
+    "world_coherence": 8,
+    "secret_reward_placement": 7,
+    "memorability": 7
+  },
+  "structural_design_score": 7.4,
+  "structural_threshold": 7.5,
+  "passes_structural_threshold": false,
+  "three_strongest_aspects": [
+    "A dominant landmark anchors both composition and traversal.",
+    "The critical path changes direction and creates staged reveals.",
+    "NPC roles cluster around plausible route activities rather than random spacing."
+  ],
+  "three_weakest_aspects": [
+    "The map has no secondary landmark to balance the dominant landmark's visual weight."
+  ],
+  "recommended_modifications": [
+    "Compose a smaller activity landmark off-axis from the bridge."
+  ],
+  "limitations": "Structural heuristic only; visual review and playtesting remain required."
+}

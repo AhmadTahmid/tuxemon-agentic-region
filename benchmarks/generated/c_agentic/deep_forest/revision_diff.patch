@@ -1,0 +1,640 @@
+--- initial_world_spec.yaml
++++ final_world_spec.yaml
+@@ -1,173 +1,472 @@
+ metadata:
+-  format_version: "1.0"
+-  experiment_id: deep_forest_c_initial
++  format_version: '1.0'
++  experiment_id: deep_forest_c
+   seed: 1937
+   authoring_status: reviewed
+   campaign_name: Mossveil Passage
+   starter_monster: cardiling
+   starter_level: 7
+   trainer_post_battle_dialogue: You listened to the trail better than I did.
+-
++region:
++  id: deep_forest_c_region
++  name: Mossveil Passage
++  theme: An old warden trail survives by listening to the forest rather than cutting
++    it straight.
++  history: Bellroot wardens once rang a buried iron bell through a living root to
++    warn both forest settlements of fire.
++  environment: Damp southern pine gives way to a central root clearing and a drier
++    northern rise.
++  economy:
++  - medicinal fungi
++  - courier traffic
++  conflict: The abandoned western listening path is vanishing beneath new growth.
++  story_hook: Cross the passage and learn why the Bellroot Watcher no longer answers
++    storms.
++  progression:
++  - Enter the fern tunnel
++  - Choose the western loop or pale trail
++  - Rest at Bellroot
++  - Reach the north rise
++  visual_motifs:
++  - crooked pines
++  - pale trail
++  - three mossy stones
++  - small white flowers
++  creature_ecology:
++  - Shybulb gather in the damp western hollow.
++  - Squabbit forage in the drier northern brush.
++  - Elofly follow the white flowers around Bellroot.
++  settlements:
++  - id: c_initial_southstead
++    name: Southstead
++    role: Conceptual southern herb village
++    economy:
++    - medicinal fungi
++    visual_motifs:
++    - timber
++    - ferns
++  - id: c_initial_northstead
++    name: Northstead
++    role: Conceptual northern courier village
++    economy:
++    - courier traffic
++    visual_motifs:
++    - stone
++    - bells
++  maps:
++  - id: df_c_south_threshold
++    name: Mossveil Threshold
++    map_type: settlement_threshold
++    narrative_role: Paired southern benchmark threshold.
++    emotional_role: Safe departure.
++    visual_identity: Forest gate.
++    width: 12
++    height: 10
++    base_terrain: forest_floor
++    boundary:
++      kind: forest
++      depth: 3
++      density: 0.58
++      falloff_per_cell: 0.16
++    player_spawn:
++      x: 6
++      y: 5
++    grant_starter: false
++    primary_path:
++      id: gate_path
++      role: critical
++      width: 3
++      points:
++      - x: 6
++        y: 9
++      - x: 6
++        y: 0
++    secondary_paths: []
++    landmarks: []
++    zones: []
++    warps:
++    - id: df_c_initial_south_return
++      at:
++        x: 6
++        y: 0
++      facing: up
++      target_map: deep_forest_c_route
++      target:
++        x: 20
++        y: 42
++      mandatory: true
++    npcs: []
++    encounter_zones: []
++    secrets: []
++    environmental_features: []
++    props: []
++    events: []
++    pacing_notes: []
++    revision: 1
++  - id: df_c_north_threshold
++    name: Mossveil Threshold
++    map_type: settlement_threshold
++    narrative_role: Paired northern benchmark threshold.
++    emotional_role: Safe arrival.
++    visual_identity: Forest gate.
++    width: 12
++    height: 10
++    base_terrain: forest_floor
++    boundary:
++      kind: forest
++      depth: 3
++      density: 0.58
++      falloff_per_cell: 0.16
++    player_spawn:
++      x: 6
++      y: 5
++    grant_starter: false
++    primary_path:
++      id: gate_path
++      role: critical
++      width: 3
++      points:
++      - x: 6
++        y: 9
++      - x: 6
++        y: 0
++    secondary_paths: []
++    landmarks: []
++    zones: []
++    warps:
++    - id: df_c_initial_north_return
++      at:
++        x: 6
++        y: 9
++      facing: down
++      target_map: deep_forest_c_route
++      target:
++        x: 20
++        y: 1
++      mandatory: true
++    npcs: []
++    encounter_zones: []
++    secrets: []
++    environmental_features: []
++    props: []
++    events: []
++    pacing_notes: []
++    revision: 1
++  - id: deep_forest_c_route
++    name: Mossveil Passage
++    map_type: route
++    narrative_role: Forest connection and first Bellroot mystery beat.
++    emotional_role: Compression, choice, hush, reveal, rest, release.
++    visual_identity: Asymmetric pine walls frame a pale winding path and mossy central
++      clearing.
++    width: 40
++    height: 44
++    base_terrain: forest_floor
++    boundary:
++      kind: forest
++      depth: 4
++      density: 0.76
++      falloff_per_cell: 0.13
++    player_spawn:
++      x: 20
++      y: 40
++    grant_starter: true
++    primary_path:
++      id: warden_trail
++      role: critical
++      width: 3
++      points:
++      - x: 20
++        y: 43
++      - x: 19
++        y: 39
++      - x: 14
++        y: 34
++      - x: 14
++        y: 30
++      - x: 18
++        y: 26
++      - x: 20
++        y: 22
++      - x: 24
++        y: 18
++      - x: 24
++        y: 13
++      - x: 20
++        y: 9
++      - x: 18
++        y: 4
++      - x: 20
++        y: 0
++    secondary_paths:
++    - id: whispering_hollow_loop
++      role: optional
++      width: 2
++      points:
++      - x: 14
++        y: 30
++      - x: 9
++        y: 31
++      - x: 6
++        y: 27
++      - x: 7
++        y: 22
++      - x: 10
++        y: 18
++      - x: 16
++        y: 20
++      - x: 20
++        y: 22
++    landmarks:
++    - id: bellroot_watcher
++      name: The Bellroot Watcher
++      role: dominant
++      kind: standing_stones
++      anchor:
++        x: 20
++        y: 22
++      footprint:
++        x: 16
++        y: 18
++        width: 12
++        height: 9
++      description: Three mossy ward stones flank a root said to carry warning tones
++        through the soil.
++    zones:
++    - id: western_wall
++      kind: forest
++      bounds:
++        x: 1
++        y: 4
++        width: 11
++        height: 37
++      density: 0.68
++      tags:
++      - pine
++      - damp
++    - id: eastern_wall
++      kind: forest
++      bounds:
++        x: 28
++        y: 3
++        width: 11
++        height: 38
++      density: 0.72
++      tags:
++      - pine
++      - dense
++    - id: north_crown
++      kind: forest
++      bounds:
++        x: 11
++        y: 3
++        width: 8
++        height: 14
++      density: 0.54
++      tags:
++      - pine
++      - high_ground
++    - id: bellroot_clearing
++      kind: safe
++      bounds:
++        x: 15
++        y: 17
++        width: 14
++        height: 11
++      density: 0.0
++      tags:
++      - rest
++      - sightline
++    - id: hollow_understory
++      kind: encounter
++      bounds:
++        x: 3
++        y: 21
++        width: 10
++        height: 10
++      density: 0.56
++      tags:
++      - tall_grass
++      - damp
++    - id: north_brush
++      kind: encounter
++      bounds:
++        x: 23
++        y: 5
++        width: 10
++        height: 9
++      density: 0.48
++      tags:
++      - tall_grass
++      - dry
++    warps:
++    - id: df_c_initial_south_exit
++      at:
++        x: 20
++        y: 43
++      facing: down
++      target_map: df_c_south_threshold
++      target:
++        x: 6
++        y: 1
++      mandatory: true
++    - id: df_c_initial_north_exit
++      at:
++        x: 20
++        y: 0
++      facing: up
++      target_map: df_c_north_threshold
++      target:
++        x: 6
++        y: 8
++      mandatory: true
++    npcs:
++    - id: df_c_naturalist
++      role: Bellroot warden-naturalist
++      at:
++        x: 22
++        y: 24
++      sprite: scientist
++      dialogue: Bellroot once answered thunder. Now even the stones seem to be listening.
++      post_battle_dialogue: null
++      trainer: false
++      party: []
++      mandatory: true
++    - id: df_c_forager
++      role: Hollow mushroom gatherer and optional trainer
++      at:
++        x: 7
++        y: 26
++      sprite: miner_green
++      dialogue: The hollow rewards quiet curiosity. Let us see whether you brought
++        either.
++      post_battle_dialogue: null
++      trainer: true
++      party:
++      - shybulb
++      mandatory: false
++    - id: df_c_scout
++      role: North-rise trail scout and trainer
++      at:
++        x: 23
++        y: 12
++      sprite: knight
++      dialogue: The trees loosen beyond this rise. Keep your focus until they do.
++      post_battle_dialogue: null
++      trainer: true
++      party:
++      - squabbit
++      mandatory: false
++    encounter_zones:
++    - id: df_c_initial_hollow_encounters
++      bounds:
++        x: 3
++        y: 21
++        width: 10
++        height: 10
++      table: df_c_forest
++      probability: 9
++    - id: df_c_initial_north_encounters
++      bounds:
++        x: 23
++        y: 5
++        width: 10
++        height: 9
++      table: df_c_forest
++      probability: 9
++    secrets:
++    - id: df_c_initial_bell_tonic
++      at:
++        x: 7
++        y: 22
++      reward: potion
++      clue: The western loop narrows beside a solitary pale shrub.
++    environmental_features: []
++    props:
++    - id: df_c_initial_west_marker
++      kind: sign
++      at:
++        x: 11
++        y: 33
++      blocks_movement: true
++      semantic_role: Signals the optional listening path
++    - id: df_c_initial_watcher_west
++      kind: boulder
++      at:
++        x: 18
++        y: 20
++      blocks_movement: true
++      semantic_role: Bellroot ward stone
++    - id: df_c_initial_watcher_north
++      kind: boulder
++      at:
++        x: 22
++        y: 17
++      blocks_movement: true
++      semantic_role: Bellroot ward stone
++    - id: df_c_initial_watcher_east
++      kind: boulder
++      at:
++        x: 26
++        y: 22
++      blocks_movement: true
++      semantic_role: Bellroot ward stone
++    - id: df_c_initial_frame_west
++      kind: tree
++      at:
++        x: 16
++        y: 23
++      blocks_movement: true
++      semantic_role: Frames the clearing reveal
++    - id: df_c_initial_frame_east
++      kind: tree
++      at:
++        x: 27
++        y: 24
++      blocks_movement: true
++      semantic_role: Frames the clearing reveal
++    - id: df_c_initial_white_flower
++      kind: flower
++      at:
++        x: 21
++        y: 25
++      blocks_movement: false
++      semantic_role: Bellroot ecology motif
++    - id: df_c_initial_secret_shrub
++      kind: shrub
++      at:
++        x: 5
++        y: 22
++      blocks_movement: false
++      semantic_role: Secret sightline cue
++    events:
++    - id: df_c_initial_listen_bellroot
++      at:
++        x: 20
++        y: 22
++      trigger: interact
++      actions:
++      - translated_dialog A low tone travels through the stone and fades toward the
++        western hollow.
++    pacing_notes:
++    - Southern bends compress the view before the optional fork.
++    - The western loop uses damp encounter cover and rejoins at Bellroot.
++    - The large safe clearing creates negative space around the landmark.
++    - A narrow north rise leads into one final encounter patch before release.
++    revision: 2
++  quests: []
+ encounter_tables:
+-  - id: df_c_initial_forest
+-    entries:
+-      - {monster: shybulb, encounter_rate: 4, level_min: 4, level_max: 6}
+-      - {monster: squabbit, encounter_rate: 3, level_min: 5, level_max: 7}
+-      - {monster: elofly, encounter_rate: 2, level_min: 4, level_max: 6}
+-
+-region:
+-  id: deep_forest_c_initial_region
+-  name: Mossveil Passage
+-  theme: An old warden trail survives by listening to the forest rather than cutting it straight.
+-  history: Bellroot wardens once rang a buried iron bell through a living root to warn both forest settlements of fire.
+-  environment: Damp southern pine gives way to a central root clearing and a drier northern rise.
+-  economy: [medicinal fungi, courier traffic]
+-  conflict: The abandoned western listening path is vanishing beneath new growth.
+-  story_hook: Cross the passage and learn why the Bellroot Watcher no longer answers storms.
+-  progression: [Enter the fern tunnel, Choose the western loop or pale trail, Rest at Bellroot, Reach the north rise]
+-  visual_motifs: [crooked pines, pale trail, three mossy stones, small white flowers]
+-  creature_ecology:
+-    - Shybulb gather in the damp western hollow.
+-    - Squabbit forage in the drier northern brush.
+-    - Elofly follow the white flowers around Bellroot.
+-  settlements:
+-    - {id: c_initial_southstead, name: Southstead, role: Conceptual southern herb village, economy: [medicinal fungi], visual_motifs: [timber, ferns]}
+-    - {id: c_initial_northstead, name: Northstead, role: Conceptual northern courier village, economy: [courier traffic], visual_motifs: [stone, bells]}
+-  maps:
+-    - id: df_c_initial_south_threshold
+-      name: Mossveil Threshold
+-      map_type: settlement_threshold
+-      narrative_role: Paired southern benchmark threshold.
+-      emotional_role: Safe departure.
+-      visual_identity: Forest gate.
+-      width: 12
+-      height: 10
+-      base_terrain: forest_floor
+-      boundary: {kind: forest, depth: 3, density: 0.58, falloff_per_cell: 0.16}
+-      player_spawn: {x: 6, y: 5}
+-      primary_path: {id: gate_path, role: critical, width: 3, points: [{x: 6, y: 9}, {x: 6, y: 0}]}
+-      warps:
+-        - {id: df_c_initial_south_return, at: {x: 6, y: 0}, facing: up, target_map: deep_forest_c_initial_route, target: {x: 20, y: 42}}
+-      revision: 1
+-
+-    - id: df_c_initial_north_threshold
+-      name: Mossveil Threshold
+-      map_type: settlement_threshold
+-      narrative_role: Paired northern benchmark threshold.
+-      emotional_role: Safe arrival.
+-      visual_identity: Forest gate.
+-      width: 12
+-      height: 10
+-      base_terrain: forest_floor
+-      boundary: {kind: forest, depth: 3, density: 0.58, falloff_per_cell: 0.16}
+-      player_spawn: {x: 6, y: 5}
+-      primary_path: {id: gate_path, role: critical, width: 3, points: [{x: 6, y: 9}, {x: 6, y: 0}]}
+-      warps:
+-        - {id: df_c_initial_north_return, at: {x: 6, y: 9}, facing: down, target_map: deep_forest_c_initial_route, target: {x: 20, y: 1}}
+-      revision: 1
+-
+-    - id: deep_forest_c_initial_route
+-      name: Mossveil Passage
+-      map_type: route
+-      narrative_role: Forest connection and first Bellroot mystery beat.
+-      emotional_role: Compression, choice, hush, reveal, rest, release.
+-      visual_identity: Asymmetric pine walls frame a pale winding path and mossy central clearing.
+-      width: 40
+-      height: 44
+-      base_terrain: forest_floor
+-      boundary: {kind: forest, depth: 4, density: 0.76, falloff_per_cell: 0.13}
+-      player_spawn: {x: 20, y: 40}
+-      grant_starter: true
+-      primary_path:
+-        id: warden_trail
+-        role: critical
+-        width: 3
+-        points:
+-          - {x: 20, y: 43}
+-          - {x: 19, y: 39}
+-          - {x: 14, y: 34}
+-          - {x: 14, y: 30}
+-          - {x: 18, y: 26}
+-          - {x: 20, y: 22}
+-          - {x: 24, y: 18}
+-          - {x: 24, y: 13}
+-          - {x: 20, y: 9}
+-          - {x: 18, y: 4}
+-          - {x: 20, y: 0}
+-      secondary_paths:
+-        - id: whispering_hollow_loop
+-          role: optional
+-          width: 2
+-          points:
+-            - {x: 14, y: 30}
+-            - {x: 9, y: 31}
+-            - {x: 6, y: 27}
+-            - {x: 7, y: 22}
+-            - {x: 10, y: 18}
+-            - {x: 16, y: 20}
+-            - {x: 20, y: 22}
+-      landmarks:
+-        - id: bellroot_watcher
+-          name: The Bellroot Watcher
+-          role: dominant
+-          kind: standing_stones
+-          anchor: {x: 20, y: 22}
+-          footprint: {x: 16, y: 18, width: 12, height: 9}
+-          description: Three mossy ward stones flank a root said to carry warning tones through the soil.
+-      zones:
+-        - {id: western_wall, kind: forest, bounds: {x: 1, y: 4, width: 11, height: 37}, density: 0.68, tags: [pine, damp]}
+-        - {id: eastern_wall, kind: forest, bounds: {x: 28, y: 3, width: 11, height: 38}, density: 0.72, tags: [pine, dense]}
+-        - {id: north_crown, kind: forest, bounds: {x: 11, y: 3, width: 8, height: 14}, density: 0.54, tags: [pine, high_ground]}
+-        - {id: bellroot_clearing, kind: safe, bounds: {x: 15, y: 17, width: 14, height: 11}, density: 0.0, tags: [rest, sightline]}
+-        - {id: hollow_understory, kind: encounter, bounds: {x: 3, y: 21, width: 10, height: 10}, density: 0.56, tags: [tall_grass, damp]}
+-        - {id: north_brush, kind: encounter, bounds: {x: 23, y: 5, width: 10, height: 9}, density: 0.48, tags: [tall_grass, dry]}
+-      warps:
+-        - {id: df_c_initial_south_exit, at: {x: 20, y: 43}, facing: down, target_map: df_c_initial_south_threshold, target: {x: 6, y: 1}}
+-        - {id: df_c_initial_north_exit, at: {x: 20, y: 0}, facing: up, target_map: df_c_initial_north_threshold, target: {x: 6, y: 8}}
+-      npcs:
+-        - id: df_c_initial_naturalist
+-          role: Bellroot warden-naturalist
+-          at: {x: 22, y: 24}
+-          sprite: scientist
+-          dialogue: Bellroot once answered thunder. Now even the stones seem to be listening.
+-          mandatory: true
+-        - id: df_c_initial_forager
+-          role: Hollow mushroom gatherer and optional trainer
+-          at: {x: 7, y: 26}
+-          sprite: miner_green
+-          dialogue: The hollow rewards quiet curiosity. Let us see whether you brought either.
+-          trainer: true
+-          party: [shybulb]
+-        - id: df_c_initial_scout
+-          role: North-rise trail scout and trainer
+-          at: {x: 23, y: 12}
+-          sprite: knight
+-          dialogue: The trees loosen beyond this rise. Keep your focus until they do.
+-          trainer: true
+-          party: [squabbit]
+-      encounter_zones:
+-        - {id: df_c_initial_hollow_encounters, bounds: {x: 3, y: 21, width: 10, height: 10}, table: df_c_initial_forest, probability: 9}
+-        - {id: df_c_initial_north_encounters, bounds: {x: 23, y: 5, width: 10, height: 9}, table: df_c_initial_forest, probability: 9}
+-      secrets:
+-        - {id: df_c_initial_bell_tonic, at: {x: 7, y: 22}, reward: potion, clue: The western loop narrows beside a solitary pale shrub.}
+-      props:
+-        - {id: df_c_initial_west_marker, kind: sign, at: {x: 11, y: 31}, blocks_movement: true, semantic_role: Signals the optional listening path}
+-        - {id: df_c_initial_watcher_west, kind: boulder, at: {x: 18, y: 20}, blocks_movement: true, semantic_role: Bellroot ward stone}
+-        - {id: df_c_initial_watcher_north, kind: boulder, at: {x: 22, y: 19}, blocks_movement: true, semantic_role: Bellroot ward stone}
+-        - {id: df_c_initial_watcher_east, kind: boulder, at: {x: 26, y: 22}, blocks_movement: true, semantic_role: Bellroot ward stone}
+-        - {id: df_c_initial_frame_west, kind: tree, at: {x: 16, y: 23}, blocks_movement: true, semantic_role: Frames the clearing reveal}
+-        - {id: df_c_initial_frame_east, kind: tree, at: {x: 27, y: 24}, blocks_movement: true, semantic_role: Frames the clearing reveal}
+-        - {id: df_c_initial_white_flower, kind: flower, at: {x: 21, y: 25}, blocks_movement: false, semantic_role: Bellroot ecology motif}
+-        - {id: df_c_initial_secret_shrub, kind: shrub, at: {x: 5, y: 22}, blocks_movement: false, semantic_role: Secret sightline cue}
+-      events:
+-        - id: df_c_initial_listen_bellroot
+-          at: {x: 20, y: 22}
+-          trigger: interact
+-          actions:
+-            - translated_dialog A low tone travels through the stone and fades toward the western hollow.
+-      pacing_notes:
+-        - Southern bends compress the view before the optional fork.
+-        - The western loop uses damp encounter cover and rejoins at Bellroot.
+-        - The large safe clearing creates negative space around the landmark.
+-        - A narrow north rise leads into one final encounter patch before release.
+-      revision: 1
++- id: df_c_forest
++  entries:
++  - monster: shybulb
++    encounter_rate: 4
++    level_min: 4
++    level_max: 6
++  - monster: squabbit
++    encounter_rate: 3
++    level_min: 5
++    level_max: 7
++  - monster: elofly
++    encounter_rate: 2
++    level_min: 4
++    level_max: 6

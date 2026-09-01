@@ -1,0 +1,658 @@
+{
+  "format_version": "1.0",
+  "map_id": "df_a_north_threshold",
+  "source": "benchmarks/generated/a_procedural/deep_forest/world_spec.yaml",
+  "source_seed": 1937,
+  "revision": 1,
+  "tmx_sha256": "574ec6143278012a8a0c29ecf97f74afe78f26c63b0daea0be3903694a863673",
+  "blocked_cells": [
+    [
+      0,
+      1
+    ],
+    [
+      1,
+      1
+    ],
+    [
+      8,
+      1
+    ],
+    [
+      11,
+      1
+    ],
+    [
+      0,
+      2
+    ],
+    [
+      1,
+      2
+    ],
+    [
+      9,
+      2
+    ],
+    [
+      10,
+      2
+    ],
+    [
+      11,
+      2
+    ],
+    [
+      0,
+      3
+    ],
+    [
+      11,
+      3
+    ],
+    [
+      0,
+      4
+    ],
+    [
+      1,
+      4
+    ],
+    [
+      2,
+      4
+    ],
+    [
+      11,
+      4
+    ],
+    [
+      0,
+      5
+    ],
+    [
+      2,
+      5
+    ],
+    [
+      11,
+      5
+    ],
+    [
+      0,
+      6
+    ],
+    [
+      9,
+      6
+    ],
+    [
+      11,
+      6
+    ],
+    [
+      0,
+      7
+    ],
+    [
+      2,
+      7
+    ],
+    [
+      3,
+      7
+    ],
+    [
+      11,
+      7
+    ],
+    [
+      0,
+      8
+    ],
+    [
+      3,
+      8
+    ],
+    [
+      11,
+      8
+    ],
+    [
+      0,
+      9
+    ],
+    [
+      1,
+      9
+    ],
+    [
+      2,
+      9
+    ],
+    [
+      3,
+      9
+    ],
+    [
+      4,
+      9
+    ],
+    [
+      8,
+      9
+    ],
+    [
+      9,
+      9
+    ],
+    [
+      10,
+      9
+    ],
+    [
+      11,
+      9
+    ]
+  ],
+  "collision_rectangles": [
+    [
+      0,
+      1,
+      2,
+      2
+    ],
+    [
+      8,
+      1,
+      1,
+      1
+    ],
+    [
+      11,
+      1,
+      1,
+      9
+    ],
+    [
+      9,
+      2,
+      2,
+      1
+    ],
+    [
+      0,
+      3,
+      1,
+      7
+    ],
+    [
+      1,
+      4,
+      2,
+      1
+    ],
+    [
+      2,
+      5,
+      1,
+      1
+    ],
+    [
+      9,
+      6,
+      1,
+      1
+    ],
+    [
+      2,
+      7,
+      2,
+      1
+    ],
+    [
+      3,
+      8,
+      1,
+      2
+    ],
+    [
+      1,
+      9,
+      2,
+      1
+    ],
+    [
+      4,
+      9,
+      1,
+      1
+    ],
+    [
+      8,
+      9,
+      3,
+      1
+    ]
+  ],
+  "path_cells": [
+    [
+      5,
+      0
+    ],
+    [
+      6,
+      0
+    ],
+    [
+      7,
+      0
+    ],
+    [
+      5,
+      1
+    ],
+    [
+      6,
+      1
+    ],
+    [
+      7,
+      1
+    ],
+    [
+      5,
+      2
+    ],
+    [
+      6,
+      2
+    ],
+    [
+      7,
+      2
+    ],
+    [
+      5,
+      3
+    ],
+    [
+      6,
+      3
+    ],
+    [
+      7,
+      3
+    ],
+    [
+      5,
+      4
+    ],
+    [
+      6,
+      4
+    ],
+    [
+      7,
+      4
+    ],
+    [
+      5,
+      5
+    ],
+    [
+      6,
+      5
+    ],
+    [
+      7,
+      5
+    ],
+    [
+      5,
+      6
+    ],
+    [
+      6,
+      6
+    ],
+    [
+      7,
+      6
+    ],
+    [
+      5,
+      7
+    ],
+    [
+      6,
+      7
+    ],
+    [
+      7,
+      7
+    ],
+    [
+      5,
+      8
+    ],
+    [
+      6,
+      8
+    ],
+    [
+      7,
+      8
+    ],
+    [
+      5,
+      9
+    ],
+    [
+      6,
+      9
+    ],
+    [
+      7,
+      9
+    ]
+  ],
+  "generated_objects": [
+    {
+      "kind": "pine",
+      "at": [
+        0,
+        1
+      ],
+      "rule": "boundary"
+    },
+    {
+      "kind": "pine",
+      "at": [
+        1,
+        1
+      ],
+      "rule": "boundary"
+    },
+    {
+      "kind": "pine",
+      "at": [
+        8,
+        1
+      ],
+      "rule": "boundary"
+    },
+    {
+      "kind": "pine",
+      "at": [
+        11,
+        1
+      ],
+      "rule": "boundary"
+    },
+    {
+      "kind": "pine",
+      "at": [
+        0,
+        2
+      ],
+      "rule": "boundary"
+    },
+    {
+      "kind": "pine",
+      "at": [
+        1,
+        2
+      ],
+      "rule": "boundary"
+    },
+    {
+      "kind": "pine",
+      "at": [
+        9,
+        2
+      ],
+      "rule": "boundary"
+    },
+    {
+      "kind": "pine",
+      "at": [
+        10,
+        2
+      ],
+      "rule": "boundary"
+    },
+    {
+      "kind": "pine",
+      "at": [
+        11,
+        2
+      ],
+      "rule": "boundary"
+    },
+    {
+      "kind": "pine",
+      "at": [
+        0,
+        3
+      ],
+      "rule": "boundary"
+    },
+    {
+      "kind": "pine",
+      "at": [
+        11,
+        3
+      ],
+      "rule": "boundary"
+    },
+    {
+      "kind": "pine",
+      "at": [
+        0,
+        4
+      ],
+      "rule": "boundary"
+    },
+    {
+      "kind": "pine",
+      "at": [
+        1,
+        4
+      ],
+      "rule": "boundary"
+    },
+    {
+      "kind": "pine",
+      "at": [
+        2,
+        4
+      ],
+      "rule": "boundary"
+    },
+    {
+      "kind": "pine",
+      "at": [
+        11,
+        4
+      ],
+      "rule": "boundary"
+    },
+    {
+      "kind": "pine",
+      "at": [
+        0,
+        5
+      ],
+      "rule": "boundary"
+    },
+    {
+      "kind": "pine",
+      "at": [
+        2,
+        5
+      ],
+      "rule": "boundary"
+    },
+    {
+      "kind": "pine",
+      "at": [
+        11,
+        5
+      ],
+      "rule": "boundary"
+    },
+    {
+      "kind": "pine",
+      "at": [
+        0,
+        6
+      ],
+      "rule": "boundary"
+    },
+    {
+      "kind": "pine",
+      "at": [
+        9,
+        6
+      ],
+      "rule": "boundary"
+    },
+    {
+      "kind": "pine",
+      "at": [
+        11,
+        6
+      ],
+      "rule": "boundary"
+    },
+    {
+      "kind": "pine",
+      "at": [
+        0,
+        7
+      ],
+      "rule": "boundary"
+    },
+    {
+      "kind": "pine",
+      "at": [
+        2,
+        7
+      ],
+      "rule": "boundary"
+    },
+    {
+      "kind": "pine",
+      "at": [
+        3,
+        7
+      ],
+      "rule": "boundary"
+    },
+    {
+      "kind": "pine",
+      "at": [
+        11,
+        7
+      ],
+      "rule": "boundary"
+    },
+    {
+      "kind": "pine",
+      "at": [
+        0,
+        8
+      ],
+      "rule": "boundary"
+    },
+    {
+      "kind": "pine",
+      "at": [
+        3,
+        8
+      ],
+      "rule": "boundary"
+    },
+    {
+      "kind": "pine",
+      "at": [
+        11,
+        8
+      ],
+      "rule": "boundary"
+    },
+    {
+      "kind": "pine",
+      "at": [
+        0,
+        9
+      ],
+      "rule": "boundary"
+    },
+    {
+      "kind": "pine",
+      "at": [
+        1,
+        9
+      ],
+      "rule": "boundary"
+    },
+    {
+      "kind": "pine",
+      "at": [
+        2,
+        9
+      ],
+      "rule": "boundary"
+    },
+    {
+      "kind": "pine",
+      "at": [
+        3,
+        9
+      ],
+      "rule": "boundary"
+    },
+    {
+      "kind": "pine",
+      "at": [
+        4,
+        9
+      ],
+      "rule": "boundary"
+    },
+    {
+      "kind": "pine",
+      "at": [
+        8,
+        9
+      ],
+      "rule": "boundary"
+    },
+    {
+      "kind": "pine",
+      "at": [
+        9,
+        9
+      ],
+      "rule": "boundary"
+    },
+    {
+      "kind": "pine",
+      "at": [
+        10,
+        9
+      ],
+      "rule": "boundary"
+    },
+    {
+      "kind": "pine",
+      "at": [
+        11,
+        9
+      ],
+      "rule": "boundary"
+    }
+  ]
+}

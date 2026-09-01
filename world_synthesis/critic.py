@@ -90,7 +90,7 @@ def critique(layout: CompiledLayout) -> dict[str, object]:
         )
     if not secondary:
         weaknesses.append(
-            "The bridge has no secondary landmark to balance its visual weight."
+            "The map has no secondary landmark to balance the dominant landmark's visual weight."
         )
         recommendations.append(
             "Compose a smaller activity landmark off-axis from the bridge."

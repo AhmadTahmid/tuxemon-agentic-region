@@ -1,0 +1,163 @@
+metadata:
+  format_version: "1.0"
+  experiment_id: deep_forest_b
+  seed: 1937
+  authoring_status: reviewed
+  campaign_name: Mossveil Passage
+  starter_monster: cardiling
+  starter_level: 7
+  trainer_post_battle_dialogue: You have a sharper forest sense than most travelers.
+
+encounter_tables:
+  - id: df_b_forest
+    entries:
+      - {monster: shybulb, encounter_rate: 4, level_min: 4, level_max: 6}
+      - {monster: squabbit, encounter_rate: 3, level_min: 5, level_max: 7}
+      - {monster: elofly, encounter_rate: 2, level_min: 4, level_max: 6}
+
+region:
+  id: deep_forest_b_region
+  name: Mossveil Passage
+  theme: An old lantern trail survives beneath a thick green canopy.
+  history: Travelers once left polished stones around a shrine so moonlight could guide late caravans.
+  environment: Damp pine forest broken by one mossy shrine clearing.
+  economy: [foraging, courier traffic]
+  conflict: The western loop is being reclaimed by undergrowth.
+  story_hook: Cross the forest and inspect the old moon shrine.
+  progression: [Enter from the south, Find the shrine clearing, Reach the north threshold]
+  visual_motifs: [dark pines, pale trail, mossy boulders]
+  creature_ecology:
+    - Shybulb cluster under the wet western canopy.
+    - Squabbit forage in the drier northern brush.
+  settlements:
+    - {id: b_southstead, name: Southstead, role: Conceptual southern village, economy: [foraging], visual_motifs: [timber]}
+    - {id: b_northstead, name: Northstead, role: Conceptual northern village, economy: [couriers], visual_motifs: [stone]}
+  maps:
+    - id: df_b_south_threshold
+      name: Mossveil Threshold
+      map_type: settlement_threshold
+      narrative_role: Paired southern benchmark threshold.
+      emotional_role: Safe departure.
+      visual_identity: Forest gate.
+      width: 12
+      height: 10
+      base_terrain: forest_floor
+      boundary: {kind: forest, depth: 3, density: 0.58, falloff_per_cell: 0.16}
+      player_spawn: {x: 6, y: 5}
+      primary_path: {id: gate_path, role: critical, width: 3, points: [{x: 6, y: 9}, {x: 6, y: 0}]}
+      warps:
+        - {id: df_b_south_return, at: {x: 6, y: 0}, facing: up, target_map: deep_forest_b_route, target: {x: 20, y: 42}}
+      revision: 1
+
+    - id: df_b_north_threshold
+      name: Mossveil Threshold
+      map_type: settlement_threshold
+      narrative_role: Paired northern benchmark threshold.
+      emotional_role: Safe arrival.
+      visual_identity: Forest gate.
+      width: 12
+      height: 10
+      base_terrain: forest_floor
+      boundary: {kind: forest, depth: 3, density: 0.58, falloff_per_cell: 0.16}
+      player_spawn: {x: 6, y: 5}
+      primary_path: {id: gate_path, role: critical, width: 3, points: [{x: 6, y: 9}, {x: 6, y: 0}]}
+      warps:
+        - {id: df_b_north_return, at: {x: 6, y: 9}, facing: down, target_map: deep_forest_b_route, target: {x: 20, y: 1}}
+      revision: 1
+
+    - id: deep_forest_b_route
+      name: Mossveil Passage
+      map_type: route
+      narrative_role: Forest connection between two conceptual settlements.
+      emotional_role: Enclosure, detour, discovery, release.
+      visual_identity: A pale S-shaped trail beneath a dense pine canopy.
+      width: 40
+      height: 44
+      base_terrain: forest_floor
+      boundary: {kind: forest, depth: 4, density: 0.76, falloff_per_cell: 0.13}
+      player_spawn: {x: 20, y: 40}
+      grant_starter: true
+      primary_path:
+        id: lantern_trail
+        role: critical
+        width: 3
+        points:
+          - {x: 20, y: 43}
+          - {x: 19, y: 37}
+          - {x: 15, y: 31}
+          - {x: 17, y: 28}
+          - {x: 21, y: 23}
+          - {x: 18, y: 18}
+          - {x: 23, y: 12}
+          - {x: 20, y: 6}
+          - {x: 20, y: 0}
+      secondary_paths:
+        - id: moon_shrine_loop
+          role: optional
+          width: 2
+          points:
+            - {x: 15, y: 31}
+            - {x: 10, y: 27}
+            - {x: 6, y: 23}
+            - {x: 5, y: 17}
+            - {x: 12, y: 14}
+            - {x: 18, y: 18}
+      landmarks:
+        - id: moon_shrine
+          name: Moon Shrine
+          role: dominant
+          kind: standing_stones
+          anchor: {x: 21, y: 23}
+          footprint: {x: 18, y: 20, width: 8, height: 7}
+          description: Three mossy stones ring a small restful opening beside the trail.
+      zones:
+        - {id: western_canopy, kind: forest, bounds: {x: 1, y: 3, width: 13, height: 38}, density: 0.62, tags: [pine, damp]}
+        - {id: eastern_canopy, kind: forest, bounds: {x: 27, y: 3, width: 12, height: 38}, density: 0.65, tags: [pine, dense]}
+        - {id: shrine_rest, kind: safe, bounds: {x: 18, y: 19, width: 10, height: 9}, density: 0.0, tags: [rest]}
+        - {id: western_understory, kind: encounter, bounds: {x: 3, y: 16, width: 10, height: 11}, density: 0.55, tags: [tall_grass, damp]}
+        - {id: northern_brush, kind: encounter, bounds: {x: 23, y: 5, width: 10, height: 9}, density: 0.48, tags: [tall_grass, dry]}
+      warps:
+        - {id: df_b_south_exit, at: {x: 20, y: 43}, facing: down, target_map: df_b_south_threshold, target: {x: 6, y: 1}}
+        - {id: df_b_north_exit, at: {x: 20, y: 0}, facing: up, target_map: df_b_north_threshold, target: {x: 6, y: 8}}
+      npcs:
+        - id: df_b_keeper
+          role: Shrine keeper and navigation hint
+          at: {x: 22, y: 25}
+          sprite: scientist
+          dialogue: The shrine stones catch moonlight, even beneath this canopy.
+          mandatory: true
+        - id: df_b_forager
+          role: Western loop trainer
+          at: {x: 9, y: 26}
+          sprite: miner_green
+          dialogue: Quiet feet find the best mushrooms. Let us test yours.
+          trainer: true
+          party: [shybulb]
+        - id: df_b_scout
+          role: Northern trail trainer
+          at: {x: 22, y: 11}
+          sprite: knight
+          dialogue: Northstead is close, but the last thicket still has teeth.
+          trainer: true
+          party: [squabbit]
+      encounter_zones:
+        - {id: df_b_west_encounters, bounds: {x: 3, y: 16, width: 10, height: 11}, table: df_b_forest, probability: 9}
+        - {id: df_b_north_encounters, bounds: {x: 23, y: 5, width: 10, height: 9}, table: df_b_forest, probability: 9}
+      secrets:
+        - {id: df_b_moon_cache, at: {x: 5, y: 17}, reward: potion, clue: A pale shrub marks the westernmost bend of the forgotten trail.}
+      props:
+        - {id: df_b_shrine_north, kind: boulder, at: {x: 23, y: 21}, blocks_movement: true, semantic_role: Shrine stone}
+        - {id: df_b_shrine_east, kind: boulder, at: {x: 25, y: 23}, blocks_movement: true, semantic_role: Shrine stone}
+        - {id: df_b_shrine_south, kind: boulder, at: {x: 23, y: 26}, blocks_movement: true, semantic_role: Shrine stone}
+        - {id: df_b_loop_sign, kind: sign, at: {x: 13, y: 31}, blocks_movement: true, semantic_role: Optional trail cue}
+        - {id: df_b_shrine_flower, kind: flower, at: {x: 20, y: 24}, blocks_movement: false, semantic_role: Clearing accent}
+      events:
+        - id: df_b_inspect_shrine
+          at: {x: 21, y: 23}
+          trigger: interact
+          actions: [translated_dialog The stone is cool and faintly luminous beneath the moss.]
+      pacing_notes:
+        - The southern path bends toward a clear central shrine.
+        - The western loop is longer and denser than the critical path.
+        - The northern brush provides a final encounter space before release.
+      revision: 1

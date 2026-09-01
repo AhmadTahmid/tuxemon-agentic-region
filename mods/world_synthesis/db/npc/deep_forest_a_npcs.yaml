@@ -1,0 +1,42 @@
+- slug: df_a_ranger
+  speech:
+    profile:
+      default:
+        pre_battle: df_a_ranger_dialog
+        post_battle_win: null
+        post_battle_lose: null
+        post_battle_draw: null
+  combat: {}
+  audio: {}
+  template:
+    sprite_name: scientist
+    combat_sheet: scientist
+    slug: scientist
+- slug: df_a_forager
+  speech:
+    profile:
+      default:
+        pre_battle: df_a_forager_dialog
+        post_battle_win: null
+        post_battle_lose: df_a_forager_post_battle
+        post_battle_draw: null
+  combat: {}
+  audio: {}
+  template:
+    sprite_name: miner_green
+    combat_sheet: miner
+    slug: miner
+- slug: df_a_scout
+  speech:
+    profile:
+      default:
+        pre_battle: df_a_scout_dialog
+        post_battle_win: null
+        post_battle_lose: df_a_scout_post_battle
+        post_battle_draw: null
+  combat: {}
+  audio: {}
+  template:
+    sprite_name: knight
+    combat_sheet: knight
+    slug: knight

@@ -1,0 +1,3 @@
+World synthesis validation: 2 error(s), 0 warning(s)
+[ERROR] deep_forest_c_initial_route path_blocked: Authored paths overlap collision at [(11, 31), (22, 19)].
+[ERROR] deep_forest_c_initial_route unreachable_critical: secret:df_c_initial_bell_tonic at (7, 22) is unreachable from spawn.

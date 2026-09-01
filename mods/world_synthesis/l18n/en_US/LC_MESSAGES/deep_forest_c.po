@@ -1,0 +1,24 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: deep_forest_c 0.1.0\n"
+"Language: en_US\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "df_c_forager_dialog"
+msgstr "The hollow rewards quiet curiosity. Let us see whether you brought either."
+
+msgid "df_c_forager_post_battle"
+msgstr "You listened to the trail better than I did."
+
+msgid "df_c_naturalist_dialog"
+msgstr "Bellroot once answered thunder. Now even the stones seem to be listening."
+
+msgid "df_c_scout_dialog"
+msgstr "The trees loosen beyond this rise. Keep your focus until they do."
+
+msgid "df_c_scout_post_battle"
+msgstr "You listened to the trail better than I did."
+
+msgid "world_synthesis_campaign"
+msgstr "Mossveil Passage"

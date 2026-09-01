@@ -1,0 +1,29 @@
+format_version: "1.0"
+base: initial_world_spec.yaml
+metadata_updates:
+  experiment_id: deep_forest_c
+region_updates:
+  id: deep_forest_c_region
+renames:
+  maps:
+    df_c_initial_south_threshold: df_c_south_threshold
+    df_c_initial_north_threshold: df_c_north_threshold
+    deep_forest_c_initial_route: deep_forest_c_route
+  encounter_tables:
+    df_c_initial_forest: df_c_forest
+  npcs:
+    df_c_initial_naturalist: df_c_naturalist
+    df_c_initial_forager: df_c_forager
+    df_c_initial_scout: df_c_scout
+map_updates:
+  deep_forest_c_route:
+    revision: 2
+    props:
+      df_c_initial_west_marker:
+        at: {x: 11, y: 33}
+      df_c_initial_watcher_north:
+        at: {x: 22, y: 17}
+rationale:
+  - Remove two authored collision/path intersections found by validation.
+  - Restore access to the optional loop and its secret.
+  - Preserve shared benchmark scope and all map-design decisions not implicated by evidence.

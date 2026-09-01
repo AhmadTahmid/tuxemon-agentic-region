@@ -1,0 +1,23 @@
+{
+  "format_version": "1.0",
+  "world_id": "deep_forest_c_initial_region",
+  "summary": {
+    "errors": 2,
+    "warnings": 0,
+    "maps": 3
+  },
+  "diagnostics": [
+    {
+      "severity": "error",
+      "code": "path_blocked",
+      "map_id": "deep_forest_c_initial_route",
+      "message": "Authored paths overlap collision at [(11, 31), (22, 19)]."
+    },
+    {
+      "severity": "error",
+      "code": "unreachable_critical",
+      "map_id": "deep_forest_c_initial_route",
+      "message": "secret:df_c_initial_bell_tonic at (7, 22) is unreachable from spawn."
+    }
+  ]
+}

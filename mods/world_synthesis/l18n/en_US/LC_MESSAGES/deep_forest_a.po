@@ -1,0 +1,24 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: deep_forest_a 0.1.0\n"
+"Language: en_US\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "df_a_forager_dialog"
+msgstr "I came for shelf mushrooms and found a worthy detour."
+
+msgid "df_a_forager_post_battle"
+msgstr "You read this forest better than I expected."
+
+msgid "df_a_ranger_dialog"
+msgstr "The pale trail stays honest even when the trees crowd close."
+
+msgid "df_a_scout_dialog"
+msgstr "The canopy opens ahead. First, show me your trail sense."
+
+msgid "df_a_scout_post_battle"
+msgstr "You read this forest better than I expected."
+
+msgid "world_synthesis_campaign"
+msgstr "Mossveil Passage"

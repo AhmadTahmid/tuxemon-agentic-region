@@ -1,11 +1,15 @@
-"""Launch the Glasswind experiment while retaining upstream Tuxemon assets."""
+"""Launch an experiment map while retaining upstream Tuxemon assets."""
 
 from __future__ import annotations
 
+import argparse
 import sys
 
 
-def main() -> None:
+def launch(
+    starting_map: str = "glasswind_causeway",
+    starting_position: tuple[int, int] = (15, 36),
+) -> None:
     # This must happen before display/database initialization. The database and
     # asset loader see both mods; the startup state machine receives only the
     # experimental campaign so it launches directly without a menu.
@@ -64,6 +68,15 @@ def main() -> None:
     )
     experiment_db.preload()
     experiment_db.load()
+    metadata = experiment_db.mod_metadata.get_mod_metadata("world_synthesis")
+    experiment_db.mod_metadata._mod_metadata["world_synthesis"] = (
+        metadata.model_copy(
+            update={
+                "starting_map": f"{starting_map}.tmx",
+                "starting_position": starting_position,
+            }
+        )
+    )
     runtime.db = experiment_db
     validator.reset()
     validator.set(Validator(experiment_db))
@@ -76,6 +89,15 @@ def main() -> None:
     config.config_model.display.splash = False
     config.logging.configure()
     tuxemon_main.main(config=config, context=context, load_slot=None)
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--map", default="glasswind_causeway")
+    parser.add_argument("--x", type=int, default=15)
+    parser.add_argument("--y", type=int, default=36)
+    args = parser.parse_args()
+    launch(args.map, (args.x, args.y))
 
 
 if __name__ == "__main__":
