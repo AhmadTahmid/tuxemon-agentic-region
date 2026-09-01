@@ -5,6 +5,19 @@ Tuxemon is a free, open source monster-fighting RPG. It's in constant
 development and improving all the time! Contributors of all skill and
 level are welcome to join. 
 
+World-synthesis experiment
+--------------------------
+
+This fork preserves upstream Tuxemon and adds a specification-first experiment
+for agent-authored RPG regions. Its completed first milestone compiles and
+launches the original **Glasswind Causeway** route, with deterministic terrain,
+collision, paired exits, encounters, NPCs/trainers, an optional loop, a secret,
+static inspection renders, validation and recorded critique/revision.
+
+[Read the experiment guide](docs/world_synthesis/README.md).
+
+![Glasswind Causeway in the live Tuxemon client](artifacts/game_screenshots/glasswind_bridge_live.png)
+
 ![Python 3.10](https://img.shields.io/badge/python-3.10-blue.svg)
 ![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)
 [![Documentation Status](https://readthedocs.org/projects/tuxemon/badge/?version=latest)](https://tuxemon.readthedocs.io/en/latest/?badge=latest)

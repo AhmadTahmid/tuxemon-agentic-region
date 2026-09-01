@@ -1,6 +1,6 @@
 # First Milestone Implementation Plan
 
-Status: Phase 0/1 complete; route tooling in progress.
+Status: Phase 0/1 and the first polished-route milestone are complete.
 
 1. Verify upstream launch and freeze the inspected development commit.
 2. Catalogue TMX, tilesets, sprites, NPCs, monsters, items, encounters, and event vocabulary.
@@ -13,3 +13,8 @@ Status: Phase 0/1 complete; route tooling in progress.
 9. Add focused tests, document exact commands, commit logical milestones, and push.
 
 Acceptance: the route is traversable between two conceptual settlements, includes a landmark, optional loop, secret, encounters, and meaningful NPC/trainer locations, and passes both the independent validator and Tuxemon's real TMX loader.
+
+Result: accepted. Revision 2 passes with zero blocking validator errors; all
+focused tests pass; the real loader reports a 40x48 map with collision and
+events; and the isolated campaign was launched and moved through in the normal
+Tuxemon client. Full-region expansion remains intentionally pending.

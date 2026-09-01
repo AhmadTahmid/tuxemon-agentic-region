@@ -1,0 +1,36 @@
+{
+  "format_version": "1.0",
+  "map_id": "glasswind_causeway",
+  "revision": 2,
+  "rubric_scores": {
+    "visual_composition": 8,
+    "navigation_readability": 8,
+    "landmark_quality": 8,
+    "exploration": 9,
+    "environmental_storytelling": 8,
+    "gameplay_pacing": 9,
+    "npc_placement": 9,
+    "world_coherence": 8,
+    "secret_reward_placement": 7,
+    "memorability": 8
+  },
+  "average": 8.2,
+  "threshold": 7.5,
+  "passes_threshold": true,
+  "three_strongest_aspects": [
+    "A dominant landmark anchors both composition and traversal.",
+    "The critical path changes direction and creates staged reveals.",
+    "NPC roles cluster around plausible route activities rather than random spacing."
+  ],
+  "three_weakest_aspects": [
+    "Tile-level edge treatment remains limited by the selected prototype atlas.",
+    "Static rendering cannot judge moment-to-moment trainer interruption pacing.",
+    "Threshold maps prove topology but do not yet deliver settlement context."
+  ],
+  "recommended_modifications": [
+    "Playtest encounter frequency and trainer sightline timing in the real client.",
+    "Replace the prototype atlas only after the experimental design comparison is stable.",
+    "Do not expand the region until navigation feedback from this route is recorded."
+  ],
+  "limitations": "Structural heuristic only; visual review and playtesting remain required."
+}
