@@ -59,6 +59,8 @@ This is a benchmark finding, not a reason to change art mid-experiment.
 - two graphical in-game captures were produced for each map;
 - deterministic normal/debug renders and critic reports are indexed in
   `artifacts/world_synthesis/benchmark_gallery.md`.
+- the full repository suite completed with 4,261 passes and the one documented
+  pre-existing Windows cache-test failure.
 
 ## What the human should test next
 

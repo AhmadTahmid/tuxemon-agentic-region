@@ -24,7 +24,7 @@
   ],
   "three_weakest_aspects": [
     "There is no true optional exploration loop; leaving the road only creates open-field wandering.",
-    "The bridge has no secondary landmark to balance its visual weight.",
+    "The map has no secondary landmark to balance the dominant landmark's visual weight.",
     "The secret is mechanically reachable but weakly telegraphed by circulation."
   ],
   "recommended_modifications": [

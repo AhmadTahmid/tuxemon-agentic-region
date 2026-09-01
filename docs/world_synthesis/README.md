@@ -134,7 +134,7 @@ Results currently remain pending, so no method is declared the winner. See
   real Tuxemon events, but the milestone is a route—not a complete narrative arc.
 - Tiled was not installed in the inspected environment; generated maps were
   instead loaded through Tuxemon's real `TMXMapLoader` and launched in-game.
-- The full upstream suite is 4,246 passed / 1 pre-existing Windows-specific
+- The full suite is 4,261 passed / 1 pre-existing Windows-specific
   failure; see `TEST_REPORT.md` for the exact test and evidence.
 
 See `TUXEMON_ARCHITECTURE.md`, `MAP_GRAMMAR.md`, `EVENT_GRAMMAR.md`,
