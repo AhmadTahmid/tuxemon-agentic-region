@@ -1,0 +1,24 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: glasswind-world-synthesis 0.1.0\n"
+"Language: en_US\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "glasswind_fisher_dialog"
+msgstr "The alder loop is slower, but river glass washes up west of the bridge."
+
+msgid "glasswind_gardener_dialog"
+msgstr "Wild blooms thrive where boots leave the road. Let's see where yours have been."
+
+msgid "glasswind_scout_dialog"
+msgstr "A clear road makes a careless traveler. Show me you watch the verge."
+
+msgid "glasswind_trainer_post_battle"
+msgstr "A good crossing teaches both travelers something."
+
+msgid "glasswind_warden_dialog"
+msgstr "The bridge used to sing only before rain. Today it has not stopped."
+
+msgid "world_synthesis_campaign"
+msgstr "Glasswind World Synthesis"

@@ -1,0 +1,815 @@
+{
+  "$defs": {
+    "Character": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "pattern": "^[a-z][a-z0-9_]*$",
+          "title": "Id",
+          "type": "string"
+        },
+        "role": {
+          "title": "Role",
+          "type": "string"
+        },
+        "at": {
+          "$ref": "#/$defs/Point"
+        },
+        "sprite": {
+          "title": "Sprite",
+          "type": "string"
+        },
+        "dialogue": {
+          "title": "Dialogue",
+          "type": "string"
+        },
+        "trainer": {
+          "default": false,
+          "title": "Trainer",
+          "type": "boolean"
+        },
+        "party": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Party",
+          "type": "array"
+        },
+        "mandatory": {
+          "default": false,
+          "title": "Mandatory",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "role",
+        "at",
+        "sprite",
+        "dialogue"
+      ],
+      "title": "Character",
+      "type": "object"
+    },
+    "EncounterZone": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "bounds": {
+          "$ref": "#/$defs/Rect"
+        },
+        "table": {
+          "title": "Table",
+          "type": "string"
+        },
+        "probability": {
+          "maximum": 100,
+          "minimum": 0,
+          "title": "Probability",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "id",
+        "bounds",
+        "table",
+        "probability"
+      ],
+      "title": "EncounterZone",
+      "type": "object"
+    },
+    "EnvironmentalFeature": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "river",
+            "bridge",
+            "pond",
+            "grove",
+            "fence",
+            "flowers"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "bounds": {
+          "$ref": "#/$defs/Rect"
+        },
+        "blocks_movement": {
+          "title": "Blocks Movement",
+          "type": "boolean"
+        },
+        "notes": {
+          "default": "",
+          "title": "Notes",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "kind",
+        "bounds",
+        "blocks_movement"
+      ],
+      "title": "EnvironmentalFeature",
+      "type": "object"
+    },
+    "Landmark": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "pattern": "^[a-z][a-z0-9_]*$",
+          "title": "Id",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "role": {
+          "enum": [
+            "dominant",
+            "secondary"
+          ],
+          "title": "Role",
+          "type": "string"
+        },
+        "kind": {
+          "title": "Kind",
+          "type": "string"
+        },
+        "anchor": {
+          "$ref": "#/$defs/Point"
+        },
+        "footprint": {
+          "$ref": "#/$defs/Rect"
+        },
+        "description": {
+          "title": "Description",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "role",
+        "kind",
+        "anchor",
+        "footprint",
+        "description"
+      ],
+      "title": "Landmark",
+      "type": "object"
+    },
+    "MapSpec": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "pattern": "^[a-z][a-z0-9_]*$",
+          "title": "Id",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "map_type": {
+          "$ref": "#/$defs/MapType"
+        },
+        "narrative_role": {
+          "title": "Narrative Role",
+          "type": "string"
+        },
+        "emotional_role": {
+          "title": "Emotional Role",
+          "type": "string"
+        },
+        "visual_identity": {
+          "title": "Visual Identity",
+          "type": "string"
+        },
+        "width": {
+          "maximum": 200,
+          "minimum": 8,
+          "title": "Width",
+          "type": "integer"
+        },
+        "height": {
+          "maximum": 200,
+          "minimum": 8,
+          "title": "Height",
+          "type": "integer"
+        },
+        "player_spawn": {
+          "$ref": "#/$defs/Point"
+        },
+        "primary_path": {
+          "$ref": "#/$defs/PathSpec"
+        },
+        "secondary_paths": {
+          "items": {
+            "$ref": "#/$defs/PathSpec"
+          },
+          "title": "Secondary Paths",
+          "type": "array"
+        },
+        "landmarks": {
+          "items": {
+            "$ref": "#/$defs/Landmark"
+          },
+          "title": "Landmarks",
+          "type": "array"
+        },
+        "zones": {
+          "items": {
+            "$ref": "#/$defs/Zone"
+          },
+          "title": "Zones",
+          "type": "array"
+        },
+        "warps": {
+          "items": {
+            "$ref": "#/$defs/Warp"
+          },
+          "title": "Warps",
+          "type": "array"
+        },
+        "npcs": {
+          "items": {
+            "$ref": "#/$defs/Character"
+          },
+          "title": "Npcs",
+          "type": "array"
+        },
+        "encounter_zones": {
+          "items": {
+            "$ref": "#/$defs/EncounterZone"
+          },
+          "title": "Encounter Zones",
+          "type": "array"
+        },
+        "secrets": {
+          "items": {
+            "$ref": "#/$defs/Secret"
+          },
+          "title": "Secrets",
+          "type": "array"
+        },
+        "environmental_features": {
+          "items": {
+            "$ref": "#/$defs/EnvironmentalFeature"
+          },
+          "title": "Environmental Features",
+          "type": "array"
+        },
+        "events": {
+          "items": {
+            "$ref": "#/$defs/StoryEvent"
+          },
+          "title": "Events",
+          "type": "array"
+        },
+        "pacing_notes": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Pacing Notes",
+          "type": "array"
+        },
+        "revision": {
+          "minimum": 1,
+          "title": "Revision",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "map_type",
+        "narrative_role",
+        "emotional_role",
+        "visual_identity",
+        "width",
+        "height",
+        "player_spawn",
+        "primary_path",
+        "revision"
+      ],
+      "title": "MapSpec",
+      "type": "object"
+    },
+    "MapType": {
+      "enum": [
+        "route",
+        "settlement_threshold",
+        "settlement",
+        "dungeon"
+      ],
+      "title": "MapType",
+      "type": "string"
+    },
+    "Metadata": {
+      "additionalProperties": false,
+      "properties": {
+        "format_version": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Format Version",
+          "type": "string"
+        },
+        "experiment_id": {
+          "pattern": "^[a-z][a-z0-9_]*$",
+          "title": "Experiment Id",
+          "type": "string"
+        },
+        "seed": {
+          "title": "Seed",
+          "type": "integer"
+        },
+        "authoring_status": {
+          "enum": [
+            "draft",
+            "reviewed"
+          ],
+          "title": "Authoring Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "experiment_id",
+        "seed",
+        "authoring_status"
+      ],
+      "title": "Metadata",
+      "type": "object"
+    },
+    "PathSpec": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "role": {
+          "enum": [
+            "critical",
+            "optional"
+          ],
+          "title": "Role",
+          "type": "string"
+        },
+        "width": {
+          "maximum": 7,
+          "minimum": 1,
+          "title": "Width",
+          "type": "integer"
+        },
+        "points": {
+          "items": {
+            "$ref": "#/$defs/Point"
+          },
+          "minItems": 2,
+          "title": "Points",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "role",
+        "width",
+        "points"
+      ],
+      "title": "PathSpec",
+      "type": "object"
+    },
+    "Point": {
+      "additionalProperties": false,
+      "properties": {
+        "x": {
+          "minimum": 0,
+          "title": "X",
+          "type": "integer"
+        },
+        "y": {
+          "minimum": 0,
+          "title": "Y",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "x",
+        "y"
+      ],
+      "title": "Point",
+      "type": "object"
+    },
+    "Quest": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "summary": {
+          "title": "Summary",
+          "type": "string"
+        },
+        "steps": {
+          "items": {
+            "$ref": "#/$defs/QuestStep"
+          },
+          "minItems": 1,
+          "title": "Steps",
+          "type": "array"
+        },
+        "reward": {
+          "title": "Reward",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "summary",
+        "steps",
+        "reward"
+      ],
+      "title": "Quest",
+      "type": "object"
+    },
+    "QuestStep": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "pattern": "^[a-z][a-z0-9_]*$",
+          "title": "Id",
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "npc",
+            "event",
+            "warp",
+            "secret"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "reference": {
+          "title": "Reference",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "kind",
+        "reference"
+      ],
+      "title": "QuestStep",
+      "type": "object"
+    },
+    "Rect": {
+      "additionalProperties": false,
+      "properties": {
+        "x": {
+          "minimum": 0,
+          "title": "X",
+          "type": "integer"
+        },
+        "y": {
+          "minimum": 0,
+          "title": "Y",
+          "type": "integer"
+        },
+        "width": {
+          "exclusiveMinimum": 0,
+          "title": "Width",
+          "type": "integer"
+        },
+        "height": {
+          "exclusiveMinimum": 0,
+          "title": "Height",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "x",
+        "y",
+        "width",
+        "height"
+      ],
+      "title": "Rect",
+      "type": "object"
+    },
+    "Region": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "pattern": "^[a-z][a-z0-9_]*$",
+          "title": "Id",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "theme": {
+          "title": "Theme",
+          "type": "string"
+        },
+        "history": {
+          "title": "History",
+          "type": "string"
+        },
+        "environment": {
+          "title": "Environment",
+          "type": "string"
+        },
+        "economy": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Economy",
+          "type": "array"
+        },
+        "conflict": {
+          "title": "Conflict",
+          "type": "string"
+        },
+        "story_hook": {
+          "title": "Story Hook",
+          "type": "string"
+        },
+        "progression": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Progression",
+          "type": "array"
+        },
+        "visual_motifs": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Visual Motifs",
+          "type": "array"
+        },
+        "creature_ecology": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Creature Ecology",
+          "type": "array"
+        },
+        "settlements": {
+          "items": {
+            "$ref": "#/$defs/Settlement"
+          },
+          "title": "Settlements",
+          "type": "array"
+        },
+        "maps": {
+          "items": {
+            "$ref": "#/$defs/MapSpec"
+          },
+          "title": "Maps",
+          "type": "array"
+        },
+        "quests": {
+          "items": {
+            "$ref": "#/$defs/Quest"
+          },
+          "title": "Quests",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "theme",
+        "history",
+        "environment",
+        "economy",
+        "conflict",
+        "story_hook",
+        "progression",
+        "visual_motifs",
+        "creature_ecology",
+        "settlements",
+        "maps"
+      ],
+      "title": "Region",
+      "type": "object"
+    },
+    "Secret": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "at": {
+          "$ref": "#/$defs/Point"
+        },
+        "reward": {
+          "title": "Reward",
+          "type": "string"
+        },
+        "clue": {
+          "title": "Clue",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "at",
+        "reward",
+        "clue"
+      ],
+      "title": "Secret",
+      "type": "object"
+    },
+    "Settlement": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "pattern": "^[a-z][a-z0-9_]*$",
+          "title": "Id",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "role": {
+          "title": "Role",
+          "type": "string"
+        },
+        "economy": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Economy",
+          "type": "array"
+        },
+        "visual_motifs": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Visual Motifs",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "role",
+        "economy",
+        "visual_motifs"
+      ],
+      "title": "Settlement",
+      "type": "object"
+    },
+    "StoryEvent": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "at": {
+          "$ref": "#/$defs/Point"
+        },
+        "trigger": {
+          "title": "Trigger",
+          "type": "string"
+        },
+        "actions": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Actions",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "at",
+        "trigger",
+        "actions"
+      ],
+      "title": "StoryEvent",
+      "type": "object"
+    },
+    "Warp": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "at": {
+          "$ref": "#/$defs/Point"
+        },
+        "facing": {
+          "enum": [
+            "up",
+            "down",
+            "left",
+            "right"
+          ],
+          "title": "Facing",
+          "type": "string"
+        },
+        "target_map": {
+          "title": "Target Map",
+          "type": "string"
+        },
+        "target": {
+          "$ref": "#/$defs/Point"
+        },
+        "mandatory": {
+          "default": true,
+          "title": "Mandatory",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "at",
+        "facing",
+        "target_map",
+        "target"
+      ],
+      "title": "Warp",
+      "type": "object"
+    },
+    "Zone": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "meadow",
+            "forest",
+            "river",
+            "encounter",
+            "safe",
+            "secret"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "bounds": {
+          "$ref": "#/$defs/Rect"
+        },
+        "density": {
+          "default": 0,
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Density",
+          "type": "number"
+        },
+        "tags": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Tags",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "kind",
+        "bounds"
+      ],
+      "title": "Zone",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "metadata": {
+      "$ref": "#/$defs/Metadata"
+    },
+    "region": {
+      "$ref": "#/$defs/Region"
+    }
+  },
+  "required": [
+    "metadata",
+    "region"
+  ],
+  "title": "WorldSpec",
+  "type": "object"
+}

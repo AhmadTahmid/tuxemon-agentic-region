@@ -28,7 +28,11 @@ SEMANTIC_PATTERNS: dict[str, tuple[str, ...]] = {
 
 def semantic_tags(name: str) -> tuple[list[str], str]:
     lowered = name.lower().replace("_", " ").replace("-", " ")
-    tags = [tag for tag, terms in SEMANTIC_PATTERNS.items() if any(term in lowered for term in terms)]
+    tags = [
+        tag
+        for tag, terms in SEMANTIC_PATTERNS.items()
+        if any(term in lowered for term in terms)
+    ]
     return tags or ["unclassified"], "medium" if tags else "low"
 
 
@@ -42,14 +46,19 @@ def image_record(path: Path) -> dict[str, Any]:
         "dimensions_px": [width, height],
         "semantic_tags": tags,
         "classification_confidence": confidence,
-        "classification_basis": "filename heuristic; requires visual review" if confidence == "low" else "filename plus visual-family naming",
+        "classification_basis": "filename heuristic; requires visual review"
+        if confidence == "low"
+        else "filename plus visual-family naming",
     }
     if tsx.exists():
         root = ET.parse(tsx).getroot()
         record["tsx"] = tsx.relative_to(ROOT).as_posix()
-        record["tile_size"] = [int(root.get("tilewidth", "0")), int(root.get("tileheight", "0"))]
+        record["tile_size"] = [
+            int(root.get("tilewidth", "0")),
+            int(root.get("tileheight", "0")),
+        ]
         record["tile_count"] = int(root.get("tilecount", "0"))
-        properties = Counter()
+        properties: Counter[str] = Counter()
         animated = 0
         for tile in root.findall("tile"):
             if tile.find("animation") is not None:
@@ -72,16 +81,28 @@ def yaml_records(folder: Path, kind: str) -> list[dict[str, Any]]:
         for entry in entries:
             if not isinstance(entry, dict) or "slug" not in entry:
                 continue
-            record: dict[str, Any] = {"slug": entry["slug"], "source": path.relative_to(ROOT).as_posix()}
+            record: dict[str, Any] = {
+                "slug": entry["slug"],
+                "source": path.relative_to(ROOT).as_posix(),
+            }
             if kind == "monster":
-                record.update({key: entry.get(key, []) for key in ("types", "terrains", "tags")})
+                record.update(
+                    {
+                        key: entry.get(key, [])
+                        for key in ("types", "terrains", "tags")
+                    }
+                )
                 record["shape"] = entry.get("shape")
             elif kind == "npc":
                 template = entry.get("template") or {}
                 record["sprite"] = template.get("sprite_name")
                 record["combat_sheet"] = template.get("combat_sheet")
                 record["has_monsters"] = bool(entry.get("monsters"))
-                record["dialogue_fields"] = sorted(((entry.get("speech") or {}).get("profile") or {}).get("default", {}).keys())
+                record["dialogue_fields"] = sorted(
+                    ((entry.get("speech") or {}).get("profile") or {})
+                    .get("default", {})
+                    .keys()
+                )
             elif kind == "item":
                 record["category"] = entry.get("category")
                 record["sprite"] = entry.get("sprite")
@@ -90,13 +111,25 @@ def yaml_records(folder: Path, kind: str) -> list[dict[str, Any]]:
 
 
 def build_catalog() -> dict[str, Any]:
-    tilesets = [image_record(path) for path in sorted((MOD / "gfx" / "tilesets").glob("*")) if path.suffix.lower() in {".png", ".gif", ".bmp"}]
+    tilesets = [
+        image_record(path)
+        for path in sorted((MOD / "gfx" / "tilesets").glob("*"))
+        if path.suffix.lower() in {".png", ".gif", ".bmp"}
+    ]
     sprites = []
     for path in sorted((MOD / "sprites").glob("*.png")):
         with Image.open(path) as image:
             size = list(image.size)
         tags, confidence = semantic_tags(path.stem)
-        sprites.append({"id": path.stem, "path": path.relative_to(ROOT).as_posix(), "dimensions_px": size, "semantic_tags": tags, "classification_confidence": confidence})
+        sprites.append(
+            {
+                "id": path.stem,
+                "path": path.relative_to(ROOT).as_posix(),
+                "dimensions_px": size,
+                "semantic_tags": tags,
+                "classification_confidence": confidence,
+            }
+        )
     monsters = yaml_records(MOD / "db" / "monster", "monster")
     npcs = yaml_records(MOD / "db" / "npc", "npc")
     items = yaml_records(MOD / "db" / "item", "item")
@@ -107,7 +140,13 @@ def build_catalog() -> dict[str, Any]:
             "semantic_classification": "Conservative filename heuristics plus structured TSX/YAML metadata.",
             "uncertainty_policy": "Unclassified and low-confidence entries are retained for human review; no visual meaning is invented.",
         },
-        "counts": {"tilesets": len(tilesets), "overworld_sprites": len(sprites), "npc_records": len(npcs), "monsters": len(monsters), "items": len(items)},
+        "counts": {
+            "tilesets": len(tilesets),
+            "overworld_sprites": len(sprites),
+            "npc_records": len(npcs),
+            "monsters": len(monsters),
+            "items": len(items),
+        },
         "tilesets": tilesets,
         "overworld_sprites": sprites,
         "npc_records": npcs,
@@ -119,7 +158,10 @@ def build_catalog() -> dict[str, Any]:
 def main() -> None:
     destination = ROOT / "docs" / "world_synthesis" / "ASSET_CATALOG.json"
     destination.parent.mkdir(parents=True, exist_ok=True)
-    destination.write_text(json.dumps(build_catalog(), indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    destination.write_text(
+        json.dumps(build_catalog(), indent=2, sort_keys=True) + "\n",
+        encoding="utf-8",
+    )
     print(f"Wrote {destination.relative_to(ROOT)}")
 
 

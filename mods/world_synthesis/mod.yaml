@@ -1,0 +1,13 @@
+slug: world_synthesis
+description: Agentic world-synthesis experiment isolated from upstream Tuxemon content.
+name: Glasswind World Synthesis
+version: 0.1.0
+authors: [AhmadTahmid, OpenAI Codex]
+startup_rules: []
+starting_players: [npc_red]
+starting_map: glasswind_causeway.tmx
+starting_position: [15, 36]
+starting_money: [500, 500]
+starting_names: [Rowan]
+sprite: adventurer
+combat_sheet: adventurer

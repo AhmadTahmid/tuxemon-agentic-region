@@ -42,6 +42,11 @@ test = [
     "pytest-mock",
     "pytest-cov",
 ]
+world-synthesis = [
+    "mypy>=1.15",
+    "ruff>=0.11",
+    "types-PyYAML>=6.0",
+]
 
 [tool.setuptools]
 include-package-data = true

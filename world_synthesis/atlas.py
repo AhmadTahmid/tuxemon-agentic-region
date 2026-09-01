@@ -8,8 +8,20 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 def render_index(start_row: int = 0, row_count: int = 32) -> Path:
-    source = ROOT / "mods" / "tuxemon" / "gfx" / "tilesets" / "prototyping_outdoor.png"
-    output = ROOT / "artifacts" / "analysis" / f"prototyping_tiles_{start_row}_{start_row + row_count - 1}.png"
+    source = (
+        ROOT
+        / "mods"
+        / "tuxemon"
+        / "gfx"
+        / "tilesets"
+        / "prototyping_outdoor.png"
+    )
+    output = (
+        ROOT
+        / "artifacts"
+        / "analysis"
+        / f"prototyping_tiles_{start_row}_{start_row + row_count - 1}.png"
+    )
     image = Image.open(source).convert("RGBA")
     columns = image.width // 16
     scale = 4
@@ -20,7 +32,9 @@ def render_index(start_row: int = 0, row_count: int = 32) -> Path:
         row = start_row + relative_row
         for column in range(columns):
             tile_id = row * columns + column
-            tile = image.crop((column * 16, row * 16, column * 16 + 16, row * 16 + 16)).resize((cell, cell), Image.Resampling.NEAREST)
+            tile = image.crop(
+                (column * 16, row * 16, column * 16 + 16, row * 16 + 16)
+            ).resize((cell, cell), Image.Resampling.NEAREST)
             x, y = column * cell, relative_row * cell
             sheet.alpha_composite(tile, (x, y))
             draw.rectangle((x, y, x + 31, y + 10), fill=(0, 0, 0, 190))

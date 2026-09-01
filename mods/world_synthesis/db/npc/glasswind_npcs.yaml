@@ -1,0 +1,56 @@
+- slug: glasswind_warden
+  speech:
+    profile:
+      default:
+        pre_battle: glasswind_warden_dialog
+        post_battle_win: null
+        post_battle_lose: glasswind_trainer_post_battle
+        post_battle_draw: null
+  combat: {}
+  audio: {}
+  template:
+    sprite_name: scientist
+    combat_sheet: scientist
+    slug: scientist
+- slug: glasswind_fisher
+  speech:
+    profile:
+      default:
+        pre_battle: glasswind_fisher_dialog
+        post_battle_win: null
+        post_battle_lose: glasswind_trainer_post_battle
+        post_battle_draw: null
+  combat: {}
+  audio: {}
+  template:
+    sprite_name: fisher
+    combat_sheet: fisher
+    slug: fisher
+- slug: glasswind_scout
+  speech:
+    profile:
+      default:
+        pre_battle: glasswind_scout_dialog
+        post_battle_win: null
+        post_battle_lose: glasswind_trainer_post_battle
+        post_battle_draw: null
+  combat: {}
+  audio: {}
+  template:
+    sprite_name: knight
+    combat_sheet: knight
+    slug: knight
+- slug: glasswind_gardener
+  speech:
+    profile:
+      default:
+        pre_battle: glasswind_gardener_dialog
+        post_battle_win: null
+        post_battle_lose: glasswind_trainer_post_battle
+        post_battle_draw: null
+  combat: {}
+  audio: {}
+  template:
+    sprite_name: miner_green
+    combat_sheet: miner
+    slug: miner

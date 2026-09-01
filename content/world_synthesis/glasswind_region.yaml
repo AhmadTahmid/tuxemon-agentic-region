@@ -1,0 +1,232 @@
+metadata:
+  format_version: "1.0"
+  experiment_id: glasswind_route_milestone
+  seed: 24052026
+  authoring_status: reviewed
+
+region:
+  id: glasswind_marches
+  name: The Glasswind Marches
+  theme: Communities make a home along an old singing-water road.
+  history: An abandoned glassworks diverted the river through resonant stone, leaving a bridge that hums before rain.
+  environment: Temperate meadow, alder riverbank and narrow pine woodland.
+  economy: [herbs, river glass, orchard fruit, courier traffic]
+  conflict: Fernwake wants the old bridge protected while Brasshaven traders want it widened.
+  story_hook: A route warden asks travelers to learn why the Singing Span has changed its tune.
+  progression:
+    - Leave Fernwake through its north gate.
+    - Cross Glasswind Causeway and investigate the Singing Span.
+    - Reach the Brasshaven south gate.
+  visual_motifs: [amber flowers, blue water, weathered timber, pale river stones, leaning pines]
+  creature_ecology:
+    - Cardiling and Elofly forage in sunny meadow pockets.
+    - Squabbit shelters along the forest boundary.
+    - Shybulb clusters in damp riverbank grass.
+  settlements:
+    - id: fernwake
+      name: Fernwake
+      role: Southern herb-growing village
+      economy: [medicinal herbs, orchard fruit]
+      visual_motifs: [woven fences, flower boxes]
+    - id: brasshaven
+      name: Brasshaven
+      role: Northern river-trade town
+      economy: [river glass, metalwork, freight]
+      visual_motifs: [brass signs, stone storehouses]
+  quests:
+    - id: bridge_song
+      summary: Listen at the Singing Span and bring the route warden an observation.
+      steps:
+        - {id: speak_to_warden, kind: npc, reference: glasswind_warden}
+        - {id: inspect_bridge, kind: event, reference: inspect_singing_span}
+        - {id: reach_brasshaven, kind: warp, reference: north_to_brasshaven}
+      reward: potion
+  maps:
+    - id: fernwake_threshold
+      name: Fernwake North Gate
+      map_type: settlement_threshold
+      narrative_role: Paired southern route threshold; not a complete settlement.
+      emotional_role: Safe departure.
+      visual_identity: Orchard verge and woven fence.
+      width: 12
+      height: 10
+      player_spawn: {x: 6, y: 4}
+      primary_path:
+        id: gate_path
+        role: critical
+        width: 3
+        points: [{x: 6, y: 9}, {x: 6, y: 0}]
+      warps:
+        - id: to_glasswind
+          at: {x: 6, y: 0}
+          facing: up
+          target_map: glasswind_causeway
+          target: {x: 19, y: 45}
+      revision: 1
+
+    - id: brasshaven_threshold
+      name: Brasshaven South Gate
+      map_type: settlement_threshold
+      narrative_role: Paired northern route threshold; not a complete settlement.
+      emotional_role: Arrival and prospect.
+      visual_identity: Stone apron and trade road.
+      width: 12
+      height: 10
+      player_spawn: {x: 6, y: 5}
+      primary_path:
+        id: gate_path
+        role: critical
+        width: 3
+        points: [{x: 6, y: 9}, {x: 6, y: 0}]
+      warps:
+        - id: to_glasswind
+          at: {x: 6, y: 9}
+          facing: down
+          target_map: glasswind_causeway
+          target: {x: 22, y: 2}
+      revision: 1
+
+    - id: glasswind_causeway
+      name: Glasswind Causeway
+      map_type: route
+      narrative_role: First journey from an intimate farming village toward a busier river town.
+      emotional_role: Compression, release, curiosity, crossing, reveal.
+      visual_identity: A blue river cuts through amber meadow beneath dense asymmetrical pine framing.
+      width: 40
+      height: 48
+      player_spawn: {x: 15, y: 36}
+      primary_path:
+        id: old_trade_road
+        role: critical
+        width: 3
+        points:
+          - {x: 19, y: 47}
+          - {x: 18, y: 40}
+          - {x: 14, y: 35}
+          - {x: 17, y: 29}
+          - {x: 19, y: 25}
+          - {x: 19, y: 20}
+          - {x: 23, y: 15}
+          - {x: 25, y: 9}
+          - {x: 22, y: 0}
+      secondary_paths:
+        - id: alder_loop
+          role: optional
+          width: 2
+          points:
+            - {x: 15, y: 34}
+            - {x: 9, y: 32}
+            - {x: 7, y: 26}
+            - {x: 11, y: 23}
+            - {x: 17, y: 25}
+        - id: glassmakers_spur
+          role: optional
+          width: 2
+          points:
+            - {x: 23, y: 15}
+            - {x: 31, y: 13}
+            - {x: 34, y: 17}
+      landmarks:
+        - id: singing_span
+          name: The Singing Span
+          role: dominant
+          kind: bridge
+          anchor: {x: 19, y: 22}
+          footprint: {x: 18, y: 20, width: 3, height: 5}
+          description: Weathered timber over resonant river stones; the route's visual and traversal hinge.
+        - id: warden_grove
+          name: Warden's Grove
+          role: secondary
+          kind: grove
+          anchor: {x: 31, y: 12}
+          footprint: {x: 29, y: 10, width: 6, height: 6}
+          description: A fenced flower clearing and sign used by the route warden.
+      zones:
+        - {id: south_meadow, kind: meadow, bounds: {x: 8, y: 34, width: 24, height: 12}, density: 0.18, tags: [flowers, open]}
+        - {id: west_alder_bank, kind: encounter, bounds: {x: 4, y: 24, width: 10, height: 10}, density: 0.48, tags: [tall_grass, damp]}
+        - {id: north_meadow, kind: encounter, bounds: {x: 22, y: 6, width: 12, height: 9}, density: 0.38, tags: [tall_grass, sunny]}
+        - {id: boundary_forest, kind: forest, bounds: {x: 0, y: 0, width: 40, height: 48}, density: 0.72, tags: [edge_only, pine]}
+        - {id: hidden_glass_bank, kind: secret, bounds: {x: 5, y: 18, width: 5, height: 4}, density: 0.24, tags: [river_glass]}
+      warps:
+        - id: south_to_fernwake
+          at: {x: 19, y: 47}
+          facing: down
+          target_map: fernwake_threshold
+          target: {x: 6, y: 1}
+        - id: north_to_brasshaven
+          at: {x: 22, y: 0}
+          facing: up
+          target_map: brasshaven_threshold
+          target: {x: 6, y: 8}
+      npcs:
+        - id: glasswind_warden
+          role: Route warden and story hook
+          at: {x: 30, y: 15}
+          sprite: scientist
+          dialogue: "The bridge used to sing only before rain. Today it has not stopped."
+          mandatory: true
+        - id: glasswind_fisher
+          role: Riverbank texture and navigation hint
+          at: {x: 12, y: 25}
+          sprite: fisher
+          dialogue: "The alder loop is slower, but river glass washes up west of the bridge."
+        - id: glasswind_scout
+          role: Optional trainer guarding the meadow choice
+          at: {x: 24, y: 12}
+          sprite: knight
+          dialogue: "A clear road makes a careless traveler. Show me you watch the verge."
+          trainer: true
+          party: [squabbit]
+        - id: glasswind_gardener
+          role: Optional trainer near the southern release
+          at: {x: 12, y: 38}
+          sprite: miner_green
+          dialogue: "Wild blooms thrive where boots leave the road. Let's see where yours have been."
+          trainer: true
+          party: [shybulb, elofly]
+      encounter_zones:
+        - id: alder_encounters
+          bounds: {x: 4, y: 24, width: 10, height: 10}
+          table: glasswind_meadow
+          probability: 9
+        - id: north_meadow_encounters
+          bounds: {x: 22, y: 6, width: 12, height: 9}
+          table: glasswind_meadow
+          probability: 9
+      secrets:
+        - id: river_glass_cache
+          at: {x: 7, y: 19}
+          reward: potion
+          clue: A gap in the alder trees aligns with a pale stone at the waterline.
+      environmental_features:
+        - id: glasswind_river
+          kind: river
+          bounds: {x: 0, y: 20, width: 40, height: 5}
+          blocks_movement: true
+          notes: The bridge footprint is excluded from collision.
+        - id: singing_span_feature
+          kind: bridge
+          bounds: {x: 18, y: 20, width: 3, height: 5}
+          blocks_movement: false
+        - id: warden_fence
+          kind: fence
+          bounds: {x: 28, y: 9, width: 8, height: 8}
+          blocks_movement: true
+          notes: Compiler leaves an opening at the southwest approach.
+        - id: south_flowers
+          kind: flowers
+          bounds: {x: 9, y: 36, width: 15, height: 8}
+          blocks_movement: false
+      events:
+        - id: inspect_singing_span
+          at: {x: 21, y: 22}
+          trigger: interact
+          actions:
+            - "translated_dialog The old timbers hum beneath your palm. The note rises toward Brasshaven."
+            - "set_variable glasswind_bridge_heard:yes"
+      pacing_notes:
+        - Pine compression at the south gate opens into a flowered meadow.
+        - The alder loop offers a slower route and spatially telegraphs the secret.
+        - The river is a hard visual pause; the bridge is the only crossing.
+        - The road bends toward the warden before narrowing into the north gate.
+      revision: 2
