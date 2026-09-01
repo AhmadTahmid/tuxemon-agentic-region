@@ -34,3 +34,19 @@ must be recorded in `artifacts/world_synthesis/generalization_log.json`.
 The deterministic critic reports a `structural_design_score`; it is neither a
 visual-quality rating nor evidence that a map is enjoyable. Blind human
 playtest answers are stored separately and are never averaged into that score.
+
+## D008 — Equivalent allowance, not identical geometry
+
+Deep Forest A/B/C share dimensions, seed, engine, asset vocabulary, NPC/trainer
+counts, encounter zones, dominant-landmark allowance, optional content and
+reward budget. Their geometry and authorship effort differ because generation
+method is the independent variable. A is competent rather than intentionally
+weak; B receives only parse/load repairs (none were needed); C retains its full
+revision history.
+
+## D009 — Blind assignment, revealed post-test
+
+The play launcher exposes only “Mossveil Passage” and a random session ID. It
+logs the hidden method before launch and stores the questionnaire separately.
+The gallery reveals method identity only for post-test analysis. Automated
+structural scores never enter human response files.

@@ -1,7 +1,8 @@
 {
   "format_version": "1.0",
   "compiler_baseline_commit": "ac937da97",
-  "compiler_freeze_commit": null,
+  "compiler_freeze_commit": "1ded0461f423639f06adc5fd3990cd2f4b65467f",
+  "compiler_sha256": "a2e28bd42e4810faef84bbe508594aa6f3e231b81e8d1f5d92b6562689962088",
   "preparation": {
     "compiler_changed": true,
     "reason": "The fixture-0 audit found content-independent capabilities required before a fair Deep Forest benchmark.",
@@ -22,5 +23,30 @@
       "A descriptive full-map forest zone became redundant once boundary intent was typed and was removed from fixture content."
     ]
   },
-  "maps": []
+  "maps": [
+    {
+      "map_id": "deep_forest_a_route",
+      "map_archetype": "deep_forest_procedural_baseline",
+      "compiler_changed": false,
+      "missing_primitives": [],
+      "validation_status": "passed_zero_errors",
+      "playability_status": "real_loader_and_headless_startup_passed; graphical_capture_completed"
+    },
+    {
+      "map_id": "deep_forest_b_route",
+      "map_archetype": "deep_forest_one_shot_baseline",
+      "compiler_changed": false,
+      "missing_primitives": [],
+      "validation_status": "passed_zero_errors_without_mechanical_repair",
+      "playability_status": "real_loader_and_headless_startup_passed; graphical_capture_completed"
+    },
+    {
+      "map_id": "deep_forest_c_route",
+      "map_archetype": "deep_forest_structured_agentic",
+      "compiler_changed": false,
+      "missing_primitives": [],
+      "validation_status": "initial_failed_two_blockers; content_revision_passed_zero_errors",
+      "playability_status": "real_loader_and_headless_startup_passed; graphical_capture_completed"
+    }
+  ]
 }

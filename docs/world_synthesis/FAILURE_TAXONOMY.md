@@ -37,5 +37,13 @@ or uncertain observation.
 - The structural critic is a known `CRITIC_BLIND_SPOT` risk. Its score is not a
   quality score and must not be merged with human results.
 
-Deep Forest findings will append concrete records with map ID, method-hidden
-test ID, evidence path and disposition.
+## Deep Forest observations
+
+| Map/method | Failure | Evidence | Classification | Disposition |
+|---|---|---|---|---|
+| Deep Forest C initial | A sign and ward stone blocked authored paths; the secret became unreachable. | `benchmarks/generated/c_agentic/deep_forest/initial_validation/validation.txt` | collision mistake / LLM spatial-reasoning failure | Corrected through revision content; compiler remained frozen. |
+| Deep Forest C initial | Structural heuristic scored 7.5 while the map had two blocking errors. | `initial_structural_critic.json` beside the validation report | critic blind spot | Retained as evidence; validation and human results stay independent. |
+| Deep Forest A/B/C | Repeated pine silhouettes dominate dense areas and make sub-areas less visually distinct. | Static and live gallery renders | frozen asset-vocabulary limitation / repetition | Not repaired in this art-frozen milestone. |
+| Deep Forest A/B/C | Dominant landmarks are readable clearings but boulder clusters have modest visual identity. | Landmark captures in `benchmark_gallery.md` | asset-semantic mismatch / weak landmark | Human tester should compare memorability; no new art permitted. |
+| Deep Forest B/C | Both capable LLM-authored paths converge on broadly similar S-curves and west-side loops. | Full-map renders | LLM spatial-reasoning homogeneity | Blind playtesting must determine whether local rhythm still differs perceptibly. |
+| Capture tooling | Accelerated Pygame surfaces rendered black through Win32 `PrintWindow`. | Rejected first capture batch | tooling limitation, not map quality | Capture helper now foregrounds the client and uses screen pixels. |

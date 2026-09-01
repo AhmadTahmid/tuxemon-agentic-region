@@ -14,6 +14,11 @@ not claimed as completed settlements or as the requested 45–90 minute region.
 
 ![Live Tuxemon client at the Singing Span](../../artifacts/game_screenshots/glasswind_bridge_live.png)
 
+The second research milestone adds one controlled **Deep Forest A/B/C
+benchmark**. It does not expand the region. Three equivalent “Mossveil Passage”
+maps compare deterministic procedural, unrevised one-shot, and structured
+agentic workflows with the compiler and visual vocabulary held fixed.
+
 ## Pipeline
 
 ```text
@@ -96,15 +101,26 @@ evidence.
 
 ## A/B/C experiment status
 
-The three-way experiment is designed but deliberately not implemented yet:
+The Deep Forest family is implemented and ready for blind human evaluation:
 
-- A: baseline procedural map;
-- B: one-shot intent-to-map attempt;
-- C: region bible → WorldSpec → compiler → validation → render → critic → revision.
+- A: competent deterministic procedural baseline;
+- B: saved verbatim one-shot prompt and unrevised valid result;
+- C: design reasoning → WorldSpec → compiler → validation/render → structural
+  critique → one recorded content revision.
 
-Only C's first route milestone exists. Comparable A/B maps and the complete
-three-settlement region must wait until playtesting establishes that this map
-is a useful benchmark.
+Build all three, then launch a method-masked session:
+
+```powershell
+.\.venv\Scripts\python.exe -m world_synthesis.benchmark build
+.\.venv\Scripts\python.exe -m world_synthesis.benchmark play deep_forest
+```
+
+Close the game window after exploring; the launcher then asks the separate
+human questionnaire. Do not inspect the method-revealing
+`artifacts/world_synthesis/benchmark_gallery.md` before a blind session.
+Results currently remain pending, so no method is declared the winner. See
+`DEEP_FOREST_BENCHMARK_REPORT.md`, `GENERALIZATION_AUDIT.md`, and
+`FAILURE_TAXONOMY.md` for evidence and limitations.
 
 ## Honest limitations
 
@@ -112,6 +128,8 @@ is a useful benchmark.
   but has basic path edges and limited prop variety; this is not final art.
 - Static structural scoring cannot judge fun, encounter cadence or every
   moment-to-moment sightline. Human playtesting remains necessary.
+- The frozen pine-heavy atlas makes all Deep Forest variants visually
+  repetitive and may compress differences between design methods.
 - NPC dialogue, battles, wild encounters, secret reward and warps are wired to
   real Tuxemon events, but the milestone is a route—not a complete narrative arc.
 - Tiled was not installed in the inspected environment; generated maps were
