@@ -214,9 +214,7 @@
    <properties>
     <property name="act1" value="create_npc low_bell_rockat_guard,17,31,stand" />
     <property name="cond1" value="not char_exists low_bell_rockat_guard" />
-    <property name="cond10" value="not battle_outcome player" />
-    <property name="cond11" value="won" />
-    <property name="cond12" value="low_bell_rockat_guard" />
+    <property name="cond10" value="not battle_outcome player,won,low_bell_rockat_guard" />
    </properties>
   </object>
   <object id="17" name="survey_disturbance" type="event" x="368" y="192" width="16" height="16">

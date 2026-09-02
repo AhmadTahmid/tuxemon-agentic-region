@@ -17,5 +17,7 @@ Development commands:
 ```powershell
 .\.venv\Scripts\python.exe -m world_synthesis.production_slice build low_bell
 .\.venv\Scripts\python.exe -m world_synthesis.production_slice render low_bell
+.\.venv\Scripts\python.exe -m world_synthesis.production_slice validate low_bell
 .\.venv\Scripts\python.exe -m world_synthesis.production_slice play low_bell
+.\.venv\Scripts\python.exe -m world_synthesis.production_slice playtest low_bell
 ```

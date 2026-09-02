@@ -4,7 +4,7 @@
   "map": "low_bell_quarry_exterior",
   "source": "content/production_slice/low_bell/episode.yaml",
   "revision": 1,
-  "tmx_sha256": "61c389e141e0642a07785f43fce6086615999ea7257f6af217024fe59a8d4cea",
+  "tmx_sha256": "15fb04d977671b1855c643e0d8e94d7891b29ef4a1d259720a0ec2c0304c079f",
   "blocked_cells": [
     [
       0,

@@ -20,8 +20,11 @@ def _resolve_episode(repo: Path, slug: str) -> Path:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("command", choices=("build", "render", "play"))
+    parser.add_argument(
+        "command", choices=("build", "render", "validate", "play", "playtest")
+    )
     parser.add_argument("episode", choices=tuple(EPISODES))
+    parser.add_argument("--dry-run", action="store_true")
     args = parser.parse_args()
     repo = Path(__file__).resolve().parents[2]
     spec_path = _resolve_episode(repo, args.episode)
@@ -37,6 +40,22 @@ def main() -> int:
         outputs = render_episode(load_episode(spec_path), repo)
         print(f"Rendered {args.episode}: {len(outputs)} images")
         return 0
+    if args.command == "validate":
+        from world_synthesis.production_slice.validation import (
+            validate_episode,
+        )
+
+        contract_path = spec_path.with_name("acceptance.yaml")
+        report = validate_episode(spec_path, contract_path, repo)
+        print(
+            f"Validated {args.episode}: "
+            f"{'PASS' if report['passed'] else 'FAIL'}"
+        )
+        return 0 if report["passed"] else 1
+    if args.command == "playtest":
+        from world_synthesis.production_slice.playtest import run_playtest
+
+        return run_playtest(spec_path, repo, dry_run=args.dry_run)
 
     from world_synthesis.production_slice.launcher import launch
 

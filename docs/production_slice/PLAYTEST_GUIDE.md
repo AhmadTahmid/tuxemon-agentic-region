@@ -1,13 +1,31 @@
 # Playtest guide
 
-Status: design-lock draft. The final launcher and fresh-save instructions will
-be added in Milestone 5.
+## Fresh-session launcher
 
-The human session must begin from a fresh Low Bell save and disclose only the
-episode title. Automated validation output is not shown before play. After
-`low_bell_episode_complete` is observed, collect ratings and free responses in
-`artifacts/production_slice/low_bell/human_evaluation/`; never merge them into
-automated reports or compute a synthetic “soul score.”
+From the repository root in PowerShell:
+
+```powershell
+.\.venv\Scripts\python.exe -m world_synthesis.production_slice playtest low_bell
+```
+
+This builds the current canonical episode, creates a new session record, and
+starts Tuxemon with `load_slot=None`; it does not load or overwrite an existing
+save slot. The launcher shows only **Ashenbell: The Low Bell**. Close the game
+after reaching the ending hook in resolved Ashenbell. The launcher then asks
+for completion confirmation and presents the questionnaire. If the episode
+was not completed, it records an incomplete session without presenting the
+completion questionnaire.
+
+Human responses live only under
+`artifacts/production_slice/low_bell/human_evaluation/`. They are never merged
+with `automated_acceptance.json`, and the response schema contains no aggregate
+score. Do not read automated reports before a human session if that knowledge
+could bias the playthrough.
+
+## Questionnaire
+
+Ratings use 1–10; yes/no and free responses are stored separately. The
+launcher asks every required question:
 
 Required questions:
 
@@ -26,4 +44,3 @@ Required questions:
 13. Would you continue playing another episode?
 14. Did this feel like a competent early chapter of a classic
     monster-catching RPG?
-

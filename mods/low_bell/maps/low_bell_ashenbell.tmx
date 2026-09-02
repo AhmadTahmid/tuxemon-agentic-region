@@ -283,9 +283,7 @@
    <properties>
     <property name="act1" value="create_npc low_bell_garden_caper,10,34,stand" />
     <property name="cond1" value="not char_exists low_bell_garden_caper" />
-    <property name="cond10" value="not battle_outcome player" />
-    <property name="cond11" value="won" />
-    <property name="cond12" value="low_bell_garden_caper" />
+    <property name="cond10" value="not battle_outcome player,won,low_bell_garden_caper" />
    </properties>
   </object>
   <object id="27" name="village_arrival_scene" type="event" x="320" y="576" width="80" height="48">
@@ -298,7 +296,7 @@
     <property name="act6" value="set_variable low_bell_story:investigation" />
     <property name="cond10" value="is char_at player" />
     <property name="cond30" value="is variable_set low_bell_tutorial_won:yes" />
-    <property name="cond31" value="not variable_set low_bell_story" />
+    <property name="cond31" value="is variable_set low_bell_story:intro" />
    </properties>
   </object>
   <object id="28" name="mara_investigation" type="event" x="304" y="320" width="16" height="16">

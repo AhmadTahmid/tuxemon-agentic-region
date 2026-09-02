@@ -1,0 +1,82 @@
+{
+  "format_version": "1.0",
+  "episode": "low_bell",
+  "passed": true,
+  "mechanically_verified": [
+    {
+      "check": "schema_validation",
+      "passed": true,
+      "evidence": "EpisodeSpec loaded with strict references"
+    },
+    {
+      "check": "all_maps_connected",
+      "passed": true,
+      "evidence": "7/7 maps connected"
+    },
+    {
+      "check": "mandatory_story_sequence",
+      "passed": true,
+      "evidence": "19 ordered events"
+    },
+    {
+      "check": "side_quests_complete_and_nonblocking",
+      "passed": true,
+      "evidence": "both optional quests have independent completion producers"
+    },
+    {
+      "check": "interaction_anchors_and_critical_reachability",
+      "passed": true,
+      "evidence": "all interaction and critical traversal anchors are usable"
+    },
+    {
+      "check": "assets_monsters_items_and_dialogue_references",
+      "passed": true,
+      "evidence": "all referenced records exist"
+    },
+    {
+      "check": "persistent_shortcut_and_ordinary_route",
+      "passed": true,
+      "evidence": "paired conditional shortcut; ordinary route remains independent"
+    },
+    {
+      "check": "post_resolution_dialogue",
+      "passed": true,
+      "evidence": "9 declared characters have resolved dialogue"
+    },
+    {
+      "check": "save_reload_key_progression_state",
+      "passed": true,
+      "evidence": "key variables survive NPCState JSON and GameVariablesManager restoration"
+    },
+    {
+      "check": "real_tmx_loading_and_database_overlay",
+      "passed": true,
+      "evidence": "7 maps, 17 NPCs and 3 encounter tables activated"
+    }
+  ],
+  "semantically_reviewed": [
+    {
+      "topic": "locked_story_fidelity",
+      "evidence": "Beat ledger, quest graph and dialogue matrix preserve the grounded runoff/fitting/Jemuar explanation and return consequences."
+    },
+    {
+      "topic": "ecological_progression",
+      "evidence": "Separate wooded, highland and quarry tables use ten existing species plus Jemuar; village displacement is scripted rather than random table padding."
+    },
+    {
+      "topic": "content_density",
+      "evidence": "Every major outdoor map contains multiple authored event purposes; separate report lists the evidence without a quality score."
+    }
+  ],
+  "requires_human_playtest": [
+    "60–90 minute first-play duration",
+    "goal clarity and pacing",
+    "whether traversal feels empty",
+    "dialogue naturalness and emotional investment",
+    "village believability and perceived post-climax change",
+    "map composition, memorable landmarks and apparent randomness",
+    "whether optional rewards justify exploration",
+    "overall enjoyment and desire to continue"
+  ],
+  "limitations": "Mechanical checks establish consistency and loadability, not fun."
+}

@@ -60,3 +60,36 @@ prototype palette, verify each selected source tileset exists, and compare
 hashes across two independent render passes. The asset-review atlas windows,
 seven full renders and seven debug renders are preserved as reproducible
 evidence.
+
+## Milestone 5 — validation and playtest build
+
+The final focused production suite contains 17 tests and passes. The complete
+world-synthesis suite passes: **55 passed**. The complete repository suite ran
+all 4,291 tests: **4,290 passed, 1 failed** in 104.96 seconds. The remaining
+failure is the pre-existing Windows-specific assertion in
+`tests/tuxemon/test_map_loader.py::test_remove_from_cache`, where removing the
+synthetic path `/fake/path` returns false. No production-slice test failed.
+
+`python -m world_synthesis.production_slice validate low_bell` passes ten
+transparent acceptance groups:
+
+- strict schema and reference validation;
+- seven-map connectivity;
+- the 19-event mandatory sequence and required final state;
+- two independently completable, non-blocking side quests;
+- usable interaction anchors and collision-aware critical reachability;
+- existing asset, monster, item and dialogue references;
+- paired persistent shortcut plus independent ordinary route;
+- resolved dialogue for nine declared characters;
+- key-variable save/model round trip;
+- real TMX loading and NPC/encounter overlay activation.
+
+The real client launched the isolated Low Bell mod and rendered the opening
+South Approach event. `graphical_launch_game.png` and its SHA-256 are preserved with
+an empty stderr log. The process was stopped after evidence capture. This is a
+graphical smoke test, not a completed human playthrough.
+
+The playtest launcher and questionnaire are tested without producing a fake
+aggregate score. No completed human response is bundled, so duration, fun,
+balance, emotional effect and ending ergonomics are still pending human
+acceptance.

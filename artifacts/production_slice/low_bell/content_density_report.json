@@ -1,0 +1,470 @@
+{
+  "episode": "low_bell",
+  "definition": "Authored event purposes are reported as beats; walking distance and subjective pacing require playtesting.",
+  "maps": [
+    {
+      "map": "low_bell_south_approach",
+      "major_outdoor_map": true,
+      "authored_meaningful_beats": [
+        {
+          "event": "opening_low_tone",
+          "purpose": "opening hook and creature displacement",
+          "mandatory": true,
+          "trigger": "init"
+        },
+        {
+          "event": "choose_starter",
+          "purpose": "meaningful starter selection",
+          "mandatory": true,
+          "trigger": "talk"
+        },
+        {
+          "event": "nera_before_tutorial",
+          "purpose": "clear immediate goal",
+          "mandatory": false,
+          "trigger": "talk"
+        },
+        {
+          "event": "frightened_shybulb_tutorial",
+          "purpose": "real tutorial battle caused by the tone",
+          "mandatory": true,
+          "trigger": "touch"
+        },
+        {
+          "event": "tutorial_victory",
+          "purpose": "capture kit and next objective",
+          "mandatory": true,
+          "trigger": "init"
+        },
+        {
+          "event": "vibrating_rail_evidence",
+          "purpose": "environmental evidence that stone and metal carry the tone",
+          "mandatory": false,
+          "trigger": "interact"
+        },
+        {
+          "event": "settlement_reveal",
+          "purpose": "reveal Ashenbell and Split Crown together",
+          "mandatory": false,
+          "trigger": "touch"
+        },
+        {
+          "event": "ren_challenge",
+          "purpose": "optional courier battle with capture-pocket context",
+          "mandatory": false,
+          "trigger": "talk"
+        },
+        {
+          "event": "ren_after",
+          "purpose": "post-battle capture hint",
+          "mandatory": false,
+          "trigger": "talk"
+        },
+        {
+          "event": "silent_shift_south_record",
+          "purpose": "optional worker-name evidence on a landmark spur",
+          "mandatory": false,
+          "trigger": "interact"
+        },
+        {
+          "event": "south_stream_cache",
+          "purpose": "curiosity reward in capture pocket",
+          "mandatory": false,
+          "trigger": "interact"
+        }
+      ],
+      "review": "multiple authored beats present"
+    },
+    {
+      "map": "low_bell_ashenbell",
+      "major_outdoor_map": true,
+      "authored_meaningful_beats": [
+        {
+          "event": "village_arrival_scene",
+          "purpose": "concise civic conflict and main objective",
+          "mandatory": true,
+          "trigger": "touch"
+        },
+        {
+          "event": "mara_investigation",
+          "purpose": "historical boundary, main objective and optional names quest",
+          "mandatory": false,
+          "trigger": "talk"
+        },
+        {
+          "event": "mara_names_progress",
+          "purpose": "concise optional record reminder",
+          "mandatory": false,
+          "trigger": "talk"
+        },
+        {
+          "event": "mara_names_complete",
+          "purpose": "complete Names of the Silent Shift without gating main story",
+          "mandatory": false,
+          "trigger": "talk"
+        },
+        {
+          "event": "iven_investigation",
+          "purpose": "economic conflict and concealed survey",
+          "mandatory": false,
+          "trigger": "talk"
+        },
+        {
+          "event": "nera_investigation",
+          "purpose": "ecology objective",
+          "mandatory": false,
+          "trigger": "talk"
+        },
+        {
+          "event": "jori_intro",
+          "purpose": "begin optional Squabbit quest",
+          "mandatory": false,
+          "trigger": "talk"
+        },
+        {
+          "event": "jori_searching",
+          "purpose": "optional quest clue toward quarry dry ledges",
+          "mandatory": false,
+          "trigger": "talk"
+        },
+        {
+          "event": "jori_squabbit_return",
+          "purpose": "complete optional companion rescue and reward player",
+          "mandatory": false,
+          "trigger": "talk"
+        },
+        {
+          "event": "jori_squabbit_complete",
+          "purpose": "persistent optional quest consequence",
+          "mandatory": false,
+          "trigger": "talk"
+        },
+        {
+          "event": "sela_investigation",
+          "purpose": "wind and runoff correlation",
+          "mandatory": false,
+          "trigger": "talk"
+        },
+        {
+          "event": "village_quarry_discovered_notice",
+          "purpose": "point player to Tovin after finding survey evidence",
+          "mandatory": false,
+          "trigger": "touch"
+        },
+        {
+          "event": "resolution_prompt",
+          "purpose": "complete the return-to-town ending at the memorial",
+          "mandatory": true,
+          "trigger": "interact"
+        },
+        {
+          "event": "mara_resolved",
+          "purpose": "changed memorial interpretation",
+          "mandatory": false,
+          "trigger": "talk"
+        },
+        {
+          "event": "mara_resolved_names",
+          "purpose": "memorial incorporates recovered worker names",
+          "mandatory": false,
+          "trigger": "talk"
+        },
+        {
+          "event": "iven_resolved",
+          "purpose": "accepted responsibility",
+          "mandatory": false,
+          "trigger": "talk"
+        },
+        {
+          "event": "nera_resolved",
+          "purpose": "ecological consequence",
+          "mandatory": false,
+          "trigger": "talk"
+        },
+        {
+          "event": "jori_resolved",
+          "purpose": "unresolved optional personal stake before content completion",
+          "mandatory": false,
+          "trigger": "talk"
+        },
+        {
+          "event": "jori_resolved_complete",
+          "purpose": "resolved reaction depends on optional rescue",
+          "mandatory": false,
+          "trigger": "talk"
+        },
+        {
+          "event": "alda_intro",
+          "purpose": "productive edge and displaced creatures",
+          "mandatory": false,
+          "trigger": "talk"
+        },
+        {
+          "event": "alda_resolved",
+          "purpose": "visible ecological recovery",
+          "mandatory": false,
+          "trigger": "talk"
+        },
+        {
+          "event": "bren_intro",
+          "purpose": "material evidence without causal overclaim",
+          "mandatory": false,
+          "trigger": "talk"
+        },
+        {
+          "event": "bren_resolved",
+          "purpose": "post-story maintenance consequence",
+          "mandatory": false,
+          "trigger": "talk"
+        },
+        {
+          "event": "caro_intro",
+          "purpose": "distinguish rumour from evidence",
+          "mandatory": false,
+          "trigger": "talk"
+        },
+        {
+          "event": "caro_resolved",
+          "purpose": "changed public mood",
+          "mandatory": false,
+          "trigger": "talk"
+        },
+        {
+          "event": "pell_intro",
+          "purpose": "courier identity and regional connection",
+          "mandatory": false,
+          "trigger": "talk"
+        },
+        {
+          "event": "pell_resolved",
+          "purpose": "forward hook and changed courier work",
+          "mandatory": false,
+          "trigger": "talk"
+        },
+        {
+          "event": "garden_caper_challenge",
+          "purpose": "optional displaced-creature battle tied to productive edge",
+          "mandatory": false,
+          "trigger": "talk"
+        }
+      ],
+      "review": "multiple authored beats present"
+    },
+    {
+      "map": "low_bell_mara_archive",
+      "major_outdoor_map": false,
+      "authored_meaningful_beats": [
+        {
+          "event": "inspect_bell_diagram",
+          "purpose": "show why the current tone is unlike the warning bells",
+          "mandatory": false,
+          "trigger": "interact"
+        }
+      ],
+      "review": "multiple authored beats present"
+    },
+    {
+      "map": "low_bell_tovin_workshop",
+      "major_outdoor_map": false,
+      "authored_meaningful_beats": [
+        {
+          "event": "tovin_initial",
+          "purpose": "guarded knowledge and gradual guilt",
+          "mandatory": false,
+          "trigger": "talk"
+        },
+        {
+          "event": "tovin_quarry_briefing",
+          "purpose": "make survivor knowledge mechanically useful",
+          "mandatory": true,
+          "trigger": "talk"
+        },
+        {
+          "event": "tovin_after_briefing",
+          "purpose": "concise procedural reminder",
+          "mandatory": false,
+          "trigger": "talk"
+        },
+        {
+          "event": "tovin_resolved",
+          "purpose": "changed guilt state",
+          "mandatory": false,
+          "trigger": "talk"
+        },
+        {
+          "event": "tovin_resolved_names",
+          "purpose": "recovered names deepen Tovin's resolution",
+          "mandatory": false,
+          "trigger": "talk"
+        }
+      ],
+      "review": "multiple authored beats present"
+    },
+    {
+      "map": "low_bell_highland_pass",
+      "major_outdoor_map": true,
+      "authored_meaningful_beats": [
+        {
+          "event": "rook_challenge",
+          "purpose": "motivated trainer gate and practical route test",
+          "mandatory": true,
+          "trigger": "talk"
+        },
+        {
+          "event": "rook_victory",
+          "purpose": "acknowledge victory and open upper pass",
+          "mandatory": true,
+          "trigger": "init"
+        },
+        {
+          "event": "rook_after",
+          "purpose": "local knowledge after the test",
+          "mandatory": false,
+          "trigger": "talk"
+        },
+        {
+          "event": "split_crown_resonance",
+          "purpose": "stronger tone and terrain-transmission evidence",
+          "mandatory": true,
+          "trigger": "touch"
+        },
+        {
+          "event": "quarry_fork_read",
+          "purpose": "clear quarry decision and recent track evidence",
+          "mandatory": false,
+          "trigger": "interact"
+        },
+        {
+          "event": "kesh_challenge",
+          "purpose": "optional surveyor battle guarding an exposed evidence shelf",
+          "mandatory": false,
+          "trigger": "talk"
+        },
+        {
+          "event": "kesh_after",
+          "purpose": "evidence-driven optional route hint",
+          "mandatory": false,
+          "trigger": "talk"
+        },
+        {
+          "event": "silent_shift_pass_record",
+          "purpose": "optional survey rubbing names evidence",
+          "mandatory": false,
+          "trigger": "interact"
+        },
+        {
+          "event": "pass_wind_cache_secret",
+          "purpose": "useful reward at exposed dead end",
+          "mandatory": false,
+          "trigger": "interact"
+        }
+      ],
+      "review": "multiple authored beats present"
+    },
+    {
+      "map": "low_bell_quarry_exterior",
+      "major_outdoor_map": true,
+      "authored_meaningful_beats": [
+        {
+          "event": "survey_disturbance",
+          "purpose": "reveal Iven's recent drainage disturbance",
+          "mandatory": true,
+          "trigger": "interact"
+        },
+        {
+          "event": "sela_before_tovin",
+          "purpose": "require Tovin's distinct expertise without making Sela passive",
+          "mandatory": false,
+          "trigger": "talk"
+        },
+        {
+          "event": "sela_after_tovin",
+          "purpose": "confirm safe entry after briefing",
+          "mandatory": false,
+          "trigger": "talk"
+        },
+        {
+          "event": "fitting_evidence",
+          "purpose": "old metal and fractured stone evidence",
+          "mandatory": false,
+          "trigger": "interact"
+        },
+        {
+          "event": "find_jori_squabbit",
+          "purpose": "represent and resolve the optional quarry discovery",
+          "mandatory": false,
+          "trigger": "talk"
+        },
+        {
+          "event": "rockat_guard_challenge",
+          "purpose": "mandatory territorial quarry encounter before lower works",
+          "mandatory": true,
+          "trigger": "talk"
+        },
+        {
+          "event": "rockat_guard_victory",
+          "purpose": "clear lower-works gate after a real battle",
+          "mandatory": true,
+          "trigger": "init"
+        },
+        {
+          "event": "silent_shift_quarry_record",
+          "purpose": "optional final name record and useful collapsed-pocket reward",
+          "mandatory": false,
+          "trigger": "interact"
+        }
+      ],
+      "review": "multiple authored beats present"
+    },
+    {
+      "map": "low_bell_quarry_lower",
+      "major_outdoor_map": true,
+      "authored_meaningful_beats": [
+        {
+          "event": "collapse_evidence",
+          "purpose": "environmental account of collapse and silent shift",
+          "mandatory": false,
+          "trigger": "interact"
+        },
+        {
+          "event": "puzzle_runoff_first",
+          "purpose": "first observed-order puzzle control diverts runoff",
+          "mandatory": true,
+          "trigger": "interact"
+        },
+        {
+          "event": "puzzle_cradle_correct",
+          "purpose": "second observed-order puzzle control braces cradle",
+          "mandatory": true,
+          "trigger": "interact"
+        },
+        {
+          "event": "puzzle_hoist_correct",
+          "purpose": "final control stabilizes hoist and unlocks shortcut",
+          "mandatory": true,
+          "trigger": "interact"
+        },
+        {
+          "event": "jemuar_climax",
+          "purpose": "real boss-like battle with frightened territorial creature",
+          "mandatory": true,
+          "trigger": "talk"
+        },
+        {
+          "event": "jemuar_victory",
+          "purpose": "separate battle victory from environmental resolution",
+          "mandatory": true,
+          "trigger": "init"
+        },
+        {
+          "event": "damp_resonant_assembly",
+          "purpose": "physical post-battle action resolves runoff and vibration",
+          "mandatory": true,
+          "trigger": "interact"
+        }
+      ],
+      "review": "multiple authored beats present"
+    }
+  ],
+  "no_aggregate_quality_score": true
+}

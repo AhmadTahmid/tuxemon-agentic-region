@@ -63,3 +63,18 @@ The quarry reuses cave details embedded in `core_outdoor` instead of mixing a
 second incompatible cave atlas into a single generated map. This limits wall
 autotiling and machinery variety, but preserves a coherent existing-art
 family and keeps the production compiler generic.
+
+## Milestone 5 — validation and launch boundaries
+
+The design audit proposed mission records for journal visibility. The final
+episode uses namespaced persistent variables and concise in-world reminders,
+but does not add a mission-journal entry. This avoids authoring a parallel
+mission database solely for one episode, at the cost of less explicit objective
+tracking in menus. Human testing must determine whether dialogue and geography
+keep the goal clear enough.
+
+Save persistence was exercised through the engine's actual state models and
+variable manager, not through a manual save-menu/reload playthrough. The real
+client was launched and the opening event was observed, but a complete human
+playthrough has not yet been recorded. Therefore target duration, enjoyment,
+all interaction ergonomics and end-to-end difficulty remain unverified.

@@ -1,0 +1,11 @@
+{
+  "format_version": "1.0",
+  "episode": "low_bell",
+  "command": ".\\.venv\\Scripts\\python.exe -m world_synthesis.production_slice play low_bell",
+  "result": "real graphical client reached and rendered the opening South Approach dialogue",
+  "screenshot": "artifacts/production_slice/low_bell/graphical_launch_game.png",
+  "screenshot_sha256": "d9c289ca18bcc6f90e8043cc2e74281b2e25c0d1ce14e16263ee852f7cbdfd79",
+  "stderr_empty": true,
+  "termination": "test process stopped manually after launch evidence was captured",
+  "limitation": "This is graphical launch evidence, not a recorded beginning-to-ending human playthrough."
+}

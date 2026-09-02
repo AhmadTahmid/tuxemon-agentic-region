@@ -27,7 +27,7 @@ not automated proof of play duration.
 | Highland Pass | quarry fork | Read recent wheel ruts and choose branch | Clear major route decision | pass trace | quarry route identified | No |
 | Quarry Exterior | survey runnel | Find fresh tool marks and diverted water | Evidence of Iven's disturbance | pass trace | quarry discovered | No |
 | Quarry Exterior | dry ledge | Find Jori's Squabbit | Pay off personal clue | any | Squabbit found | Yes |
-| Quarry Exterior | collapsed pocket | Brass name strip and super potion | Emotional evidence and useful reward | quarry discovered | quarry record | Yes |
+| Quarry Exterior | collapsed pocket | Brass name strip and Revive | Emotional evidence and useful reward | quarry discovered | quarry record | Yes |
 | Quarry Exterior | lower gate | Territorial Rockat encounter | Dungeon escalation, not random padding | quarry discovered | lower works access | No |
 | Quarry Lower | collapse gallery | Inspect timbers, names and buried fittings | Environmental account of disaster | quarry discovered | assembly evidence | No |
 | Quarry Lower | runoff control | Divert water, control 1/3 | Puzzle with causal action | puzzle stage 0 | stage 1 | No |
@@ -43,4 +43,3 @@ not automated proof of play duration.
 
 No major outdoor golden-path segment relies only on walking and random
 encounters. Every listed dead-end pocket contains at least two kinds of payoff.
-

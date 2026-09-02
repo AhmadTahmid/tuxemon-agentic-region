@@ -1,0 +1,55 @@
+format_version: "1.0"
+episode: low_bell
+main_sequence:
+  - opening_low_tone
+  - choose_starter
+  - frightened_shybulb_tutorial
+  - tutorial_victory
+  - village_arrival_scene
+  - rook_challenge
+  - rook_victory
+  - split_crown_resonance
+  - survey_disturbance
+  - tovin_quarry_briefing
+  - rockat_guard_challenge
+  - rockat_guard_victory
+  - puzzle_runoff_first
+  - puzzle_cradle_correct
+  - puzzle_hoist_correct
+  - jemuar_climax
+  - jemuar_victory
+  - damp_resonant_assembly
+  - resolution_prompt
+required_final_state:
+  low_bell_story: resolved
+  low_bell_boss_defeated: "yes"
+  low_bell_puzzle_solved: "yes"
+  low_bell_shortcut_unlocked: "yes"
+  low_bell_episode_complete: "yes"
+side_quests:
+  - slug: jori_squabbit
+    completion_state: low_bell_sq_squabbit_complete
+    producer_event: jori_squabbit_return
+  - slug: names_silent_shift
+    completion_state: low_bell_sq_names_complete
+    producer_event: mara_names_complete
+shortcut:
+  state: low_bell_shortcut_unlocked
+  warps: [pass_shortcut_to_lower, lower_shortcut_to_pass]
+  ordinary_route_warps: [pass_to_quarry, quarry_to_pass, quarry_to_lower, lower_to_quarry]
+post_resolution_npcs:
+  - low_bell_nera
+  - low_bell_mara
+  - low_bell_tovin
+  - low_bell_jori
+  - low_bell_iven
+  - low_bell_alda
+  - low_bell_bren
+  - low_bell_caro
+  - low_bell_pell
+major_outdoor_maps:
+  - low_bell_south_approach
+  - low_bell_ashenbell
+  - low_bell_highland_pass
+  - low_bell_quarry_exterior
+  - low_bell_quarry_lower

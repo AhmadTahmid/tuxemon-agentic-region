@@ -334,6 +334,7 @@ maps:
           - translated_dialog low_bell_nera_opening
           - set_teleport_faint player,low_bell_south_approach.tmx,17,42
           - set_variable low_bell_tone_seen:yes
+          - set_variable low_bell_story:intro
       - slug: choose_starter
         at: {x: 16, y: 39}
         trigger: talk
@@ -525,7 +526,7 @@ maps:
       - {slug: low_bell_pell, at: {x: 27, y: 28}}
       - slug: low_bell_garden_caper
         at: {x: 10, y: 34}
-        conditions: [not battle_outcome player,won,low_bell_garden_caper]
+        conditions: ["not battle_outcome player,won,low_bell_garden_caper"]
     events:
       - slug: village_arrival_scene
         at: {x: 22, y: 37}
@@ -535,7 +536,7 @@ maps:
         mandatory: true
         conditions:
           - is variable_set low_bell_tutorial_won:yes
-          - not variable_set low_bell_story
+          - is variable_set low_bell_story:intro
         actions:
           - translated_dialog low_bell_village_arrival
           - translated_dialog low_bell_mara_intro
@@ -1138,7 +1139,7 @@ maps:
         conditions: [not variable_set low_bell_sq_squabbit_found:yes]
       - slug: low_bell_rockat_guard
         at: {x: 17, y: 31}
-        conditions: [not battle_outcome player,won,low_bell_rockat_guard]
+        conditions: ["not battle_outcome player,won,low_bell_rockat_guard"]
     encounters:
       - {slug: quarry_edge_wild, bounds: {x: 20, y: 16, width: 9, height: 10}, table: low_bell_quarry_wild, probability: 10}
     events:

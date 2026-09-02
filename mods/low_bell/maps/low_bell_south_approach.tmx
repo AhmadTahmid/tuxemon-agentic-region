@@ -255,6 +255,7 @@
     <property name="act4" value="translated_dialog low_bell_nera_opening" />
     <property name="act5" value="set_teleport_faint player,low_bell_south_approach.tmx,17,42" />
     <property name="act6" value="set_variable low_bell_tone_seen:yes" />
+    <property name="act7" value="set_variable low_bell_story:intro" />
     <property name="cond30" value="not variable_set low_bell_tone_seen:yes" />
    </properties>
   </object>

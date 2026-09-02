@@ -71,3 +71,24 @@ It must describe arbitrary episodes and may not branch on Low Bell map IDs.
 
 No upstream engine change is authorized by this audit. Every capability still
 requires real-client exercise before the final report can call it working.
+
+## Milestone 5 acceptance status
+
+No file under `tuxemon/` or `mods/tuxemon/` was changed. The production layer
+uses existing event actions and conditions; its generic additions are an
+isolated EpisodeSpec schema/compiler, deterministic renderer, acceptance
+validator and playtest wrapper.
+
+The real TMX loader accepted every authored event on all seven maps, and the
+real database overlay activated all 17 NPC records and all three encounter
+tables. A regression check compares the authored TMX event count to the
+loader's accepted event count; this caught two comma-split YAML conditions
+before release. Key story and shortcut variables survived a round trip through
+the engine's `NPCState` JSON and `GameVariablesManager` restoration path.
+
+The real graphical client rendered the opening map, NPCs and opening dialogue
+with an empty error log; screenshot evidence is preserved under the production
+artifact directory. This establishes launch and initial event execution. It
+does not establish that starter selection, every battle, manual save UI or the
+ending was human-played in this development session. Those remain explicit
+playtest tasks rather than inflated capability claims.

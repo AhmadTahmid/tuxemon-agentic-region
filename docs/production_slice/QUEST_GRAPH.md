@@ -74,8 +74,8 @@ Tovin explains the safe physical order: **divert runoff, brace the cradle,
 then release the hoist**. Labels and water/brace/hoist visuals repeat the clue
 inside the lower works.
 
-Controls advance `low_bell_puzzle_stage` from 0 to 1 to 2; the final control
-sets `low_bell_puzzle_solved`. An out-of-order control makes no state change,
+Controls advance `low_bell_puzzle_stage` from absent to `runoff` to `brace`;
+the final control sets `low_bell_puzzle_solved`. An out-of-order control makes no state change,
 so experimentation cannot lose progress or permanently block the puzzle.
 Solving it opens the hoist and sets
 `low_bell_shortcut_unlocked`. Bidirectional shortcut events require that flag;

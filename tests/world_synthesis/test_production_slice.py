@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import hashlib
+import json
 import xml.etree.ElementTree as ET
 from collections import deque
 from pathlib import Path
@@ -18,8 +19,13 @@ from world_synthesis.production_slice.compiler import (
     build_episode,
     compile_map,
 )
+from world_synthesis.production_slice.playtest import (
+    collect_evaluation,
+    create_session,
+)
 from world_synthesis.production_slice.render import render_episode
 from world_synthesis.production_slice.schema import EventTrigger, load_episode
+from world_synthesis.production_slice.validation import validate_episode
 
 REPO = Path(__file__).resolve().parents[2]
 SPEC = REPO / "content" / "production_slice" / "low_bell" / "episode.yaml"
@@ -348,3 +354,59 @@ def test_static_review_renders_are_deterministic() -> None:
     }
     assert before == after
     assert len(second) == len(episode.maps) * 2
+
+
+def test_flow_style_battle_conditions_survive_tmx_compilation() -> None:
+    build_episode(SPEC, REPO)
+    expected = {
+        "not battle_outcome player,won,low_bell_garden_caper",
+        "not battle_outcome player,won,low_bell_rockat_guard",
+    }
+    actual = {
+        prop.attrib.get("value", "")
+        for path in (REPO / "mods" / "low_bell" / "maps").glob("*.tmx")
+        for prop in ET.parse(path).getroot().findall(".//property")
+    }
+    assert expected <= actual
+
+
+def test_automated_acceptance_passes() -> None:
+    contract = SPEC.with_name("acceptance.yaml")
+    report = validate_episode(SPEC, contract, REPO)
+    assert report["passed"]
+    assert all(check["passed"] for check in report["mechanically_verified"])
+    assert report["requires_human_playtest"]
+
+
+def test_human_questionnaire_is_separate_and_has_no_aggregate(
+    tmp_path: Path, monkeypatch
+) -> None:
+    session_id, session_path = create_session(tmp_path)
+    answers = iter(
+        [
+            "yes",
+            "8",
+            "7",
+            "8",
+            "9",
+            "7",
+            "8",
+            "6",
+            "8",
+            "The lower pass dragged.",
+            "Nera, Mara, Tovin",
+            "yes",
+            "Iven's first explanation.",
+            "no",
+            "",
+            "Dampening the assembly.",
+            "yes",
+        ]
+    )
+    monkeypatch.setattr("builtins.input", lambda _prompt: next(answers))
+    output = collect_evaluation(session_id, session_path, tmp_path)
+    assert output is not None
+    response = json.loads(output.read_text(encoding="utf-8"))
+    assert response["aggregate_score"] is None
+    assert len(response["ratings"]) == 8
+    assert "answers" in response
