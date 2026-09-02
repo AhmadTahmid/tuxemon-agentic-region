@@ -1,9 +1,9 @@
 {
   "episode": "low_bell",
   "revision": 1,
-  "source_sha256": "1bfa4467186e7f303871e276c0cc011dd29d567c02f295570ba8463064baefdf",
+  "source_sha256": "4dc09bbc146cb1df05fa4a1c6440c8ba04fb1f262f3ddfe829c357c75f148ccd",
   "map_sha256": {
-    "low_bell_ashenbell": "68a8aaf461e7c626f525e6ca31cd55113ba30d352ccd5f421b92a644a8c50ac6",
+    "low_bell_ashenbell": "35b78cfcc4a15ba8864dc417089740919a2579f859e99e5851ebe802a97c4f3a",
     "low_bell_highland_pass": "c2fd844fd8e97a7b80b1fcf6fbaf8d0655958be2b459b8e7c4f49204d32b597d",
     "low_bell_mara_archive": "c8e951743e9b1a0c5c6a567f9f717ba60bb8a78a562d7cf2f05ceb1269145204",
     "low_bell_quarry_exterior": "15fb04d977671b1855c643e0d8e94d7891b29ef4a1d259720a0ec2c0304c079f",

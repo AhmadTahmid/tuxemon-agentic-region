@@ -72,6 +72,13 @@ the bridge. It was replaced by an explicit persistent completion flag in the
 same ordered encounter event, and the validator now rejects that unsupported
 condition pattern.
 
+The second external playtest added a sixth material repair: Ashenbell's entry
+touch event chained four modal dialogue states and delayed its state producer
+until the end. The repaired arrival records progression first, uses one concise
+prompt, and distributes the disagreement across the characters' existing
+player-initiated conversations. Tests and validation now reject chained modal
+dialogue on touch events.
+
 All content and repair decisions were agent-authored in this run. No human map
 or dialogue polish pass and no completed human playtest response has yet been
 applied, so production autonomy beyond mechanical completion is unproven.

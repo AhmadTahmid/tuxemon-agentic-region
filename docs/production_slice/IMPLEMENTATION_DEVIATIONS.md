@@ -89,3 +89,14 @@ The repaired event sets `low_bell_tutorial_cleared` after the asynchronous
 encounter returns and grants the capture kit in the same sequence. Allowing a
 retreat is consistent with Nera's goal of giving the frightened creature room,
 and prevents the tutorial from requiring a specific combat outcome.
+
+## Second external playtest — village arrival dialogue lifecycle
+
+The original Ashenbell entrance chained four automatic `DialogState` actions
+and recorded `low_bell_story:investigation` only after every box closed. A
+player reached a dialogue box that would not advance, leaving both movement
+and progression blocked. The arrival now records the guarded progression state
+before opening one concise prompt. Mara, Iven and Nera deliver their distinct
+accounts through their existing player-initiated conversations around the
+memorial. This preserves the intended conflict while removing the fragile
+modal chain and makes an interrupted arrival safe to reload.

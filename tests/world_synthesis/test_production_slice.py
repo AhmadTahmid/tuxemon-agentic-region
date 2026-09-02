@@ -87,6 +87,35 @@ def test_golden_path_has_real_battles_and_resolution_action() -> None:
     )
 
 
+def test_village_arrival_is_reentry_safe_and_uses_one_dialog_state() -> None:
+    episode = load_episode(SPEC)
+    events = {
+        event.slug: event
+        for map_spec in episode.maps
+        for event in map_spec.events
+    }
+    arrival = events["village_arrival_scene"]
+    assert arrival.trigger == EventTrigger.TOUCH
+    assert arrival.actions[0] == "set_variable low_bell_story:investigation"
+    assert sum(
+        action.startswith("translated_dialog ") for action in arrival.actions
+    ) == 1
+
+
+def test_touch_events_do_not_chain_adjacent_modal_dialog_states() -> None:
+    episode = load_episode(SPEC)
+    for map_spec in episode.maps:
+        for event in map_spec.events:
+            if event.trigger != EventTrigger.TOUCH:
+                continue
+            has_adjacent_dialogs = any(
+                first.startswith("translated_dialog ")
+                and second.startswith("translated_dialog ")
+                for first, second in zip(event.actions, event.actions[1:])
+            )
+            assert not has_adjacent_dialogs, f"{map_spec.slug}:{event.slug}"
+
+
 def test_main_progression_does_not_consume_side_quest_state() -> None:
     episode = load_episode(SPEC)
     mandatory = [

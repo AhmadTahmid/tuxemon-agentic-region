@@ -44,9 +44,6 @@ msgstr "A displaced Caper has nested between the seed rows. It stamps at every v
 msgid "low_bell_hoist_apply"
 msgstr "You divert the trickle, seat the cradle brace, then ease the hoist brake. The chamber floor settles instead of ringing."
 
-msgid "low_bell_iven_intro"
-msgstr "Iven: A working warning line would be useful. Abandonment has not made this village safer—or richer."
-
 msgid "low_bell_iven_investigation"
 msgstr "Iven: I paid for a survey, nothing more. If a cleared ditch frightens people, perhaps the ditch needed attention."
 
@@ -89,9 +86,6 @@ msgstr "Kesh: They broke east on the same gust that carried the tone. Take the m
 msgid "low_bell_lower_collapse"
 msgstr "Broken shift boards remain where the roof fell. The final line is smeared, but the inspection boxes were never signed."
 
-msgid "low_bell_mara_intro"
-msgstr "Mara: It is not one of our warning bells. Say that clearly before a rumour says otherwise."
-
 msgid "low_bell_mara_investigation"
 msgstr "Mara: The old bells were measured, named and maintained. This tone is lower. Ask Sela what the ridge is carrying."
 
@@ -124,9 +118,6 @@ msgstr "Nera: Good. You gave it room to retreat. Take these Tuxeballs—some dis
 
 msgid "low_bell_nera_clear_path"
 msgstr "Nera: The frightened Shybulb ahead cannot settle while we crowd it. Approach slowly; I will talk you through the battle."
-
-msgid "low_bell_nera_investigation"
-msgstr "Nera: Creatures are leaving wet ground from here to the South Approach. We need the source, not a story about it."
 
 msgid "low_bell_nera_opening"
 msgstr "Nera: That was no thunder. Stay close—those creatures are running from something."
@@ -258,4 +249,4 @@ msgid "low_bell_tutorial_creature"
 msgstr "The Shybulb shivers, then plants itself across the path."
 
 msgid "low_bell_village_arrival"
-msgstr "The memorial square is busy, but nobody is celebrating."
+msgstr "Ashenbell's memorial square is tense. Mara, Iven and Nera are waiting by the plinth; hear their accounts before taking the north road."

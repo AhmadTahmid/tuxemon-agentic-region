@@ -112,3 +112,21 @@ validator now reports that unsupported condition as a missing reference.
 
 After rebuilding, all 17 focused production tests pass and the complete
 acceptance validator passes.
+
+## Second external playtest repair — village arrival dialogue lock
+
+The next player session exposed a critical modal lock on first entering
+Ashenbell. The touch event opened four independent translated-dialog actions
+before producing its progression state, so an interrupted or stalled dialog
+left the player immobile and the arrival unresolved.
+
+The entrance now sets `low_bell_story:investigation` first and opens one short
+arrival prompt. The three character perspectives remain available as separate
+player-initiated conversations at the memorial. Regression coverage asserts
+the state-first ordering, exactly one dialog on this arrival, and no chained
+adjacent modal dialogs on any touch event. The generic validator rejects future
+unsafe touch-dialog chains while allowing dialogue separated by gameplay, such
+as the tutorial's pre- and post-battle lines.
+
+After rebuilding, all **19 focused production tests** and all **57 complete
+world-synthesis tests** pass. The production acceptance validator passes.

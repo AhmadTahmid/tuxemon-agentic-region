@@ -528,12 +528,9 @@ maps:
           - is variable_set low_bell_tutorial_cleared:yes
           - is variable_set low_bell_story:intro
         actions:
-          - translated_dialog low_bell_village_arrival
-          - translated_dialog low_bell_mara_intro
-          - translated_dialog low_bell_iven_intro
-          - translated_dialog low_bell_nera_investigation
-          - set_teleport_faint player,low_bell_ashenbell.tmx,22,37
           - set_variable low_bell_story:investigation
+          - set_teleport_faint player,low_bell_ashenbell.tmx,22,37
+          - translated_dialog low_bell_village_arrival
       - slug: mara_investigation
         at: {x: 19, y: 20}
         trigger: talk
@@ -1375,10 +1372,7 @@ dialogue:
   low_bell_nera_after_tutorial: "Nera: Good. You gave it room to retreat. Take these Tuxeballs—some displaced creatures may accept a calmer approach."
   low_bell_south_rail: "The old guide rail hums against the stream stones. Tiny tracks point uphill, away from the wet bank."
   low_bell_settlement_reveal: "Ashenbell appears beyond the trees. Far above its roofs, Split Crown Ridge divides the cloud."
-  low_bell_village_arrival: "The memorial square is busy, but nobody is celebrating."
-  low_bell_mara_intro: "Mara: It is not one of our warning bells. Say that clearly before a rumour says otherwise."
-  low_bell_iven_intro: "Iven: A working warning line would be useful. Abandonment has not made this village safer—or richer."
-  low_bell_nera_investigation: "Nera: Creatures are leaving wet ground from here to the South Approach. We need the source, not a story about it."
+  low_bell_village_arrival: "Ashenbell's memorial square is tense. Mara, Iven and Nera are waiting by the plinth; hear their accounts before taking the north road."
   low_bell_mara_investigation: "Mara: The old bells were measured, named and maintained. This tone is lower. Ask Sela what the ridge is carrying."
   low_bell_iven_investigation: "Iven: I paid for a survey, nothing more. If a cleared ditch frightens people, perhaps the ditch needed attention."
   low_bell_nera_town: "Nera: Garden species moved first, then woodland species. Whatever changed is travelling downhill through water or ground."

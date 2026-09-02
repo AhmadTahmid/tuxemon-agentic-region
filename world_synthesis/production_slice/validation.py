@@ -175,6 +175,13 @@ def _reference_check(episode: EpisodeSpec, repo: Path) -> Check:
             if entry.monster not in monster_ids:
                 missing.add(f"monster:{entry.monster}")
     for event in _event_index(episode).values():
+        has_adjacent_dialogs = any(
+            first.startswith("translated_dialog ")
+            and second.startswith("translated_dialog ")
+            for first, second in zip(event.actions, event.actions[1:])
+        )
+        if event.trigger == EventTrigger.TOUCH and has_adjacent_dialogs:
+            missing.add(f"unsafe-touch-dialog-chain:{event.slug}")
         for condition in event.conditions:
             if (
                 condition.endswith(",wild_encounter")
