@@ -12,3 +12,10 @@ in `artifacts/production_slice/low_bell/`.
 The implementation is deliberately limited to this episode. It adds no new
 region, monster, visual asset, image model or engine port.
 
+Development commands:
+
+```powershell
+.\.venv\Scripts\python.exe -m world_synthesis.production_slice build low_bell
+.\.venv\Scripts\python.exe -m world_synthesis.production_slice render low_bell
+.\.venv\Scripts\python.exe -m world_synthesis.production_slice play low_bell
+```

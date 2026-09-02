@@ -28,8 +28,12 @@ def launch(spec_path: Path, repo: Path) -> None:
     if hasattr(base_translation, "_catalog"):
         for domain, translator in T._translators.items():
             production_translation = translator._real_translate
-            if domain != "base" and hasattr(production_translation, "_catalog"):
-                base_translation._catalog.update(production_translation._catalog)
+            if domain != "base" and hasattr(
+                production_translation, "_catalog"
+            ):
+                base_translation._catalog.update(
+                    production_translation._catalog
+                )
 
     import tuxemon.database.runtime as runtime
     from tuxemon.database.data import ModData
@@ -48,7 +52,10 @@ def launch(spec_path: Path, repo: Path) -> None:
             "active_mods": ["tuxemon", mod_slug],
             "mod_activation": {**base.mod_activation, mod_slug: True},
             "mod_tables": tables,
-            "mod_dependencies": {**base.mod_dependencies, mod_slug: ["tuxemon"]},
+            "mod_dependencies": {
+                **base.mod_dependencies,
+                mod_slug: ["tuxemon"],
+            },
         }
     )
     production_db = ModData(
@@ -75,4 +82,3 @@ def launch(spec_path: Path, repo: Path) -> None:
     config.config_model.display.splash = False
     config.logging.configure()
     tuxemon_main.main(config=config, context=context, load_slot=None)
-

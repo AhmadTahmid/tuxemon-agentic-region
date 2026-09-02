@@ -60,7 +60,9 @@ def _line(a: Point, b: Point) -> Iterable[tuple[int, int]]:
             y0 += sy
 
 
-def _path_cells(map_spec: MapSpec, points: list[Point], width: int) -> set[tuple[int, int]]:
+def _path_cells(
+    map_spec: MapSpec, points: list[Point], width: int
+) -> set[tuple[int, int]]:
     cells: set[tuple[int, int]] = set()
     radius = (width - 1) / 2
     for start, end in zip(points, points[1:]):
@@ -82,10 +84,13 @@ def _visual_id(palette: PaletteSpec, visual: str) -> int:
         raise ValueError(f"visual {visual!r} is not a single tile") from error
 
 
-def compile_map(episode: EpisodeSpec, map_spec: MapSpec) -> CompiledProductionMap:
+def compile_map(
+    episode: EpisodeSpec, map_spec: MapSpec
+) -> CompiledProductionMap:
     palette = episode.palettes[map_spec.palette]
     layers = {
-        layer.value: _blank(map_spec.width, map_spec.height) for layer in LayerName
+        layer.value: _blank(map_spec.width, map_spec.height)
+        for layer in LayerName
     }
     base = _visual_id(palette, map_spec.base_tile)
     layers[LayerName.GROUND.value] = [
@@ -110,7 +115,11 @@ def compile_map(episode: EpisodeSpec, map_spec: MapSpec) -> CompiledProductionMa
 
     if map_spec.boundary:
         boundary = map_spec.boundary
-        openings = set().union(*(item.cells() for item in boundary.openings)) if boundary.openings else set()
+        openings = (
+            set().union(*(item.cells() for item in boundary.openings))
+            if boundary.openings
+            else set()
+        )
         cells = {
             (x, y)
             for y in range(map_spec.height)
@@ -136,8 +145,12 @@ def compile_map(episode: EpisodeSpec, map_spec: MapSpec) -> CompiledProductionMa
             for oy, row in enumerate(stamp):
                 for ox, tile in enumerate(row):
                     tx, ty = x + ox, y + oy
-                    if not (0 <= tx < map_spec.width and 0 <= ty < map_spec.height):
-                        raise ValueError(f"prop {prop.slug!r} stamp leaves map")
+                    if not (
+                        0 <= tx < map_spec.width and 0 <= ty < map_spec.height
+                    ):
+                        raise ValueError(
+                            f"prop {prop.slug!r} stamp leaves map"
+                        )
                     if tile >= 0:
                         grid[ty][tx] = tile
                         occupied.add((tx, ty))
@@ -167,7 +180,9 @@ def compile_map(episode: EpisodeSpec, map_spec: MapSpec) -> CompiledProductionMa
 
 
 def _csv_data(grid: list[list[int]]) -> str:
-    rows = [",".join(str(tile + 1 if tile else 0) for tile in row) for row in grid]
+    rows = [
+        ",".join(str(tile + 1 if tile else 0) for tile in row) for row in grid
+    ]
     return ",\n".join(rows)
 
 
@@ -255,7 +270,9 @@ def layout_to_tmx(
         data.text = "\n" + _csv_data(grid) + "\n"
 
     collisions = ET.SubElement(
-        root, "objectgroup", {"id": "5", "name": "Collisions", "color": "#ff0000"}
+        root,
+        "objectgroup",
+        {"id": "5", "name": "Collisions", "color": "#ff0000"},
     )
     next_id = 1
     for x, y, width, height in merge_blocked_cells(layout.blocked):
@@ -304,12 +321,20 @@ def layout_to_tmx(
             next_id,
             encounter.slug,
             encounter.bounds,
-            [("act1", f"random_encounter {encounter.table},{encounter.probability}")],
+            [
+                (
+                    "act1",
+                    f"random_encounter {encounter.table},{encounter.probability}",
+                )
+            ],
         )
 
     for placement in spec.npcs:
         action = f"create_npc {placement.slug},{placement.at.x},{placement.at.y},{placement.behavior}"
-        properties = [("act1", action), ("cond1", f"not char_exists {placement.slug}")]
+        properties = [
+            ("act1", action),
+            ("cond1", f"not char_exists {placement.slug}"),
+        ]
         properties.extend(
             (f"cond{index + 10}", condition)
             for index, condition in enumerate(placement.conditions)
@@ -324,15 +349,20 @@ def layout_to_tmx(
 
     for event in spec.events:
         properties = [
-            (f"act{index}", action) for index, action in enumerate(event.actions, start=1)
+            (f"act{index}", action)
+            for index, action in enumerate(event.actions, start=1)
         ]
         properties.extend(_trigger_properties(event))
         properties.extend(
             (f"cond{index + 30}", condition)
             for index, condition in enumerate(event.conditions)
         )
-        bounds = event.bounds or Rect(x=event.at.x, y=event.at.y, width=1, height=1)
-        next_id = _event_object(events, next_id, event.slug, bounds, properties)
+        bounds = event.bounds or Rect(
+            x=event.at.x, y=event.at.y, width=1, height=1
+        )
+        next_id = _event_object(
+            events, next_id, event.slug, bounds, properties
+        )
 
     environment_properties = [
         ("act1", f"set_environment {spec.environment}"),
@@ -358,9 +388,11 @@ def layout_to_tmx(
         )
 
     ET.indent(root, space=" ")
-    return '<?xml version="1.0" encoding="UTF-8"?>\n' + ET.tostring(
-        root, encoding="unicode"
-    ) + "\n"
+    return (
+        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        + ET.tostring(root, encoding="unicode")
+        + "\n"
+    )
 
 
 def _npc_records(episode: EpisodeSpec) -> list[dict[str, object]]:
@@ -431,16 +463,26 @@ def _translation_catalog(episode: EpisodeSpec) -> str:
     )
 
 
-def build_episode(spec_path: Path, repo: Path) -> dict[str, CompiledProductionMap]:
+def build_episode(
+    spec_path: Path, repo: Path
+) -> dict[str, CompiledProductionMap]:
     episode = load_episode(spec_path)
     mod = repo / "mods" / episode.metadata.slug
     maps_dir = mod / "maps"
     npc_dir = mod / "db" / "npc"
     encounter_dir = mod / "db" / "encounter"
     locale_dir = mod / "l18n" / "en_US" / "LC_MESSAGES"
-    evidence_dir = repo / "artifacts" / "production_slice" / episode.metadata.slug
+    evidence_dir = (
+        repo / "artifacts" / "production_slice" / episode.metadata.slug
+    )
     manifest_dir = evidence_dir / "manifests"
-    for directory in (maps_dir, npc_dir, encounter_dir, locale_dir, manifest_dir):
+    for directory in (
+        maps_dir,
+        npc_dir,
+        encounter_dir,
+        locale_dir,
+        manifest_dir,
+    ):
         directory.mkdir(parents=True, exist_ok=True)
 
     layouts: dict[str, CompiledProductionMap] = {}
@@ -461,10 +503,12 @@ def build_episode(spec_path: Path, repo: Path) -> dict[str, CompiledProductionMa
             "revision": episode.metadata.revision,
             "tmx_sha256": digest,
             "blocked_cells": sorted(
-                [list(cell) for cell in layout.blocked], key=lambda cell: (cell[1], cell[0])
+                [list(cell) for cell in layout.blocked],
+                key=lambda cell: (cell[1], cell[0]),
             ),
             "path_cells": sorted(
-                [list(cell) for cell in layout.path_cells], key=lambda cell: (cell[1], cell[0])
+                [list(cell) for cell in layout.path_cells],
+                key=lambda cell: (cell[1], cell[0]),
             ),
             "interaction_anchors": sorted(
                 [list(cell) for cell in layout.interaction_anchors],
@@ -476,11 +520,13 @@ def build_episode(spec_path: Path, repo: Path) -> dict[str, CompiledProductionMa
         )
 
     (npc_dir / f"{episode.metadata.slug}_npcs.yaml").write_text(
-        yaml.safe_dump(_npc_records(episode), sort_keys=False), encoding="utf-8"
+        yaml.safe_dump(_npc_records(episode), sort_keys=False),
+        encoding="utf-8",
     )
     for table in episode.encounters:
         (encounter_dir / f"{table.slug}.yaml").write_text(
-            yaml.safe_dump(_encounter_record(table), sort_keys=False), encoding="utf-8"
+            yaml.safe_dump(_encounter_record(table), sort_keys=False),
+            encoding="utf-8",
         )
     (locale_dir / f"{episode.metadata.slug}.po").write_text(
         _translation_catalog(episode), encoding="utf-8", newline="\n"

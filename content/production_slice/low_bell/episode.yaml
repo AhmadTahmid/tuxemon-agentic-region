@@ -11,6 +11,137 @@ metadata:
   player_sprite: adventurer
 
 palettes:
+  core_outdoor:
+    source: ../../tuxemon/gfx/tilesets/core_outdoor.tsx
+    tiles:
+      grass: 111
+      forest_floor: 112
+      path: 127
+      water: 944
+      tree: 1137
+      flower: 916
+      shrub: 1138
+      rock: 1171
+      boulder: 1140
+      stone_floor: 132
+      worked_stone: 1140
+      metal: 1274
+    stamps:
+      tree_tall:
+        - [1061, 1062]
+        - [1098, 1099]
+        - [1135, 1136]
+      sign:
+        - [1432]
+      plinth:
+        - [2200, 2201]
+        - [2237, 2238]
+      hoist:
+        - [1274, 1275, 1276]
+        - [1311, 1312, 1313]
+  core_city:
+    source: ../../tuxemon/gfx/tilesets/core_city_and_country.tsx
+    tiles:
+      grass: 360
+      forest_floor: 400
+      path: 204
+      tree: 686
+      flower: 482
+      shrub: 640
+      rock: 480
+      boulder: 930
+      stone_floor: 204
+      worked_stone: 1022
+      metal: 903
+    stamps:
+      sign:
+        - [903]
+      plinth:
+        - [382, 383, 384]
+        - [422, 423, 424]
+      house:
+        - [7, 8, 9, 10]
+        - [47, 48, 49, 50]
+        - [87, 88, 89, 90]
+        - [127, 128, 129, 130]
+        - [167, 168, 169, 170]
+      house_alt:
+        - [12, 13, 14, 15]
+        - [52, 53, 54, 55]
+        - [92, 93, 94, 95]
+        - [132, 133, 134, 135]
+        - [172, 173, 174, 175]
+  core_highland:
+    source: ../../tuxemon/gfx/tilesets/core_outdoor.tsx
+    tiles:
+      grass: 112
+      forest_floor: 136
+      path: 127
+      water: 944
+      tree: 1137
+      flower: 916
+      shrub: 1138
+      rock: 1140
+      boulder: 1140
+      stone_floor: 132
+      worked_stone: 1140
+      metal: 1274
+    stamps:
+      sign:
+        - [1432]
+      hoist:
+        - [1274, 1275, 1276]
+        - [1311, 1312, 1313]
+  core_quarry:
+    source: ../../tuxemon/gfx/tilesets/core_outdoor.tsx
+    tiles:
+      grass: 132
+      forest_floor: 2570
+      path: 2196
+      water: 2098
+      tree: 2602
+      flower: 2538
+      shrub: 2501
+      rock: 2603
+      boulder: 2602
+      stone_floor: 132
+      worked_stone: 1140
+      metal: 2206
+    stamps:
+      sign:
+        - [2209]
+      plinth:
+        - [2200, 2201]
+        - [2237, 2238]
+      hoist:
+        - [2394, 2395]
+        - [2431, 2432]
+  core_indoor:
+    source: ../../tuxemon/gfx/tilesets/core_indoor_floors.tsx
+    tiles:
+      placeholder: 1
+  core_set:
+    source: ../../tuxemon/gfx/tilesets/core_set pieces.tsx
+    tiles:
+      stone_floor: 664
+      path: 665
+      worked_stone: 731
+      metal: 815
+      grass: 664
+      forest_floor: 665
+      water: 768
+      tree: 892
+      flower: 951
+      shrub: 893
+      rock: 922
+      boulder: 925
+    stamps:
+      sign:
+        - [580, 581]
+        - [611, 612]
+      hoist:
+        - [842, 843, 844]
+        - [873, 874, 875]
   prototype_outdoor:
     source: ../../tuxemon/gfx/tilesets/prototyping_outdoor.tsx
     tiles:
@@ -122,7 +253,7 @@ maps:
     role: opening hook, onboarding and sheltered ascent
     width: 34
     height: 46
-    palette: prototype_outdoor
+    palette: core_outdoor
     base_tile: forest_floor
     environment: grass
     music: music_approaching_the_green_grass
@@ -162,6 +293,19 @@ maps:
       - {slug: track_rail, at: {x: 10, y: 29}, visual: metal, blocks_movement: true, interaction_anchor: {x: 10, y: 29}}
       - {slug: overlook_rock, at: {x: 29, y: 10}, visual: boulder, blocks_movement: true}
       - {slug: stream_cache_marker, at: {x: 6, y: 20}, visual: shrub, blocks_movement: true, interaction_anchor: {x: 6, y: 20}}
+      - {slug: south_tree_a, at: {x: 3, y: 4}, visual: tree_tall}
+      - {slug: south_tree_b, at: {x: 7, y: 7}, visual: tree_tall}
+      - {slug: south_tree_c, at: {x: 25, y: 4}, visual: tree_tall}
+      - {slug: south_tree_d, at: {x: 29, y: 17}, visual: tree_tall}
+      - {slug: south_tree_e, at: {x: 3, y: 35}, visual: tree_tall}
+      - {slug: south_tree_f, at: {x: 27, y: 37}, visual: tree_tall}
+      - {slug: south_shrub_a, at: {x: 9, y: 11}, visual: shrub}
+      - {slug: south_shrub_b, at: {x: 27, y: 24}, visual: shrub}
+      - {slug: south_shrub_c, at: {x: 5, y: 26}, visual: shrub}
+      - {slug: south_flower_a, at: {x: 11, y: 18}, visual: flower}
+      - {slug: south_flower_b, at: {x: 24, y: 29}, visual: flower}
+      - {slug: south_rock_a, at: {x: 28, y: 31}, visual: rock}
+      - {slug: south_rock_b, at: {x: 4, y: 13}, visual: rock}
     warps:
       - slug: south_to_village
         at: {x: 17, y: 0}
@@ -312,7 +456,7 @@ maps:
     role: inhabited hub, investigation and return resolution
     width: 44
     height: 40
-    palette: prototype_outdoor
+    palette: core_city
     base_tile: grass
     environment: grass
     music: music_07_town
@@ -342,15 +486,23 @@ maps:
     props:
       - {slug: memorial_plinth, at: {x: 20, y: 17}, visual: plinth, blocks_movement: true, interaction_anchor: {x: 21, y: 19}}
       - {slug: archive_building, at: {x: 4, y: 8}, visual: house, interaction_anchor: {x: 6, y: 13}}
-      - {slug: workshop_building, at: {x: 35, y: 14}, visual: house, interaction_anchor: {x: 37, y: 19}}
-      - {slug: home_a, at: {x: 9, y: 11}, visual: house}
-      - {slug: home_b, at: {x: 29, y: 8}, visual: house}
+      - {slug: workshop_building, at: {x: 35, y: 14}, visual: house_alt, interaction_anchor: {x: 37, y: 19}}
+      - {slug: home_a, at: {x: 12, y: 10}, visual: house}
+      - {slug: home_b, at: {x: 26, y: 8}, visual: house_alt}
       - {slug: north_sign, at: {x: 25, y: 4}, visual: sign, blocks_movement: true, interaction_anchor: {x: 25, y: 4}}
+      - {slug: village_garden_flower_a, at: {x: 5, y: 28}, visual: flower}
+      - {slug: village_garden_flower_b, at: {x: 8, y: 28}, visual: flower}
+      - {slug: village_garden_flower_c, at: {x: 11, y: 28}, visual: flower}
+      - {slug: village_garden_shrub_a, at: {x: 5, y: 32}, visual: shrub}
+      - {slug: village_garden_shrub_b, at: {x: 11, y: 32}, visual: shrub}
+      - {slug: village_tree_a, at: {x: 3, y: 21}, visual: tree}
+      - {slug: village_tree_b, at: {x: 38, y: 7}, visual: tree}
+      - {slug: village_rock_a, at: {x: 32, y: 30}, visual: rock}
     collisions:
       - {slug: archive_roof, bounds: {x: 4, y: 8, width: 4, height: 4}}
       - {slug: workshop_roof, bounds: {x: 35, y: 14, width: 4, height: 4}}
-      - {slug: home_a_block, bounds: {x: 9, y: 11, width: 4, height: 5}}
-      - {slug: home_b_block, bounds: {x: 29, y: 8, width: 4, height: 5}}
+      - {slug: home_a_block, bounds: {x: 12, y: 10, width: 4, height: 5}}
+      - {slug: home_b_block, bounds: {x: 26, y: 8, width: 4, height: 5}}
     warps:
       - {slug: village_to_south, at: {x: 22, y: 39}, facing: down, target_map: low_bell_south_approach, target: {x: 17, y: 2}}
       - slug: village_to_pass
@@ -656,7 +808,7 @@ maps:
     role: records interior and physical bell explanation
     width: 16
     height: 12
-    palette: prototype_outdoor
+    palette: core_set
     base_tile: stone_floor
     environment: interior
     music: music_23_inn
@@ -686,7 +838,7 @@ maps:
     role: staged quarry knowledge and return dependency
     width: 16
     height: 12
-    palette: prototype_outdoor
+    palette: core_set
     base_tile: stone_floor
     environment: interior
     music: music_23_inn
@@ -755,7 +907,7 @@ maps:
     role: exposed trainer route and stronger geographic evidence
     width: 36
     height: 48
-    palette: prototype_outdoor
+    palette: core_highland
     base_tile: grass
     environment: grass
     music: music_08_overworld
@@ -787,7 +939,7 @@ maps:
         width: 2
         points: [{x: 18, y: 14}, {x: 8, y: 13}, {x: 0, y: 13}]
     fills:
-      - {slug: exposed_stone_band, bounds: {x: 4, y: 16, width: 28, height: 9}, tile: forest_floor, layer: Ground}
+      - {slug: exposed_stone_band, bounds: {x: 4, y: 16, width: 28, height: 9}, tile: stone_floor, layer: Ground}
     props:
       - {slug: split_crown_left, at: {x: 27, y: 7}, visual: boulder, blocks_movement: true}
       - {slug: split_crown_right, at: {x: 29, y: 7}, visual: boulder, blocks_movement: true}
@@ -795,6 +947,14 @@ maps:
       - {slug: pass_name_marker, at: {x: 30, y: 10}, visual: metal, blocks_movement: true, interaction_anchor: {x: 30, y: 10}}
       - {slug: pass_wind_cache, at: {x: 31, y: 12}, visual: shrub, blocks_movement: true, interaction_anchor: {x: 31, y: 12}}
       - {slug: pass_hoist_frame, at: {x: 1, y: 11}, visual: hoist, blocks_movement: true}
+      - {slug: pass_rock_a, at: {x: 5, y: 38}, visual: rock}
+      - {slug: pass_rock_b, at: {x: 26, y: 36}, visual: boulder}
+      - {slug: pass_rock_c, at: {x: 7, y: 28}, visual: boulder}
+      - {slug: pass_rock_d, at: {x: 29, y: 20}, visual: rock}
+      - {slug: pass_rock_e, at: {x: 5, y: 9}, visual: boulder}
+      - {slug: pass_rock_f, at: {x: 23, y: 5}, visual: rock}
+      - {slug: pass_shrub_a, at: {x: 30, y: 33}, visual: shrub}
+      - {slug: pass_shrub_b, at: {x: 6, y: 19}, visual: shrub}
     warps:
       - {slug: pass_to_village, at: {x: 18, y: 47}, facing: down, target_map: low_bell_ashenbell, target: {x: 22, y: 2}}
       - slug: pass_to_quarry
@@ -923,8 +1083,8 @@ maps:
     role: investigation evidence and lower-works threshold
     width: 34
     height: 36
-    palette: prototype_outdoor
-    base_tile: forest_floor
+    palette: core_quarry
+    base_tile: stone_floor
     environment: cave
     music: music_15_dungeon
     boundary:
@@ -955,6 +1115,12 @@ maps:
       - {slug: survey_stake, at: {x: 23, y: 12}, visual: sign, blocks_movement: true, interaction_anchor: {x: 23, y: 12}}
       - {slug: collapsed_fitting, at: {x: 15, y: 25}, visual: metal, blocks_movement: true, interaction_anchor: {x: 15, y: 25}}
       - {slug: quarry_name_strip, at: {x: 29, y: 29}, visual: metal, blocks_movement: true, interaction_anchor: {x: 29, y: 29}}
+      - {slug: quarry_rubble_a, at: {x: 5, y: 7}, visual: boulder}
+      - {slug: quarry_rubble_b, at: {x: 8, y: 12}, visual: rock}
+      - {slug: quarry_rubble_c, at: {x: 27, y: 14}, visual: boulder}
+      - {slug: quarry_rubble_d, at: {x: 30, y: 22}, visual: rock}
+      - {slug: quarry_metal_a, at: {x: 6, y: 23}, visual: metal}
+      - {slug: quarry_metal_b, at: {x: 25, y: 31}, visual: metal}
     warps:
       - {slug: quarry_to_pass, at: {x: 0, y: 18}, facing: left, target_map: low_bell_highland_pass, target: {x: 33, y: 24}}
       - slug: quarry_to_lower
@@ -1058,7 +1224,7 @@ maps:
     role: small dungeon, grounded reveal, climax and physical resolution
     width: 38
     height: 40
-    palette: prototype_outdoor
+    palette: core_quarry
     base_tile: stone_floor
     environment: cave
     music: music_dungeon_loop_slow
@@ -1099,6 +1265,12 @@ maps:
       - {slug: runoff_control_marker, at: {x: 11, y: 20}, visual: metal, blocks_movement: true, interaction_anchor: {x: 11, y: 20}}
       - {slug: cradle_brace_marker, at: {x: 17, y: 25}, visual: metal, blocks_movement: true, interaction_anchor: {x: 17, y: 25}}
       - {slug: lower_shortcut_frame, at: {x: 1, y: 28}, visual: hoist, blocks_movement: true}
+      - {slug: lower_rubble_a, at: {x: 5, y: 6}, visual: boulder}
+      - {slug: lower_rubble_b, at: {x: 8, y: 12}, visual: rock}
+      - {slug: lower_rubble_c, at: {x: 30, y: 8}, visual: boulder}
+      - {slug: lower_rubble_d, at: {x: 33, y: 16}, visual: rock}
+      - {slug: lower_metal_a, at: {x: 24, y: 23}, visual: metal}
+      - {slug: lower_metal_b, at: {x: 31, y: 31}, visual: metal}
     warps:
       - {slug: lower_to_quarry, at: {x: 19, y: 0}, facing: up, target_map: low_bell_quarry_exterior, target: {x: 17, y: 33}}
       - slug: lower_shortcut_to_pass

@@ -4,7 +4,7 @@
   "map": "low_bell_mara_archive",
   "source": "content/production_slice/low_bell/episode.yaml",
   "revision": 1,
-  "tmx_sha256": "0390671db71ffb8b349f3c12732ef783e3bc793846143c5e4f7b9016c5baca18",
+  "tmx_sha256": "c8e951743e9b1a0c5c6a567f9f717ba60bb8a78a562d7cf2f05ceb1269145204",
   "blocked_cells": [
     [
       0,
@@ -87,6 +87,10 @@
       2
     ],
     [
+      9,
+      2
+    ],
+    [
       15,
       2
     ],
@@ -103,6 +107,10 @@
       3
     ],
     [
+      9,
+      3
+    ],
+    [
       12,
       3
     ],
@@ -112,10 +120,6 @@
     ],
     [
       0,
-      4
-    ],
-    [
-      8,
       4
     ],
     [

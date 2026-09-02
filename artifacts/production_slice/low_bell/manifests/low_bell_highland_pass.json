@@ -4,7 +4,7 @@
   "map": "low_bell_highland_pass",
   "source": "content/production_slice/low_bell/episode.yaml",
   "revision": 1,
-  "tmx_sha256": "1e031cb24483effadb1168ecb4389e411afac8941c95c387bc7eee75eaf33d26",
+  "tmx_sha256": "c2fd844fd8e97a7b80b1fcf6fbaf8d0655958be2b459b8e7c4f49204d32b597d",
   "blocked_cells": [
     [
       0,
@@ -659,19 +659,11 @@
       26
     ],
     [
-      27,
-      26
-    ],
-    [
       0,
       27
     ],
     [
       1,
-      27
-    ],
-    [
-      27,
       27
     ],
     [

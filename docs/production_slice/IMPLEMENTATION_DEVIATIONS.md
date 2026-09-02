@@ -50,3 +50,16 @@ the hood and cannot be captured. The optional South wild zone remains the
 episode's real capture opportunity. A reusable distinct-ID scripted-wild
 battle would remove this presentation compromise, but adding it was not
 necessary for the episode's progression.
+
+## Milestone 4 — existing-art composition
+
+The village civic plinth uses the existing `core_city_and_country` fountain
+set because the repository has no confirmed overworld stone-bell memorial
+stamp in the reviewed compatible family. Dialogue and interaction identify it
+as Ashenbell's memorial/warning focal point; its water imagery also supports
+the drainage theme. This is a visual approximation, not a story change.
+
+The quarry reuses cave details embedded in `core_outdoor` instead of mixing a
+second incompatible cave atlas into a single generated map. This limits wall
+autotiling and machinery variety, but preserves a coherent existing-art
+family and keeps the production compiler generic.

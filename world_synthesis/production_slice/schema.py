@@ -212,9 +212,13 @@ class MapSpec(StrictModel):
             *(self.boundary.openings if self.boundary else []),
         ]
         if any(not point_ok(point) for point in points):
-            raise ValueError(f"map {self.slug!r} contains an out-of-bounds point")
+            raise ValueError(
+                f"map {self.slug!r} contains an out-of-bounds point"
+            )
         if any(not rect_ok(rect) for rect in rects):
-            raise ValueError(f"map {self.slug!r} contains an out-of-bounds rectangle")
+            raise ValueError(
+                f"map {self.slug!r} contains an out-of-bounds rectangle"
+            )
         ids = [
             *(item.slug for item in self.paths),
             *(item.slug for item in self.fills),
@@ -294,7 +298,9 @@ class EpisodeSpec(StrictModel):
             visuals.update(prop.visual for prop in map_spec.props)
             if map_spec.boundary:
                 visuals.add(map_spec.boundary.tile)
-            missing_visuals = visuals - set(palette.tiles) - set(palette.stamps)
+            missing_visuals = (
+                visuals - set(palette.tiles) - set(palette.stamps)
+            )
             if missing_visuals:
                 raise ValueError(
                     f"map {map_spec.slug!r} has missing palette visuals: "
@@ -308,7 +314,9 @@ class EpisodeSpec(StrictModel):
                 raise ValueError(
                     f"map {map_spec.slug!r} places missing NPCs: {sorted(missing_npcs)}"
                 )
-            missing_tables = {item.table for item in map_spec.encounters} - tables
+            missing_tables = {
+                item.table for item in map_spec.encounters
+            } - tables
             if missing_tables:
                 raise ValueError(
                     f"map {map_spec.slug!r} uses missing encounters: {sorted(missing_tables)}"

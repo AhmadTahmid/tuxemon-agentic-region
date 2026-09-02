@@ -46,3 +46,17 @@ The reachability check found blocked interior exit tiles in the first content
 build; explicit door openings were authored for both interiors and the test
 then passed. The real database overlay and all seven real TMX loads continue
 to pass.
+
+## Milestone 4 — composition and presentation
+
+The static review renderer emits full and collision/event/encounter debug
+views for all seven maps. Review exposed two real presentation defects before
+commit: a stamp that combined two neighbouring building atlas entries and a
+cave-rock detail repeated as a terrain fill. Both were corrected in the
+canonical semantic palettes, without map-ID-specific compiler code.
+
+Fourteen focused tests now also require every runtime map to avoid the old
+prototype palette, verify each selected source tileset exists, and compare
+hashes across two independent render passes. The asset-review atlas windows,
+seven full renders and seven debug renders are preserved as reproducible
+evidence.

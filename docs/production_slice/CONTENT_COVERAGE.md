@@ -47,25 +47,29 @@ including all optional/scripted beats, within the locked budget. Random wild
 encounters are additional. Ten non-boss ecology candidates are reviewed in
 the capability audit; final tables must remain area-specific.
 
-## Area palettes
+## Reviewed area palettes
 
-Palette review is constrained to existing repository assets:
+Every runtime tile comes from an existing repository tileset. No artwork was
+created or imported. The semantic palettes deliberately reuse compatible
+families while assigning different material vocabularies:
 
-- South Approach: `core_outdoor`, `core_outdoor_nature`,
-  `core_outdoor_water`; dense canopy margins, wet ground and narrow openings.
-- Ashenbell: the same core family plus `core_city_and_country`,
-  `core_buildings` and `core_set pieces`; orthogonal service paths, clustered
-  homes, garden rows and a central plinth.
-- Highland Pass: `core_outdoor` and compatible nature/terrain rock forms;
-  sparse planting, cliff bands, wind gaps and long sightlines.
-- Quarry: compatible cave/worked-stone tiles with `factory` or core set pieces
-  only after rendered review; machinery traces are accents, not a mismatched
-  industrial map.
-- Interiors: `core_indoor_floors`, `core_indoor_walls`, furniture and small
-  function-specific set pieces.
+- South Approach uses `core_outdoor`: damp green ground, water, tall conifers,
+  flowers, shrubs and narrow earth paths.
+- Ashenbell uses `core_city_and_country`: bright maintained grass, timber
+  houses, service paths, garden planting and the existing fountain/plinth set
+  as its civic focal point.
+- Highland Pass uses a second semantic view of `core_outdoor`: sparse green
+  margins, a broad exposed-earth shelf and repeated pale ridge stones.
+- Both quarry maps use a quarry-specific semantic view of `core_outdoor`:
+  worked timber track, runoff channels, rock boundaries, metal fittings and a
+  darker resonant chamber floor.
+- Mara's Archive and Tovin's Workshop use `core_set pieces`: wood floor,
+  masonry walls and distinct record/hoist props.
 
-Exact tile IDs will be recorded by the compiler palette catalogue and checked
-through deterministic full-map renders before client launch.
+The labelled atlas windows used to inspect legal candidates are preserved in
+`artifacts/production_slice/low_bell/asset_review/`. Full and debug renders of
+all seven maps are preserved in the sibling `renders/` directory. These are
+review artifacts generated from the source atlases, not replacement assets.
 
 ## Milestone 2 coverage
 
@@ -88,3 +92,14 @@ bring the authored combat total to seven. The labelled runoff–cradle–hoist
 sequence unlocks a persistent bidirectional shortcut while leaving the
 ordinary route open. Nine logical village/key characters have resolved-state
 dialogue branches, including complete/incomplete side-quest reactions.
+
+## Milestone 4 coverage
+
+All seven maps now compile with reviewed, existing art rather than the
+benchmark prototype palette. Ashenbell has four compact buildings, an actual
+civic focal point, an orthogonal road hierarchy and planted productive edge.
+The South Approach is framed by layered woodland and water; the Pass opens
+into exposed earth and ridge stones; and the quarry changes to worked timber,
+runoff, rubble, fittings and a dark resonant bay. Static full/debug rendering
+is a reusable deterministic command: `python -m
+world_synthesis.production_slice render low_bell`.

@@ -18,6 +18,7 @@ from world_synthesis.production_slice.compiler import (
     build_episode,
     compile_map,
 )
+from world_synthesis.production_slice.render import render_episode
 from world_synthesis.production_slice.schema import EventTrigger, load_episode
 
 REPO = Path(__file__).resolve().parents[2]
@@ -39,20 +40,35 @@ def test_low_bell_design_lock_loads_as_production_episode() -> None:
 
 def test_golden_path_has_real_battles_and_resolution_action() -> None:
     episode = load_episode(SPEC)
-    events = {event.slug: event for map_spec in episode.maps for event in map_spec.events}
-    assert "choice_monster anoleaf:flounce:rockitten,low_bell_starter_choice" in events[
-        "choose_starter"
-    ].actions
-    assert "wild_encounter shybulb,3" in events["frightened_shybulb_tutorial"].actions
-    assert "start_battle player,low_bell_rook" in events["rook_challenge"].actions
-    assert "start_battle player,low_bell_jemuar" in events["jemuar_climax"].actions
+    events = {
+        event.slug: event
+        for map_spec in episode.maps
+        for event in map_spec.events
+    }
+    assert (
+        "choice_monster anoleaf:flounce:rockitten,low_bell_starter_choice"
+        in events["choose_starter"].actions
+    )
+    assert (
+        "wild_encounter shybulb,3"
+        in events["frightened_shybulb_tutorial"].actions
+    )
+    assert (
+        "start_battle player,low_bell_rook" in events["rook_challenge"].actions
+    )
+    assert (
+        "start_battle player,low_bell_jemuar"
+        in events["jemuar_climax"].actions
+    )
     assert events["damp_resonant_assembly"].trigger == EventTrigger.INTERACT
-    assert "set_variable low_bell_story:resolved" in events[
-        "damp_resonant_assembly"
-    ].actions
-    assert "set_variable low_bell_episode_complete:yes" in events[
-        "resolution_prompt"
-    ].actions
+    assert (
+        "set_variable low_bell_story:resolved"
+        in events["damp_resonant_assembly"].actions
+    )
+    assert (
+        "set_variable low_bell_episode_complete:yes"
+        in events["resolution_prompt"].actions
+    )
 
 
 def test_main_progression_does_not_consume_side_quest_state() -> None:
@@ -64,13 +80,23 @@ def test_main_progression_does_not_consume_side_quest_state() -> None:
         if event.mandatory
     ]
     assert mandatory
-    assert all("sq_" not in condition for event in mandatory for condition in event.conditions)
-    assert all("sq_" not in action for event in mandatory for action in event.actions)
+    assert all(
+        "sq_" not in condition
+        for event in mandatory
+        for condition in event.conditions
+    )
+    assert all(
+        "sq_" not in action for event in mandatory for action in event.actions
+    )
 
 
 def test_content_completion_budget_and_optional_quests() -> None:
     episode = load_episode(SPEC)
-    events = {event.slug: event for map_spec in episode.maps for event in map_spec.events}
+    events = {
+        event.slug: event
+        for map_spec in episode.maps
+        for event in map_spec.events
+    }
     battle_actions = [
         action
         for event in events.values()
@@ -78,13 +104,21 @@ def test_content_completion_budget_and_optional_quests() -> None:
         if action.startswith(("start_battle ", "wild_encounter "))
     ]
     assert len(battle_actions) == 7
-    assert "set_variable low_bell_sq_squabbit_complete:yes" in events[
-        "jori_squabbit_return"
-    ].actions
-    assert "set_variable low_bell_sq_names_complete:yes" in events[
-        "mara_names_complete"
-    ].actions
-    assert all(not event.mandatory for event in (events["jori_squabbit_return"], events["mara_names_complete"]))
+    assert (
+        "set_variable low_bell_sq_squabbit_complete:yes"
+        in events["jori_squabbit_return"].actions
+    )
+    assert (
+        "set_variable low_bell_sq_names_complete:yes"
+        in events["mara_names_complete"].actions
+    )
+    assert all(
+        not event.mandatory
+        for event in (
+            events["jori_squabbit_return"],
+            events["mara_names_complete"],
+        )
+    )
     assert {
         "low_bell_secret_south:yes",
         "low_bell_secret_pass:yes",
@@ -100,16 +134,23 @@ def test_content_completion_budget_and_optional_quests() -> None:
 def test_puzzle_and_shortcut_are_stateful_and_nonmandatory() -> None:
     episode = load_episode(SPEC)
     maps = {map_spec.slug: map_spec for map_spec in episode.maps}
-    events = {event.slug: event for map_spec in episode.maps for event in map_spec.events}
-    assert "set_variable low_bell_puzzle_stage:runoff" in events[
-        "puzzle_runoff_first"
-    ].actions
-    assert "set_variable low_bell_puzzle_stage:brace" in events[
-        "puzzle_cradle_correct"
-    ].actions
-    assert "set_variable low_bell_shortcut_unlocked:yes" in events[
-        "puzzle_hoist_correct"
-    ].actions
+    events = {
+        event.slug: event
+        for map_spec in episode.maps
+        for event in map_spec.events
+    }
+    assert (
+        "set_variable low_bell_puzzle_stage:runoff"
+        in events["puzzle_runoff_first"].actions
+    )
+    assert (
+        "set_variable low_bell_puzzle_stage:brace"
+        in events["puzzle_cradle_correct"].actions
+    )
+    assert (
+        "set_variable low_bell_shortcut_unlocked:yes"
+        in events["puzzle_hoist_correct"].actions
+    )
     shortcut_warps = [
         warp
         for map_spec in maps.values()
@@ -126,7 +167,9 @@ def test_puzzle_and_shortcut_are_stateful_and_nonmandatory() -> None:
 
 def test_six_or_more_village_characters_have_resolved_dialogue() -> None:
     episode = load_episode(SPEC)
-    village = next(item for item in episode.maps if item.slug == "low_bell_ashenbell")
+    village = next(
+        item for item in episode.maps if item.slug == "low_bell_ashenbell"
+    )
     resolved_npcs = {
         event.npc
         for event in village.events
@@ -154,7 +197,9 @@ def test_all_mandatory_anchors_are_statically_reachable() -> None:
             x, y = queue.popleft()
             for cell in ((x - 1, y), (x + 1, y), (x, y - 1), (x, y + 1)):
                 cx, cy = cell
-                if not (0 <= cx < map_spec.width and 0 <= cy < map_spec.height):
+                if not (
+                    0 <= cx < map_spec.width and 0 <= cy < map_spec.height
+                ):
                     continue
                 if cell in layout.blocked or cell in reachable:
                     continue
@@ -164,15 +209,28 @@ def test_all_mandatory_anchors_are_statically_reachable() -> None:
         for event in (item for item in map_spec.events if item.mandatory):
             if event.trigger == EventTrigger.INIT:
                 continue
-            bounds = event.bounds.cells() if event.bounds else {(event.at.x, event.at.y)}
+            bounds = (
+                event.bounds.cells()
+                if event.bounds
+                else {(event.at.x, event.at.y)}
+            )
             adjacent = {
                 neighbor
                 for x, y in bounds
-                for neighbor in ((x - 1, y), (x + 1, y), (x, y - 1), (x, y + 1))
+                for neighbor in (
+                    (x - 1, y),
+                    (x + 1, y),
+                    (x, y - 1),
+                    (x, y + 1),
+                )
             }
-            assert reachable & (bounds | adjacent), f"{map_spec.slug}:{event.slug}"
+            assert reachable & (bounds | adjacent), (
+                f"{map_spec.slug}:{event.slug}"
+            )
         for warp in (item for item in map_spec.warps if item.mandatory):
-            assert (warp.at.x, warp.at.y) in reachable, f"{map_spec.slug}:{warp.slug}"
+            assert (warp.at.x, warp.at.y) in reachable, (
+                f"{map_spec.slug}:{warp.slug}"
+            )
 
 
 def test_all_interactions_declare_anchors() -> None:
@@ -248,7 +306,10 @@ def test_low_bell_database_overlay_activates(monkeypatch) -> None:
             "active_mods": ["tuxemon", "low_bell"],
             "mod_activation": {**base.mod_activation, "low_bell": True},
             "mod_tables": tables,
-            "mod_dependencies": {**base.mod_dependencies, "low_bell": ["tuxemon"]},
+            "mod_dependencies": {
+                **base.mod_dependencies,
+                "low_bell": ["tuxemon"],
+            },
         }
     )
     database = ModData(config, ModelLoader(load_model_map(config.model_map)))
@@ -257,3 +318,33 @@ def test_low_bell_database_overlay_activates(monkeypatch) -> None:
     assert "low_bell_nera" in database.database["npc"]
     assert "low_bell_rook" in database.database["npc"]
     assert "low_bell_south_wild" in database.database["encounter"]
+
+
+def test_area_palettes_use_reviewed_existing_assets() -> None:
+    episode = load_episode(SPEC)
+    palettes = {map_spec.slug: map_spec.palette for map_spec in episode.maps}
+    assert "prototype_outdoor" not in palettes.values()
+    assert palettes["low_bell_south_approach"] == "core_outdoor"
+    assert palettes["low_bell_ashenbell"] == "core_city"
+    assert palettes["low_bell_highland_pass"] == "core_highland"
+    assert palettes["low_bell_quarry_exterior"] == "core_quarry"
+    assert palettes["low_bell_quarry_lower"] == "core_quarry"
+    for palette_slug in set(palettes.values()):
+        source = episode.palettes[palette_slug].source
+        assert (
+            (REPO / "mods" / "low_bell" / "maps" / source).resolve().is_file()
+        )
+
+
+def test_static_review_renders_are_deterministic() -> None:
+    episode = load_episode(SPEC)
+    first = render_episode(episode, REPO)
+    before = {
+        path: hashlib.sha256(path.read_bytes()).hexdigest() for path in first
+    }
+    second = render_episode(episode, REPO)
+    after = {
+        path: hashlib.sha256(path.read_bytes()).hexdigest() for path in second
+    }
+    assert before == after
+    assert len(second) == len(episode.maps) * 2
