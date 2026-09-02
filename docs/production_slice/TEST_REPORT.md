@@ -139,3 +139,18 @@ only required mechanical work is producing investigation state and a faint
 return point, automatic dialogue has now been removed from that event. The
 arrival regression requires zero translated-dialog actions; character-specific
 scene content remains in the three nearby talk events.
+
+### Follow-up result: movement remains locked
+
+The next external run entered Ashenbell without the prompt but still could not
+move. This proves that prompt removal did not repair the underlying
+critical-path failure. Static compilation confirms that the incoming
+destination and its neighbors are not collision-blocked, while the arrival
+event now contains only synchronous state assignments. Runtime
+transition/control release is the leading unverified failure area.
+
+This bug remains open as `LB-004` in `EXTERNAL_PLAYTEST_BUGS.md`. The previously
+reported 19 focused tests, 57 world-synthesis tests and passing acceptance
+validator did **not** establish end-to-end playability. Their scope does not
+simulate transition cleanup, input delivery or movement-control state in a
+real critical-path playthrough.

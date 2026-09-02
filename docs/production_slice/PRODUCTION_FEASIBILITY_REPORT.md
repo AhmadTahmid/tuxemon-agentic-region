@@ -1,8 +1,15 @@
 # Ashenbell: The Low Bell — production feasibility report
 
+> **External-playtest status:** failed. The current build is not verified as
+> beginning-to-end playable. A real player remains unable to move after the
+> South Approach-to-Ashenbell transition (`LB-004`), despite passing automated
+> validation. Claims below about implemented content describe authored and
+> loadable coverage, not successfully traversed content.
+
 ## 1. Could the locked creative brief be implemented faithfully?
 
-Substantially, at the authored and mechanically validated level. The isolated
+Not yet at the required production-feasibility level. Substantially at the
+authored and mechanically validated level, the isolated
 episode implements the opening resonance, three-way starter choice, tutorial,
 capture opportunity, organized village, recurring cast, investigation,
 Highland Pass, two side quests, three-control puzzle, shortcut, real Jemuar
@@ -15,6 +22,9 @@ proxy; the memorial is represented by a compatible existing fountain/plinth;
 objective state is not exposed through a mission journal; and no completed
 human playthrough yet establishes the intended 60–90-minute duration. These do
 not change the central story, but they weaken presentation and usability.
+More importantly, the unresolved Ashenbell transition blocker prevents a
+beginning-to-end playthrough and therefore prevents claiming faithful playable
+implementation.
 
 ## 2. Which intended experiences survived implementation?
 
@@ -85,22 +95,31 @@ investigation state and returns control immediately, while Mara, Iven and Nera
 carry the scene through nearby player-initiated conversations. This was a
 second revision of the same sixth repair, not a new content feature.
 
+The next playtest entered Ashenbell without a prompt but still could not move.
+The destination and neighboring cells are statically walkable and the arrival
+event is synchronous, leaving runtime transition/control release as the leading
+unverified cause. This open blocker demonstrates that the preceding repair was
+symptom-driven and that automated acceptance lacked a real-client control-state
+oracle.
+
 All content and repair decisions were agent-authored in this run. No human map
 or dialogue polish pass and no completed human playtest response has yet been
 applied, so production autonomy beyond mechanical completion is unproven.
 
 ## 6. Did the result contain substantial playable content rather than empty maps?
 
-Yes by inspectable content coverage, not yet by human enjoyment evidence. Every
+The source contains substantial inspectable content, but the build does not yet
+meet the requirement for substantial *playable* content because a real player
+is blocked at the second major area. Every
 major outdoor map has several authored battles, revelations, quest updates,
 decisions, rewards or state changes in addition to random encounters. Every
 declared detour pays off with evidence, an item, a battle, a side-quest subject
 or the shortcut. The density report exposes those beats map by map and avoids
 an aggregate quality score.
 
-Whether traversal still *feels* empty, repetitive or padded requires the fresh
-human playtest launcher. The 60–90-minute target is therefore a design target,
-not a measured result.
+Most downstream content has therefore not been reached in external testing.
+The 60–90-minute target is a design target, not a measured result, and current
+evidence cannot distinguish its pacing quality from inaccessible authored data.
 
 ## 7. What must be solved before attempting a 3–5-hour alpha?
 
@@ -112,7 +131,10 @@ Use those observations to determine whether the bottleneck is objective UX,
 spatial composition, encounter balance, dialogue, or missing creature/world
 presentation.
 
-Before a longer alpha, the pipeline also needs full manual save-menu/reload
+Before any longer alpha, resolve and trace the map-transition movement lock,
+add a real-client golden-path harness or required observed checkpoint protocol,
+and make runtime control-state assertions part of acceptance. The pipeline also
+needs full manual save-menu/reload
 exercise, automated event-script parsing as a standard compiler gate, better
 generic multi-tile/autotile composition, and a legal strategy for distinct
 overworld creature representation. Expanding playtime before those questions

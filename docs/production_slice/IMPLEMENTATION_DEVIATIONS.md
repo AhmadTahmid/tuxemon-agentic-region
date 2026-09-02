@@ -107,3 +107,8 @@ repair removes modal dialogue from the arrival event altogether. Entering the
 map now records investigation state and immediately returns control; the
 intended scene is delivered entirely through Mara, Iven and Nera's nearby
 player-initiated conversations.
+
+That mitigation exposed a further failure: the player entered Ashenbell with
+no dialog but remained unable to move. The arrival cells are statically open,
+so this is recorded as unresolved runtime transition/control behavior rather
+than another content deviation. No further speculative repair was applied.
