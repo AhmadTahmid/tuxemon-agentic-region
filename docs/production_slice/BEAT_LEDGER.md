@@ -15,7 +15,7 @@ not automated proof of play duration.
 | South Approach | overlook spur | Shift token plus first view of Split Crown | Reward curiosity, names quest evidence, landmark | tutorial cleared | south record | Yes |
 | South Approach | courier pocket | Ren's practical optional battle and potion | Extra practice with a motivated courier | tutorial cleared | reward | Yes |
 | Ashenbell | productive south edge | Alda's displaced garden creature event | Make settlement/ecology consequential | arrival | local evidence | Yes |
-| Ashenbell | memorial square | Brief arrival prompt, followed by separate Mara/Iven/Nera conversations | Establish conflict and objective without a forced modal chain | tutorial cleared | investigation | No |
+| Ashenbell | memorial square | Immediate free movement followed by separate Mara/Iven/Nera conversations | Establish conflict and objective without blocking map entry | tutorial cleared | investigation | No |
 | Ashenbell | residential lane | Meet Jori and accept/decline Squabbit search | Personal stake and optional quest | investigation | side quest accepted or deferred | Yes |
 | Ashenbell | archive interior | Inspect bell diagram; accept names quest | Physical lore and optional quest | investigation | clue + quest state | Yes |
 | Ashenbell | Tovin's workshop | Extract one drainage clue, not an exposition dump | Character tension and puzzle foreshadowing | investigation | hoist clue | No |

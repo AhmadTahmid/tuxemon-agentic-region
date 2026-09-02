@@ -130,3 +130,12 @@ as the tutorial's pre- and post-battle lines.
 
 After rebuilding, all **19 focused production tests** and all **57 complete
 world-synthesis tests** pass. The production acceptance validator passes.
+
+### Follow-up: remove the modal entrance prompt
+
+The player confirmed that the replacement single prompt could still trap the
+client. It was not an ending or an intentional gate. Because the arrival's
+only required mechanical work is producing investigation state and a faint
+return point, automatic dialogue has now been removed from that event. The
+arrival regression requires zero translated-dialog actions; character-specific
+scene content remains in the three nearby talk events.

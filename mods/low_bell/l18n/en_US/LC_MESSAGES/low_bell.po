@@ -247,6 +247,3 @@ msgstr "Tovin: Mett Saro set that cradle beside me. Seeing his name restored doe
 
 msgid "low_bell_tutorial_creature"
 msgstr "The Shybulb shivers, then plants itself across the path."
-
-msgid "low_bell_village_arrival"
-msgstr "Ashenbell's memorial square is tense. Mara, Iven and Nera are waiting by the plinth; hear their accounts before taking the north road."

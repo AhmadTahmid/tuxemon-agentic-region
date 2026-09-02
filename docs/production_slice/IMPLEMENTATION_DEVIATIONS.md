@@ -100,3 +100,10 @@ before opening one concise prompt. Mara, Iven and Nera deliver their distinct
 accounts through their existing player-initiated conversations around the
 memorial. This preserves the intended conflict while removing the fragile
 modal chain and makes an interrupted arrival safe to reload.
+
+The first repair still left one automatic entrance prompt, and the external
+player confirmed that this single `DialogState` also remained stuck. The final
+repair removes modal dialogue from the arrival event altogether. Entering the
+map now records investigation state and immediately returns control; the
+intended scene is delivered entirely through Mara, Iven and Nera's nearby
+player-initiated conversations.

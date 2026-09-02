@@ -87,7 +87,7 @@ def test_golden_path_has_real_battles_and_resolution_action() -> None:
     )
 
 
-def test_village_arrival_is_reentry_safe_and_uses_one_dialog_state() -> None:
+def test_village_arrival_is_reentry_safe_and_nonmodal() -> None:
     episode = load_episode(SPEC)
     events = {
         event.slug: event
@@ -97,9 +97,10 @@ def test_village_arrival_is_reentry_safe_and_uses_one_dialog_state() -> None:
     arrival = events["village_arrival_scene"]
     assert arrival.trigger == EventTrigger.TOUCH
     assert arrival.actions[0] == "set_variable low_bell_story:investigation"
-    assert sum(
-        action.startswith("translated_dialog ") for action in arrival.actions
-    ) == 1
+    assert all(
+        not action.startswith("translated_dialog ")
+        for action in arrival.actions
+    )
 
 
 def test_touch_events_do_not_chain_adjacent_modal_dialog_states() -> None:

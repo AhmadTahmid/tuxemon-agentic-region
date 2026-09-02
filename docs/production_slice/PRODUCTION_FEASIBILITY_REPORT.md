@@ -79,6 +79,12 @@ prompt, and distributes the disagreement across the characters' existing
 player-initiated conversations. Tests and validation now reject chained modal
 dialogue on touch events.
 
+Follow-up playtesting showed that even the replacement single entrance prompt
+could remain modal. The arrival now contains no automatic dialogue: it records
+investigation state and returns control immediately, while Mara, Iven and Nera
+carry the scene through nearby player-initiated conversations. This was a
+second revision of the same sixth repair, not a new content feature.
+
 All content and repair decisions were agent-authored in this run. No human map
 or dialogue polish pass and no completed human playtest response has yet been
 applied, so production autonomy beyond mechanical completion is unproven.
