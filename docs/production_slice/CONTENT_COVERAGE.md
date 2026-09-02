@@ -1,0 +1,68 @@
+# Content coverage
+
+This is the design-lock inventory. Final status and evidence links will be
+updated as implementation lands.
+
+## Planned maps (7)
+
+| Map | Approximate size | Function | Visual family |
+|---|---:|---|---|
+| South Approach | 34×46 | Opening, tutorial, capture, wooded ascent | Core outdoor/nature/water: damp green shelter |
+| Ashenbell | 44×40 | Organized village hub and four story phases | Core outdoor/city/buildings/set pieces: paths, gardens, civic plinth |
+| Mara's Archive | 16×12 | Bell records and names quest | Core indoor floors/walls/furniture |
+| Tovin's Workshop | 16×12 | Hoist/drainage clues and character progression | Core indoor plus existing industrial/furniture set pieces |
+| Highland Pass | 36×48 | Exposed route, trainers, ridge and quarry fork | Core outdoor/nature: sparse rock and cliff geometry |
+| Old Bell Quarry Exterior | 34×36 | Survey evidence, Squabbit and optional pocket | Core outdoor/cave/set pieces: worked damaged stone |
+| Quarry Lower Works | 38×40 | Small dungeon, puzzle, hoist, boss and resolution | Existing cave/factory/core set pieces in one reviewed family |
+
+## Planned logical NPCs (16)
+
+| NPC | Declared function(s) |
+|---|---|
+| Nera | tutorial, main progression, ecology, ending consequence |
+| Mara | main progression, historian conflict, names quest, reward |
+| Tovin | character development, puzzle clue, resolution |
+| Jori | side quest, personal stake, changed consequence |
+| Iven | central conflict, concealed evidence, responsibility arc |
+| Sela | geography, evidence, gameplay direction |
+| Rook | trainer gate, route safety, local knowledge |
+| Alda | productive-world texture, ecology evidence, post-state |
+| Bren | material evidence, local texture, post-state |
+| Caro | rumour contrast, inhabited-world texture, post-state |
+| Demas | ecology evidence, regional livelihood, post-state |
+| Etti | memorial practice, names quest texture, post-state |
+| Pell | courier identity, outside-world ending hook |
+| Ren | optional South battle, tutorial reinforcement, reward |
+| Kesh | optional Pass battle, survey context, reward |
+| Quarry Squabbit | represented side-quest subject and interaction |
+
+Repeated appearances of a logical character do not inflate this count.
+
+## Planned combat and ecology
+
+Six authored combat beats: frightened Shybulb tutorial, Ren, displaced garden
+encounter, Rook, Kesh, territorial Rockat, and the Jemuar climax. This is seven
+including all optional/scripted beats, within the locked budget. Random wild
+encounters are additional. Ten non-boss ecology candidates are reviewed in
+the capability audit; final tables must remain area-specific.
+
+## Area palettes
+
+Palette review is constrained to existing repository assets:
+
+- South Approach: `core_outdoor`, `core_outdoor_nature`,
+  `core_outdoor_water`; dense canopy margins, wet ground and narrow openings.
+- Ashenbell: the same core family plus `core_city_and_country`,
+  `core_buildings` and `core_set pieces`; orthogonal service paths, clustered
+  homes, garden rows and a central plinth.
+- Highland Pass: `core_outdoor` and compatible nature/terrain rock forms;
+  sparse planting, cliff bands, wind gaps and long sightlines.
+- Quarry: compatible cave/worked-stone tiles with `factory` or core set pieces
+  only after rendered review; machinery traces are accents, not a mismatched
+  industrial map.
+- Interiors: `core_indoor_floors`, `core_indoor_walls`, furniture and small
+  function-specific set pieces.
+
+Exact tile IDs will be recorded by the compiler palette catalogue and checked
+through deterministic full-map renders before client launch.
+

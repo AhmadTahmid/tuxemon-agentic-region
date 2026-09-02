@@ -1,0 +1,82 @@
+episode:
+  slug: low_bell
+  title: "Ashenbell: The Low Bell"
+  target_minutes: [60, 90]
+  story_states: [intro, investigation, quarry_discovered, resolved]
+  start_map: low_bell_south_approach
+  start_position: [17, 42]
+  complete_variable: low_bell_episode_complete
+
+starters:
+  level: 5
+  choices:
+    - slug: anoleaf
+      role: quick_utility
+    - slug: flounce
+      role: direct_offense_and_protection
+    - slug: rockitten
+      role: sturdy_earth_control
+
+climax:
+  monster: jemuar
+  role: frightened_territorial_resonance_amplifier
+  battle_kind: real_scripted_battle
+  resolution_requires_post_battle_action: true
+
+maps:
+  - {slug: low_bell_south_approach, kind: outdoor_route, size: [34, 46]}
+  - {slug: low_bell_ashenbell, kind: settlement, size: [44, 40]}
+  - {slug: low_bell_mara_archive, kind: interior, size: [16, 12]}
+  - {slug: low_bell_tovin_workshop, kind: interior, size: [16, 12]}
+  - {slug: low_bell_highland_pass, kind: outdoor_route, size: [36, 48]}
+  - {slug: low_bell_quarry_exterior, kind: optional_branch_dungeon_entry, size: [34, 36]}
+  - {slug: low_bell_quarry_lower, kind: dungeon, size: [38, 40]}
+
+topology:
+  mandatory_path:
+    - low_bell_south_approach
+    - low_bell_ashenbell
+    - low_bell_highland_pass
+    - low_bell_quarry_exterior
+    - low_bell_quarry_lower
+    - low_bell_ashenbell
+  interiors:
+    low_bell_ashenbell: [low_bell_mara_archive, low_bell_tovin_workshop]
+  shortcut:
+    endpoints: [low_bell_quarry_lower, low_bell_highland_pass]
+    unlock_variable: low_bell_shortcut_unlocked
+    ordinary_route_remains_open: true
+
+quests:
+  main:
+    slug: low_bell_main
+    side_quest_dependencies: []
+  side:
+    - slug: low_bell_squabbit
+      mandatory_for_main: false
+      reward: {item: tuxeball_hearty, quantity: 2}
+    - slug: low_bell_silent_shift
+      mandatory_for_main: false
+      evidence_count: 3
+      reward: {item: bivouac, quantity: 1}
+
+puzzle:
+  slug: low_bell_resonant_controls
+  clue: "divert runoff, brace the cradle, release the hoist"
+  controls: [runoff, cradle, hoist]
+  wrong_order: reset_progress_only
+  unlocks: low_bell_shortcut_unlocked
+
+ecology:
+  south_approach: [shybulb, budaye, elofly, caper]
+  village_edge: [caper, squabbit, budaye]
+  highland_pass: [rockitten, flacono, baddrscratch, corvix]
+  quarry: [slichen, rockat]
+  unique_climax: [jemuar]
+
+constraints:
+  new_visual_assets: false
+  new_monsters: false
+  map_id_specific_compiler_logic: false
+  side_quests_gate_main: false
+  generated_tmx_hand_edits: false
