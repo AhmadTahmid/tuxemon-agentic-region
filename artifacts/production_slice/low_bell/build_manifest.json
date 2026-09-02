@@ -1,14 +1,14 @@
 {
   "episode": "low_bell",
   "revision": 1,
-  "source_sha256": "4a4c63d50d3366136a2e203eaafee9734513bef054ef196c8eabc58d510f72ab",
+  "source_sha256": "1bfa4467186e7f303871e276c0cc011dd29d567c02f295570ba8463064baefdf",
   "map_sha256": {
-    "low_bell_ashenbell": "2b2954fc05222b0d67b59aef5a800e0c39503b9b5558f902683c30d85043198a",
+    "low_bell_ashenbell": "68a8aaf461e7c626f525e6ca31cd55113ba30d352ccd5f421b92a644a8c50ac6",
     "low_bell_highland_pass": "c2fd844fd8e97a7b80b1fcf6fbaf8d0655958be2b459b8e7c4f49204d32b597d",
     "low_bell_mara_archive": "c8e951743e9b1a0c5c6a567f9f717ba60bb8a78a562d7cf2f05ceb1269145204",
     "low_bell_quarry_exterior": "15fb04d977671b1855c643e0d8e94d7891b29ef4a1d259720a0ec2c0304c079f",
     "low_bell_quarry_lower": "34164d940bdc2b3f2eab67133b552c87a7e4b5b8acb912a7a817ab3c9a9b51e3",
-    "low_bell_south_approach": "79a8083831ae43fb30c126467087ccea3d34147b8796b67e52823e34f1eecde0",
+    "low_bell_south_approach": "0edca5779bdfe58d3cb6b1d10b914c9ed818311ce5395f50928bf8f3fdc082d0",
     "low_bell_tovin_workshop": "29bfbe5b1d6fbef8ed138e8ca391a07dd4f948bfec2a4cc04cb8d154d676bea2"
   }
 }

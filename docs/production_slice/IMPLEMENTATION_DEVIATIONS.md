@@ -78,3 +78,14 @@ variable manager, not through a manual save-menu/reload playthrough. The real
 client was launched and the opening event was observed, but a complete human
 playthrough has not yet been recorded. Therefore target duration, enjoyment,
 all interaction ergonomics and end-to-end difficulty remain unverified.
+
+## First external playtest — tutorial resolution semantics
+
+The frightened Shybulb tutorial is resolved when the scripted wild encounter
+ends by victory, capture or retreat. Tuxemon records trainer results for
+`battle_outcome`, but does not record `CombatType.MONSTER` encounters there.
+The original trainer-history condition therefore caused an infinite retrigger.
+The repaired event sets `low_bell_tutorial_cleared` after the asynchronous
+encounter returns and grants the capture kit in the same sequence. Allowing a
+retreat is consistent with Nera's goal of giving the frightened creature room,
+and prevents the tutorial from requiring a specific combat outcome.

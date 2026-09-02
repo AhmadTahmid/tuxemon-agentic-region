@@ -55,9 +55,19 @@ def test_golden_path_has_real_battles_and_resolution_action() -> None:
         "choice_monster anoleaf:flounce:rockitten,low_bell_starter_choice"
         in events["choose_starter"].actions
     )
-    assert (
+    tutorial = events["frightened_shybulb_tutorial"]
+    assert "wild_encounter shybulb,3" in tutorial.actions
+    assert "set_variable low_bell_tutorial_cleared:yes" in tutorial.actions
+    assert tutorial.actions.index(
         "wild_encounter shybulb,3"
-        in events["frightened_shybulb_tutorial"].actions
+    ) < tutorial.actions.index("set_variable low_bell_tutorial_cleared:yes")
+    assert (
+        "not variable_set low_bell_tutorial_cleared:yes" in tutorial.conditions
+    )
+    assert all(
+        "battle_outcome player,won,wild_encounter" not in condition
+        for event in events.values()
+        for condition in event.conditions
     )
     assert (
         "start_battle player,low_bell_rook" in events["rook_challenge"].actions

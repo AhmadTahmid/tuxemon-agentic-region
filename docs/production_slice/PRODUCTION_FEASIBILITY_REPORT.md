@@ -25,7 +25,7 @@ survived because winning the boss battle does not solve the disturbance; the
 player must stabilize the mechanism and dampen the assembly.
 
 The episode contains substantial authored structure: 7 maps, 17 logical NPCs,
-72 events, 7 authored combat beats, 7 wild encounter zones, 2 completable side
+71 events, 7 authored combat beats, 7 wild encounter zones, 2 completable side
 quests, 3 secrets, 1 observed-order puzzle, 1 persistent bidirectional shortcut
 and 9 characters with resolved-state dialogue. The real client renders the
 opening and the real loader accepts every authored event.
@@ -65,6 +65,12 @@ atlas stamp; replacing a repeated cave-detail tile used as terrain; and quoting
 comma-containing YAML conditions after the real loader rejected two NPC spawn
 events. The puzzle's incorrect-order behaviour was simplified to a safe no-op
 to avoid a held-input race.
+
+The first external playtest added a fifth material repair: a tutorial wild
+battle incorrectly relied on trainer-only battle history and retriggered on
+the bridge. It was replaced by an explicit persistent completion flag in the
+same ordered encounter event, and the validator now rejects that unsupported
+condition pattern.
 
 All content and repair decisions were agent-authored in this run. No human map
 or dialogue polish pass and no completed human playtest response has yet been

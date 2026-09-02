@@ -75,7 +75,7 @@ transparent acceptance groups:
 
 - strict schema and reference validation;
 - seven-map connectivity;
-- the 19-event mandatory sequence and required final state;
+- the 18-event mandatory sequence and required final state;
 - two independently completable, non-blocking side quests;
 - usable interaction anchors and collision-aware critical reachability;
 - existing asset, monster, item and dialogue references;
@@ -93,3 +93,22 @@ The playtest launcher and questionnaire are tested without producing a fake
 aggregate score. No completed human response is bundled, so duration, fun,
 balance, emotional effect and ending ergonomics are still pending human
 acceptance.
+
+## First external playtest repair — tutorial encounter loop
+
+The first player session exposed a critical bridge loop: the tutorial used
+`battle_outcome player,won,wild_encounter`, but Tuxemon does not record
+`CombatType.MONSTER` results in trainer battle history. The condition could
+therefore never become true, so the touch event immediately retriggered after
+winning or running.
+
+The tutorial now follows the existing upstream scripted-wild pattern: dialogue,
+the asynchronous wild encounter, reward/heal, and an explicit persistent
+`low_bell_tutorial_cleared` flag execute in one ordered event. Win, capture or
+retreat all resolve the frightened-creature obstruction and cannot retrigger
+it. A regression test forbids battle-history conditions against
+`wild_encounter`, verifies action ordering, and the generic acceptance
+validator now reports that unsupported condition as a missing reference.
+
+After rebuilding, all 17 focused production tests pass and the complete
+acceptance validator passes.

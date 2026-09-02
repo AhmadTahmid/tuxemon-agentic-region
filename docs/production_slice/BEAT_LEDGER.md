@@ -9,13 +9,13 @@ not automated proof of play duration.
 |---|---|---|---|---|---|---|
 | South Approach | opening bend | Low tone and creature rush | Hook within two minutes | fresh | tone seen | No |
 | South Approach | sheltered lay-by | Choose Anoleaf/Flounce/Rockitten | Player identity and onboarding | tone seen | starter chosen | No |
-| South Approach | blocked path | Scripted frightened-creature battle | Real combat tutorial | starter chosen | tutorial won | No |
-| South Approach | wet grass pocket | Catchable wild encounter and Tuxeballs | Teach capture through play | tutorial won | capture opportunity | Yes |
-| South Approach | stream crossing | Inspect reversed tracks and vibrating rail | Establish abnormal movement and terrain transmission | tutorial won | route evidence | No |
-| South Approach | overlook spur | Shift token plus first view of Split Crown | Reward curiosity, names quest evidence, landmark | tutorial won | south record | Yes |
-| South Approach | courier pocket | Ren's practical optional battle and potion | Extra practice with a motivated courier | tutorial won | reward | Yes |
+| South Approach | blocked path | Scripted frightened-creature battle | Real combat tutorial | starter chosen | tutorial cleared | No |
+| South Approach | wet grass pocket | Catchable wild encounter and Tuxeballs | Teach capture through play | tutorial cleared | capture opportunity | Yes |
+| South Approach | stream crossing | Inspect reversed tracks and vibrating rail | Establish abnormal movement and terrain transmission | tutorial cleared | route evidence | No |
+| South Approach | overlook spur | Shift token plus first view of Split Crown | Reward curiosity, names quest evidence, landmark | tutorial cleared | south record | Yes |
+| South Approach | courier pocket | Ren's practical optional battle and potion | Extra practice with a motivated courier | tutorial cleared | reward | Yes |
 | Ashenbell | productive south edge | Alda's displaced garden creature event | Make settlement/ecology consequential | arrival | local evidence | Yes |
-| Ashenbell | memorial square | Mara/Iven/Nera disagreement in short turns | Establish conflict and objective | tutorial won | investigation | No |
+| Ashenbell | memorial square | Mara/Iven/Nera disagreement in short turns | Establish conflict and objective | tutorial cleared | investigation | No |
 | Ashenbell | residential lane | Meet Jori and accept/decline Squabbit search | Personal stake and optional quest | investigation | side quest accepted or deferred | Yes |
 | Ashenbell | archive interior | Inspect bell diagram; accept names quest | Physical lore and optional quest | investigation | clue + quest state | Yes |
 | Ashenbell | Tovin's workshop | Extract one drainage clue, not an exposition dump | Character tension and puzzle foreshadowing | investigation | hoist clue | No |

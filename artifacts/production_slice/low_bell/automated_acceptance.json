@@ -16,7 +16,7 @@
     {
       "check": "mandatory_story_sequence",
       "passed": true,
-      "evidence": "19 ordered events"
+      "evidence": "18 ordered events"
     },
     {
       "check": "side_quests_complete_and_nonblocking",

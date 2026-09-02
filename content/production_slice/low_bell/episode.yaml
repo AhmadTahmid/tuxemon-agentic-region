@@ -312,7 +312,7 @@ maps:
         facing: up
         target_map: low_bell_ashenbell
         target: {x: 22, y: 38}
-        conditions: [is variable_set low_bell_tutorial_won:yes]
+        conditions: [is variable_set low_bell_tutorial_cleared:yes]
     npcs:
       - {slug: low_bell_nera, at: {x: 16, y: 39}}
       - {slug: low_bell_ren, at: {x: 7, y: 24}}
@@ -357,7 +357,7 @@ maps:
         purpose: clear immediate goal
         conditions:
           - is variable_set low_bell_starter_chosen:yes
-          - not variable_set low_bell_tutorial_won:yes
+          - not variable_set low_bell_tutorial_cleared:yes
         actions: [translated_dialog low_bell_nera_clear_path]
       - slug: frightened_shybulb_tutorial
         at: {x: 13, y: 35}
@@ -367,24 +367,14 @@ maps:
         mandatory: true
         conditions:
           - is variable_set low_bell_starter_chosen:yes
-          - not battle_outcome player,won,wild_encounter
+          - not variable_set low_bell_tutorial_cleared:yes
         actions:
           - translated_dialog low_bell_tutorial_creature
           - wild_encounter shybulb,3
-      - slug: tutorial_victory
-        at: {x: 0, y: 0}
-        trigger: init
-        anchor_required: false
-        purpose: capture kit and next objective
-        mandatory: true
-        conditions:
-          - is battle_outcome player,won,wild_encounter
-          - not variable_set low_bell_tutorial_won:yes
-        actions:
           - translated_dialog low_bell_nera_after_tutorial
           - add_item tuxeball,5
           - modify_monster_health
-          - set_variable low_bell_tutorial_won:yes
+          - set_variable low_bell_tutorial_cleared:yes
       - slug: vibrating_rail_evidence
         at: {x: 10, y: 29}
         trigger: interact
@@ -399,7 +389,7 @@ maps:
         trigger: touch
         purpose: reveal Ashenbell and Split Crown together
         conditions:
-          - is variable_set low_bell_tutorial_won:yes
+          - is variable_set low_bell_tutorial_cleared:yes
           - not variable_set low_bell_settlement_revealed:yes
         actions:
           - translated_dialog low_bell_settlement_reveal
@@ -410,7 +400,7 @@ maps:
         npc: low_bell_ren
         purpose: optional courier battle with capture-pocket context
         conditions:
-          - is variable_set low_bell_tutorial_won:yes
+          - is variable_set low_bell_tutorial_cleared:yes
           - not battle_outcome player,won,low_bell_ren
         actions:
           - translated_dialog low_bell_ren_challenge
@@ -535,7 +525,7 @@ maps:
         purpose: concise civic conflict and main objective
         mandatory: true
         conditions:
-          - is variable_set low_bell_tutorial_won:yes
+          - is variable_set low_bell_tutorial_cleared:yes
           - is variable_set low_bell_story:intro
         actions:
           - translated_dialog low_bell_village_arrival

@@ -175,6 +175,12 @@ def _reference_check(episode: EpisodeSpec, repo: Path) -> Check:
             if entry.monster not in monster_ids:
                 missing.add(f"monster:{entry.monster}")
     for event in _event_index(episode).values():
+        for condition in event.conditions:
+            if (
+                condition.endswith(",wild_encounter")
+                and "battle_outcome " in condition
+            ):
+                missing.add(f"unsupported-condition:{event.slug}:{condition}")
         for action in event.actions:
             if action.startswith("translated_dialog "):
                 key = action.removeprefix("translated_dialog ")

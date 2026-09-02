@@ -10,7 +10,7 @@ quest progress; none substitutes for a story phase.
 ```text
 fresh start
   -> starter chosen
-  -> tutorial won
+  -> tutorial encounter cleared
   -> arrive Ashenbell [intro]
   -> accept Mara/Nera investigation [investigation]
   -> defeat Rook + hear pass tone
@@ -29,8 +29,8 @@ Quarry route remains available after the hoist shortcut opens.
 |---|---|---|---|
 | First resonance | South arrival trigger | none | `low_bell_tone_seen` |
 | New handler | Nera interaction | tone seen, no starter | `low_bell_starter_chosen` |
-| Clear the path | tutorial victory | starter chosen | `low_bell_tutorial_won`, capture kit |
-| Hear the accounts | civic plinth scene | tutorial won | `low_bell_story:investigation` |
+| Clear the path | tutorial encounter resolves by win, capture or retreat | starter chosen | `low_bell_tutorial_cleared`, capture kit |
+| Hear the accounts | civic plinth scene | tutorial cleared | `low_bell_story:investigation` |
 | Warden's test | Rook victory | investigation | `low_bell_rook_defeated` |
 | Trace the tone | pass resonance interaction | Rook defeated | `low_bell_pass_trace` |
 | Find the disturbance | quarry survey evidence | pass trace | `low_bell_story:quarry_discovered` |

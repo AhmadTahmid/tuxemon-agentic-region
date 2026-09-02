@@ -106,8 +106,8 @@ world_synthesis.production_slice render low_bell`.
 
 ## Final authored coverage
 
-The canonical episode contains 7 maps, 17 logical NPCs, 72 authored events,
-19 mandatory story events, 14 warps, 7 encounter zones, 70 placed props, 84
+The canonical episode contains 7 maps, 17 logical NPCs, 71 authored events,
+18 mandatory story events, 14 warps, 7 encounter zones, 70 placed props, 84
 dialogue entries and 10 species across the three random ecology tables. Seven
 authored combat beats include the real Jemuar climax. Counts are coverage
 evidence only; the separate density report lists each event's purpose and does

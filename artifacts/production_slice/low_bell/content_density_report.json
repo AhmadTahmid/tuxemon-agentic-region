@@ -31,12 +31,6 @@
           "trigger": "touch"
         },
         {
-          "event": "tutorial_victory",
-          "purpose": "capture kit and next objective",
-          "mandatory": true,
-          "trigger": "init"
-        },
-        {
           "event": "vibrating_rail_evidence",
           "purpose": "environmental evidence that stone and metal carry the tone",
           "mandatory": false,
