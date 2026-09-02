@@ -66,3 +66,16 @@ Palette review is constrained to existing repository assets:
 Exact tile IDs will be recorded by the compiler palette catalogue and checked
 through deterministic full-map renders before client launch.
 
+## Milestone 2 coverage
+
+The first playable golden path now compiles all seven declared maps. It
+includes starter selection, a scripted tutorial encounter, capture devices and
+wild zones, Ashenbell's introduction, state-dependent village dialogue,
+Rook's real trainer party, Split Crown resonance, Iven's survey evidence, a
+required return for Tovin's knowledge, the lower works, a real Jemuar battle,
+a separate post-battle physical resolution, return-to-town closure, rewards
+and an episode-complete ending hook.
+
+Content completion remains intentionally open for Milestone 3: both optional
+quests, three curiosity secrets, four additional authored combat beats, the
+three-control puzzle, the hoist shortcut and richer post-state reactions.

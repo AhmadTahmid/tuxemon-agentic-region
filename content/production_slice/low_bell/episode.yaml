@@ -1,0 +1,877 @@
+metadata:
+  format_version: "1.0"
+  slug: low_bell
+  title: "Ashenbell: The Low Bell"
+  seed: 43117
+  revision: 1
+  target_minutes: [60, 90]
+  start_map: low_bell_south_approach
+  start_position: [17, 42]
+  player_name: Rowan
+  player_sprite: adventurer
+
+palettes:
+  prototype_outdoor:
+    source: ../../tuxemon/gfx/tilesets/prototyping_outdoor.tsx
+    tiles:
+      grass: 33
+      forest_floor: 36
+      path: 193
+      water: 45
+      tree: 47
+      flower: 475
+      shrub: 476
+      rock: 54
+      boulder: 50
+      stone_floor: 193
+      worked_stone: 50
+      metal: 210
+    stamps:
+      tree_tall:
+        - [15]
+        - [47]
+      sign:
+        - [306]
+        - [338]
+        - [370]
+      house:
+        - [850, 851, 852, 853]
+        - [882, 883, 884, 885]
+        - [914, 915, 916, 917]
+        - [946, 947, 948, 949]
+        - [978, 979, 980, 981]
+      plinth:
+        - [50, 50]
+        - [54, 54]
+      hoist:
+        - [210, 210, 210]
+        - [242, 50, 242]
+
+npcs:
+  - {slug: low_bell_nera, sprite: scientist, template: scientist}
+  - {slug: low_bell_mara, sprite: granny, template: granny}
+  - {slug: low_bell_tovin, sprite: miner_blue, combat_sheet: miner, template: miner}
+  - {slug: low_bell_jori, sprite: childactor_fiery, combat_sheet: childactor, template: childactor}
+  - {slug: low_bell_iven, sprite: shopkeeper, template: shopkeeper}
+  - {slug: low_bell_sela, sprite: scientist_fiery, combat_sheet: scientist, template: scientist}
+  - slug: low_bell_rook
+    sprite: knight_green
+    combat_sheet: knight
+    template: knight
+    party:
+      - {slug: rockitten, level: 7, gender: female}
+      - {slug: flacono, level: 7, gender: male}
+  - {slug: low_bell_alda, sprite: florist, template: florist}
+  - {slug: low_bell_bren, sprite: miner_green, combat_sheet: miner, template: miner}
+  - {slug: low_bell_caro, sprite: barmaid, template: barmaid}
+  - {slug: low_bell_demas, sprite: picnicker, template: picnicker}
+  - {slug: low_bell_etti, sprite: monk, template: monk}
+  - {slug: low_bell_pell, sprite: postboy, template: postboy}
+  - slug: low_bell_jemuar
+    sprite: landrace
+    combat_sheet: snugglepot
+    template: snugglepot
+    party:
+      - {slug: jemuar, level: 11, gender: neuter, money_mod: 1, exp_req_mod: 2}
+
+encounters:
+  - slug: low_bell_south_wild
+    entries:
+      - {monster: shybulb, encounter_rate: 35, level_range: [3, 5]}
+      - {monster: budaye, encounter_rate: 25, level_range: [3, 5]}
+      - {monster: elofly, encounter_rate: 25, level_range: [4, 5]}
+      - {monster: caper, encounter_rate: 15, level_range: [4, 6]}
+  - slug: low_bell_highland_wild
+    entries:
+      - {monster: rockitten, encounter_rate: 35, level_range: [6, 8]}
+      - {monster: flacono, encounter_rate: 30, level_range: [6, 8]}
+      - {monster: baddrscratch, encounter_rate: 20, level_range: [7, 9]}
+      - {monster: corvix, encounter_rate: 15, level_range: [7, 9]}
+  - slug: low_bell_quarry_wild
+    entries:
+      - {monster: slichen, encounter_rate: 55, level_range: [7, 9]}
+      - {monster: rockat, encounter_rate: 45, level_range: [8, 10]}
+
+maps:
+  - slug: low_bell_south_approach
+    title: South Approach
+    role: opening hook, onboarding and sheltered ascent
+    width: 34
+    height: 46
+    palette: prototype_outdoor
+    base_tile: forest_floor
+    environment: grass
+    music: music_approaching_the_green_grass
+    boundary:
+      depth: 2
+      tile: tree
+      openings:
+        - {x: 15, y: 44, width: 4, height: 2}
+        - {x: 15, y: 0, width: 4, height: 2}
+    paths:
+      - slug: south_main_path
+        width: 3
+        points:
+          - {x: 17, y: 45}
+          - {x: 17, y: 39}
+          - {x: 12, y: 34}
+          - {x: 13, y: 27}
+          - {x: 20, y: 21}
+          - {x: 22, y: 13}
+          - {x: 17, y: 6}
+          - {x: 17, y: 0}
+      - slug: capture_pocket_path
+        width: 2
+        points: [{x: 13, y: 28}, {x: 7, y: 25}, {x: 6, y: 20}]
+      - slug: overlook_path
+        width: 2
+        points: [{x: 21, y: 14}, {x: 28, y: 11}]
+    fills:
+      - {slug: wet_runoff, bounds: {x: 3, y: 16, width: 6, height: 8}, tile: grass, layer: Ground}
+      - {slug: stream_band, bounds: {x: 2, y: 30, width: 30, height: 2}, tile: water, layer: Terrain}
+      - {slug: stream_crossing, bounds: {x: 11, y: 30, width: 4, height: 2}, tile: path, layer: Terrain}
+    collisions:
+      - {slug: stream_left, bounds: {x: 2, y: 30, width: 9, height: 2}}
+      - {slug: stream_right, bounds: {x: 15, y: 30, width: 17, height: 2}}
+    props:
+      - {slug: south_sign, at: {x: 20, y: 38}, visual: sign, blocks_movement: true, interaction_anchor: {x: 20, y: 38}}
+      - {slug: track_rail, at: {x: 10, y: 29}, visual: metal, blocks_movement: true, interaction_anchor: {x: 10, y: 29}}
+      - {slug: overlook_rock, at: {x: 29, y: 10}, visual: boulder, blocks_movement: true}
+    warps:
+      - slug: south_to_village
+        at: {x: 17, y: 0}
+        facing: up
+        target_map: low_bell_ashenbell
+        target: {x: 22, y: 38}
+        conditions: [is variable_set low_bell_tutorial_won:yes]
+    npcs:
+      - {slug: low_bell_nera, at: {x: 16, y: 39}}
+    encounters:
+      - {slug: south_capture_zone, bounds: {x: 3, y: 17, width: 7, height: 8}, table: low_bell_south_wild, probability: 14}
+      - {slug: south_upper_zone, bounds: {x: 19, y: 15, width: 8, height: 8}, table: low_bell_south_wild, probability: 9}
+    events:
+      - slug: opening_low_tone
+        at: {x: 0, y: 0}
+        trigger: init
+        anchor_required: false
+        purpose: opening hook and creature displacement
+        mandatory: true
+        conditions: [not variable_set low_bell_tone_seen:yes]
+        actions:
+          - play_sound japanese_temple_bell_small,0.55
+          - camera_shake 0.7,0.8
+          - translated_dialog low_bell_opening_tone
+          - translated_dialog low_bell_nera_opening
+          - set_teleport_faint player,low_bell_south_approach.tmx,17,42
+          - set_variable low_bell_tone_seen:yes
+      - slug: choose_starter
+        at: {x: 16, y: 39}
+        trigger: talk
+        npc: low_bell_nera
+        purpose: meaningful starter selection
+        mandatory: true
+        conditions:
+          - is variable_set low_bell_tone_seen:yes
+          - not variable_set low_bell_starter_chosen:yes
+        actions:
+          - translated_dialog low_bell_nera_starter
+          - choice_monster anoleaf:flounce:rockitten,low_bell_starter_choice
+          - add_monster low_bell_starter_choice,5
+          - add_item potion,2
+          - set_variable low_bell_starter_chosen:yes
+      - slug: nera_before_tutorial
+        at: {x: 16, y: 39}
+        trigger: talk
+        npc: low_bell_nera
+        purpose: clear immediate goal
+        conditions:
+          - is variable_set low_bell_starter_chosen:yes
+          - not variable_set low_bell_tutorial_won:yes
+        actions: [translated_dialog low_bell_nera_clear_path]
+      - slug: frightened_shybulb_tutorial
+        at: {x: 13, y: 35}
+        bounds: {x: 11, y: 34, width: 5, height: 2}
+        trigger: touch
+        purpose: real tutorial battle caused by the tone
+        mandatory: true
+        conditions:
+          - is variable_set low_bell_starter_chosen:yes
+          - not battle_outcome player,won,wild_encounter
+        actions:
+          - translated_dialog low_bell_tutorial_creature
+          - wild_encounter shybulb,3
+      - slug: tutorial_victory
+        at: {x: 0, y: 0}
+        trigger: init
+        anchor_required: false
+        purpose: capture kit and next objective
+        mandatory: true
+        conditions:
+          - is battle_outcome player,won,wild_encounter
+          - not variable_set low_bell_tutorial_won:yes
+        actions:
+          - translated_dialog low_bell_nera_after_tutorial
+          - add_item tuxeball,5
+          - modify_monster_health
+          - set_variable low_bell_tutorial_won:yes
+      - slug: vibrating_rail_evidence
+        at: {x: 10, y: 29}
+        trigger: interact
+        purpose: environmental evidence that stone and metal carry the tone
+        conditions: [not variable_set low_bell_south_rail_seen:yes]
+        actions:
+          - translated_dialog low_bell_south_rail
+          - set_variable low_bell_south_rail_seen:yes
+      - slug: settlement_reveal
+        at: {x: 17, y: 6}
+        bounds: {x: 15, y: 5, width: 5, height: 2}
+        trigger: touch
+        purpose: reveal Ashenbell and Split Crown together
+        conditions:
+          - is variable_set low_bell_tutorial_won:yes
+          - not variable_set low_bell_settlement_revealed:yes
+        actions:
+          - translated_dialog low_bell_settlement_reveal
+          - set_variable low_bell_settlement_revealed:yes
+
+  - slug: low_bell_ashenbell
+    title: Ashenbell
+    role: inhabited hub, investigation and return resolution
+    width: 44
+    height: 40
+    palette: prototype_outdoor
+    base_tile: grass
+    environment: grass
+    music: music_07_town
+    boundary:
+      depth: 1
+      tile: tree
+      openings:
+        - {x: 20, y: 38, width: 5, height: 2}
+        - {x: 20, y: 0, width: 5, height: 2}
+    paths:
+      - slug: village_spine
+        width: 4
+        points: [{x: 22, y: 39}, {x: 22, y: 28}, {x: 21, y: 19}, {x: 22, y: 0}]
+      - slug: residential_lane
+        width: 3
+        points: [{x: 21, y: 20}, {x: 10, y: 18}, {x: 5, y: 13}]
+      - slug: workshop_lane
+        width: 3
+        points: [{x: 22, y: 25}, {x: 33, y: 24}, {x: 38, y: 19}]
+      - slug: garden_lane
+        width: 3
+        points: [{x: 22, y: 31}, {x: 10, y: 32}]
+    fills:
+      - {slug: garden_rows_a, bounds: {x: 4, y: 28, width: 9, height: 2}, tile: forest_floor, layer: Ground}
+      - {slug: garden_rows_b, bounds: {x: 4, y: 32, width: 9, height: 2}, tile: forest_floor, layer: Ground}
+      - {slug: memorial_square, bounds: {x: 17, y: 16, width: 10, height: 8}, tile: path, layer: Terrain}
+    props:
+      - {slug: memorial_plinth, at: {x: 20, y: 17}, visual: plinth, blocks_movement: true, interaction_anchor: {x: 21, y: 19}}
+      - {slug: archive_building, at: {x: 4, y: 8}, visual: house, interaction_anchor: {x: 6, y: 13}}
+      - {slug: workshop_building, at: {x: 35, y: 14}, visual: house, interaction_anchor: {x: 37, y: 19}}
+      - {slug: home_a, at: {x: 9, y: 11}, visual: house}
+      - {slug: home_b, at: {x: 29, y: 8}, visual: house}
+      - {slug: north_sign, at: {x: 25, y: 4}, visual: sign, blocks_movement: true, interaction_anchor: {x: 25, y: 4}}
+    collisions:
+      - {slug: archive_roof, bounds: {x: 4, y: 8, width: 4, height: 4}}
+      - {slug: workshop_roof, bounds: {x: 35, y: 14, width: 4, height: 4}}
+      - {slug: home_a_block, bounds: {x: 9, y: 11, width: 4, height: 5}}
+      - {slug: home_b_block, bounds: {x: 29, y: 8, width: 4, height: 5}}
+    warps:
+      - {slug: village_to_south, at: {x: 22, y: 39}, facing: down, target_map: low_bell_south_approach, target: {x: 17, y: 2}}
+      - slug: village_to_pass
+        at: {x: 22, y: 0}
+        facing: up
+        target_map: low_bell_highland_pass
+        target: {x: 18, y: 46}
+        conditions: [is variable_set low_bell_story:investigation]
+      - {slug: enter_archive, at: {x: 6, y: 12}, facing: up, target_map: low_bell_mara_archive, target: {x: 8, y: 10}}
+      - {slug: enter_workshop, at: {x: 37, y: 18}, facing: up, target_map: low_bell_tovin_workshop, target: {x: 8, y: 10}}
+    npcs:
+      - {slug: low_bell_nera, at: {x: 24, y: 22}}
+      - {slug: low_bell_mara, at: {x: 19, y: 20}}
+      - {slug: low_bell_iven, at: {x: 24, y: 19}}
+      - {slug: low_bell_jori, at: {x: 12, y: 20}}
+      - {slug: low_bell_sela, at: {x: 24, y: 7}}
+      - {slug: low_bell_alda, at: {x: 8, y: 31}}
+      - {slug: low_bell_bren, at: {x: 32, y: 25}}
+      - {slug: low_bell_caro, at: {x: 13, y: 14}}
+      - {slug: low_bell_demas, at: {x: 15, y: 33}}
+      - {slug: low_bell_etti, at: {x: 18, y: 18}}
+      - {slug: low_bell_pell, at: {x: 27, y: 28}}
+    events:
+      - slug: village_arrival_scene
+        at: {x: 22, y: 37}
+        bounds: {x: 20, y: 36, width: 5, height: 3}
+        trigger: touch
+        purpose: concise civic conflict and main objective
+        mandatory: true
+        conditions:
+          - is variable_set low_bell_tutorial_won:yes
+          - not variable_set low_bell_story
+        actions:
+          - translated_dialog low_bell_village_arrival
+          - translated_dialog low_bell_mara_intro
+          - translated_dialog low_bell_iven_intro
+          - translated_dialog low_bell_nera_investigation
+          - set_teleport_faint player,low_bell_ashenbell.tmx,22,37
+          - set_variable low_bell_story:investigation
+      - slug: mara_investigation
+        at: {x: 19, y: 20}
+        trigger: talk
+        npc: low_bell_mara
+        purpose: historical boundary and main objective
+        conditions: [is variable_set low_bell_story:investigation]
+        actions: [translated_dialog low_bell_mara_investigation]
+      - slug: iven_investigation
+        at: {x: 24, y: 19}
+        trigger: talk
+        npc: low_bell_iven
+        purpose: economic conflict and concealed survey
+        conditions: [is variable_set low_bell_story:investigation]
+        actions: [translated_dialog low_bell_iven_investigation]
+      - slug: nera_investigation
+        at: {x: 24, y: 22}
+        trigger: talk
+        npc: low_bell_nera
+        purpose: ecology objective
+        conditions: [is variable_set low_bell_story:investigation]
+        actions: [translated_dialog low_bell_nera_town]
+      - slug: jori_intro
+        at: {x: 12, y: 20}
+        trigger: talk
+        npc: low_bell_jori
+        purpose: personal consequence and future optional quest
+        conditions: [not variable_set low_bell_story:resolved]
+        actions: [translated_dialog low_bell_jori_intro]
+      - slug: sela_investigation
+        at: {x: 24, y: 7}
+        trigger: talk
+        npc: low_bell_sela
+        purpose: wind and runoff correlation
+        conditions: [is variable_set low_bell_story:investigation]
+        actions: [translated_dialog low_bell_sela_investigation]
+      - slug: village_quarry_discovered_notice
+        at: {x: 22, y: 26}
+        bounds: {x: 19, y: 25, width: 7, height: 2}
+        trigger: touch
+        purpose: point player to Tovin after finding survey evidence
+        conditions:
+          - is variable_set low_bell_story:quarry_discovered
+          - not variable_set low_bell_tovin_briefed:yes
+          - not variable_set low_bell_return_prompt_seen:yes
+        actions:
+          - translated_dialog low_bell_return_for_tovin
+          - set_variable low_bell_return_prompt_seen:yes
+      - slug: resolution_prompt
+        at: {x: 21, y: 20}
+        trigger: interact
+        purpose: complete the return-to-town ending at the memorial
+        mandatory: true
+        conditions:
+          - is variable_set low_bell_story:resolved
+          - not variable_set low_bell_episode_complete:yes
+        actions:
+          - translated_dialog low_bell_return_mara
+          - translated_dialog low_bell_return_iven
+          - translated_dialog low_bell_return_tovin
+          - translated_dialog low_bell_return_nera
+          - add_item revive,1
+          - add_item tuxeball_hearty,3
+          - set_variable low_bell_episode_complete:yes
+          - translated_dialog low_bell_ending_hook
+      - slug: mara_resolved
+        at: {x: 19, y: 20}
+        trigger: talk
+        npc: low_bell_mara
+        purpose: changed memorial interpretation
+        conditions: [is variable_set low_bell_story:resolved]
+        actions: [translated_dialog low_bell_mara_resolved]
+      - slug: iven_resolved
+        at: {x: 24, y: 19}
+        trigger: talk
+        npc: low_bell_iven
+        purpose: accepted responsibility
+        conditions: [is variable_set low_bell_story:resolved]
+        actions: [translated_dialog low_bell_iven_resolved]
+      - slug: nera_resolved
+        at: {x: 24, y: 22}
+        trigger: talk
+        npc: low_bell_nera
+        purpose: ecological consequence
+        conditions: [is variable_set low_bell_story:resolved]
+        actions: [translated_dialog low_bell_nera_resolved]
+      - slug: jori_resolved
+        at: {x: 12, y: 20}
+        trigger: talk
+        npc: low_bell_jori
+        purpose: unresolved optional personal stake before content completion
+        conditions: [is variable_set low_bell_story:resolved]
+        actions: [translated_dialog low_bell_jori_resolved_pending]
+      - slug: alda_intro
+        at: {x: 8, y: 31}
+        trigger: talk
+        npc: low_bell_alda
+        purpose: productive edge and displaced creatures
+        conditions: [not variable_set low_bell_story:resolved]
+        actions: [translated_dialog low_bell_alda_intro]
+      - slug: alda_resolved
+        at: {x: 8, y: 31}
+        trigger: talk
+        npc: low_bell_alda
+        purpose: visible ecological recovery
+        conditions: [is variable_set low_bell_story:resolved]
+        actions: [translated_dialog low_bell_alda_resolved]
+      - slug: bren_intro
+        at: {x: 32, y: 25}
+        trigger: talk
+        npc: low_bell_bren
+        purpose: material evidence without causal overclaim
+        conditions: [not variable_set low_bell_story:resolved]
+        actions: [translated_dialog low_bell_bren_intro]
+      - slug: bren_resolved
+        at: {x: 32, y: 25}
+        trigger: talk
+        npc: low_bell_bren
+        purpose: post-story maintenance consequence
+        conditions: [is variable_set low_bell_story:resolved]
+        actions: [translated_dialog low_bell_bren_resolved]
+      - slug: caro_intro
+        at: {x: 13, y: 14}
+        trigger: talk
+        npc: low_bell_caro
+        purpose: distinguish rumour from evidence
+        conditions: [not variable_set low_bell_story:resolved]
+        actions: [translated_dialog low_bell_caro_intro]
+      - slug: caro_resolved
+        at: {x: 13, y: 14}
+        trigger: talk
+        npc: low_bell_caro
+        purpose: changed public mood
+        conditions: [is variable_set low_bell_story:resolved]
+        actions: [translated_dialog low_bell_caro_resolved]
+
+  - slug: low_bell_mara_archive
+    title: Mara's Archive
+    role: records interior and physical bell explanation
+    width: 16
+    height: 12
+    palette: prototype_outdoor
+    base_tile: stone_floor
+    environment: interior
+    music: music_23_inn
+    boundary: {depth: 1, tile: worked_stone}
+    paths:
+      - {slug: archive_aisle, width: 3, points: [{x: 8, y: 11}, {x: 8, y: 3}]}
+    props:
+      - {slug: bell_diagram, at: {x: 8, y: 2}, visual: sign, blocks_movement: true, interaction_anchor: {x: 8, y: 2}}
+      - {slug: record_shelf_left, at: {x: 3, y: 3}, visual: metal, blocks_movement: true}
+      - {slug: record_shelf_right, at: {x: 12, y: 3}, visual: metal, blocks_movement: true}
+    warps:
+      - {slug: archive_exit, at: {x: 8, y: 11}, facing: down, target_map: low_bell_ashenbell, target: {x: 6, y: 14}}
+    events:
+      - slug: inspect_bell_diagram
+        at: {x: 8, y: 2}
+        trigger: interact
+        purpose: show why the current tone is unlike the warning bells
+        actions:
+          - translated_dialog low_bell_archive_diagram
+          - set_variable low_bell_bell_diagram_seen:yes
+
+  - slug: low_bell_tovin_workshop
+    title: Tovin's Workshop
+    role: staged quarry knowledge and return dependency
+    width: 16
+    height: 12
+    palette: prototype_outdoor
+    base_tile: stone_floor
+    environment: interior
+    music: music_23_inn
+    boundary: {depth: 1, tile: worked_stone}
+    paths:
+      - {slug: workshop_aisle, width: 3, points: [{x: 8, y: 11}, {x: 8, y: 4}]}
+    props:
+      - {slug: hoist_model, at: {x: 2, y: 2}, visual: hoist, blocks_movement: true, interaction_anchor: {x: 3, y: 4}}
+    warps:
+      - {slug: workshop_exit, at: {x: 8, y: 11}, facing: down, target_map: low_bell_ashenbell, target: {x: 37, y: 20}}
+    npcs:
+      - {slug: low_bell_tovin, at: {x: 9, y: 5}}
+    events:
+      - slug: tovin_initial
+        at: {x: 9, y: 5}
+        trigger: talk
+        npc: low_bell_tovin
+        purpose: guarded knowledge and gradual guilt
+        conditions: [is variable_set low_bell_story:investigation]
+        actions: [translated_dialog low_bell_tovin_initial]
+      - slug: tovin_quarry_briefing
+        at: {x: 9, y: 5}
+        trigger: talk
+        npc: low_bell_tovin
+        purpose: make survivor knowledge mechanically useful
+        mandatory: true
+        conditions:
+          - is variable_set low_bell_story:quarry_discovered
+          - not variable_set low_bell_tovin_briefed:yes
+        actions:
+          - translated_dialog low_bell_tovin_briefing
+          - set_variable low_bell_tovin_briefed:yes
+      - slug: tovin_after_briefing
+        at: {x: 9, y: 5}
+        trigger: talk
+        npc: low_bell_tovin
+        purpose: concise procedural reminder
+        conditions:
+          - is variable_set low_bell_tovin_briefed:yes
+          - not variable_set low_bell_story:resolved
+        actions: [translated_dialog low_bell_tovin_reminder]
+      - slug: tovin_resolved
+        at: {x: 9, y: 5}
+        trigger: talk
+        npc: low_bell_tovin
+        purpose: changed guilt state
+        conditions: [is variable_set low_bell_story:resolved]
+        actions: [translated_dialog low_bell_tovin_resolved]
+
+  - slug: low_bell_highland_pass
+    title: Highland Pass
+    role: exposed trainer route and stronger geographic evidence
+    width: 36
+    height: 48
+    palette: prototype_outdoor
+    base_tile: grass
+    environment: grass
+    music: music_08_overworld
+    boundary:
+      depth: 2
+      tile: boulder
+      openings:
+        - {x: 16, y: 46, width: 5, height: 2}
+        - {x: 34, y: 22, width: 2, height: 5}
+    paths:
+      - slug: pass_main
+        width: 3
+        points:
+          - {x: 18, y: 47}
+          - {x: 17, y: 40}
+          - {x: 11, y: 34}
+          - {x: 13, y: 27}
+          - {x: 20, y: 22}
+          - {x: 18, y: 14}
+          - {x: 15, y: 5}
+      - slug: quarry_branch
+        width: 3
+        points: [{x: 20, y: 23}, {x: 29, y: 25}, {x: 35, y: 24}]
+      - slug: split_crown_view
+        width: 2
+        points: [{x: 18, y: 14}, {x: 27, y: 10}]
+    fills:
+      - {slug: exposed_stone_band, bounds: {x: 4, y: 16, width: 28, height: 9}, tile: forest_floor, layer: Ground}
+    props:
+      - {slug: split_crown_left, at: {x: 27, y: 7}, visual: boulder, blocks_movement: true}
+      - {slug: split_crown_right, at: {x: 29, y: 7}, visual: boulder, blocks_movement: true}
+      - {slug: quarry_fork_sign, at: {x: 27, y: 25}, visual: sign, blocks_movement: true, interaction_anchor: {x: 27, y: 25}}
+    warps:
+      - {slug: pass_to_village, at: {x: 18, y: 47}, facing: down, target_map: low_bell_ashenbell, target: {x: 22, y: 2}}
+      - slug: pass_to_quarry
+        at: {x: 35, y: 24}
+        facing: right
+        target_map: low_bell_quarry_exterior
+        target: {x: 2, y: 18}
+        conditions: [is variable_set low_bell_pass_trace:yes]
+    npcs:
+      - {slug: low_bell_rook, at: {x: 13, y: 31}}
+    encounters:
+      - {slug: highland_lower_wild, bounds: {x: 7, y: 34, width: 10, height: 8}, table: low_bell_highland_wild, probability: 10}
+      - {slug: highland_upper_wild, bounds: {x: 15, y: 15, width: 10, height: 8}, table: low_bell_highland_wild, probability: 12}
+    events:
+      - slug: rook_challenge
+        at: {x: 13, y: 31}
+        trigger: talk
+        npc: low_bell_rook
+        purpose: motivated trainer gate and practical route test
+        mandatory: true
+        conditions:
+          - is variable_set low_bell_story:investigation
+          - not battle_outcome player,won,low_bell_rook
+        actions:
+          - translated_dialog low_bell_rook_challenge
+          - start_battle player,low_bell_rook
+      - slug: rook_victory
+        at: {x: 0, y: 0}
+        trigger: init
+        anchor_required: false
+        purpose: acknowledge victory and open upper pass
+        mandatory: true
+        conditions:
+          - is battle_outcome player,won,low_bell_rook
+          - not variable_set low_bell_rook_defeated:yes
+        actions:
+          - translated_dialog low_bell_rook_victory
+          - modify_monster_health
+          - set_variable low_bell_rook_defeated:yes
+      - slug: rook_after
+        at: {x: 13, y: 31}
+        trigger: talk
+        npc: low_bell_rook
+        purpose: local knowledge after the test
+        conditions: [is variable_set low_bell_rook_defeated:yes]
+        actions: [translated_dialog low_bell_rook_after]
+      - slug: split_crown_resonance
+        at: {x: 19, y: 17}
+        bounds: {x: 16, y: 16, width: 7, height: 3}
+        trigger: touch
+        purpose: stronger tone and terrain-transmission evidence
+        mandatory: true
+        conditions:
+          - is variable_set low_bell_rook_defeated:yes
+          - not variable_set low_bell_pass_trace:yes
+        actions:
+          - play_sound japanese_temple_bell_small,0.7
+          - camera_shake 0.9,1.0
+          - translated_dialog low_bell_split_crown_tone
+          - set_variable low_bell_pass_trace:yes
+      - slug: quarry_fork_read
+        at: {x: 27, y: 25}
+        trigger: interact
+        purpose: clear quarry decision and recent track evidence
+        conditions: [is variable_set low_bell_pass_trace:yes]
+        actions: [translated_dialog low_bell_quarry_fork]
+
+  - slug: low_bell_quarry_exterior
+    title: Old Bell Quarry
+    role: investigation evidence and lower-works threshold
+    width: 34
+    height: 36
+    palette: prototype_outdoor
+    base_tile: forest_floor
+    environment: cave
+    music: music_15_dungeon
+    boundary:
+      depth: 2
+      tile: worked_stone
+      openings:
+        - {x: 0, y: 16, width: 2, height: 5}
+        - {x: 15, y: 34, width: 5, height: 2}
+    paths:
+      - slug: quarry_track
+        width: 4
+        points: [{x: 0, y: 18}, {x: 9, y: 18}, {x: 15, y: 23}, {x: 17, y: 35}]
+      - slug: survey_runnel_path
+        width: 2
+        points: [{x: 10, y: 19}, {x: 14, y: 11}, {x: 23, y: 9}]
+    fills:
+      - {slug: disturbed_runnel, bounds: {x: 12, y: 9, width: 13, height: 3}, tile: water, layer: Terrain}
+      - {slug: worked_floor, bounds: {x: 8, y: 16, width: 18, height: 12}, tile: stone_floor, layer: Ground}
+    collisions:
+      - {slug: runnel_bank, bounds: {x: 12, y: 9, width: 13, height: 1}}
+    props:
+      - {slug: survey_stake, at: {x: 23, y: 12}, visual: sign, blocks_movement: true, interaction_anchor: {x: 23, y: 12}}
+      - {slug: collapsed_fitting, at: {x: 15, y: 25}, visual: metal, blocks_movement: true, interaction_anchor: {x: 15, y: 25}}
+    warps:
+      - {slug: quarry_to_pass, at: {x: 0, y: 18}, facing: left, target_map: low_bell_highland_pass, target: {x: 33, y: 24}}
+      - slug: quarry_to_lower
+        at: {x: 17, y: 35}
+        facing: down
+        target_map: low_bell_quarry_lower
+        target: {x: 19, y: 2}
+        conditions: [is variable_set low_bell_tovin_briefed:yes]
+    npcs:
+      - {slug: low_bell_sela, at: {x: 8, y: 20}}
+    encounters:
+      - {slug: quarry_edge_wild, bounds: {x: 20, y: 16, width: 9, height: 10}, table: low_bell_quarry_wild, probability: 10}
+    events:
+      - slug: survey_disturbance
+        at: {x: 23, y: 12}
+        trigger: interact
+        purpose: reveal Iven's recent drainage disturbance
+        mandatory: true
+        conditions: [is variable_set low_bell_story:investigation]
+        actions:
+          - translated_dialog low_bell_survey_disturbance
+          - set_variable low_bell_story:quarry_discovered
+      - slug: sela_before_tovin
+        at: {x: 8, y: 20}
+        trigger: talk
+        npc: low_bell_sela
+        purpose: require Tovin's distinct expertise without making Sela passive
+        conditions:
+          - is variable_set low_bell_story:quarry_discovered
+          - not variable_set low_bell_tovin_briefed:yes
+        actions: [translated_dialog low_bell_sela_need_tovin]
+      - slug: sela_after_tovin
+        at: {x: 8, y: 20}
+        trigger: talk
+        npc: low_bell_sela
+        purpose: confirm safe entry after briefing
+        conditions: [is variable_set low_bell_tovin_briefed:yes]
+        actions: [translated_dialog low_bell_sela_enter]
+      - slug: fitting_evidence
+        at: {x: 15, y: 25}
+        trigger: interact
+        purpose: old metal and fractured stone evidence
+        actions: [translated_dialog low_bell_quarry_fitting]
+
+  - slug: low_bell_quarry_lower
+    title: Quarry Lower Works
+    role: small dungeon, grounded reveal, climax and physical resolution
+    width: 38
+    height: 40
+    palette: prototype_outdoor
+    base_tile: stone_floor
+    environment: cave
+    music: music_dungeon_loop_slow
+    boundary:
+      depth: 2
+      tile: worked_stone
+      openings:
+        - {x: 17, y: 0, width: 5, height: 2}
+    paths:
+      - slug: lower_gallery
+        width: 3
+        points:
+          - {x: 19, y: 0}
+          - {x: 19, y: 8}
+          - {x: 11, y: 14}
+          - {x: 12, y: 24}
+          - {x: 21, y: 29}
+          - {x: 27, y: 34}
+      - slug: assembly_loop
+        width: 2
+        points: [{x: 12, y: 23}, {x: 23, y: 20}, {x: 28, y: 28}, {x: 27, y: 34}]
+    fills:
+      - {slug: runoff_crack, bounds: {x: 7, y: 17, width: 18, height: 2}, tile: water, layer: Terrain}
+      - {slug: resonant_chamber, bounds: {x: 22, y: 27, width: 11, height: 9}, tile: forest_floor, layer: Ground}
+    collisions:
+      - {slug: runoff_left, bounds: {x: 7, y: 17, width: 5, height: 2}}
+      - {slug: runoff_right, bounds: {x: 15, y: 17, width: 10, height: 2}}
+      - {slug: collapse_a, bounds: {x: 3, y: 7, width: 7, height: 4}}
+      - {slug: collapse_b, bounds: {x: 27, y: 9, width: 7, height: 5}}
+    props:
+      - {slug: old_hoist, at: {x: 9, y: 21}, visual: hoist, blocks_movement: true, interaction_anchor: {x: 10, y: 23}}
+      - {slug: buried_assembly, at: {x: 29, y: 33}, visual: plinth, blocks_movement: true, interaction_anchor: {x: 29, y: 33}}
+      - {slug: collapse_marker, at: {x: 12, y: 10}, visual: sign, blocks_movement: true, interaction_anchor: {x: 12, y: 10}}
+    warps:
+      - {slug: lower_to_quarry, at: {x: 19, y: 0}, facing: up, target_map: low_bell_quarry_exterior, target: {x: 17, y: 33}}
+    npcs:
+      - slug: low_bell_jemuar
+        at: {x: 27, y: 33}
+        conditions: [not variable_set low_bell_boss_defeated:yes]
+    encounters:
+      - {slug: lower_works_wild, bounds: {x: 9, y: 10, width: 10, height: 16}, table: low_bell_quarry_wild, probability: 8}
+    events:
+      - slug: collapse_evidence
+        at: {x: 12, y: 10}
+        trigger: interact
+        purpose: environmental account of collapse and silent shift
+        actions: [translated_dialog low_bell_lower_collapse]
+      - slug: hoist_knowledge
+        at: {x: 10, y: 23}
+        trigger: interact
+        purpose: apply Tovin's knowledge to reach the resonant chamber
+        mandatory: true
+        conditions:
+          - is variable_set low_bell_tovin_briefed:yes
+          - not variable_set low_bell_hoist_stabilized:yes
+        actions:
+          - translated_dialog low_bell_hoist_apply
+          - play_sound sound_misc_07_metal,0.55
+          - set_variable low_bell_hoist_stabilized:yes
+      - slug: jemuar_climax
+        at: {x: 27, y: 33}
+        trigger: talk
+        npc: low_bell_jemuar
+        purpose: real boss-like battle with frightened territorial creature
+        mandatory: true
+        conditions:
+          - is variable_set low_bell_hoist_stabilized:yes
+          - not battle_outcome player,won,low_bell_jemuar
+        actions:
+          - play_sound japanese_temple_bell_small,0.8
+          - camera_shake 1.2,1.2
+          - translated_dialog low_bell_jemuar_reveal
+          - start_battle player,low_bell_jemuar
+      - slug: jemuar_victory
+        at: {x: 0, y: 0}
+        trigger: init
+        anchor_required: false
+        purpose: separate battle victory from environmental resolution
+        mandatory: true
+        conditions:
+          - is battle_outcome player,won,low_bell_jemuar
+          - not variable_set low_bell_boss_defeated:yes
+        actions:
+          - translated_dialog low_bell_jemuar_after
+          - modify_monster_health
+          - remove_npc low_bell_jemuar
+          - set_variable low_bell_boss_defeated:yes
+      - slug: damp_resonant_assembly
+        at: {x: 29, y: 33}
+        trigger: interact
+        purpose: physical post-battle action resolves runoff and vibration
+        mandatory: true
+        conditions:
+          - is variable_set low_bell_boss_defeated:yes
+          - not variable_set low_bell_story:resolved
+        actions:
+          - translated_dialog low_bell_assembly_action
+          - play_sound sound_misc_06_wood_and_metal,0.5
+          - camera_shake 0.35,0.5
+          - set_variable low_bell_story:resolved
+          - translated_dialog low_bell_return_objective
+
+dialogue:
+  low_bell_opening_tone: "A low note rolls under the rain. Leaves jump; frightened creatures spill onto the path."
+  low_bell_nera_opening: "Nera: That was no thunder. Stay close—those creatures are running from something."
+  low_bell_nera_starter: "Nera: You need a partner, not a weapon. Choose the one whose way of working makes sense to you."
+  low_bell_nera_clear_path: "Nera: The frightened Shybulb ahead cannot settle while we crowd it. Approach slowly; I will talk you through the battle."
+  low_bell_tutorial_creature: "The Shybulb shivers, then plants itself across the path."
+  low_bell_nera_after_tutorial: "Nera: Good. You gave it room to retreat. Take these Tuxeballs—some displaced creatures may accept a calmer approach."
+  low_bell_south_rail: "The old guide rail hums against the stream stones. Tiny tracks point uphill, away from the wet bank."
+  low_bell_settlement_reveal: "Ashenbell appears beyond the trees. Far above its roofs, Split Crown Ridge divides the cloud."
+  low_bell_village_arrival: "The memorial square is busy, but nobody is celebrating."
+  low_bell_mara_intro: "Mara: It is not one of our warning bells. Say that clearly before a rumour says otherwise."
+  low_bell_iven_intro: "Iven: A working warning line would be useful. Abandonment has not made this village safer—or richer."
+  low_bell_nera_investigation: "Nera: Creatures are leaving wet ground from here to the South Approach. We need the source, not a story about it."
+  low_bell_mara_investigation: "Mara: The old bells were measured, named and maintained. This tone is lower. Ask Sela what the ridge is carrying."
+  low_bell_iven_investigation: "Iven: I paid for a survey, nothing more. If a cleared ditch frightens people, perhaps the ditch needed attention."
+  low_bell_nera_town: "Nera: Garden species moved first, then woodland species. Whatever changed is travelling downhill through water or ground."
+  low_bell_jori_intro: "Jori: Squabbit follows noises under the floor. It ran north last night and did not come back."
+  low_bell_sela_investigation: "Sela: Every report follows heavy runoff and a west wind. Split Crown carries the tone; the source lies beyond its east shoulder."
+  low_bell_return_for_tovin: "The fresh survey marks match Tovin's hoist sketch. His workshop may hold the safe way into the lower works."
+  low_bell_return_mara: "Mara: We will keep the names and retire the machinery. A memorial is not an instruction to repeat the past."
+  low_bell_return_iven: "Iven: My crew opened the western runnel. I hid that because I wanted the survey to look harmless. I will pay to make it safe."
+  low_bell_return_tovin: "Tovin: I approved that last shift. Silence did not change it. I can still teach the next crew where to stop."
+  low_bell_return_nera: "Nera: Shybulb are back at the stream, and the garden Squabbit stopped digging at the foundations. The pressure is easing."
+  low_bell_ending_hook: "Nera pins a courier note beside the revised memorial notice: the western valley has reported the same displaced Corvix flight."
+  low_bell_mara_resolved: "Mara: The silent memorial remains. This year we will also read the maintenance oath—the part everyone stopped reading."
+  low_bell_iven_resolved: "Iven: Ashenbell still needs work. Reopening blindly was not work; it was wishing with other people's risk."
+  low_bell_nera_resolved: "Nera: Habitat is a better witness than rumour. The creatures are already drawing the new map for us."
+  low_bell_jori_resolved_pending: "Jori: The quarry path is safer now. I am going to keep watching for Squabbit's tracks."
+  low_bell_alda_intro: "Alda: Caper ate seedlings before. They never slept under my tool bench until that tone began."
+  low_bell_alda_resolved: "Alda: No one under the bench this morning. I had forgotten how welcome an ordinary bite mark could look."
+  low_bell_bren_intro: "Bren: These hairline cracks are old. The fresh grit inside them is not. I can tell you that much and no more."
+  low_bell_bren_resolved: "Bren: Iven bought drain stone. I made him buy inspection markers too."
+  low_bell_caro_intro: "Caro: Three guests heard a ghost; two heard weather; one slept through it. That is why I serve breakfast, not conclusions."
+  low_bell_caro_resolved: "Caro: Tonight's wager is whether the inn can be quiet enough for anyone to complain."
+  low_bell_archive_diagram: "The diagram shows three tuned bells, each with a narrow metal tongue. A note in Mara's hand reads: LOW TONE IS NOT A WARNING SIGNAL."
+  low_bell_tovin_initial: "Tovin: Hoists, drains, bells—people remember the nouns and forget the inspection. I will not help anyone reopen that place."
+  low_bell_tovin_briefing: "Tovin studies the survey mark. 'That runnel fed the lower fracture. Brace the cradle before you touch the hoist, or the stone will answer.'"
+  low_bell_tovin_reminder: "Tovin: Water first. Brace second. Hoist last. The order kept weight off the cracked shelf."
+  low_bell_tovin_resolved: "Tovin: I kept the procedure and buried the reason. Mara was right: facts cannot protect anyone if we refuse to speak them."
+  low_bell_rook_challenge: "Rook: The upper pass has nowhere to hide from wind or a panicked monster. Show me you can hold a line without chasing."
+  low_bell_rook_victory: "Rook: Good footing. Split Crown is loudest on the east shelf; follow the rock, not the echo."
+  low_bell_rook_after: "Rook: Corvix have left the west face. Rockitten are climbing out of cracks they normally sleep in. That is a direction, not bad luck."
+  low_bell_split_crown_tone: "The low tone arrives through the ridge before it reaches the air. Loose stones chatter toward the quarry fork."
+  low_bell_quarry_fork: "Fresh cart ruts cut across the abandoned track. Blue survey cloth is caught on a stone pointing east."
+  low_bell_survey_disturbance: "The survey stake bears Iven's trade mark. A freshly cleared runnel sends rainwater beneath a slab labelled LOWER RESONANCE BAY."
+  low_bell_sela_need_tovin: "Sela: I can prove where the water went. Tovin is the one who knows what is carrying the load below it. Bring me his sequence."
+  low_bell_sela_enter: "Sela: That matches the old maintenance marks. I will watch the runnel; use Tovin's order in the lower works."
+  low_bell_quarry_fitting: "A bent metal tongue lies pinned under resonant stone. Rust is old; bright scrapes around the drainage bolt are recent."
+  low_bell_lower_collapse: "Broken shift boards remain where the roof fell. The final line is smeared, but the inspection boxes were never signed."
+  low_bell_hoist_apply: "You divert the trickle, seat the cradle brace, then ease the hoist brake. The chamber floor settles instead of ringing."
+  low_bell_jemuar_reveal: "A massive Jemuar rises beside the buried assembly. Each frightened step drives a lower note through stone and metal."
+  low_bell_jemuar_after: "Jemuar backs into a dry fissure. Without its weight, the note thins—but water still runs across the buried fitting."
+  low_bell_assembly_action: "You close the survey cut and wedge the loose tongue clear of the fractured bell stone. Water returns to the old drain."
+  low_bell_return_objective: "The chamber falls quiet. Return to Ashenbell; the village needs the whole account."

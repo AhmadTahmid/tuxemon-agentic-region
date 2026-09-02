@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="16" height="12" tilewidth="16" tileheight="16" infinite="0" nextlayerid="7" nextobjectid="10000">
+ <tileset firstgid="1" source="../../tuxemon/gfx/tilesets/prototyping_outdoor.tsx" />
+ <layer id="1" name="Ground" width="16" height="12">
+  <data encoding="csv">
+194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,
+194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,
+194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,
+194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,
+194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,
+194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,
+194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,
+194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,
+194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,
+194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,
+194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,
+194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,194
+</data>
+ </layer>
+ <layer id="2" name="Terrain" width="16" height="12">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,194,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,194,194,194,0,0,0,0,0,0,
+0,0,0,0,0,0,0,194,194,194,0,0,0,0,0,0,
+0,0,0,0,0,0,0,194,194,194,0,0,0,0,0,0,
+0,0,0,0,0,0,0,194,194,194,0,0,0,0,0,0,
+0,0,0,0,0,0,0,194,194,194,0,0,0,0,0,0,
+0,0,0,0,0,0,0,194,194,194,0,0,0,0,0,0,
+0,0,0,0,0,0,0,194,194,194,0,0,0,0,0,0,
+0,0,0,0,0,0,0,194,194,194,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="3" name="Objects" width="16" height="12">
+  <data encoding="csv">
+51,51,51,51,51,51,51,51,51,51,51,51,51,51,51,51,
+51,0,0,0,0,0,0,0,0,0,0,0,0,0,0,51,
+51,0,211,211,211,0,0,0,0,0,0,0,0,0,0,51,
+51,0,243,51,243,0,0,0,0,0,0,0,0,0,0,51,
+51,0,0,0,0,0,0,0,0,0,0,0,0,0,0,51,
+51,0,0,0,0,0,0,0,0,0,0,0,0,0,0,51,
+51,0,0,0,0,0,0,0,0,0,0,0,0,0,0,51,
+51,0,0,0,0,0,0,0,0,0,0,0,0,0,0,51,
+51,0,0,0,0,0,0,0,0,0,0,0,0,0,0,51,
+51,0,0,0,0,0,0,0,0,0,0,0,0,0,0,51,
+51,0,0,0,0,0,0,0,0,0,0,0,0,0,0,51,
+51,51,51,51,51,51,51,51,51,51,51,51,51,51,51,51
+</data>
+ </layer>
+ <layer id="4" name="Above Player" width="16" height="12">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <objectgroup id="5" name="Collisions" color="#ff0000">
+  <object id="1" type="collision" x="0" y="0" width="256" height="16" />
+  <object id="2" type="collision" x="0" y="16" width="16" height="176" />
+  <object id="3" type="collision" x="240" y="16" width="16" height="176" />
+  <object id="4" type="collision" x="32" y="32" width="48" height="32" />
+  <object id="5" type="collision" x="16" y="176" width="224" height="16" />
+ </objectgroup>
+ <objectgroup id="6" name="Events" color="#ffff00">
+  <object id="6" name="workshop_exit" type="event" x="128" y="176" width="16" height="16">
+   <properties>
+    <property name="act10" value="transition_teleport player,low_bell_ashenbell.tmx,37,20,0.3" />
+    <property name="act20" value="char_face player,down" />
+    <property name="cond10" value="is char_at player" />
+    <property name="cond20" value="is char_facing player,down" />
+   </properties>
+  </object>
+  <object id="7" name="Create low_bell_tovin" type="event" x="144" y="80" width="16" height="16">
+   <properties>
+    <property name="act1" value="create_npc low_bell_tovin,9,5,stand" />
+    <property name="cond1" value="not char_exists low_bell_tovin" />
+   </properties>
+  </object>
+  <object id="8" name="tovin_initial" type="event" x="144" y="80" width="16" height="16">
+   <properties>
+    <property name="act1" value="translated_dialog low_bell_tovin_initial" />
+    <property name="behav1" value="talk low_bell_tovin" />
+    <property name="cond30" value="is variable_set low_bell_story:investigation" />
+   </properties>
+  </object>
+  <object id="9" name="tovin_quarry_briefing" type="event" x="144" y="80" width="16" height="16">
+   <properties>
+    <property name="act1" value="translated_dialog low_bell_tovin_briefing" />
+    <property name="act2" value="set_variable low_bell_tovin_briefed:yes" />
+    <property name="behav1" value="talk low_bell_tovin" />
+    <property name="cond30" value="is variable_set low_bell_story:quarry_discovered" />
+    <property name="cond31" value="not variable_set low_bell_tovin_briefed:yes" />
+   </properties>
+  </object>
+  <object id="10" name="tovin_after_briefing" type="event" x="144" y="80" width="16" height="16">
+   <properties>
+    <property name="act1" value="translated_dialog low_bell_tovin_reminder" />
+    <property name="behav1" value="talk low_bell_tovin" />
+    <property name="cond30" value="is variable_set low_bell_tovin_briefed:yes" />
+    <property name="cond31" value="not variable_set low_bell_story:resolved" />
+   </properties>
+  </object>
+  <object id="11" name="tovin_resolved" type="event" x="144" y="80" width="16" height="16">
+   <properties>
+    <property name="act1" value="translated_dialog low_bell_tovin_resolved" />
+    <property name="behav1" value="talk low_bell_tovin" />
+    <property name="cond30" value="is variable_set low_bell_story:resolved" />
+   </properties>
+  </object>
+  <object id="12" name="Set environment" type="event" x="0" y="0" width="16" height="16">
+   <properties>
+    <property name="act1" value="set_environment interior" />
+    <property name="cond1" value="not environment_is interior" />
+   </properties>
+  </object>
+  <object id="13" name="Play music" type="event" x="0" y="0" width="16" height="16">
+   <properties>
+    <property name="act1" value="play_music music_23_inn,0.55" />
+    <property name="cond1" value="not music_playing music_23_inn" />
+   </properties>
+  </object>
+ </objectgroup>
+</map>

@@ -1,0 +1,168 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: low_bell 0.1.0\n"
+"Language: en_US\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "low_bell_alda_intro"
+msgstr "Alda: Caper ate seedlings before. They never slept under my tool bench until that tone began."
+
+msgid "low_bell_alda_resolved"
+msgstr "Alda: No one under the bench this morning. I had forgotten how welcome an ordinary bite mark could look."
+
+msgid "low_bell_archive_diagram"
+msgstr "The diagram shows three tuned bells, each with a narrow metal tongue. A note in Mara's hand reads: LOW TONE IS NOT A WARNING SIGNAL."
+
+msgid "low_bell_assembly_action"
+msgstr "You close the survey cut and wedge the loose tongue clear of the fractured bell stone. Water returns to the old drain."
+
+msgid "low_bell_bren_intro"
+msgstr "Bren: These hairline cracks are old. The fresh grit inside them is not. I can tell you that much and no more."
+
+msgid "low_bell_bren_resolved"
+msgstr "Bren: Iven bought drain stone. I made him buy inspection markers too."
+
+msgid "low_bell_campaign"
+msgstr "Ashenbell: The Low Bell"
+
+msgid "low_bell_caro_intro"
+msgstr "Caro: Three guests heard a ghost; two heard weather; one slept through it. That is why I serve breakfast, not conclusions."
+
+msgid "low_bell_caro_resolved"
+msgstr "Caro: Tonight's wager is whether the inn can be quiet enough for anyone to complain."
+
+msgid "low_bell_ending_hook"
+msgstr "Nera pins a courier note beside the revised memorial notice: the western valley has reported the same displaced Corvix flight."
+
+msgid "low_bell_hoist_apply"
+msgstr "You divert the trickle, seat the cradle brace, then ease the hoist brake. The chamber floor settles instead of ringing."
+
+msgid "low_bell_iven_intro"
+msgstr "Iven: A working warning line would be useful. Abandonment has not made this village safer—or richer."
+
+msgid "low_bell_iven_investigation"
+msgstr "Iven: I paid for a survey, nothing more. If a cleared ditch frightens people, perhaps the ditch needed attention."
+
+msgid "low_bell_iven_resolved"
+msgstr "Iven: Ashenbell still needs work. Reopening blindly was not work; it was wishing with other people's risk."
+
+msgid "low_bell_jemuar_after"
+msgstr "Jemuar backs into a dry fissure. Without its weight, the note thins—but water still runs across the buried fitting."
+
+msgid "low_bell_jemuar_reveal"
+msgstr "A massive Jemuar rises beside the buried assembly. Each frightened step drives a lower note through stone and metal."
+
+msgid "low_bell_jori_intro"
+msgstr "Jori: Squabbit follows noises under the floor. It ran north last night and did not come back."
+
+msgid "low_bell_jori_resolved_pending"
+msgstr "Jori: The quarry path is safer now. I am going to keep watching for Squabbit's tracks."
+
+msgid "low_bell_lower_collapse"
+msgstr "Broken shift boards remain where the roof fell. The final line is smeared, but the inspection boxes were never signed."
+
+msgid "low_bell_mara_intro"
+msgstr "Mara: It is not one of our warning bells. Say that clearly before a rumour says otherwise."
+
+msgid "low_bell_mara_investigation"
+msgstr "Mara: The old bells were measured, named and maintained. This tone is lower. Ask Sela what the ridge is carrying."
+
+msgid "low_bell_mara_resolved"
+msgstr "Mara: The silent memorial remains. This year we will also read the maintenance oath—the part everyone stopped reading."
+
+msgid "low_bell_nera_after_tutorial"
+msgstr "Nera: Good. You gave it room to retreat. Take these Tuxeballs—some displaced creatures may accept a calmer approach."
+
+msgid "low_bell_nera_clear_path"
+msgstr "Nera: The frightened Shybulb ahead cannot settle while we crowd it. Approach slowly; I will talk you through the battle."
+
+msgid "low_bell_nera_investigation"
+msgstr "Nera: Creatures are leaving wet ground from here to the South Approach. We need the source, not a story about it."
+
+msgid "low_bell_nera_opening"
+msgstr "Nera: That was no thunder. Stay close—those creatures are running from something."
+
+msgid "low_bell_nera_resolved"
+msgstr "Nera: Habitat is a better witness than rumour. The creatures are already drawing the new map for us."
+
+msgid "low_bell_nera_starter"
+msgstr "Nera: You need a partner, not a weapon. Choose the one whose way of working makes sense to you."
+
+msgid "low_bell_nera_town"
+msgstr "Nera: Garden species moved first, then woodland species. Whatever changed is travelling downhill through water or ground."
+
+msgid "low_bell_opening_tone"
+msgstr "A low note rolls under the rain. Leaves jump; frightened creatures spill onto the path."
+
+msgid "low_bell_quarry_fitting"
+msgstr "A bent metal tongue lies pinned under resonant stone. Rust is old; bright scrapes around the drainage bolt are recent."
+
+msgid "low_bell_quarry_fork"
+msgstr "Fresh cart ruts cut across the abandoned track. Blue survey cloth is caught on a stone pointing east."
+
+msgid "low_bell_return_for_tovin"
+msgstr "The fresh survey marks match Tovin's hoist sketch. His workshop may hold the safe way into the lower works."
+
+msgid "low_bell_return_iven"
+msgstr "Iven: My crew opened the western runnel. I hid that because I wanted the survey to look harmless. I will pay to make it safe."
+
+msgid "low_bell_return_mara"
+msgstr "Mara: We will keep the names and retire the machinery. A memorial is not an instruction to repeat the past."
+
+msgid "low_bell_return_nera"
+msgstr "Nera: Shybulb are back at the stream, and the garden Squabbit stopped digging at the foundations. The pressure is easing."
+
+msgid "low_bell_return_objective"
+msgstr "The chamber falls quiet. Return to Ashenbell; the village needs the whole account."
+
+msgid "low_bell_return_tovin"
+msgstr "Tovin: I approved that last shift. Silence did not change it. I can still teach the next crew where to stop."
+
+msgid "low_bell_rook_after"
+msgstr "Rook: Corvix have left the west face. Rockitten are climbing out of cracks they normally sleep in. That is a direction, not bad luck."
+
+msgid "low_bell_rook_challenge"
+msgstr "Rook: The upper pass has nowhere to hide from wind or a panicked monster. Show me you can hold a line without chasing."
+
+msgid "low_bell_rook_victory"
+msgstr "Rook: Good footing. Split Crown is loudest on the east shelf; follow the rock, not the echo."
+
+msgid "low_bell_sela_enter"
+msgstr "Sela: That matches the old maintenance marks. I will watch the runnel; use Tovin's order in the lower works."
+
+msgid "low_bell_sela_investigation"
+msgstr "Sela: Every report follows heavy runoff and a west wind. Split Crown carries the tone; the source lies beyond its east shoulder."
+
+msgid "low_bell_sela_need_tovin"
+msgstr "Sela: I can prove where the water went. Tovin is the one who knows what is carrying the load below it. Bring me his sequence."
+
+msgid "low_bell_settlement_reveal"
+msgstr "Ashenbell appears beyond the trees. Far above its roofs, Split Crown Ridge divides the cloud."
+
+msgid "low_bell_south_rail"
+msgstr "The old guide rail hums against the stream stones. Tiny tracks point uphill, away from the wet bank."
+
+msgid "low_bell_split_crown_tone"
+msgstr "The low tone arrives through the ridge before it reaches the air. Loose stones chatter toward the quarry fork."
+
+msgid "low_bell_survey_disturbance"
+msgstr "The survey stake bears Iven's trade mark. A freshly cleared runnel sends rainwater beneath a slab labelled LOWER RESONANCE BAY."
+
+msgid "low_bell_tovin_briefing"
+msgstr "Tovin studies the survey mark. 'That runnel fed the lower fracture. Brace the cradle before you touch the hoist, or the stone will answer.'"
+
+msgid "low_bell_tovin_initial"
+msgstr "Tovin: Hoists, drains, bells—people remember the nouns and forget the inspection. I will not help anyone reopen that place."
+
+msgid "low_bell_tovin_reminder"
+msgstr "Tovin: Water first. Brace second. Hoist last. The order kept weight off the cracked shelf."
+
+msgid "low_bell_tovin_resolved"
+msgstr "Tovin: I kept the procedure and buried the reason. Mara was right: facts cannot protect anyone if we refuse to speak them."
+
+msgid "low_bell_tutorial_creature"
+msgstr "The Shybulb shivers, then plants itself across the path."
+
+msgid "low_bell_village_arrival"
+msgstr "The memorial square is busy, but nobody is celebrating."

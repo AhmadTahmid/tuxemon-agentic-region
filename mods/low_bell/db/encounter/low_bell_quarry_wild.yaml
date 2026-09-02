@@ -1,0 +1,18 @@
+slug: low_bell_quarry_wild
+monsters:
+- encounter_rate: 55
+  exp_req_mod: 3
+  held_items: []
+  level_range:
+  - 7
+  - 9
+  monster: slichen
+  variables: []
+- encounter_rate: 45
+  exp_req_mod: 3
+  held_items: []
+  level_range:
+  - 8
+  - 10
+  monster: rockat
+  variables: []

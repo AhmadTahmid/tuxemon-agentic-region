@@ -1,0 +1,13 @@
+slug: low_bell
+description: "Isolated production vertical slice for Ashenbell: The Low Bell."
+name: "Ashenbell: The Low Bell"
+version: 0.1.0
+authors: [AhmadTahmid, OpenAI Codex]
+startup_rules: []
+starting_players: [npc_red]
+starting_map: low_bell_south_approach.tmx
+starting_position: [17, 42]
+starting_money: [300, 300]
+starting_names: [Rowan]
+sprite: adventurer
+combat_sheet: adventurer

@@ -1,0 +1,171 @@
+- slug: low_bell_nera
+  persistence: false
+  speech:
+    profile:
+      default: {}
+  combat: {}
+  audio: {}
+  template:
+    sprite_name: scientist
+    combat_sheet: scientist
+    slug: scientist
+- slug: low_bell_mara
+  persistence: false
+  speech:
+    profile:
+      default: {}
+  combat: {}
+  audio: {}
+  template:
+    sprite_name: granny
+    combat_sheet: granny
+    slug: granny
+- slug: low_bell_tovin
+  persistence: false
+  speech:
+    profile:
+      default: {}
+  combat: {}
+  audio: {}
+  template:
+    sprite_name: miner_blue
+    combat_sheet: miner
+    slug: miner
+- slug: low_bell_jori
+  persistence: false
+  speech:
+    profile:
+      default: {}
+  combat: {}
+  audio: {}
+  template:
+    sprite_name: childactor_fiery
+    combat_sheet: childactor
+    slug: childactor
+- slug: low_bell_iven
+  persistence: false
+  speech:
+    profile:
+      default: {}
+  combat: {}
+  audio: {}
+  template:
+    sprite_name: shopkeeper
+    combat_sheet: shopkeeper
+    slug: shopkeeper
+- slug: low_bell_sela
+  persistence: false
+  speech:
+    profile:
+      default: {}
+  combat: {}
+  audio: {}
+  template:
+    sprite_name: scientist_fiery
+    combat_sheet: scientist
+    slug: scientist
+- slug: low_bell_rook
+  persistence: false
+  speech:
+    profile:
+      default: {}
+  combat: {}
+  audio: {}
+  template:
+    sprite_name: knight_green
+    combat_sheet: knight
+    slug: knight
+  monsters:
+  - slug: rockitten
+    level: 7
+    money_mod: 1
+    exp_req_mod: 1
+    gender: female
+  - slug: flacono
+    level: 7
+    money_mod: 1
+    exp_req_mod: 1
+    gender: male
+- slug: low_bell_alda
+  persistence: false
+  speech:
+    profile:
+      default: {}
+  combat: {}
+  audio: {}
+  template:
+    sprite_name: florist
+    combat_sheet: florist
+    slug: florist
+- slug: low_bell_bren
+  persistence: false
+  speech:
+    profile:
+      default: {}
+  combat: {}
+  audio: {}
+  template:
+    sprite_name: miner_green
+    combat_sheet: miner
+    slug: miner
+- slug: low_bell_caro
+  persistence: false
+  speech:
+    profile:
+      default: {}
+  combat: {}
+  audio: {}
+  template:
+    sprite_name: barmaid
+    combat_sheet: barmaid
+    slug: barmaid
+- slug: low_bell_demas
+  persistence: false
+  speech:
+    profile:
+      default: {}
+  combat: {}
+  audio: {}
+  template:
+    sprite_name: picnicker
+    combat_sheet: picnicker
+    slug: picnicker
+- slug: low_bell_etti
+  persistence: false
+  speech:
+    profile:
+      default: {}
+  combat: {}
+  audio: {}
+  template:
+    sprite_name: monk
+    combat_sheet: monk
+    slug: monk
+- slug: low_bell_pell
+  persistence: false
+  speech:
+    profile:
+      default: {}
+  combat: {}
+  audio: {}
+  template:
+    sprite_name: postboy
+    combat_sheet: postboy
+    slug: postboy
+- slug: low_bell_jemuar
+  persistence: false
+  speech:
+    profile:
+      default: {}
+  combat: {}
+  audio: {}
+  template:
+    sprite_name: landrace
+    combat_sheet: snugglepot
+    slug: snugglepot
+  monsters:
+  - slug: jemuar
+    level: 11
+    money_mod: 1.0
+    exp_req_mod: 2.0
+    gender: neuter

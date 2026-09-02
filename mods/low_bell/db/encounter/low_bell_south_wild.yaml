@@ -1,0 +1,34 @@
+slug: low_bell_south_wild
+monsters:
+- encounter_rate: 35
+  exp_req_mod: 3
+  held_items: []
+  level_range:
+  - 3
+  - 5
+  monster: shybulb
+  variables: []
+- encounter_rate: 25
+  exp_req_mod: 3
+  held_items: []
+  level_range:
+  - 3
+  - 5
+  monster: budaye
+  variables: []
+- encounter_rate: 25
+  exp_req_mod: 3
+  held_items: []
+  level_range:
+  - 4
+  - 5
+  monster: elofly
+  variables: []
+- encounter_rate: 15
+  exp_req_mod: 3
+  held_items: []
+  level_range:
+  - 4
+  - 6
+  monster: caper
+  variables: []

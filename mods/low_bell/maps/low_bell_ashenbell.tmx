@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="44" height="40" tilewidth="16" tileheight="16" infinite="0" nextlayerid="7" nextobjectid="10000">
+ <tileset firstgid="1" source="../../tuxemon/gfx/tilesets/prototyping_outdoor.tsx" />
+ <layer id="1" name="Ground" width="44" height="40">
+  <data encoding="csv">
+34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,
+34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,
+34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,
+34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,
+34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,
+34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,
+34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,
+34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,
+34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,
+34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,
+34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,
+34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,
+34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,
+34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,
+34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,
+34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,
+34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,
+34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,
+34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,
+34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,
+34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,
+34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,
+34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,
+34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,
+34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,
+34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,
+34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,
+34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,
+34,34,34,34,37,37,37,37,37,37,37,37,37,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,
+34,34,34,34,37,37,37,37,37,37,37,37,37,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,
+34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,
+34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,
+34,34,34,34,37,37,37,37,37,37,37,37,37,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,
+34,34,34,34,37,37,37,37,37,37,37,37,37,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,
+34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,
+34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,
+34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,
+34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,
+34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,
+34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34
+</data>
+ </layer>
+ <layer id="2" name="Terrain" width="44" height="40">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,194,194,194,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,194,194,194,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,194,194,194,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,194,194,194,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,194,194,194,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,194,194,194,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,194,194,194,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,194,194,194,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,194,194,194,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,194,194,194,194,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,194,194,194,194,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,194,194,194,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,194,0,0,0,0,0,0,0,0,0,0,0,0,0,0,194,194,194,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,194,194,194,0,0,0,0,0,0,0,0,0,0,0,0,0,194,194,194,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,194,194,194,0,0,0,0,0,0,0,0,0,0,0,0,194,194,194,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,194,194,194,0,0,0,0,0,0,0,0,0,0,0,194,194,194,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,194,194,194,0,0,0,0,0,0,0,194,194,194,194,194,194,194,194,194,194,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,194,194,194,194,194,0,0,0,0,194,194,194,194,194,194,194,194,194,194,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,0,0,0,0,0,0,0,0,0,0,0,194,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,0,0,0,0,0,0,0,0,0,0,194,194,194,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,194,194,194,194,194,194,194,194,194,194,194,194,194,194,0,0,0,0,0,0,0,0,0,194,194,194,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,194,194,194,194,194,194,194,194,194,194,0,0,0,0,0,0,0,0,194,194,194,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,194,194,194,194,194,194,194,194,194,194,0,0,0,0,0,0,0,194,194,194,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,194,194,194,194,194,194,194,194,194,194,0,194,194,194,194,194,194,194,194,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,194,194,194,194,194,194,194,194,194,194,194,194,194,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,194,194,194,194,194,194,194,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,194,194,194,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,194,194,194,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,194,194,194,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,194,194,194,194,194,194,194,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,194,194,194,194,194,194,194,194,194,194,194,194,194,194,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,194,194,194,194,194,194,194,0,0,0,0,194,194,194,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,194,194,194,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,194,194,194,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,194,194,194,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,194,194,194,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,194,194,194,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,194,194,194,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="3" name="Objects" width="44" height="40">
+  <data encoding="csv">
+48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,0,0,0,0,0,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,
+48,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,48,
+48,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,48,
+48,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,48,
+48,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,307,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,48,
+48,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,339,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,48,
+48,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,371,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,48,
+48,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,48,
+48,0,0,0,851,852,853,854,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,851,852,853,854,0,0,0,0,0,0,0,0,0,0,48,
+48,0,0,0,883,884,885,886,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,883,884,885,886,0,0,0,0,0,0,0,0,0,0,48,
+48,0,0,0,915,916,917,918,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,915,916,917,918,0,0,0,0,0,0,0,0,0,0,48,
+48,0,0,0,947,948,949,950,0,851,852,853,854,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,947,948,949,950,0,0,0,0,0,0,0,0,0,0,48,
+48,0,0,0,979,980,981,982,0,883,884,885,886,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,979,980,981,982,0,0,0,0,0,0,0,0,0,0,48,
+48,0,0,0,0,0,0,0,0,915,916,917,918,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,48,
+48,0,0,0,0,0,0,0,0,947,948,949,950,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,851,852,853,854,0,0,0,0,48,
+48,0,0,0,0,0,0,0,0,979,980,981,982,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,883,884,885,886,0,0,0,0,48,
+48,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,915,916,917,918,0,0,0,0,48,
+48,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,51,51,0,0,0,0,0,0,0,0,0,0,0,0,0,947,948,949,950,0,0,0,0,48,
+48,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,55,55,0,0,0,0,0,0,0,0,0,0,0,0,0,979,980,981,982,0,0,0,0,48,
+48,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,48,
+48,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,48,
+48,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,48,
+48,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,48,
+48,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,48,
+48,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,48,
+48,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,48,
+48,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,48,
+48,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,48,
+48,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,48,
+48,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,48,
+48,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,48,
+48,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,48,
+48,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,48,
+48,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,48,
+48,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,48,
+48,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,48,
+48,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,48,
+48,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,48,
+48,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,48,
+48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,0,0,0,0,0,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48
+</data>
+ </layer>
+ <layer id="4" name="Above Player" width="44" height="40">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <objectgroup id="5" name="Collisions" color="#ff0000">
+  <object id="1" type="collision" x="0" y="0" width="320" height="16" />
+  <object id="2" type="collision" x="400" y="0" width="304" height="16" />
+  <object id="3" type="collision" x="0" y="16" width="16" height="624" />
+  <object id="4" type="collision" x="688" y="16" width="16" height="624" />
+  <object id="5" type="collision" x="400" y="64" width="16" height="48" />
+  <object id="6" type="collision" x="64" y="128" width="64" height="64" />
+  <object id="7" type="collision" x="464" y="128" width="64" height="80" />
+  <object id="8" type="collision" x="144" y="176" width="64" height="80" />
+  <object id="9" type="collision" x="560" y="224" width="64" height="64" />
+  <object id="10" type="collision" x="320" y="272" width="32" height="32" />
+  <object id="11" type="collision" x="16" y="624" width="304" height="16" />
+  <object id="12" type="collision" x="400" y="624" width="288" height="16" />
+ </objectgroup>
+ <objectgroup id="6" name="Events" color="#ffff00">
+  <object id="13" name="village_to_south" type="event" x="352" y="624" width="16" height="16">
+   <properties>
+    <property name="act10" value="transition_teleport player,low_bell_south_approach.tmx,17,2,0.3" />
+    <property name="act20" value="char_face player,down" />
+    <property name="cond10" value="is char_at player" />
+    <property name="cond20" value="is char_facing player,down" />
+   </properties>
+  </object>
+  <object id="14" name="village_to_pass" type="event" x="352" y="0" width="16" height="16">
+   <properties>
+    <property name="act10" value="transition_teleport player,low_bell_highland_pass.tmx,18,46,0.3" />
+    <property name="act20" value="char_face player,up" />
+    <property name="cond10" value="is char_at player" />
+    <property name="cond20" value="is char_facing player,up" />
+    <property name="cond30" value="is variable_set low_bell_story:investigation" />
+   </properties>
+  </object>
+  <object id="15" name="enter_archive" type="event" x="96" y="192" width="16" height="16">
+   <properties>
+    <property name="act10" value="transition_teleport player,low_bell_mara_archive.tmx,8,10,0.3" />
+    <property name="act20" value="char_face player,up" />
+    <property name="cond10" value="is char_at player" />
+    <property name="cond20" value="is char_facing player,up" />
+   </properties>
+  </object>
+  <object id="16" name="enter_workshop" type="event" x="592" y="288" width="16" height="16">
+   <properties>
+    <property name="act10" value="transition_teleport player,low_bell_tovin_workshop.tmx,8,10,0.3" />
+    <property name="act20" value="char_face player,up" />
+    <property name="cond10" value="is char_at player" />
+    <property name="cond20" value="is char_facing player,up" />
+   </properties>
+  </object>
+  <object id="17" name="Create low_bell_nera" type="event" x="384" y="352" width="16" height="16">
+   <properties>
+    <property name="act1" value="create_npc low_bell_nera,24,22,stand" />
+    <property name="cond1" value="not char_exists low_bell_nera" />
+   </properties>
+  </object>
+  <object id="18" name="Create low_bell_mara" type="event" x="304" y="320" width="16" height="16">
+   <properties>
+    <property name="act1" value="create_npc low_bell_mara,19,20,stand" />
+    <property name="cond1" value="not char_exists low_bell_mara" />
+   </properties>
+  </object>
+  <object id="19" name="Create low_bell_iven" type="event" x="384" y="304" width="16" height="16">
+   <properties>
+    <property name="act1" value="create_npc low_bell_iven,24,19,stand" />
+    <property name="cond1" value="not char_exists low_bell_iven" />
+   </properties>
+  </object>
+  <object id="20" name="Create low_bell_jori" type="event" x="192" y="320" width="16" height="16">
+   <properties>
+    <property name="act1" value="create_npc low_bell_jori,12,20,stand" />
+    <property name="cond1" value="not char_exists low_bell_jori" />
+   </properties>
+  </object>
+  <object id="21" name="Create low_bell_sela" type="event" x="384" y="112" width="16" height="16">
+   <properties>
+    <property name="act1" value="create_npc low_bell_sela,24,7,stand" />
+    <property name="cond1" value="not char_exists low_bell_sela" />
+   </properties>
+  </object>
+  <object id="22" name="Create low_bell_alda" type="event" x="128" y="496" width="16" height="16">
+   <properties>
+    <property name="act1" value="create_npc low_bell_alda,8,31,stand" />
+    <property name="cond1" value="not char_exists low_bell_alda" />
+   </properties>
+  </object>
+  <object id="23" name="Create low_bell_bren" type="event" x="512" y="400" width="16" height="16">
+   <properties>
+    <property name="act1" value="create_npc low_bell_bren,32,25,stand" />
+    <property name="cond1" value="not char_exists low_bell_bren" />
+   </properties>
+  </object>
+  <object id="24" name="Create low_bell_caro" type="event" x="208" y="224" width="16" height="16">
+   <properties>
+    <property name="act1" value="create_npc low_bell_caro,13,14,stand" />
+    <property name="cond1" value="not char_exists low_bell_caro" />
+   </properties>
+  </object>
+  <object id="25" name="Create low_bell_demas" type="event" x="240" y="528" width="16" height="16">
+   <properties>
+    <property name="act1" value="create_npc low_bell_demas,15,33,stand" />
+    <property name="cond1" value="not char_exists low_bell_demas" />
+   </properties>
+  </object>
+  <object id="26" name="Create low_bell_etti" type="event" x="288" y="288" width="16" height="16">
+   <properties>
+    <property name="act1" value="create_npc low_bell_etti,18,18,stand" />
+    <property name="cond1" value="not char_exists low_bell_etti" />
+   </properties>
+  </object>
+  <object id="27" name="Create low_bell_pell" type="event" x="432" y="448" width="16" height="16">
+   <properties>
+    <property name="act1" value="create_npc low_bell_pell,27,28,stand" />
+    <property name="cond1" value="not char_exists low_bell_pell" />
+   </properties>
+  </object>
+  <object id="28" name="village_arrival_scene" type="event" x="320" y="576" width="80" height="48">
+   <properties>
+    <property name="act1" value="translated_dialog low_bell_village_arrival" />
+    <property name="act2" value="translated_dialog low_bell_mara_intro" />
+    <property name="act3" value="translated_dialog low_bell_iven_intro" />
+    <property name="act4" value="translated_dialog low_bell_nera_investigation" />
+    <property name="act5" value="set_teleport_faint player,low_bell_ashenbell.tmx,22,37" />
+    <property name="act6" value="set_variable low_bell_story:investigation" />
+    <property name="cond10" value="is char_at player" />
+    <property name="cond30" value="is variable_set low_bell_tutorial_won:yes" />
+    <property name="cond31" value="not variable_set low_bell_story" />
+   </properties>
+  </object>
+  <object id="29" name="mara_investigation" type="event" x="304" y="320" width="16" height="16">
+   <properties>
+    <property name="act1" value="translated_dialog low_bell_mara_investigation" />
+    <property name="behav1" value="talk low_bell_mara" />
+    <property name="cond30" value="is variable_set low_bell_story:investigation" />
+   </properties>
+  </object>
+  <object id="30" name="iven_investigation" type="event" x="384" y="304" width="16" height="16">
+   <properties>
+    <property name="act1" value="translated_dialog low_bell_iven_investigation" />
+    <property name="behav1" value="talk low_bell_iven" />
+    <property name="cond30" value="is variable_set low_bell_story:investigation" />
+   </properties>
+  </object>
+  <object id="31" name="nera_investigation" type="event" x="384" y="352" width="16" height="16">
+   <properties>
+    <property name="act1" value="translated_dialog low_bell_nera_town" />
+    <property name="behav1" value="talk low_bell_nera" />
+    <property name="cond30" value="is variable_set low_bell_story:investigation" />
+   </properties>
+  </object>
+  <object id="32" name="jori_intro" type="event" x="192" y="320" width="16" height="16">
+   <properties>
+    <property name="act1" value="translated_dialog low_bell_jori_intro" />
+    <property name="behav1" value="talk low_bell_jori" />
+    <property name="cond30" value="not variable_set low_bell_story:resolved" />
+   </properties>
+  </object>
+  <object id="33" name="sela_investigation" type="event" x="384" y="112" width="16" height="16">
+   <properties>
+    <property name="act1" value="translated_dialog low_bell_sela_investigation" />
+    <property name="behav1" value="talk low_bell_sela" />
+    <property name="cond30" value="is variable_set low_bell_story:investigation" />
+   </properties>
+  </object>
+  <object id="34" name="village_quarry_discovered_notice" type="event" x="304" y="400" width="112" height="32">
+   <properties>
+    <property name="act1" value="translated_dialog low_bell_return_for_tovin" />
+    <property name="act2" value="set_variable low_bell_return_prompt_seen:yes" />
+    <property name="cond10" value="is char_at player" />
+    <property name="cond30" value="is variable_set low_bell_story:quarry_discovered" />
+    <property name="cond31" value="not variable_set low_bell_tovin_briefed:yes" />
+    <property name="cond32" value="not variable_set low_bell_return_prompt_seen:yes" />
+   </properties>
+  </object>
+  <object id="35" name="resolution_prompt" type="event" x="336" y="320" width="16" height="16">
+   <properties>
+    <property name="act1" value="translated_dialog low_bell_return_mara" />
+    <property name="act2" value="translated_dialog low_bell_return_iven" />
+    <property name="act3" value="translated_dialog low_bell_return_tovin" />
+    <property name="act4" value="translated_dialog low_bell_return_nera" />
+    <property name="act5" value="add_item revive,1" />
+    <property name="act6" value="add_item tuxeball_hearty,3" />
+    <property name="act7" value="set_variable low_bell_episode_complete:yes" />
+    <property name="act8" value="translated_dialog low_bell_ending_hook" />
+    <property name="cond10" value="is char_facing_tile player" />
+    <property name="cond20" value="is button_pressed INTERACT" />
+    <property name="cond30" value="is variable_set low_bell_story:resolved" />
+    <property name="cond31" value="not variable_set low_bell_episode_complete:yes" />
+   </properties>
+  </object>
+  <object id="36" name="mara_resolved" type="event" x="304" y="320" width="16" height="16">
+   <properties>
+    <property name="act1" value="translated_dialog low_bell_mara_resolved" />
+    <property name="behav1" value="talk low_bell_mara" />
+    <property name="cond30" value="is variable_set low_bell_story:resolved" />
+   </properties>
+  </object>
+  <object id="37" name="iven_resolved" type="event" x="384" y="304" width="16" height="16">
+   <properties>
+    <property name="act1" value="translated_dialog low_bell_iven_resolved" />
+    <property name="behav1" value="talk low_bell_iven" />
+    <property name="cond30" value="is variable_set low_bell_story:resolved" />
+   </properties>
+  </object>
+  <object id="38" name="nera_resolved" type="event" x="384" y="352" width="16" height="16">
+   <properties>
+    <property name="act1" value="translated_dialog low_bell_nera_resolved" />
+    <property name="behav1" value="talk low_bell_nera" />
+    <property name="cond30" value="is variable_set low_bell_story:resolved" />
+   </properties>
+  </object>
+  <object id="39" name="jori_resolved" type="event" x="192" y="320" width="16" height="16">
+   <properties>
+    <property name="act1" value="translated_dialog low_bell_jori_resolved_pending" />
+    <property name="behav1" value="talk low_bell_jori" />
+    <property name="cond30" value="is variable_set low_bell_story:resolved" />
+   </properties>
+  </object>
+  <object id="40" name="alda_intro" type="event" x="128" y="496" width="16" height="16">
+   <properties>
+    <property name="act1" value="translated_dialog low_bell_alda_intro" />
+    <property name="behav1" value="talk low_bell_alda" />
+    <property name="cond30" value="not variable_set low_bell_story:resolved" />
+   </properties>
+  </object>
+  <object id="41" name="alda_resolved" type="event" x="128" y="496" width="16" height="16">
+   <properties>
+    <property name="act1" value="translated_dialog low_bell_alda_resolved" />
+    <property name="behav1" value="talk low_bell_alda" />
+    <property name="cond30" value="is variable_set low_bell_story:resolved" />
+   </properties>
+  </object>
+  <object id="42" name="bren_intro" type="event" x="512" y="400" width="16" height="16">
+   <properties>
+    <property name="act1" value="translated_dialog low_bell_bren_intro" />
+    <property name="behav1" value="talk low_bell_bren" />
+    <property name="cond30" value="not variable_set low_bell_story:resolved" />
+   </properties>
+  </object>
+  <object id="43" name="bren_resolved" type="event" x="512" y="400" width="16" height="16">
+   <properties>
+    <property name="act1" value="translated_dialog low_bell_bren_resolved" />
+    <property name="behav1" value="talk low_bell_bren" />
+    <property name="cond30" value="is variable_set low_bell_story:resolved" />
+   </properties>
+  </object>
+  <object id="44" name="caro_intro" type="event" x="208" y="224" width="16" height="16">
+   <properties>
+    <property name="act1" value="translated_dialog low_bell_caro_intro" />
+    <property name="behav1" value="talk low_bell_caro" />
+    <property name="cond30" value="not variable_set low_bell_story:resolved" />
+   </properties>
+  </object>
+  <object id="45" name="caro_resolved" type="event" x="208" y="224" width="16" height="16">
+   <properties>
+    <property name="act1" value="translated_dialog low_bell_caro_resolved" />
+    <property name="behav1" value="talk low_bell_caro" />
+    <property name="cond30" value="is variable_set low_bell_story:resolved" />
+   </properties>
+  </object>
+  <object id="46" name="Set environment" type="event" x="0" y="0" width="16" height="16">
+   <properties>
+    <property name="act1" value="set_environment grass" />
+    <property name="cond1" value="not environment_is grass" />
+   </properties>
+  </object>
+  <object id="47" name="Play music" type="event" x="0" y="0" width="16" height="16">
+   <properties>
+    <property name="act1" value="play_music music_07_town,0.55" />
+    <property name="cond1" value="not music_playing music_07_town" />
+   </properties>
+  </object>
+ </objectgroup>
+</map>

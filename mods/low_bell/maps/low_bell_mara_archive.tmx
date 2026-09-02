@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="16" height="12" tilewidth="16" tileheight="16" infinite="0" nextlayerid="7" nextobjectid="10000">
+ <tileset firstgid="1" source="../../tuxemon/gfx/tilesets/prototyping_outdoor.tsx" />
+ <layer id="1" name="Ground" width="16" height="12">
+  <data encoding="csv">
+194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,
+194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,
+194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,
+194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,
+194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,
+194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,
+194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,
+194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,
+194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,
+194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,
+194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,
+194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,194
+</data>
+ </layer>
+ <layer id="2" name="Terrain" width="16" height="12">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,194,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,194,194,194,0,0,0,0,0,0,
+0,0,0,0,0,0,0,194,194,194,0,0,0,0,0,0,
+0,0,0,0,0,0,0,194,194,194,0,0,0,0,0,0,
+0,0,0,0,0,0,0,194,194,194,0,0,0,0,0,0,
+0,0,0,0,0,0,0,194,194,194,0,0,0,0,0,0,
+0,0,0,0,0,0,0,194,194,194,0,0,0,0,0,0,
+0,0,0,0,0,0,0,194,194,194,0,0,0,0,0,0,
+0,0,0,0,0,0,0,194,194,194,0,0,0,0,0,0,
+0,0,0,0,0,0,0,194,194,194,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="3" name="Objects" width="16" height="12">
+  <data encoding="csv">
+51,51,51,51,51,51,51,51,51,51,51,51,51,51,51,51,
+51,0,0,0,0,0,0,0,0,0,0,0,0,0,0,51,
+51,0,0,0,0,0,0,0,307,0,0,0,0,0,0,51,
+51,0,0,211,0,0,0,0,339,0,0,0,211,0,0,51,
+51,0,0,0,0,0,0,0,371,0,0,0,0,0,0,51,
+51,0,0,0,0,0,0,0,0,0,0,0,0,0,0,51,
+51,0,0,0,0,0,0,0,0,0,0,0,0,0,0,51,
+51,0,0,0,0,0,0,0,0,0,0,0,0,0,0,51,
+51,0,0,0,0,0,0,0,0,0,0,0,0,0,0,51,
+51,0,0,0,0,0,0,0,0,0,0,0,0,0,0,51,
+51,0,0,0,0,0,0,0,0,0,0,0,0,0,0,51,
+51,51,51,51,51,51,51,51,51,51,51,51,51,51,51,51
+</data>
+ </layer>
+ <layer id="4" name="Above Player" width="16" height="12">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <objectgroup id="5" name="Collisions" color="#ff0000">
+  <object id="1" type="collision" x="0" y="0" width="256" height="16" />
+  <object id="2" type="collision" x="0" y="16" width="16" height="176" />
+  <object id="3" type="collision" x="240" y="16" width="16" height="176" />
+  <object id="4" type="collision" x="128" y="32" width="16" height="48" />
+  <object id="5" type="collision" x="48" y="48" width="16" height="16" />
+  <object id="6" type="collision" x="192" y="48" width="16" height="16" />
+  <object id="7" type="collision" x="16" y="176" width="224" height="16" />
+ </objectgroup>
+ <objectgroup id="6" name="Events" color="#ffff00">
+  <object id="8" name="archive_exit" type="event" x="128" y="176" width="16" height="16">
+   <properties>
+    <property name="act10" value="transition_teleport player,low_bell_ashenbell.tmx,6,14,0.3" />
+    <property name="act20" value="char_face player,down" />
+    <property name="cond10" value="is char_at player" />
+    <property name="cond20" value="is char_facing player,down" />
+   </properties>
+  </object>
+  <object id="9" name="inspect_bell_diagram" type="event" x="128" y="32" width="16" height="16">
+   <properties>
+    <property name="act1" value="translated_dialog low_bell_archive_diagram" />
+    <property name="act2" value="set_variable low_bell_bell_diagram_seen:yes" />
+    <property name="cond10" value="is char_facing_tile player" />
+    <property name="cond20" value="is button_pressed INTERACT" />
+   </properties>
+  </object>
+  <object id="10" name="Set environment" type="event" x="0" y="0" width="16" height="16">
+   <properties>
+    <property name="act1" value="set_environment interior" />
+    <property name="cond1" value="not environment_is interior" />
+   </properties>
+  </object>
+  <object id="11" name="Play music" type="event" x="0" y="0" width="16" height="16">
+   <properties>
+    <property name="act1" value="play_music music_23_inn,0.55" />
+    <property name="cond1" value="not music_playing music_23_inn" />
+   </properties>
+  </object>
+ </objectgroup>
+</map>
