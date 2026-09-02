@@ -1,0 +1,17 @@
+format_version: "1.0"
+source: initial_world_spec.yaml
+changes:
+  - {map: r2_south_route, field: environmental_features.r2_bellwater_bridge.bounds.width, from: 5, to: 6, reason: clear critical road at the river edge}
+  - {map: r2_ashenbell, field: secondary_paths.r2_residential_lane.points, reason: use only declared garden-fence entrances}
+  - {map: r2_ashenbell, field: environmental_features.r2_garden_fence.entrances, reason: declare the east work-yard exit}
+  - {map: r2_ashenbell, field: props.r2_plinth_west.at, from: [14, 17], to: [14, 14], reason: clear residential lane}
+  - {map: r2_highland_pass, field: props.r2_pass_rock_01.at, from: [8, 32], to: [7, 34], reason: clear ridge stair}
+  - {map: r2_old_bell_quarry, field: events.r2_raise_hoist.actions, from: "set_variable r2_hoist:raised", to: "set_variable r2_shortcut:open", reason: match cross-map consumers}
+  - {map: r2_ashenbell, field: events.r2_village_shortcut_*.at, from: [32, 10], to: [31, 8], reason: attach both state branches to a dedicated reachable sign}
+  - {map: r2_highland_pass, field: events.r2_pass_echo.at, from: [20, 13], to: [17, 13], reason: attach the echo to the existing west cairn stone}
+  - {map: r2_highland_pass, field: events.r2_pass_shortcut_*.at, from: [4, 30], to: [4, 28], reason: attach both state branches to a dedicated reachable sign}
+  - {map: r2_old_bell_quarry, field: events.r2_quarry_evidence.at, from: [20, 12], to: [21, 8], reason: attach evidence to existing worked stone}
+  - {map: r2_old_bell_quarry, field: events.r2_*hoist*.at, from: [25, 8], to: [27, 5], reason: attach both state branches to the existing hoist sign}
+  - {map: r2_old_bell_quarry, field: secrets.r2_quarry_cache.at, from: [14, 23], to: [12, 25], reason: attach the cache to a visible marker off the path centerline}
+  - {scope: all_maps, field: revision, from: 1, to: 3}
+  - {scope: metadata, field: authoring_status, from: draft, to: reviewed}

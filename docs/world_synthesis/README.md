@@ -140,3 +140,22 @@ Results currently remain pending, so no method is declared the winner. See
 See `TUXEMON_ARCHITECTURE.md`, `MAP_GRAMMAR.md`, `EVENT_GRAMMAR.md`,
 `TILESET_CATALOG.md`, and `DECISIONS.md` for the archaeological evidence and
 contracts behind the implementation.
+
+## Ashenbell representation + horizon benchmark
+
+The third bounded milestone compares direct low-level authoring, one-shot
+WorldSpec and structured agentic WorldSpec across four connected maps. Build
+or start a method-masked session with:
+
+```powershell
+.\.venv\Scripts\python.exe -m world_synthesis.horizon_benchmark build
+.\.venv\Scripts\python.exe -m world_synthesis.horizon_benchmark play ashenbell
+```
+
+The launcher exposes only “Ashenbell Highlands.” Automated consistency output
+is in `artifacts/world_synthesis/ashenbell_consistency_report.json`; human
+responses remain separate. R1's unrevised path-collision findings are retained
+alongside its unstable interaction-anchor findings as experimental evidence.
+The same generic audit preserves the corresponding R0 failure and passes the
+critic-revised R2 result. See `ASHENBELL_HORIZON_REPORT.md` for the seven bounded
+conclusions; the project does not expand beyond this slice.

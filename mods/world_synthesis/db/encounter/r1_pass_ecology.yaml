@@ -1,0 +1,18 @@
+monsters:
+- encounter_rate: 5
+  exp_req_mod: 3
+  held_items: []
+  level_range:
+  - 6
+  - 8
+  monster: elofly
+  variables: []
+- encounter_rate: 2
+  exp_req_mod: 3
+  held_items: []
+  level_range:
+  - 6
+  - 8
+  monster: squabbit
+  variables: []
+slug: r1_pass_ecology

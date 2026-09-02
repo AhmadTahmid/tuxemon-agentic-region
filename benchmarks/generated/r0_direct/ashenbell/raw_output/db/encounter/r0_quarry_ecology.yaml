@@ -1,0 +1,26 @@
+monsters:
+- encounter_rate: 4
+  exp_req_mod: 3
+  held_items: []
+  level_range:
+  - 6
+  - 8
+  monster: elofly
+  variables: []
+- encounter_rate: 3
+  exp_req_mod: 3
+  held_items: []
+  level_range:
+  - 5
+  - 7
+  monster: shybulb
+  variables: []
+- encounter_rate: 1
+  exp_req_mod: 3
+  held_items: []
+  level_range:
+  - 6
+  - 7
+  monster: squabbit
+  variables: []
+slug: r0_quarry_ecology

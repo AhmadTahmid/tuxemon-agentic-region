@@ -1,0 +1,24 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: ashenbell_r2 0.1.0\n"
+"Language: en_US\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "r2_bell_keeper_dialog"
+msgstr "Quarry stone carried the note and iron tongues struck it. The chain warned three valleys until the slide closed the cut. We have rung nothing since, whatever wakes at night."
+
+msgid "r2_gardener_dialog"
+msgstr "Squabbit steal the dry seed; Elofly hover only when the ridge wind drops."
+
+msgid "r2_pass_surveyor_dialog"
+msgstr "The warning stones were tuned to carry across the valleys. This new tone arrives when west wind and quarry runoff coincide; weather may play what people stopped ringing."
+
+msgid "r2_quarry_prospector_dialog"
+msgstr "They cut resonant stone here and hung iron tongues inside. The slide buried straps beside that wet crack; wind and runoff can make the whole cut answer without a bell being rung."
+
+msgid "r2_south_shepherd_dialog"
+msgstr "The night tone follows the west face of Split Crown when fog presses low. My grandmother heard the quarry warnings; this is lower, but it keeps their rhythm."
+
+msgid "world_synthesis_campaign"
+msgstr "The Ashenbell Highlands"

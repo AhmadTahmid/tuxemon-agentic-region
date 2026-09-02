@@ -1,0 +1,109 @@
+{
+  "format_version": "1.0",
+  "experiment": "ashenbell_horizon",
+  "pre_experiment": {
+    "git_commit": "62e63c796d663482caf76f37f157b48bb5d86276",
+    "compiler_sha256": "a2e28bd42e4810faef84bbe508594aa6f3e231b81e8d1f5d92b6562689962088",
+    "test_result": {
+      "passed": 4261,
+      "failed": 1,
+      "failure": "tests/tuxemon/test_map_loader.py::test_remove_from_cache",
+      "classification": "pre_existing_windows_specific_upstream_failure"
+    }
+  },
+  "limitations": [
+    {
+      "id": "conditional_story_events",
+      "classification": "WORLDSPEC_LIMITATION",
+      "discovered_before_variant_generation": true,
+      "requirement": "Represent a persistent optional shortcut whose producer and consumers span maps.",
+      "finding": "Tuxemon already supports variable_set and not variable_set, and WorldSpec story events already expose actions, but StoryEvent cannot declare conditions.",
+      "resolution": "Add a generic conditions list to StoryEvent and serialize it as event conditions without Ashenbell-specific behavior.",
+      "affected_variants": ["R1", "R2"],
+      "fairness_action": "Implement before authoring any variant, re-freeze, and use the resulting engine capability for all methods. R0 receives the same event grammar in its prompt.",
+      "status": "implemented_and_tested"
+    },
+    {
+      "id": "small_outdoor_building_stamp",
+      "classification": "COMPILER_LIMITATION",
+      "discovered_before_variant_generation": true,
+      "requirement": "Render a functionally organized small settlement without mislabeling fences or boulders as houses.",
+      "finding": "The frozen prototype atlas contains reviewed four-by-five house tiles, but the generic prop compiler cannot compose them.",
+      "resolution": "Add one generic building prop using the existing prototype atlas; the anchor is the lower-left foundation cell and the fixed stamp occupies four columns by five rows.",
+      "affected_variants": ["R1", "R2"],
+      "fairness_action": "Implement before authoring any variant, re-freeze, and expose the identical building stamp and tile IDs to R0.",
+      "status": "implemented_and_tested"
+    }
+  ],
+  "horizon_freeze": {
+    "compiler_sha256": "4e94b1ae4e531dd70da33b162b8329a0d0d2cc5a71190633e4a560b1ff7f156a",
+    "primitives": [
+      "generic conditional story events",
+      "generic four-by-five outdoor building stamp using existing tiles"
+    ],
+    "applies_before": ["R0", "R1", "R2"]
+  },
+  "post_generation_findings": [
+    {
+      "id": "documented_botanist_slug_missing",
+      "classification": "ASSET_REFERENCE_LIMITATION",
+      "compiler_changed": false,
+      "finding": "The reviewed documentation named botanist, but the active upstream database has no matching template, overworld sprite or combat sheet.",
+      "fairness_action": "Apply the same reference-only substitution to existing scientist in R0, R1 and R2; preserve all raw outputs and record the repair per method.",
+      "validator_action": "Add real database-overlay activation to the build audit; TMX loading alone cannot catch NPC database failures."
+    },
+    {
+      "id": "traversable_facing_interaction_anchor",
+      "classification": "VALIDATION_LIMITATION",
+      "compiler_changed": false,
+      "finding": "Per-map reachability and state producer/consumer checks treated traversable char_facing_tile event cells as usable. In the client, directional input moves the player onto such a cell rather than leaving the player beside and facing it.",
+      "fairness_action": "Apply one generic stable-anchor and reachable-adjacent-cell audit to final R0/R1/R2 outputs. Preserve R0/R1 failures without design repair; feed the same evidence into the permitted R2 critic-linked revision.",
+      "validator_action": "Require every player-facing interaction to overlap collision or a spawned NPC and have a reachable cardinal neighbor. Treat a blocked secret as interactable when a reachable cardinal neighbor exists."
+    }
+  ],
+  "final_verification": {
+    "focused_world_synthesis_tests": "38 passed",
+    "ruff": "passed",
+    "mypy": "passed",
+    "full_suite": {
+      "passed": 4273,
+      "failed": 1,
+      "failure": "tests/tuxemon/test_map_loader.py::test_remove_from_cache",
+      "classification": "same_pre_existing_windows_specific_upstream_failure"
+    },
+    "real_tmx_loader_maps": 12,
+    "real_database_overlay": "passed",
+    "graphical_client_captures": 7,
+    "deterministic_rebuild_hashes": "identical"
+  },
+  "variants": [
+    {
+      "method": "R0",
+      "compiler_changed_after_freeze": false,
+      "design_revisions": 0,
+      "mechanical_repairs": 3,
+      "ordinary_validation": "passed_zero_errors",
+      "cross_map_validation": "failed_player_facing_interaction_anchor_check",
+      "playability": "real_loader_database_and_graphical_client_passed; hoist_and_shortcut_interactions_not_reliably_usable"
+    },
+    {
+      "method": "R1",
+      "compiler_changed_after_freeze": false,
+      "design_revisions": 0,
+      "mechanical_repairs": 5,
+      "ordinary_validation": "three_preserved_path_blocked_errors; all_critical_targets_reachable",
+      "cross_map_validation": "failed_player_facing_interaction_anchor_check",
+      "playability": "real_loader_database_and_graphical_client_passed; strict_path_clearance_and_shortcut_interaction_acceptance_failed"
+    },
+    {
+      "method": "R2",
+      "compiler_changed_after_freeze": false,
+      "design_revisions": 1,
+      "mechanical_repairs": 3,
+      "initial_validation": "three_path_blocked_errors_one_state_producer_mismatch_and_unanchored_interactions",
+      "final_validation": "passed_zero_errors; one_sparse_decoration_warning",
+      "cross_map_validation": "passed_zero_failures_after_revision",
+      "playability": "real_loader_database_and_graphical_client_passed; corrected_hoist_anchor_reached_in_client; variable_mutation_not_visually_asserted"
+    }
+  ]
+}

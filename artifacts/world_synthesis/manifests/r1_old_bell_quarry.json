@@ -1,0 +1,1076 @@
+{
+  "format_version": "1.0",
+  "map_id": "r1_old_bell_quarry",
+  "source": "benchmarks/generated/r1_worldspec_one_shot/ashenbell/world_spec.yaml",
+  "source_seed": 28411,
+  "revision": 1,
+  "tmx_sha256": "ef215d775ca9f5ad687482012f4b26994c32fa0a3db6eeeed7bb1eb2755d3b24",
+  "blocked_cells": [
+    [
+      4,
+      5
+    ],
+    [
+      7,
+      5
+    ],
+    [
+      17,
+      8
+    ],
+    [
+      25,
+      8
+    ],
+    [
+      14,
+      9
+    ],
+    [
+      20,
+      10
+    ],
+    [
+      13,
+      14
+    ],
+    [
+      19,
+      14
+    ],
+    [
+      4,
+      22
+    ],
+    [
+      25,
+      23
+    ]
+  ],
+  "collision_rectangles": [
+    [
+      4,
+      5,
+      1,
+      1
+    ],
+    [
+      7,
+      5,
+      1,
+      1
+    ],
+    [
+      17,
+      8,
+      1,
+      1
+    ],
+    [
+      25,
+      8,
+      1,
+      1
+    ],
+    [
+      14,
+      9,
+      1,
+      1
+    ],
+    [
+      20,
+      10,
+      1,
+      1
+    ],
+    [
+      13,
+      14,
+      1,
+      1
+    ],
+    [
+      19,
+      14,
+      1,
+      1
+    ],
+    [
+      4,
+      22,
+      1,
+      1
+    ],
+    [
+      25,
+      23,
+      1,
+      1
+    ]
+  ],
+  "path_cells": [
+    [
+      22,
+      7
+    ],
+    [
+      23,
+      7
+    ],
+    [
+      24,
+      7
+    ],
+    [
+      25,
+      7
+    ],
+    [
+      26,
+      7
+    ],
+    [
+      27,
+      7
+    ],
+    [
+      20,
+      8
+    ],
+    [
+      21,
+      8
+    ],
+    [
+      22,
+      8
+    ],
+    [
+      23,
+      8
+    ],
+    [
+      24,
+      8
+    ],
+    [
+      25,
+      8
+    ],
+    [
+      26,
+      8
+    ],
+    [
+      27,
+      8
+    ],
+    [
+      28,
+      8
+    ],
+    [
+      10,
+      9
+    ],
+    [
+      11,
+      9
+    ],
+    [
+      12,
+      9
+    ],
+    [
+      13,
+      9
+    ],
+    [
+      18,
+      9
+    ],
+    [
+      19,
+      9
+    ],
+    [
+      20,
+      9
+    ],
+    [
+      21,
+      9
+    ],
+    [
+      22,
+      9
+    ],
+    [
+      23,
+      9
+    ],
+    [
+      24,
+      9
+    ],
+    [
+      25,
+      9
+    ],
+    [
+      26,
+      9
+    ],
+    [
+      27,
+      9
+    ],
+    [
+      9,
+      10
+    ],
+    [
+      10,
+      10
+    ],
+    [
+      11,
+      10
+    ],
+    [
+      12,
+      10
+    ],
+    [
+      13,
+      10
+    ],
+    [
+      14,
+      10
+    ],
+    [
+      15,
+      10
+    ],
+    [
+      16,
+      10
+    ],
+    [
+      17,
+      10
+    ],
+    [
+      18,
+      10
+    ],
+    [
+      19,
+      10
+    ],
+    [
+      20,
+      10
+    ],
+    [
+      21,
+      10
+    ],
+    [
+      22,
+      10
+    ],
+    [
+      8,
+      11
+    ],
+    [
+      9,
+      11
+    ],
+    [
+      10,
+      11
+    ],
+    [
+      11,
+      11
+    ],
+    [
+      12,
+      11
+    ],
+    [
+      13,
+      11
+    ],
+    [
+      14,
+      11
+    ],
+    [
+      15,
+      11
+    ],
+    [
+      16,
+      11
+    ],
+    [
+      17,
+      11
+    ],
+    [
+      18,
+      11
+    ],
+    [
+      19,
+      11
+    ],
+    [
+      23,
+      11
+    ],
+    [
+      7,
+      12
+    ],
+    [
+      8,
+      12
+    ],
+    [
+      9,
+      12
+    ],
+    [
+      10,
+      12
+    ],
+    [
+      14,
+      12
+    ],
+    [
+      15,
+      12
+    ],
+    [
+      16,
+      12
+    ],
+    [
+      17,
+      12
+    ],
+    [
+      23,
+      12
+    ],
+    [
+      0,
+      13
+    ],
+    [
+      1,
+      13
+    ],
+    [
+      2,
+      13
+    ],
+    [
+      3,
+      13
+    ],
+    [
+      4,
+      13
+    ],
+    [
+      5,
+      13
+    ],
+    [
+      6,
+      13
+    ],
+    [
+      7,
+      13
+    ],
+    [
+      8,
+      13
+    ],
+    [
+      10,
+      13
+    ],
+    [
+      23,
+      13
+    ],
+    [
+      0,
+      14
+    ],
+    [
+      1,
+      14
+    ],
+    [
+      2,
+      14
+    ],
+    [
+      3,
+      14
+    ],
+    [
+      4,
+      14
+    ],
+    [
+      5,
+      14
+    ],
+    [
+      6,
+      14
+    ],
+    [
+      7,
+      14
+    ],
+    [
+      10,
+      14
+    ],
+    [
+      23,
+      14
+    ],
+    [
+      0,
+      15
+    ],
+    [
+      1,
+      15
+    ],
+    [
+      2,
+      15
+    ],
+    [
+      3,
+      15
+    ],
+    [
+      4,
+      15
+    ],
+    [
+      5,
+      15
+    ],
+    [
+      6,
+      15
+    ],
+    [
+      10,
+      15
+    ],
+    [
+      23,
+      15
+    ],
+    [
+      10,
+      16
+    ],
+    [
+      23,
+      16
+    ],
+    [
+      10,
+      17
+    ],
+    [
+      24,
+      17
+    ],
+    [
+      10,
+      18
+    ],
+    [
+      24,
+      18
+    ],
+    [
+      10,
+      19
+    ],
+    [
+      11,
+      19
+    ],
+    [
+      23,
+      19
+    ],
+    [
+      24,
+      19
+    ],
+    [
+      12,
+      20
+    ],
+    [
+      13,
+      20
+    ],
+    [
+      21,
+      20
+    ],
+    [
+      22,
+      20
+    ],
+    [
+      14,
+      21
+    ],
+    [
+      15,
+      21
+    ],
+    [
+      16,
+      21
+    ],
+    [
+      19,
+      21
+    ],
+    [
+      20,
+      21
+    ],
+    [
+      17,
+      22
+    ],
+    [
+      18,
+      22
+    ]
+  ],
+  "generated_objects": [
+    {
+      "kind": "tall_grass",
+      "at": [
+        8,
+        16
+      ],
+      "rule": "r1_quarry_damp_cut"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        11,
+        16
+      ],
+      "rule": "r1_quarry_damp_cut"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        14,
+        16
+      ],
+      "rule": "r1_quarry_damp_cut"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        16,
+        16
+      ],
+      "rule": "r1_quarry_damp_cut"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        9,
+        17
+      ],
+      "rule": "r1_quarry_damp_cut"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        11,
+        17
+      ],
+      "rule": "r1_quarry_damp_cut"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        13,
+        17
+      ],
+      "rule": "r1_quarry_damp_cut"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        14,
+        17
+      ],
+      "rule": "r1_quarry_damp_cut"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        16,
+        17
+      ],
+      "rule": "r1_quarry_damp_cut"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        17,
+        17
+      ],
+      "rule": "r1_quarry_damp_cut"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        9,
+        18
+      ],
+      "rule": "r1_quarry_damp_cut"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        11,
+        18
+      ],
+      "rule": "r1_quarry_damp_cut"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        12,
+        18
+      ],
+      "rule": "r1_quarry_damp_cut"
+    },
+    {
+      "kind": "shrub",
+      "at": [
+        12,
+        18
+      ],
+      "rule": "r1_quarry_damp_cut"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        16,
+        18
+      ],
+      "rule": "r1_quarry_damp_cut"
+    },
+    {
+      "kind": "shrub",
+      "at": [
+        16,
+        18
+      ],
+      "rule": "r1_quarry_damp_cut"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        17,
+        18
+      ],
+      "rule": "r1_quarry_damp_cut"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        12,
+        19
+      ],
+      "rule": "r1_quarry_damp_cut"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        16,
+        19
+      ],
+      "rule": "r1_quarry_damp_cut"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        8,
+        20
+      ],
+      "rule": "r1_quarry_damp_cut"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        16,
+        20
+      ],
+      "rule": "r1_quarry_damp_cut"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        10,
+        21
+      ],
+      "rule": "r1_quarry_damp_cut"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        11,
+        21
+      ],
+      "rule": "r1_quarry_damp_cut"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        12,
+        21
+      ],
+      "rule": "r1_quarry_damp_cut"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        13,
+        21
+      ],
+      "rule": "r1_quarry_damp_cut"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        17,
+        21
+      ],
+      "rule": "r1_quarry_damp_cut"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        7,
+        22
+      ],
+      "rule": "r1_quarry_damp_cut"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        11,
+        22
+      ],
+      "rule": "r1_quarry_damp_cut"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        12,
+        22
+      ],
+      "rule": "r1_quarry_damp_cut"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        14,
+        22
+      ],
+      "rule": "r1_quarry_damp_cut"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        8,
+        23
+      ],
+      "rule": "r1_quarry_damp_cut"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        10,
+        23
+      ],
+      "rule": "r1_quarry_damp_cut"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        11,
+        23
+      ],
+      "rule": "r1_quarry_damp_cut"
+    },
+    {
+      "kind": "shrub",
+      "at": [
+        11,
+        23
+      ],
+      "rule": "r1_quarry_damp_cut"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        12,
+        23
+      ],
+      "rule": "r1_quarry_damp_cut"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        14,
+        23
+      ],
+      "rule": "r1_quarry_damp_cut"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        16,
+        23
+      ],
+      "rule": "r1_quarry_damp_cut"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        17,
+        23
+      ],
+      "rule": "r1_quarry_damp_cut"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        7,
+        24
+      ],
+      "rule": "r1_quarry_damp_cut"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        8,
+        24
+      ],
+      "rule": "r1_quarry_damp_cut"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        10,
+        24
+      ],
+      "rule": "r1_quarry_damp_cut"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        11,
+        24
+      ],
+      "rule": "r1_quarry_damp_cut"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        12,
+        24
+      ],
+      "rule": "r1_quarry_damp_cut"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        13,
+        24
+      ],
+      "rule": "r1_quarry_damp_cut"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        15,
+        24
+      ],
+      "rule": "r1_quarry_damp_cut"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        20,
+        3
+      ],
+      "rule": "r1_quarry_shaft_air"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        17,
+        4
+      ],
+      "rule": "r1_quarry_shaft_air"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        20,
+        4
+      ],
+      "rule": "r1_quarry_shaft_air"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        25,
+        4
+      ],
+      "rule": "r1_quarry_shaft_air"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        19,
+        6
+      ],
+      "rule": "r1_quarry_shaft_air"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        20,
+        6
+      ],
+      "rule": "r1_quarry_shaft_air"
+    },
+    {
+      "kind": "shrub",
+      "at": [
+        20,
+        6
+      ],
+      "rule": "r1_quarry_shaft_air"
+    },
+    {
+      "kind": "boulder",
+      "at": [
+        14,
+        9
+      ],
+      "rule": "prop:r1_quarry_ring_01"
+    },
+    {
+      "kind": "boulder",
+      "at": [
+        17,
+        8
+      ],
+      "rule": "prop:r1_quarry_ring_02"
+    },
+    {
+      "kind": "boulder",
+      "at": [
+        20,
+        10
+      ],
+      "rule": "prop:r1_quarry_ring_03"
+    },
+    {
+      "kind": "boulder",
+      "at": [
+        19,
+        14
+      ],
+      "rule": "prop:r1_quarry_ring_04"
+    },
+    {
+      "kind": "rock",
+      "at": [
+        13,
+        14
+      ],
+      "rule": "prop:r1_quarry_ring_05"
+    },
+    {
+      "kind": "boulder",
+      "at": [
+        4,
+        5
+      ],
+      "rule": "prop:r1_quarry_wall_01"
+    },
+    {
+      "kind": "boulder",
+      "at": [
+        7,
+        5
+      ],
+      "rule": "prop:r1_quarry_wall_02"
+    },
+    {
+      "kind": "boulder",
+      "at": [
+        4,
+        22
+      ],
+      "rule": "prop:r1_quarry_wall_03"
+    },
+    {
+      "kind": "boulder",
+      "at": [
+        25,
+        23
+      ],
+      "rule": "prop:r1_quarry_wall_04"
+    },
+    {
+      "kind": "sign",
+      "at": [
+        25,
+        8
+      ],
+      "rule": "prop:r1_hoist_sign"
+    }
+  ]
+}

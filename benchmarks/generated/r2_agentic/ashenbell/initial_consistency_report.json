@@ -1,0 +1,325 @@
+{
+  "format_version": "1.0",
+  "family": "ashenbell",
+  "method": "R2",
+  "version": "initial",
+  "MECHANICALLY_VERIFIED": [
+    {
+      "check": "paired ordinary warps",
+      "status": "PASS",
+      "evidence": {
+        "unpaired": []
+      }
+    },
+    {
+      "check": "map topology matches declared region graph",
+      "status": "PASS",
+      "evidence": {
+        "expected": [
+          [
+            "r2_ashenbell",
+            "r2_highland_pass"
+          ],
+          [
+            "r2_ashenbell",
+            "r2_south_route"
+          ],
+          [
+            "r2_highland_pass",
+            "r2_old_bell_quarry"
+          ]
+        ],
+        "actual": [
+          [
+            "r2_ashenbell",
+            "r2_highland_pass"
+          ],
+          [
+            "r2_ashenbell",
+            "r2_south_route"
+          ],
+          [
+            "r2_highland_pass",
+            "r2_old_bell_quarry"
+          ]
+        ]
+      }
+    },
+    {
+      "check": "referenced transition targets exist and fit",
+      "status": "PASS",
+      "evidence": []
+    },
+    {
+      "check": "optional area remains optional",
+      "status": "PASS",
+      "evidence": {
+        "main_reachable_without_quarry": [
+          "r2_ashenbell",
+          "r2_highland_pass",
+          "r2_south_route"
+        ]
+      }
+    },
+    {
+      "check": "mandatory progression does not require quarry",
+      "status": "PASS",
+      "evidence": {
+        "mandatory_nodes": [
+          "r2_ashenbell",
+          "r2_highland_pass",
+          "r2_south_route"
+        ]
+      }
+    },
+    {
+      "check": "event action verbs resolve in the active engine",
+      "status": "PASS",
+      "evidence": {
+        "unknown_actions": []
+      }
+    },
+    {
+      "check": "player-facing interactions have stable reachable anchors",
+      "status": "FAIL",
+      "evidence": {
+        "failures": [
+          {
+            "map_id": "r2_ashenbell",
+            "event": "r2_village_shortcut_locked",
+            "at": [
+              32,
+              10
+            ],
+            "stable_anchor": false,
+            "reachable_adjacent_tiles": []
+          },
+          {
+            "map_id": "r2_ashenbell",
+            "event": "r2_village_shortcut_open",
+            "at": [
+              32,
+              10
+            ],
+            "stable_anchor": false,
+            "reachable_adjacent_tiles": []
+          },
+          {
+            "map_id": "r2_highland_pass",
+            "event": "r2_pass_echo",
+            "at": [
+              20,
+              13
+            ],
+            "stable_anchor": false,
+            "reachable_adjacent_tiles": []
+          },
+          {
+            "map_id": "r2_highland_pass",
+            "event": "r2_pass_shortcut_locked",
+            "at": [
+              4,
+              30
+            ],
+            "stable_anchor": false,
+            "reachable_adjacent_tiles": []
+          },
+          {
+            "map_id": "r2_highland_pass",
+            "event": "r2_pass_shortcut_open",
+            "at": [
+              4,
+              30
+            ],
+            "stable_anchor": false,
+            "reachable_adjacent_tiles": []
+          },
+          {
+            "map_id": "r2_old_bell_quarry",
+            "event": "r2_quarry_evidence",
+            "at": [
+              20,
+              12
+            ],
+            "stable_anchor": false,
+            "reachable_adjacent_tiles": []
+          },
+          {
+            "map_id": "r2_old_bell_quarry",
+            "event": "r2_raise_hoist",
+            "at": [
+              25,
+              8
+            ],
+            "stable_anchor": false,
+            "reachable_adjacent_tiles": []
+          },
+          {
+            "map_id": "r2_old_bell_quarry",
+            "event": "r2_hoist_raised",
+            "at": [
+              25,
+              8
+            ],
+            "stable_anchor": false,
+            "reachable_adjacent_tiles": []
+          },
+          {
+            "map_id": "r2_old_bell_quarry",
+            "event": "r2_quarry_cache",
+            "at": [
+              14,
+              23
+            ],
+            "stable_anchor": false,
+            "reachable_adjacent_tiles": []
+          }
+        ]
+      }
+    },
+    {
+      "check": "referenced events exist",
+      "status": "PASS",
+      "evidence": {
+        "missing": []
+      }
+    },
+    {
+      "check": "required state variable producer exists",
+      "status": "FAIL",
+      "evidence": {
+        "shortcut": [],
+        "history": [
+          "r2_read_bell_plinth"
+        ]
+      }
+    },
+    {
+      "check": "required state variable consumers exist",
+      "status": "PASS",
+      "evidence": {
+        "shortcut": [
+          "r2_village_shortcut_locked",
+          "r2_village_shortcut_open",
+          "r2_pass_shortcut_locked",
+          "r2_pass_shortcut_open",
+          "r2_raise_hoist",
+          "r2_hoist_raised"
+        ],
+        "history": [
+          "r2_read_bell_plinth",
+          "r2_pass_echo"
+        ]
+      }
+    },
+    {
+      "check": "shortcut is two-way after unlock",
+      "status": "PASS",
+      "evidence": {
+        "expected": [
+          [
+            "r2_ashenbell",
+            "r2_highland_pass"
+          ],
+          [
+            "r2_highland_pass",
+            "r2_ashenbell"
+          ]
+        ],
+        "actual": [
+          [
+            "r2_ashenbell",
+            "r2_highland_pass"
+          ],
+          [
+            "r2_highland_pass",
+            "r2_ashenbell"
+          ]
+        ]
+      }
+    },
+    {
+      "check": "shortcut cannot become permanently inaccessible",
+      "status": "PASS",
+      "evidence": {
+        "conflicting_writes": [],
+        "ordinary_route_available": true
+      }
+    }
+  ],
+  "SEMANTICALLY_REVIEWED": [
+    {
+      "category": "geographic_continuity",
+      "status": "supported",
+      "evidence": "The old bell road crosses the mandatory maps; Split Crown changes from distant paired stones to village frame to physical pass cairn; the quarry track leaves the pass eastward.",
+      "contradiction": null
+    },
+    {
+      "category": "story_consistency",
+      "status": "supported",
+      "evidence": "All variants retain quarry production, three-valley warnings, the closing slide, a retired chain, and a recent lower tone linked cautiously to west wind and runoff.",
+      "contradiction": null
+    },
+    {
+      "category": "npc_factual_consistency",
+      "status": "supported",
+      "evidence": "Shepherd, keeper, surveyor, and quarry worker have different evidence access without changing the immutable history.",
+      "contradiction": null
+    },
+    {
+      "category": "ecological_progression",
+      "status": "supported",
+      "evidence": "Tables remove shybulb from village/pass, increase elofly with exposure, and return shybulb only in the damp quarry cut.",
+      "contradiction": null
+    },
+    {
+      "category": "map_identity",
+      "status": "supported",
+      "evidence": "R2 varies path direction, encounter geometry, settlement circulation, negative space, and quarry density according to the region model.",
+      "contradiction": "The pass remains visually sparse under the frozen vocabulary; this is reported rather than padded."
+    },
+    {
+      "category": "progression_logic",
+      "status": "contradiction",
+      "evidence": "Initial ordinary topology remained optional-safe; final state naming matches all consumers.",
+      "contradiction": "Initial hoist produced r2_hoist:raised while consumers required r2_shortcut:open."
+    },
+    {
+      "category": "optional_content_integration",
+      "status": "supported",
+      "evidence": "The quarry adds material evidence, potion context, and the hoist shortcut without replacing the ordinary village/pass route.",
+      "contradiction": null
+    },
+    {
+      "category": "repetition_across_maps",
+      "status": "supported",
+      "evidence": "The four critical paths use different turn sequences and lateral biases, while repeated road/ridge motifs preserve regional continuity.",
+      "contradiction": null
+    },
+    {
+      "category": "landmark_reuse",
+      "status": "supported",
+      "evidence": "Split Crown is reused as one regional landform rather than copied as an unrelated prop label.",
+      "contradiction": null
+    },
+    {
+      "category": "regional_identity",
+      "status": "supported",
+      "evidence": "Road, warning signs, paired stones, civic memory, weather talk, and quarry material recur with different functions.",
+      "contradiction": null
+    }
+  ],
+  "UNVERIFIABLE": [
+    "Whether first traversal lasts 20\u201335 minutes for a first-time player.",
+    "Whether navigation feels clear moment to moment in the real client.",
+    "Whether dialogue feels natural rather than merely fact-consistent.",
+    "Whether landmarks are memorable and curiosity feels rewarded.",
+    "Whether the low tone interpretation is understood without over-explanation.",
+    "Fun and overall enjoyment."
+  ],
+  "mechanical_summary": {
+    "passed": 10,
+    "failed": 2
+  },
+  "warning": "No aggregate world-quality or fun score is computed."
+}

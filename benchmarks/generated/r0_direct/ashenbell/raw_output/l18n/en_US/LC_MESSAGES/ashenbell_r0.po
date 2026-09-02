@@ -1,0 +1,22 @@
+msgid ""
+msgstr ""
+"Language: en_US\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "r0_bell_keeper_dialog"
+msgstr "Quarry-stone bells with iron tongues warned three valleys until the slide. Nobody has operated the chain since, whatever sounds at night."
+
+msgid "r0_gardener_dialog"
+msgstr "Squabbit take dry seed; Elofly only settle here when the ridge wind drops."
+
+msgid "r0_pass_surveyor_dialog"
+msgstr "The old warning stones carried across valleys. West wind and quarry runoff arrive with the new tone; weather may be playing abandoned work."
+
+msgid "r0_quarry_prospector_dialog"
+msgstr "Wet cracked stone and a buried iron strap answer one another here. That can sound without anybody ringing a bell."
+
+msgid "r0_south_shepherd_dialog"
+msgstr "The lower night tone follows Split Crown's west face when fog presses low. Grandmother's quarry warnings kept that rhythm, but sounded brighter."
+
+msgid "world_synthesis_campaign"
+msgstr "The Ashenbell Highlands"

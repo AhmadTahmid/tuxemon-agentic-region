@@ -1,0 +1,48 @@
+format_version: "1.0"
+family: ashenbell
+display_name: The Ashenbell Highlands
+scope: exactly four playable maps; no northern destination beyond the pass threshold
+dimensions:
+  south_route: [36, 34]
+  ashenbell: [34, 30]
+  highland_pass: [36, 36]
+  old_bell_quarry: [30, 28]
+topology:
+  mandatory: [south_route, ashenbell, highland_pass]
+  optional_branch: [highland_pass, old_bell_quarry]
+  conceptual_destination: north of highland_pass
+shared_facts:
+  - Ashenbell used stone bells with metal tongues to warn upland settlements of storms and landslides.
+  - A slide ended quarry work decades ago and the warning system no longer operates.
+  - A low bell-like tone has recently returned at night.
+  - Wind and water moving through cracked quarry stone and buried metal fittings are a plausible source, but the slice does not settle the explanation absolutely.
+geographic_continuity:
+  - The old bell road runs north through all three mandatory maps and becomes the quarry track at the pass branch.
+  - Split Crown Ridge is first glimpsed from the south, frames Ashenbell, and is physically crossed in the pass.
+ecology:
+  allowed_monsters: [shybulb, squabbit, elofly]
+  gradient:
+    south_route: damp shade favors shybulb; squabbit forage at open edges; elofly are uncommon
+    ashenbell: squabbit and elofly use cultivated margins; shybulb are absent from the worked edge
+    highland_pass: exposed air favors elofly; squabbit shelter among rocks; shybulb are absent
+    old_bell_quarry: elofly use shafts; shybulb return in damp cuts; squabbit are uncommon
+allowance:
+  starter: {monster: cardiling, level: 7}
+  useful_item: potion
+  npc_sprites: [scientist, miner_green, knight, botanist, adventurer]
+  tileset: prototyping_outdoor.tsx
+  building_stamp_zero_based_tiles:
+    - [850, 851, 852, 853]
+    - [882, 883, 884, 885]
+    - [914, 915, 916, 917]
+    - [946, 947, 948, 949]
+    - [978, 979, 980, 981]
+required_state:
+  - A quarry hoist interaction sets a persistent shortcut variable.
+  - Conditional events in Ashenbell and Highland Pass consume that variable to enable a two-way optional shortcut.
+  - The ordinary village-to-pass route remains available regardless of quarry state.
+evidence_rules:
+  - preserve exact prompt and raw output
+  - log only mechanical repairs; never redesign R0 or R1 after inspection
+  - R2 alone receives consistency criticism and one recorded content revision
+  - automated review reports contradictions and evidence but emits no world-quality score

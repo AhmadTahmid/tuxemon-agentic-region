@@ -1,0 +1,1090 @@
+{
+  "format_version": "1.0",
+  "map_id": "r2_old_bell_quarry",
+  "source": "benchmarks/generated/r2_agentic/ashenbell/final_world_spec.yaml",
+  "source_seed": 28411,
+  "revision": 3,
+  "tmx_sha256": "b2362f19994ae3128e036166cc0318d4d58dcbb7f0fed88aedb8f626faf23025",
+  "blocked_cells": [
+    [
+      4,
+      5
+    ],
+    [
+      7,
+      5
+    ],
+    [
+      27,
+      5
+    ],
+    [
+      17,
+      8
+    ],
+    [
+      21,
+      8
+    ],
+    [
+      23,
+      11
+    ],
+    [
+      16,
+      13
+    ],
+    [
+      19,
+      15
+    ],
+    [
+      4,
+      22
+    ],
+    [
+      25,
+      23
+    ],
+    [
+      12,
+      25
+    ]
+  ],
+  "collision_rectangles": [
+    [
+      4,
+      5,
+      1,
+      1
+    ],
+    [
+      7,
+      5,
+      1,
+      1
+    ],
+    [
+      27,
+      5,
+      1,
+      1
+    ],
+    [
+      17,
+      8,
+      1,
+      1
+    ],
+    [
+      21,
+      8,
+      1,
+      1
+    ],
+    [
+      23,
+      11,
+      1,
+      1
+    ],
+    [
+      16,
+      13,
+      1,
+      1
+    ],
+    [
+      19,
+      15,
+      1,
+      1
+    ],
+    [
+      4,
+      22,
+      1,
+      1
+    ],
+    [
+      25,
+      23,
+      1,
+      1
+    ],
+    [
+      12,
+      25,
+      1,
+      1
+    ]
+  ],
+  "path_cells": [
+    [
+      24,
+      7
+    ],
+    [
+      25,
+      7
+    ],
+    [
+      26,
+      7
+    ],
+    [
+      27,
+      7
+    ],
+    [
+      14,
+      8
+    ],
+    [
+      15,
+      8
+    ],
+    [
+      23,
+      8
+    ],
+    [
+      24,
+      8
+    ],
+    [
+      25,
+      8
+    ],
+    [
+      26,
+      8
+    ],
+    [
+      27,
+      8
+    ],
+    [
+      28,
+      8
+    ],
+    [
+      11,
+      9
+    ],
+    [
+      12,
+      9
+    ],
+    [
+      13,
+      9
+    ],
+    [
+      14,
+      9
+    ],
+    [
+      15,
+      9
+    ],
+    [
+      16,
+      9
+    ],
+    [
+      17,
+      9
+    ],
+    [
+      22,
+      9
+    ],
+    [
+      23,
+      9
+    ],
+    [
+      24,
+      9
+    ],
+    [
+      25,
+      9
+    ],
+    [
+      26,
+      9
+    ],
+    [
+      27,
+      9
+    ],
+    [
+      9,
+      10
+    ],
+    [
+      10,
+      10
+    ],
+    [
+      11,
+      10
+    ],
+    [
+      12,
+      10
+    ],
+    [
+      13,
+      10
+    ],
+    [
+      14,
+      10
+    ],
+    [
+      15,
+      10
+    ],
+    [
+      16,
+      10
+    ],
+    [
+      17,
+      10
+    ],
+    [
+      18,
+      10
+    ],
+    [
+      19,
+      10
+    ],
+    [
+      21,
+      10
+    ],
+    [
+      22,
+      10
+    ],
+    [
+      23,
+      10
+    ],
+    [
+      24,
+      10
+    ],
+    [
+      8,
+      11
+    ],
+    [
+      9,
+      11
+    ],
+    [
+      10,
+      11
+    ],
+    [
+      11,
+      11
+    ],
+    [
+      12,
+      11
+    ],
+    [
+      13,
+      11
+    ],
+    [
+      16,
+      11
+    ],
+    [
+      17,
+      11
+    ],
+    [
+      18,
+      11
+    ],
+    [
+      19,
+      11
+    ],
+    [
+      20,
+      11
+    ],
+    [
+      21,
+      11
+    ],
+    [
+      22,
+      11
+    ],
+    [
+      24,
+      11
+    ],
+    [
+      7,
+      12
+    ],
+    [
+      8,
+      12
+    ],
+    [
+      9,
+      12
+    ],
+    [
+      10,
+      12
+    ],
+    [
+      18,
+      12
+    ],
+    [
+      19,
+      12
+    ],
+    [
+      20,
+      12
+    ],
+    [
+      21,
+      12
+    ],
+    [
+      25,
+      12
+    ],
+    [
+      0,
+      13
+    ],
+    [
+      1,
+      13
+    ],
+    [
+      2,
+      13
+    ],
+    [
+      3,
+      13
+    ],
+    [
+      4,
+      13
+    ],
+    [
+      5,
+      13
+    ],
+    [
+      6,
+      13
+    ],
+    [
+      7,
+      13
+    ],
+    [
+      8,
+      13
+    ],
+    [
+      9,
+      13
+    ],
+    [
+      20,
+      13
+    ],
+    [
+      25,
+      13
+    ],
+    [
+      0,
+      14
+    ],
+    [
+      1,
+      14
+    ],
+    [
+      2,
+      14
+    ],
+    [
+      3,
+      14
+    ],
+    [
+      4,
+      14
+    ],
+    [
+      5,
+      14
+    ],
+    [
+      6,
+      14
+    ],
+    [
+      7,
+      14
+    ],
+    [
+      9,
+      14
+    ],
+    [
+      25,
+      14
+    ],
+    [
+      0,
+      15
+    ],
+    [
+      1,
+      15
+    ],
+    [
+      2,
+      15
+    ],
+    [
+      3,
+      15
+    ],
+    [
+      4,
+      15
+    ],
+    [
+      5,
+      15
+    ],
+    [
+      6,
+      15
+    ],
+    [
+      8,
+      15
+    ],
+    [
+      25,
+      15
+    ],
+    [
+      8,
+      16
+    ],
+    [
+      25,
+      16
+    ],
+    [
+      8,
+      17
+    ],
+    [
+      24,
+      17
+    ],
+    [
+      8,
+      18
+    ],
+    [
+      24,
+      18
+    ],
+    [
+      8,
+      19
+    ],
+    [
+      23,
+      19
+    ],
+    [
+      9,
+      20
+    ],
+    [
+      10,
+      20
+    ],
+    [
+      23,
+      20
+    ],
+    [
+      11,
+      21
+    ],
+    [
+      20,
+      21
+    ],
+    [
+      21,
+      21
+    ],
+    [
+      22,
+      21
+    ],
+    [
+      12,
+      22
+    ],
+    [
+      13,
+      22
+    ],
+    [
+      16,
+      22
+    ],
+    [
+      17,
+      22
+    ],
+    [
+      18,
+      22
+    ],
+    [
+      19,
+      22
+    ],
+    [
+      14,
+      23
+    ],
+    [
+      15,
+      23
+    ]
+  ],
+  "generated_objects": [
+    {
+      "kind": "tall_grass",
+      "at": [
+        9,
+        16
+      ],
+      "rule": "r2_quarry_damp_cut"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        13,
+        16
+      ],
+      "rule": "r2_quarry_damp_cut"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        14,
+        16
+      ],
+      "rule": "r2_quarry_damp_cut"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        15,
+        16
+      ],
+      "rule": "r2_quarry_damp_cut"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        16,
+        16
+      ],
+      "rule": "r2_quarry_damp_cut"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        17,
+        16
+      ],
+      "rule": "r2_quarry_damp_cut"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        7,
+        17
+      ],
+      "rule": "r2_quarry_damp_cut"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        9,
+        17
+      ],
+      "rule": "r2_quarry_damp_cut"
+    },
+    {
+      "kind": "shrub",
+      "at": [
+        9,
+        17
+      ],
+      "rule": "r2_quarry_damp_cut"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        10,
+        17
+      ],
+      "rule": "r2_quarry_damp_cut"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        14,
+        17
+      ],
+      "rule": "r2_quarry_damp_cut"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        15,
+        17
+      ],
+      "rule": "r2_quarry_damp_cut"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        17,
+        17
+      ],
+      "rule": "r2_quarry_damp_cut"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        7,
+        18
+      ],
+      "rule": "r2_quarry_damp_cut"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        10,
+        18
+      ],
+      "rule": "r2_quarry_damp_cut"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        14,
+        18
+      ],
+      "rule": "r2_quarry_damp_cut"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        15,
+        18
+      ],
+      "rule": "r2_quarry_damp_cut"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        7,
+        19
+      ],
+      "rule": "r2_quarry_damp_cut"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        9,
+        19
+      ],
+      "rule": "r2_quarry_damp_cut"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        11,
+        19
+      ],
+      "rule": "r2_quarry_damp_cut"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        12,
+        19
+      ],
+      "rule": "r2_quarry_damp_cut"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        15,
+        19
+      ],
+      "rule": "r2_quarry_damp_cut"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        8,
+        20
+      ],
+      "rule": "r2_quarry_damp_cut"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        12,
+        20
+      ],
+      "rule": "r2_quarry_damp_cut"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        16,
+        20
+      ],
+      "rule": "r2_quarry_damp_cut"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        8,
+        21
+      ],
+      "rule": "r2_quarry_damp_cut"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        12,
+        21
+      ],
+      "rule": "r2_quarry_damp_cut"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        13,
+        21
+      ],
+      "rule": "r2_quarry_damp_cut"
+    },
+    {
+      "kind": "shrub",
+      "at": [
+        13,
+        21
+      ],
+      "rule": "r2_quarry_damp_cut"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        14,
+        22
+      ],
+      "rule": "r2_quarry_damp_cut"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        7,
+        23
+      ],
+      "rule": "r2_quarry_damp_cut"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        8,
+        23
+      ],
+      "rule": "r2_quarry_damp_cut"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        9,
+        23
+      ],
+      "rule": "r2_quarry_damp_cut"
+    },
+    {
+      "kind": "shrub",
+      "at": [
+        9,
+        23
+      ],
+      "rule": "r2_quarry_damp_cut"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        11,
+        23
+      ],
+      "rule": "r2_quarry_damp_cut"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        12,
+        23
+      ],
+      "rule": "r2_quarry_damp_cut"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        13,
+        23
+      ],
+      "rule": "r2_quarry_damp_cut"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        16,
+        23
+      ],
+      "rule": "r2_quarry_damp_cut"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        17,
+        23
+      ],
+      "rule": "r2_quarry_damp_cut"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        9,
+        24
+      ],
+      "rule": "r2_quarry_damp_cut"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        12,
+        24
+      ],
+      "rule": "r2_quarry_damp_cut"
+    },
+    {
+      "kind": "shrub",
+      "at": [
+        12,
+        24
+      ],
+      "rule": "r2_quarry_damp_cut"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        14,
+        24
+      ],
+      "rule": "r2_quarry_damp_cut"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        17,
+        24
+      ],
+      "rule": "r2_quarry_damp_cut"
+    },
+    {
+      "kind": "shrub",
+      "at": [
+        17,
+        24
+      ],
+      "rule": "r2_quarry_damp_cut"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        22,
+        3
+      ],
+      "rule": "r2_quarry_shaft_air"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        23,
+        3
+      ],
+      "rule": "r2_quarry_shaft_air"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        20,
+        4
+      ],
+      "rule": "r2_quarry_shaft_air"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        24,
+        4
+      ],
+      "rule": "r2_quarry_shaft_air"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        19,
+        5
+      ],
+      "rule": "r2_quarry_shaft_air"
+    },
+    {
+      "kind": "tall_grass",
+      "at": [
+        17,
+        6
+      ],
+      "rule": "r2_quarry_shaft_air"
+    },
+    {
+      "kind": "boulder",
+      "at": [
+        17,
+        8
+      ],
+      "rule": "prop:r2_quarry_ring_01"
+    },
+    {
+      "kind": "boulder",
+      "at": [
+        21,
+        8
+      ],
+      "rule": "prop:r2_quarry_ring_02"
+    },
+    {
+      "kind": "boulder",
+      "at": [
+        23,
+        11
+      ],
+      "rule": "prop:r2_quarry_ring_03"
+    },
+    {
+      "kind": "boulder",
+      "at": [
+        19,
+        15
+      ],
+      "rule": "prop:r2_quarry_ring_04"
+    },
+    {
+      "kind": "rock",
+      "at": [
+        16,
+        13
+      ],
+      "rule": "prop:r2_quarry_ring_05"
+    },
+    {
+      "kind": "boulder",
+      "at": [
+        4,
+        5
+      ],
+      "rule": "prop:r2_quarry_wall_01"
+    },
+    {
+      "kind": "boulder",
+      "at": [
+        7,
+        5
+      ],
+      "rule": "prop:r2_quarry_wall_02"
+    },
+    {
+      "kind": "boulder",
+      "at": [
+        4,
+        22
+      ],
+      "rule": "prop:r2_quarry_wall_03"
+    },
+    {
+      "kind": "boulder",
+      "at": [
+        25,
+        23
+      ],
+      "rule": "prop:r2_quarry_wall_04"
+    },
+    {
+      "kind": "sign",
+      "at": [
+        27,
+        5
+      ],
+      "rule": "prop:r2_hoist_sign"
+    },
+    {
+      "kind": "rock",
+      "at": [
+        12,
+        25
+      ],
+      "rule": "prop:r2_cache_marker"
+    }
+  ]
+}

@@ -1,0 +1,2 @@
+World synthesis validation: 0 error(s), 1 warning(s)
+[WARNING] r2_highland_pass sparse_decoration: Less than 7% of cells contain generated composition details.

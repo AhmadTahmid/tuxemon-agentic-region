@@ -56,6 +56,13 @@ class TilePalette:
     sign_top: int = 306
     sign_middle: int = 338
     sign_bottom: int = 370
+    building: tuple[tuple[int, ...], ...] = (
+        (850, 851, 852, 853),
+        (882, 883, 884, 885),
+        (914, 915, 916, 917),
+        (946, 947, 948, 949),
+        (978, 979, 980, 981),
+    )
 
 
 @dataclass
@@ -194,7 +201,14 @@ def compile_layout(world: WorldSpec, map_spec: MapSpec) -> CompiledLayout:
 
     # Hard boundary with deliberate gaps for authored transitions.
     warp_cells = {(warp.at.x, warp.at.y) for warp in map_spec.warps}
-    protected = path_cells | bridge_cells | warp_cells
+    building_cells = {
+        (prop.at.x + ox, prop.at.y - 4 + oy)
+        for prop in map_spec.props
+        if prop.kind == "building"
+        for oy in range(5)
+        for ox in range(4)
+    }
+    protected = path_cells | bridge_cells | warp_cells | building_cells
     protected |= {(npc.at.x, npc.at.y) for npc in map_spec.npcs}
     protected |= {(secret.at.x, secret.at.y) for secret in map_spec.secrets}
     protected |= {(prop.at.x, prop.at.y) for prop in map_spec.props}
@@ -379,9 +393,19 @@ def compile_layout(world: WorldSpec, map_spec: MapSpec) -> CompiledLayout:
             above[y - 2][x] = palette.sign_top
             above[y - 1][x] = palette.sign_middle
             objects[y][x] = palette.sign_bottom
+        elif prop.kind == "building":
+            for oy, row in enumerate(palette.building):
+                for ox, tile in enumerate(row):
+                    target_y = y - 4 + oy
+                    if oy < 4:
+                        above[target_y][x + ox] = tile
+                    else:
+                        objects[target_y][x + ox] = tile
+                    if prop.blocks_movement:
+                        blocked.add((x + ox, target_y))
         else:
             objects[y][x] = prop_tiles[prop.kind]
-        if prop.blocks_movement:
+        if prop.blocks_movement and prop.kind != "building":
             blocked.add((x, y))
         generated.append(
             {"kind": prop.kind, "at": [x, y], "rule": f"prop:{prop.id}"}
@@ -598,6 +622,10 @@ def layout_to_tmx(layout: CompiledLayout) -> str:
             (f"act{index}", action)
             for index, action in enumerate(story_event.actions, start=1)
         ]
+        props.extend(
+            (f"cond{index + 20}", condition)
+            for index, condition in enumerate(story_event.conditions, start=1)
+        )
         props.extend(
             [
                 ("cond10", "is char_facing_tile player"),

@@ -1,0 +1,17 @@
+{
+  "format_version": "1.0",
+  "world_id": "ashenbell_r2_region",
+  "summary": {
+    "errors": 0,
+    "warnings": 1,
+    "maps": 4
+  },
+  "diagnostics": [
+    {
+      "severity": "warning",
+      "code": "sparse_decoration",
+      "map_id": "r2_highland_pass",
+      "message": "Less than 7% of cells contain generated composition details."
+    }
+  ]
+}

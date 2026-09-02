@@ -44,6 +44,9 @@ settlement threshold → compression → first reveal → encounter pressure
 - `place_landmark`: explicit authored anchor and clearance;
 - `scatter_cluster`: bounded seeded decoration inside a semantic zone;
 - `place_object`: explicit meaningful prop;
+- `building` prop: one reviewed four-by-five exterior stamp from the existing
+  prototype atlas, anchored at its lower-left foundation cell; its complete
+  footprint is collision-bearing when `blocks_movement` is true;
 - `merge_collision`: combine contiguous blocked cells into rectangles;
 - `create_event`: typed Tuxemon event object;
 - `create_warp`: paired, validated transition;

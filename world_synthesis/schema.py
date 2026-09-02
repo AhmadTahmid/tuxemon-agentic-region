@@ -93,7 +93,9 @@ class BoundarySpec(StrictModel):
 
 class Prop(StrictModel):
     id: str = Field(pattern=r"^[a-z][a-z0-9_]*$")
-    kind: Literal["tree", "shrub", "flower", "rock", "boulder", "sign"]
+    kind: Literal[
+        "tree", "shrub", "flower", "rock", "boulder", "sign", "building"
+    ]
     at: Point
     blocks_movement: bool
     semantic_role: str
@@ -166,6 +168,7 @@ class StoryEvent(StrictModel):
     at: Point
     trigger: str
     actions: list[str]
+    conditions: list[str] = Field(default_factory=list)
 
 
 class QuestStep(StrictModel):
@@ -264,10 +267,22 @@ class MapSpec(StrictModel):
                         f"map {self.id!r} feature {feature.id!r} has an entrance outside its perimeter"
                     )
         for prop in self.props:
-            minimum_y = 2 if prop.kind == "sign" else 1 if prop.kind == "tree" else 0
+            minimum_y = (
+                4
+                if prop.kind == "building"
+                else 2
+                if prop.kind == "sign"
+                else 1
+                if prop.kind == "tree"
+                else 0
+            )
             if prop.at.y < minimum_y:
                 raise ValueError(
                     f"map {self.id!r} prop {prop.id!r} lacks vertical room for its layered tiles"
+                )
+            if prop.kind == "building" and prop.at.x + 4 > self.width:
+                raise ValueError(
+                    f"map {self.id!r} prop {prop.id!r} lacks horizontal room for its building stamp"
                 )
         entity_ids = [
             *(item.id for item in self.landmarks),

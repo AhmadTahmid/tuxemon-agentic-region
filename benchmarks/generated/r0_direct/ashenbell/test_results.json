@@ -1,0 +1,10 @@
+{
+  "format_version": "1.0",
+  "focused_world_synthesis": "38 passed",
+  "full_suite": "4273 passed, 1 pre-existing Windows-specific upstream failure",
+  "real_tmx_loader": "4/4 maps passed",
+  "real_database_overlay": "passed",
+  "graphical_client": "village and quarry launched and captured",
+  "deterministic_rebuild": "TMX hashes identical",
+  "experimental_acceptance": "failed stable interaction-anchor consistency check; hoist and shortcut interactions preserved without design repair"
+}

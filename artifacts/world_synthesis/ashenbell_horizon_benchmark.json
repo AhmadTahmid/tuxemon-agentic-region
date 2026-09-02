@@ -1,0 +1,321 @@
+{
+  "format_version": "1.0",
+  "family": "ashenbell",
+  "masked_display_name": "Ashenbell Highlands",
+  "compiler_sha256": "4e94b1ae4e531dd70da33b162b8329a0d0d2cc5a71190633e4a560b1ff7f156a",
+  "results": [
+    {
+      "method": "R0",
+      "representation": "direct low-level TMX/Tuxemon",
+      "map_dimensions": {
+        "south_route": [
+          36,
+          34
+        ],
+        "ashenbell": [
+          34,
+          30
+        ],
+        "highland_pass": [
+          36,
+          36
+        ],
+        "old_bell_quarry": [
+          30,
+          28
+        ]
+      },
+      "validation_errors": [],
+      "validation_warnings": [],
+      "consistency_failures": [
+        {
+          "check": "player-facing interactions have stable reachable anchors",
+          "status": "FAIL",
+          "evidence": {
+            "failures": [
+              {
+                "map_id": "r0_ashenbell",
+                "event": "r0_village_shortcut_locked",
+                "at": [
+                  32,
+                  10
+                ],
+                "stable_anchor": false,
+                "reachable_adjacent_tiles": []
+              },
+              {
+                "map_id": "r0_ashenbell",
+                "event": "r0_village_shortcut_open",
+                "at": [
+                  32,
+                  10
+                ],
+                "stable_anchor": false,
+                "reachable_adjacent_tiles": []
+              },
+              {
+                "map_id": "r0_highland_pass",
+                "event": "r0_pass_echo",
+                "at": [
+                  19,
+                  14
+                ],
+                "stable_anchor": false,
+                "reachable_adjacent_tiles": []
+              },
+              {
+                "map_id": "r0_highland_pass",
+                "event": "r0_pass_shortcut_locked",
+                "at": [
+                  4,
+                  30
+                ],
+                "stable_anchor": false,
+                "reachable_adjacent_tiles": []
+              },
+              {
+                "map_id": "r0_highland_pass",
+                "event": "r0_pass_shortcut_open",
+                "at": [
+                  4,
+                  30
+                ],
+                "stable_anchor": false,
+                "reachable_adjacent_tiles": []
+              },
+              {
+                "map_id": "r0_old_bell_quarry",
+                "event": "r0_quarry_evidence",
+                "at": [
+                  20,
+                  12
+                ],
+                "stable_anchor": false,
+                "reachable_adjacent_tiles": []
+              },
+              {
+                "map_id": "r0_old_bell_quarry",
+                "event": "r0_raise_hoist",
+                "at": [
+                  25,
+                  8
+                ],
+                "stable_anchor": false,
+                "reachable_adjacent_tiles": []
+              },
+              {
+                "map_id": "r0_old_bell_quarry",
+                "event": "r0_hoist_raised",
+                "at": [
+                  25,
+                  8
+                ],
+                "stable_anchor": false,
+                "reachable_adjacent_tiles": []
+              },
+              {
+                "map_id": "r0_old_bell_quarry",
+                "event": "r0_quarry_cache",
+                "at": [
+                  14,
+                  23
+                ],
+                "stable_anchor": false,
+                "reachable_adjacent_tiles": []
+              }
+            ]
+          }
+        }
+      ],
+      "tmx_sha256": {
+        "r0_ashenbell": "d25f3cda710d59b1d4b159df3ccbb75f881adc16081a7239e8c89fa3f97e5082",
+        "r0_highland_pass": "c9bfe4269018f853bcd7e34e92d84bfb62649964824094da31198348724b0b5e",
+        "r0_old_bell_quarry": "98711bcd5a54b66bff6ab9ec6e9e2496bd97eef9ef76c60fdb6cef374295e162",
+        "r0_south_route": "f067363c2b6b30dce290d0e123effc47c24419fa4310187ea0bb54c021e7c399"
+      }
+    },
+    {
+      "method": "R1",
+      "representation": "one-shot WorldSpec",
+      "map_dimensions": {
+        "south_route": [
+          36,
+          34
+        ],
+        "ashenbell": [
+          34,
+          30
+        ],
+        "highland_pass": [
+          36,
+          36
+        ],
+        "old_bell_quarry": [
+          30,
+          28
+        ]
+      },
+      "validation_errors": [
+        {
+          "severity": "error",
+          "code": "path_blocked",
+          "map_id": "r1_south_route",
+          "message": "Authored paths overlap collision at [(11, 20), (15, 17)]."
+        },
+        {
+          "severity": "error",
+          "code": "path_blocked",
+          "map_id": "r1_ashenbell",
+          "message": "Authored paths overlap collision at [(11, 20), (12, 20), (15, 16), (17, 14), (25, 10), (26, 10), (27, 10), (28, 10)]."
+        },
+        {
+          "severity": "error",
+          "code": "path_blocked",
+          "map_id": "r1_old_bell_quarry",
+          "message": "Authored paths overlap collision at [(20, 10), (25, 8)]."
+        }
+      ],
+      "validation_warnings": [
+        {
+          "severity": "warning",
+          "code": "sparse_decoration",
+          "map_id": "r1_highland_pass",
+          "message": "Less than 7% of cells contain generated composition details."
+        }
+      ],
+      "consistency_failures": [
+        {
+          "check": "player-facing interactions have stable reachable anchors",
+          "status": "FAIL",
+          "evidence": {
+            "failures": [
+              {
+                "map_id": "r1_ashenbell",
+                "event": "r1_village_shortcut_locked",
+                "at": [
+                  32,
+                  10
+                ],
+                "stable_anchor": false,
+                "reachable_adjacent_tiles": []
+              },
+              {
+                "map_id": "r1_ashenbell",
+                "event": "r1_village_shortcut_open",
+                "at": [
+                  32,
+                  10
+                ],
+                "stable_anchor": false,
+                "reachable_adjacent_tiles": []
+              },
+              {
+                "map_id": "r1_highland_pass",
+                "event": "r1_pass_echo",
+                "at": [
+                  20,
+                  12
+                ],
+                "stable_anchor": false,
+                "reachable_adjacent_tiles": []
+              },
+              {
+                "map_id": "r1_highland_pass",
+                "event": "r1_pass_shortcut_locked",
+                "at": [
+                  4,
+                  30
+                ],
+                "stable_anchor": false,
+                "reachable_adjacent_tiles": []
+              },
+              {
+                "map_id": "r1_highland_pass",
+                "event": "r1_pass_shortcut_open",
+                "at": [
+                  4,
+                  30
+                ],
+                "stable_anchor": false,
+                "reachable_adjacent_tiles": []
+              },
+              {
+                "map_id": "r1_old_bell_quarry",
+                "event": "r1_quarry_evidence",
+                "at": [
+                  17,
+                  11
+                ],
+                "stable_anchor": false,
+                "reachable_adjacent_tiles": []
+              },
+              {
+                "map_id": "r1_old_bell_quarry",
+                "event": "r1_quarry_cache",
+                "at": [
+                  18,
+                  22
+                ],
+                "stable_anchor": false,
+                "reachable_adjacent_tiles": []
+              }
+            ]
+          }
+        }
+      ],
+      "tmx_sha256": {
+        "r1_south_route": "db1cb81f4880e6310fd7063645bbeba2ad51c75a8eb4e0c490aeaab0e71f1342",
+        "r1_ashenbell": "87611d5bfea1cd379314996e9baed100536a83b97815c63dc72469ce81451210",
+        "r1_highland_pass": "e8a7396dbabe66c5c60ce4496d418a53d055c24e0719ccf7cc50aa191afca613",
+        "r1_old_bell_quarry": "ef215d775ca9f5ad687482012f4b26994c32fa0a3db6eeeed7bb1eb2755d3b24"
+      }
+    },
+    {
+      "method": "R2",
+      "representation": "staged agentic WorldSpec",
+      "map_dimensions": {
+        "south_route": [
+          36,
+          34
+        ],
+        "ashenbell": [
+          34,
+          30
+        ],
+        "highland_pass": [
+          36,
+          36
+        ],
+        "old_bell_quarry": [
+          30,
+          28
+        ]
+      },
+      "validation_errors": [],
+      "validation_warnings": [
+        {
+          "severity": "warning",
+          "code": "sparse_decoration",
+          "map_id": "r2_highland_pass",
+          "message": "Less than 7% of cells contain generated composition details."
+        }
+      ],
+      "consistency_failures": [],
+      "tmx_sha256": {
+        "r2_south_route": "b9ad71465eda3380c176aae07866bc4b4c343c040a71f37861003a0309179a87",
+        "r2_ashenbell": "8109a17ee3007f6d2eb2cd6ef05fdeb07dc9be86e4c8ed684c304f1427b4ac27",
+        "r2_highland_pass": "03c96eeb8500ff0c127bc4b3d56bbf42ef2f51c1d2ce59317a29964b202be9b2",
+        "r2_old_bell_quarry": "b2362f19994ae3128e036166cc0318d4d58dcbb7f0fed88aedb8f626faf23025"
+      }
+    }
+  ],
+  "real_tuxemon_loader": {
+    "maps_checked": 12,
+    "issues": []
+  },
+  "real_database_activation": {
+    "issues": []
+  },
+  "human_evaluation_status": "pending",
+  "warning": "R0/R1 interaction-anchor failures and R1 path-collision errors are preserved experimental findings; no aggregate winner is declared."
+}

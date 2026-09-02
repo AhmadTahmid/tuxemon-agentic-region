@@ -1,0 +1,69 @@
+--- initial_world_spec.yaml
++++ final_world_spec.yaml
+@@ -5 +5 @@
+-  authoring_status: draft
++  authoring_status: reviewed
+@@ -114 +114 @@
+-        - {id: r2_bellwater_bridge, kind: bridge, bounds: {x: 16, y: 15, width: 5, height: 3}, blocks_movement: false, notes: Old road bridge.}
++        - {id: r2_bellwater_bridge, kind: bridge, bounds: {x: 16, y: 15, width: 6, height: 3}, blocks_movement: false, notes: Old road bridge.}
+@@ -126 +126 @@
+-      revision: 1
++      revision: 3
+@@ -148 +148 @@
+-          points: [{x: 18, y: 16}, {x: 13, y: 17}, {x: 8, y: 17}, {x: 8, y: 20}, {x: 15, y: 21}, {x: 20, y: 21}]
++          points: [{x: 18, y: 16}, {x: 13, y: 17}, {x: 8, y: 17}, {x: 8, y: 20}, {x: 8, y: 24}, {x: 12, y: 23}, {x: 15, y: 21}, {x: 20, y: 21}]
+@@ -194 +194 @@
+-          entrances: [{x: 8, y: 20}, {x: 8, y: 27}]
++          entrances: [{x: 8, y: 20}, {x: 8, y: 27}, {x: 12, y: 23}]
+@@ -202 +202 @@
+-        - {id: r2_plinth_west, kind: boulder, at: {x: 14, y: 17}, blocks_movement: true, semantic_role: Warning plinth support}
++        - {id: r2_plinth_west, kind: boulder, at: {x: 14, y: 14}, blocks_movement: true, semantic_role: Warning plinth support}
+@@ -203,0 +204 @@
++        - {id: r2_village_shortcut_marker, kind: sign, at: {x: 31, y: 8}, blocks_movement: true, semantic_role: Counterweight gate control}
+@@ -211 +212 @@
+-          at: {x: 32, y: 10}
++          at: {x: 31, y: 8}
+@@ -216 +217 @@
+-          at: {x: 32, y: 10}
++          at: {x: 31, y: 8}
+@@ -221 +222 @@
+-      revision: 1
++      revision: 3
+@@ -283 +284 @@
+-        - {id: r2_pass_rock_01, kind: rock, at: {x: 8, y: 32}, blocks_movement: true, semantic_role: Sparse exposed scree}
++        - {id: r2_pass_rock_01, kind: rock, at: {x: 7, y: 34}, blocks_movement: true, semantic_role: Sparse exposed scree}
+@@ -288,0 +290 @@
++        - {id: r2_pass_shortcut_marker, kind: sign, at: {x: 4, y: 28}, blocks_movement: true, semantic_role: Ridge-stair counterweight gate}
+@@ -291 +293 @@
+-          at: {x: 20, y: 13}
++          at: {x: 17, y: 13}
+@@ -296 +298 @@
+-          at: {x: 4, y: 30}
++          at: {x: 4, y: 28}
+@@ -301 +303 @@
+-          at: {x: 4, y: 30}
++          at: {x: 4, y: 28}
+@@ -306 +308 @@
+-      revision: 1
++      revision: 3
+@@ -359 +361 @@
+-        - {id: r2_quarry_cache, at: {x: 14, y: 23}, reward: potion, clue: A surveyor's potion lies beside notes linking the tone to wet stone and buried iron.}
++        - {id: r2_quarry_cache, at: {x: 12, y: 25}, reward: potion, clue: A surveyor's potion lies beside notes linking the tone to wet stone and buried iron.}
+@@ -370,0 +373 @@
++        - {id: r2_cache_marker, kind: rock, at: {x: 12, y: 25}, blocks_movement: true, semantic_role: Survey cache marker}
+@@ -373 +376 @@
+-          at: {x: 20, y: 12}
++          at: {x: 21, y: 8}
+@@ -377,3 +380,3 @@
+-          at: {x: 25, y: 8}
+-          trigger: interact
+-          actions: ["translated_dialog You brace the old hoist. Far below, the ridge-stair counterweight rises.", set_variable r2_hoist:raised]
++          at: {x: 27, y: 5}
++          trigger: interact
++          actions: ["translated_dialog You brace the old hoist. Far below, the ridge-stair counterweight rises.", set_variable r2_shortcut:open]
+@@ -382 +385 @@
+-          at: {x: 25, y: 8}
++          at: {x: 27, y: 5}
+@@ -387 +390 @@
+-      revision: 1
++      revision: 3

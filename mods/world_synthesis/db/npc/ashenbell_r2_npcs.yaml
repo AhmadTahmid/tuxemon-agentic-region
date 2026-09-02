@@ -1,0 +1,70 @@
+- slug: r2_south_shepherd
+  speech:
+    profile:
+      default:
+        pre_battle: r2_south_shepherd_dialog
+        post_battle_win: null
+        post_battle_lose: null
+        post_battle_draw: null
+  combat: {}
+  audio: {}
+  template:
+    sprite_name: scientist
+    combat_sheet: scientist
+    slug: scientist
+- slug: r2_bell_keeper
+  speech:
+    profile:
+      default:
+        pre_battle: r2_bell_keeper_dialog
+        post_battle_win: null
+        post_battle_lose: null
+        post_battle_draw: null
+  combat: {}
+  audio: {}
+  template:
+    sprite_name: scientist
+    combat_sheet: scientist
+    slug: scientist
+- slug: r2_gardener
+  speech:
+    profile:
+      default:
+        pre_battle: r2_gardener_dialog
+        post_battle_win: null
+        post_battle_lose: null
+        post_battle_draw: null
+  combat: {}
+  audio: {}
+  template:
+    sprite_name: miner_green
+    combat_sheet: miner
+    slug: miner
+- slug: r2_pass_surveyor
+  speech:
+    profile:
+      default:
+        pre_battle: r2_pass_surveyor_dialog
+        post_battle_win: null
+        post_battle_lose: null
+        post_battle_draw: null
+  combat: {}
+  audio: {}
+  template:
+    sprite_name: knight
+    combat_sheet: knight
+    slug: knight
+- slug: r2_quarry_prospector
+  speech:
+    profile:
+      default:
+        pre_battle: r2_quarry_prospector_dialog
+        post_battle_win: null
+        post_battle_lose: null
+        post_battle_draw: null
+  combat: {}
+  audio: {}
+  template:
+    sprite_name: miner_green
+    combat_sheet: miner
+    slug: miner

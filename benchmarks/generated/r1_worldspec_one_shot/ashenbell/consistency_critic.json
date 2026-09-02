@@ -1,0 +1,76 @@
+{
+  "format_version": "1.0",
+  "method": "R1",
+  "version": "final",
+  "review": [
+    {
+      "category": "geographic_continuity",
+      "status": "supported",
+      "evidence": "The old bell road crosses the mandatory maps; Split Crown changes from distant paired stones to village frame to physical pass cairn; the quarry track leaves the pass eastward.",
+      "contradiction": null
+    },
+    {
+      "category": "story_consistency",
+      "status": "supported",
+      "evidence": "All variants retain quarry production, three-valley warnings, the closing slide, a retired chain, and a recent lower tone linked cautiously to west wind and runoff.",
+      "contradiction": null
+    },
+    {
+      "category": "npc_factual_consistency",
+      "status": "supported",
+      "evidence": "Shepherd, keeper, surveyor, and quarry worker have different evidence access without changing the immutable history.",
+      "contradiction": null
+    },
+    {
+      "category": "ecological_progression",
+      "status": "supported",
+      "evidence": "Tables remove shybulb from village/pass, increase elofly with exposure, and return shybulb only in the damp quarry cut.",
+      "contradiction": null
+    },
+    {
+      "category": "map_identity",
+      "status": "supported_with_defects",
+      "evidence": "WorldSpec names functional village clusters and composition/density changes by archetype.",
+      "contradiction": "Three maps retain path/prop collision diagnostics because the one-shot received no design revision."
+    },
+    {
+      "category": "progression_logic",
+      "status": "supported_with_defects",
+      "evidence": "The hoist producer is anchored to a blocking sign and the state variable names are consistent.",
+      "contradiction": "Both shortcut consumers remain on traversable event cells. Authored paths overlap collision at [(11, 20), (15, 17)].; Authored paths overlap collision at [(11, 20), (12, 20), (15, 16), (17, 14), (25, 10), (26, 10), (27, 10), (28, 10)].; Authored paths overlap collision at [(20, 10), (25, 8)]."
+    },
+    {
+      "category": "optional_content_integration",
+      "status": "supported",
+      "evidence": "The quarry adds material evidence, potion context, and the hoist shortcut without replacing the ordinary village/pass route.",
+      "contradiction": null
+    },
+    {
+      "category": "repetition_across_maps",
+      "status": "concern",
+      "evidence": "South and pass both use eight-node central S-curves, while village and quarry use similarly staged center-to-edge polylines.",
+      "contradiction": "Semantic labels differ more strongly than the underlying circulation grammar."
+    },
+    {
+      "category": "landmark_reuse",
+      "status": "supported",
+      "evidence": "Split Crown is reused as one regional landform rather than copied as an unrelated prop label.",
+      "contradiction": null
+    },
+    {
+      "category": "regional_identity",
+      "status": "supported",
+      "evidence": "Road, warning signs, paired stones, civic memory, weather talk, and quarry material recur with different functions.",
+      "contradiction": null
+    }
+  ],
+  "limitations": [
+    "Whether first traversal lasts 20\u201335 minutes for a first-time player.",
+    "Whether navigation feels clear moment to moment in the real client.",
+    "Whether dialogue feels natural rather than merely fact-consistent.",
+    "Whether landmarks are memorable and curiosity feels rewarded.",
+    "Whether the low tone interpretation is understood without over-explanation.",
+    "Fun and overall enjoyment."
+  ],
+  "aggregate_score": null
+}

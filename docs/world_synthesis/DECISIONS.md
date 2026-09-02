@@ -50,3 +50,38 @@ The play launcher exposes only “Mossveil Passage” and a random session ID. I
 logs the hidden method before launch and stores the questionnaire separately.
 The gallery reveals method identity only for post-test analysis. Automated
 structural scores never enter human response files.
+
+## D010 — Re-freeze before the Ashenbell horizon variants
+
+The pre-authoring audit found two shared missing primitives: conditional story
+events and a small building composition using existing atlas tiles. Both were
+implemented generically before R0/R1/R2 authoring and the compiler was
+re-frozen at SHA-256
+`4e94b1ae4e531dd70da33b162b8329a0d0d2cc5a71190633e4a560b1ff7f156a`.
+No variant-specific compiler change is allowed after that point.
+
+## D011 — Cross-map facts are reviewed, not scored
+
+Ashenbell mechanically verifies topology, paired warps, transition targets,
+optional bypasses, state producers/consumers and stable reachable anchors for
+player-facing interactions. Geography, NPC facts, ecology, identity and
+repetition receive evidence-linked categorical review. No aggregate
+world-quality score is produced, and human responses remain in the separate
+human-evaluation directory.
+
+## D012 — Preserve invalid one-shot design evidence
+
+R1 receives compatibility-only repairs for YAML quoting, the event-condition
+operator and an invalid documented sprite reference. Its three path/collision
+errors and seven unstable player-facing interaction anchors are not redesigned
+after inspection. The maps remain loader-valid, but R1 is explicitly not
+reported as passing authored-path or cross-map progression acceptance.
+
+## D013 — A reachable event cell is not necessarily interactable
+
+Tuxemon's `char_facing_tile` condition requires the player to stand on a
+cardinal neighbor while facing the event. A traversable target cell can absorb
+directional movement instead. The horizon audit therefore requires a player-
+facing event to overlap collision or a spawned NPC and to have a reachable
+cardinal neighbor. This generic validator exposed R0/R1 failures and informed
+the permitted R2 content revision; it did not change the frozen compiler.

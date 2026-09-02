@@ -70,33 +70,43 @@ def validate_layout(
                 f"Authored paths overlap collision at {path_collisions[:8]}.",
             )
         )
-    critical: list[tuple[str, tuple[int, int]]] = []
+    critical: list[tuple[str, tuple[int, int], bool]] = []
     critical.extend(
-        (f"warp:{item.id}", (item.at.x, item.at.y))
+        (f"warp:{item.id}", (item.at.x, item.at.y), False)
         for item in spec.warps
         if item.mandatory
     )
     critical.extend(
-        (f"npc:{item.id}", (item.at.x, item.at.y))
+        (f"npc:{item.id}", (item.at.x, item.at.y), False)
         for item in spec.npcs
         if item.mandatory
     )
     critical.extend(
-        (f"landmark:{item.id}", (item.anchor.x, item.anchor.y))
+        (f"landmark:{item.id}", (item.anchor.x, item.anchor.y), False)
         for item in spec.landmarks
         if item.role == "dominant"
     )
     critical.extend(
-        (f"secret:{item.id}", (item.at.x, item.at.y)) for item in spec.secrets
+        (f"secret:{item.id}", (item.at.x, item.at.y), True)
+        for item in spec.secrets
     )
-    for label, cell in critical:
-        if cell not in reachable:
+    for label, cell, may_be_faced in critical:
+        adjacent = {
+            (cell[0] - 1, cell[1]),
+            (cell[0] + 1, cell[1]),
+            (cell[0], cell[1] - 1),
+            (cell[0], cell[1] + 1),
+        }
+        accessible = cell in reachable or (
+            may_be_faced and bool(adjacent & reachable)
+        )
+        if not accessible:
             issues.append(
                 Diagnostic(
                     "error",
                     "unreachable_critical",
                     spec.id,
-                    f"{label} at {cell} is unreachable from spawn.",
+                    f"{label} at {cell} is neither reachable nor interactable from spawn.",
                 )
             )
     for npc in spec.npcs:
@@ -123,6 +133,19 @@ def validate_layout(
                     f"Warp {warp.id} target is outside {target.id}.",
                 )
             )
+    actions_dir = repo / "tuxemon" / "event" / "actions"
+    for event in spec.events:
+        for action in event.actions:
+            action_name = action.partition(" ")[0]
+            if not (actions_dir / f"{action_name}.py").exists():
+                issues.append(
+                    Diagnostic(
+                        "error",
+                        "unknown_event_action",
+                        spec.id,
+                        f"Event {event.id} uses unknown action {action_name!r}.",
+                    )
+                )
     source_tiles = (
         repo
         / "mods"

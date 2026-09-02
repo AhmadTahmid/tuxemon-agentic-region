@@ -53,9 +53,10 @@ def test_procedural_baseline_is_deterministic() -> None:
     second = benchmark.VARIANTS["A"].spec.read_bytes()
     assert first == second
     world, route = _main_route(benchmark.VARIANTS["A"].spec)
-    assert compile_layout(world, route).generated_objects == compile_layout(
-        world, route
-    ).generated_objects
+    assert (
+        compile_layout(world, route).generated_objects
+        == compile_layout(world, route).generated_objects
+    )
 
 
 def test_one_shot_baseline_has_no_hidden_design_repairs() -> None:
@@ -120,7 +121,7 @@ def test_dry_run_output_does_not_reveal_selected_method(
     assert "agentic" not in output
 
 
-def test_compiler_remains_at_recorded_benchmark_freeze() -> None:
+def test_compiler_freezes_are_auditable() -> None:
     digest = hashlib.sha256(
         (REPO / "world_synthesis" / "compiler.py").read_bytes()
     ).hexdigest()
@@ -132,8 +133,19 @@ def test_compiler_remains_at_recorded_benchmark_freeze() -> None:
             / "deep_forest_benchmark.json"
         ).read_text(encoding="utf-8")
     )
+    horizon = json.loads(
+        (
+            REPO
+            / "artifacts"
+            / "world_synthesis"
+            / "horizon_generalization_log.json"
+        ).read_text(encoding="utf-8")
+    )
     assert summary["compiler_freeze_commit"].startswith("1ded0461f")
-    assert digest == "a2e28bd42e4810faef84bbe508594aa6f3e231b81e8d1f5d92b6562689962088"
+    assert horizon["pre_experiment"]["compiler_sha256"] == (
+        "a2e28bd42e4810faef84bbe508594aa6f3e231b81e8d1f5d92b6562689962088"
+    )
+    assert digest == horizon["horizon_freeze"]["compiler_sha256"]
 
 
 def test_real_tuxemon_loader_reads_all_three_routes(monkeypatch) -> None:

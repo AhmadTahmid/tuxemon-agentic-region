@@ -1,0 +1,5 @@
+World synthesis validation: 3 error(s), 1 warning(s)
+[ERROR] r2_south_route path_blocked: Authored paths overlap collision at [(21, 17)].
+[ERROR] r2_ashenbell path_blocked: Authored paths overlap collision at [(9, 20), (10, 20), (11, 20), (12, 21), (14, 17)].
+[ERROR] r2_highland_pass path_blocked: Authored paths overlap collision at [(8, 32)].
+[WARNING] r2_highland_pass sparse_decoration: Less than 7% of cells contain generated composition details.

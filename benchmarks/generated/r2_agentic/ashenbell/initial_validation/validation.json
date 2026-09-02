@@ -1,0 +1,35 @@
+{
+  "format_version": "1.0",
+  "world_id": "ashenbell_r2_region",
+  "summary": {
+    "errors": 3,
+    "warnings": 1,
+    "maps": 4
+  },
+  "diagnostics": [
+    {
+      "severity": "error",
+      "code": "path_blocked",
+      "map_id": "r2_south_route",
+      "message": "Authored paths overlap collision at [(21, 17)]."
+    },
+    {
+      "severity": "error",
+      "code": "path_blocked",
+      "map_id": "r2_ashenbell",
+      "message": "Authored paths overlap collision at [(9, 20), (10, 20), (11, 20), (12, 21), (14, 17)]."
+    },
+    {
+      "severity": "error",
+      "code": "path_blocked",
+      "map_id": "r2_highland_pass",
+      "message": "Authored paths overlap collision at [(8, 32)]."
+    },
+    {
+      "severity": "warning",
+      "code": "sparse_decoration",
+      "map_id": "r2_highland_pass",
+      "message": "Less than 7% of cells contain generated composition details."
+    }
+  ]
+}

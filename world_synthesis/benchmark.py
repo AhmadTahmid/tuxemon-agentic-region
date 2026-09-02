@@ -117,9 +117,12 @@ def _materialize_c_revision() -> Path:
 
     # Validation happens before the final artifact is accepted or written.
     validated = WorldSpec.model_validate(raw)
-    encoded = yaml.safe_dump(
-        validated.model_dump(mode="json"), sort_keys=False
-    )
+    dumped = validated.model_dump(mode="json")
+    for map_spec in dumped["region"]["maps"]:
+        for event in map_spec.get("events", []):
+            if not event.get("conditions"):
+                event.pop("conditions", None)
+    encoded = yaml.safe_dump(dumped, sort_keys=False)
     output.write_text(encoded, encoding="utf-8")
     diff = difflib.unified_diff(
         base_path.read_text(encoding="utf-8").splitlines(keepends=True),

@@ -1,0 +1,76 @@
+{
+  "format_version": "1.0",
+  "method": "R0",
+  "version": "final",
+  "review": [
+    {
+      "category": "geographic_continuity",
+      "status": "supported",
+      "evidence": "The old bell road crosses the mandatory maps; Split Crown changes from distant paired stones to village frame to physical pass cairn; the quarry track leaves the pass eastward.",
+      "contradiction": null
+    },
+    {
+      "category": "story_consistency",
+      "status": "supported",
+      "evidence": "All variants retain quarry production, three-valley warnings, the closing slide, a retired chain, and a recent lower tone linked cautiously to west wind and runoff.",
+      "contradiction": null
+    },
+    {
+      "category": "npc_factual_consistency",
+      "status": "supported",
+      "evidence": "Shepherd, keeper, surveyor, and quarry worker have different evidence access without changing the immutable history.",
+      "contradiction": null
+    },
+    {
+      "category": "ecological_progression",
+      "status": "supported",
+      "evidence": "Tables remove shybulb from village/pass, increase elofly with exposure, and return shybulb only in the damp quarry cut.",
+      "contradiction": null
+    },
+    {
+      "category": "map_identity",
+      "status": "supported_with_limitation",
+      "evidence": "Direct grids distinguish wooded river approach, house-and-garden village, sparse rock pass, and dense quarry.",
+      "contradiction": "Low-level tile arrays do not preserve authored semantic intent, so later maintenance must infer why placements exist."
+    },
+    {
+      "category": "progression_logic",
+      "status": "contradicted",
+      "evidence": "TMX events contain one monotonic producer and paired conditional shortcut consumers; ordinary warps remain unconditional.",
+      "contradiction": "The hoist producer and both shortcut consumers use traversable player-facing event cells, so the intended interaction anchors are not reliable in the client."
+    },
+    {
+      "category": "optional_content_integration",
+      "status": "supported",
+      "evidence": "The quarry adds material evidence, potion context, and the hoist shortcut without replacing the ordinary village/pass route.",
+      "contradiction": null
+    },
+    {
+      "category": "repetition_across_maps",
+      "status": "concern",
+      "evidence": "The direct source reuses the same paint_path helper and similarly sized coordinate lists across all maps.",
+      "contradiction": "Distinct tiles reduce visual sameness, but the representation makes repeated geometry harder to notice before rendering."
+    },
+    {
+      "category": "landmark_reuse",
+      "status": "supported",
+      "evidence": "Split Crown is reused as one regional landform rather than copied as an unrelated prop label.",
+      "contradiction": null
+    },
+    {
+      "category": "regional_identity",
+      "status": "supported",
+      "evidence": "Road, warning signs, paired stones, civic memory, weather talk, and quarry material recur with different functions.",
+      "contradiction": null
+    }
+  ],
+  "limitations": [
+    "Whether first traversal lasts 20\u201335 minutes for a first-time player.",
+    "Whether navigation feels clear moment to moment in the real client.",
+    "Whether dialogue feels natural rather than merely fact-consistent.",
+    "Whether landmarks are memorable and curiosity feels rewarded.",
+    "Whether the low tone interpretation is understood without over-explanation.",
+    "Fun and overall enjoyment."
+  ],
+  "aggregate_score": null
+}

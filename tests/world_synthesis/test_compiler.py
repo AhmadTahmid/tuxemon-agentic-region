@@ -8,6 +8,7 @@ from world_synthesis.compiler import (
     merge_blocked_cells,
 )
 from world_synthesis.schema import load_world_spec
+from world_synthesis.validate import validate_layout
 
 REPO = Path(__file__).resolve().parents[2]
 SPEC = REPO / "content" / "world_synthesis" / "glasswind_region.yaml"
@@ -28,6 +29,14 @@ def test_generation_is_deterministic() -> None:
     assert first.layers == second.layers
     assert first.blocked == second.blocked
     assert first.generated_objects == second.generated_objects
+
+
+def test_validation_rejects_unknown_story_event_action() -> None:
+    world, route = _world_and_route()
+    event = route.events[0].model_copy(update={"actions": ["not_an_action text"]})
+    candidate = route.model_copy(update={"events": [event]})
+    issues = validate_layout(world, compile_layout(world, candidate), REPO)
+    assert any(item.code == "unknown_event_action" for item in issues)
 
 
 def test_authored_critical_path_and_bridge_stay_clear() -> None:
@@ -131,9 +140,9 @@ def test_explicit_fence_openings_remain_walkable() -> None:
         for item in route.environmental_features
         if item.id == "warden_fence"
     )
-    assert {
-        (point.x, point.y) for point in fence.entrances
-    }.isdisjoint(layout.blocked)
+    assert {(point.x, point.y) for point in fence.entrances}.isdisjoint(
+        layout.blocked
+    )
 
 
 def test_generic_database_outputs_are_named_from_spec() -> None:
@@ -155,3 +164,32 @@ def test_generic_database_outputs_are_named_from_spec() -> None:
         / "LC_MESSAGES"
         / "glasswind_route_milestone.po"
     ).exists()
+
+
+def test_story_event_serializes_generic_state_conditions() -> None:
+    world, route = _world_and_route()
+    event = route.events[0].model_copy(
+        update={"conditions": ["is variable_set shared_shortcut:open"]}
+    )
+    candidate = route.model_copy(update={"events": [event]})
+    tmx = layout_to_tmx(compile_layout(world, candidate))
+    assert "is variable_set shared_shortcut:open" in tmx
+    assert "is char_facing_tile player" in tmx
+
+
+def test_generic_building_stamp_uses_existing_tiles_and_blocks_footprint() -> (
+    None
+):
+    world, route = _world_and_route()
+    prop = route.props[0].model_copy(
+        update={
+            "id": "test_house",
+            "kind": "building",
+            "at": route.props[0].at.model_copy(update={"x": 5, "y": 8}),
+        }
+    )
+    candidate = route.model_copy(update={"props": [prop]})
+    layout = compile_layout(world, candidate)
+    assert layout.layers["Above Player"][4][5:9] == [850, 851, 852, 853]
+    assert layout.layers["Objects"][8][5:9] == [978, 979, 980, 981]
+    assert {(x, y) for y in range(4, 9) for x in range(5, 9)} <= layout.blocked

@@ -64,7 +64,15 @@ The reward flag prevents duplication. A second event conditioned on the flag can
 
 ### Quest/flag progression
 
-`set_variable key:value` records state. Common checks are `variable_set key:value`, `variable_is`, `has_item`, `battle_outcome`, `char_exists`, and `char_defeated`. Validators should model mutually exclusive flag states and verify that every required transition has at least one reachable triggering event.
+`set_variable key:value` records state. A positive condition must include its
+operator, for example `is variable_set key:value`; a negative check is
+`not variable_set key:value`. Other common checks include `variable_is`,
+`has_item`, `battle_outcome`, `char_exists`, and `char_defeated`. Validators
+should model mutually exclusive flag states and verify that every required
+transition has at least one reachable triggering event.
+
+WorldSpec `StoryEvent.conditions` stores these complete condition strings. The
+compiler serializes them without inventing or repairing operators.
 
 ## Observed conventions
 

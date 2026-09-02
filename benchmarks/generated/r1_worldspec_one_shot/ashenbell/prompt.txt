@@ -1,0 +1,9 @@
+You are authoring one complete, playable four-map Tuxemon slice in a single response.
+
+Return only one YAML document that validates against the attached WORLD_SPEC_SCHEMA.json. Use the attached ashenbell_highlands.yaml as the complete common brief and the attached frozen semantic vocabulary. This is a one-shot response: there will be no planning phase, critic, screenshot feedback, or design revision.
+
+Keep the dimensions exactly 36x34, 34x30, 36x36, and 30x28 in south-to-branch order. Use only prototyping_outdoor semantics already represented by WorldSpec, only shybulb/squabbit/elofly encounters, cardiling as the level-7 starter, potion as the optional item reward, and the reviewed NPC sprites. Provide paired ordinary warps. Implement the quarry-unlocked optional Ashenbell-to-pass shortcut using story-event actions and conditions; the main route must never require the quarry. Use distinct encounter tables for the ecological gradient.
+
+Make all four places share the old bell road, Split Crown Ridge, and the exact historical facts in the brief. At least three NPCs on different maps must discuss those facts from compatible perspectives. An earlier interaction must be contextualized later. The quarry must provide evidence plus the potion and shortcut context while remaining optional. Do not add a northern destination map.
+
+Do not explain the YAML. Do not repair or revise it after this response.

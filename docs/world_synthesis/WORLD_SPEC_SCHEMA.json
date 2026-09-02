@@ -589,7 +589,8 @@
             "flower",
             "rock",
             "boulder",
-            "sign"
+            "sign",
+            "building"
           ],
           "title": "Kind",
           "type": "string"
@@ -901,6 +902,13 @@
             "type": "string"
           },
           "title": "Actions",
+          "type": "array"
+        },
+        "conditions": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Conditions",
           "type": "array"
         }
       },

@@ -1,0 +1,22 @@
+{
+  "format_version": "1.0",
+  "mechanical_repairs": [
+    {
+      "location": "all four TMX tileset source attributes",
+      "change": "Rebased the relative tileset source from the preserved evidence directory to ../../tuxemon/gfx/tilesets/prototyping_outdoor.tsx for installation under mods/world_synthesis/maps.",
+      "classification": "loader_path_only"
+    },
+    {
+      "location": "positive variable_set conditions in installed TMX",
+      "change": "Added the explicit 'is' operator required by Tuxemon's event-condition parser; negative 'not variable_set' conditions were already complete.",
+      "classification": "event_grammar_only"
+    },
+    {
+      "location": "r0_south_shepherd NPC template/sprite/combat references",
+      "change": "Replaced the documented but nonexistent botanist slug with the already-reviewed existing scientist slug during database installation.",
+      "classification": "asset_reference_only"
+    }
+  ],
+  "design_revisions": 0,
+  "note": "No tile, collision, coordinate, event, dialogue, encounter, or other design content changed."
+}

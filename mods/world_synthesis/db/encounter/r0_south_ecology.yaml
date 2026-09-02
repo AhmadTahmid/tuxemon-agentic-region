@@ -1,0 +1,26 @@
+monsters:
+- encounter_rate: 5
+  exp_req_mod: 3
+  held_items: []
+  level_range:
+  - 4
+  - 6
+  monster: shybulb
+  variables: []
+- encounter_rate: 3
+  exp_req_mod: 3
+  held_items: []
+  level_range:
+  - 5
+  - 7
+  monster: squabbit
+  variables: []
+- encounter_rate: 1
+  exp_req_mod: 3
+  held_items: []
+  level_range:
+  - 5
+  - 6
+  monster: elofly
+  variables: []
+slug: r0_south_ecology

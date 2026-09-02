@@ -1,0 +1,32 @@
+{
+  "format_version": "1.0",
+  "mechanical_repairs": [
+    {
+      "location": "r1_village_shortcut_open.actions",
+      "change": "Quoted the comma-delimited transition_teleport and char_face action strings so YAML treats each as one list element.",
+      "classification": "schema_format_only"
+    },
+    {
+      "location": "all positive variable_set story-event conditions",
+      "change": "Added the explicit 'is' operator required by Tuxemon's condition parser.",
+      "classification": "event_grammar_only"
+    },
+    {
+      "location": "r1_pass_shortcut_open.actions",
+      "change": "Quoted the comma-delimited transition_teleport and char_face action strings so YAML treats each as one list element.",
+      "classification": "schema_format_only"
+    },
+    {
+      "location": "r1_south_shepherd.sprite",
+      "change": "Replaced the documented but nonexistent botanist slug with the already-reviewed existing scientist slug.",
+      "classification": "asset_reference_only"
+    },
+    {
+      "location": "r1_read_south_marker and r1_raise_hoist dialogue actions",
+      "change": "Quoted two comma-containing action strings so YAML preserves each as one action.",
+      "classification": "schema_format_only"
+    }
+  ],
+  "design_revisions": 0,
+  "note": "No coordinate, topology, dialogue, ecology, event meaning, or other design content changed."
+}

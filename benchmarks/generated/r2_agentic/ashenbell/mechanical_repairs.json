@@ -1,0 +1,22 @@
+{
+  "format_version": "1.0",
+  "mechanical_repairs": [
+    {
+      "location": "all positive variable_set story-event conditions in initial and final WorldSpec",
+      "change": "Added the explicit 'is' operator required by Tuxemon's condition parser.",
+      "classification": "event_grammar_only"
+    },
+    {
+      "location": "r2_south_shepherd.sprite in initial and final WorldSpec",
+      "change": "Replaced the documented but nonexistent botanist slug with the already-reviewed existing scientist slug.",
+      "classification": "asset_reference_only"
+    },
+    {
+      "location": "r2_read_south_marker and r2_raise_hoist dialogue actions in initial and final WorldSpec",
+      "change": "Quoted two comma-containing action strings so YAML preserves each as one action.",
+      "classification": "schema_format_only"
+    }
+  ],
+  "design_revisions": 1,
+  "note": "R2 content changes are preserved separately as an allowed critic-driven revision, not mislabeled as repair."
+}
