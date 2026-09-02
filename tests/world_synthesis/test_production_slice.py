@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import hashlib
 import xml.etree.ElementTree as ET
+from collections import deque
 from pathlib import Path
 
 import pygame as pg
@@ -13,7 +14,10 @@ from tuxemon.db import load_model_map
 from tuxemon.map.loader import TMXMapLoader
 from tuxemon.prepare import headless_init
 from tuxemon.user_config import CONFIG
-from world_synthesis.production_slice.compiler import build_episode
+from world_synthesis.production_slice.compiler import (
+    build_episode,
+    compile_map,
+)
 from world_synthesis.production_slice.schema import EventTrigger, load_episode
 
 REPO = Path(__file__).resolve().parents[2]
@@ -25,7 +29,7 @@ def test_low_bell_design_lock_loads_as_production_episode() -> None:
     assert episode.metadata.slug == "low_bell"
     assert episode.metadata.target_minutes == (60, 90)
     assert len(episode.maps) == 7
-    assert len(episode.npcs) == 14
+    assert len(episode.npcs) == 17
     assert {item.slug for item in episode.encounters} == {
         "low_bell_south_wild",
         "low_bell_highland_wild",
@@ -62,6 +66,113 @@ def test_main_progression_does_not_consume_side_quest_state() -> None:
     assert mandatory
     assert all("sq_" not in condition for event in mandatory for condition in event.conditions)
     assert all("sq_" not in action for event in mandatory for action in event.actions)
+
+
+def test_content_completion_budget_and_optional_quests() -> None:
+    episode = load_episode(SPEC)
+    events = {event.slug: event for map_spec in episode.maps for event in map_spec.events}
+    battle_actions = [
+        action
+        for event in events.values()
+        for action in event.actions
+        if action.startswith(("start_battle ", "wild_encounter "))
+    ]
+    assert len(battle_actions) == 7
+    assert "set_variable low_bell_sq_squabbit_complete:yes" in events[
+        "jori_squabbit_return"
+    ].actions
+    assert "set_variable low_bell_sq_names_complete:yes" in events[
+        "mara_names_complete"
+    ].actions
+    assert all(not event.mandatory for event in (events["jori_squabbit_return"], events["mara_names_complete"]))
+    assert {
+        "low_bell_secret_south:yes",
+        "low_bell_secret_pass:yes",
+        "low_bell_secret_quarry:yes",
+    } <= {
+        action.removeprefix("set_variable ")
+        for event in events.values()
+        for action in event.actions
+        if action.startswith("set_variable low_bell_secret_")
+    }
+
+
+def test_puzzle_and_shortcut_are_stateful_and_nonmandatory() -> None:
+    episode = load_episode(SPEC)
+    maps = {map_spec.slug: map_spec for map_spec in episode.maps}
+    events = {event.slug: event for map_spec in episode.maps for event in map_spec.events}
+    assert "set_variable low_bell_puzzle_stage:runoff" in events[
+        "puzzle_runoff_first"
+    ].actions
+    assert "set_variable low_bell_puzzle_stage:brace" in events[
+        "puzzle_cradle_correct"
+    ].actions
+    assert "set_variable low_bell_shortcut_unlocked:yes" in events[
+        "puzzle_hoist_correct"
+    ].actions
+    shortcut_warps = [
+        warp
+        for map_spec in maps.values()
+        for warp in map_spec.warps
+        if "shortcut" in warp.slug
+    ]
+    assert len(shortcut_warps) == 2
+    assert all(not warp.mandatory for warp in shortcut_warps)
+    assert all(
+        "is variable_set low_bell_shortcut_unlocked:yes" in warp.conditions
+        for warp in shortcut_warps
+    )
+
+
+def test_six_or_more_village_characters_have_resolved_dialogue() -> None:
+    episode = load_episode(SPEC)
+    village = next(item for item in episode.maps if item.slug == "low_bell_ashenbell")
+    resolved_npcs = {
+        event.npc
+        for event in village.events
+        if event.trigger == EventTrigger.TALK
+        and "is variable_set low_bell_story:resolved" in event.conditions
+    }
+    assert len(resolved_npcs - {None}) >= 6
+
+
+def test_all_mandatory_anchors_are_statically_reachable() -> None:
+    episode = load_episode(SPEC)
+    entries: dict[str, set[tuple[int, int]]] = {
+        map_spec.slug: set() for map_spec in episode.maps
+    }
+    entries[episode.metadata.start_map].add(episode.metadata.start_position)
+    for map_spec in episode.maps:
+        for warp in map_spec.warps:
+            entries[warp.target_map].add((warp.target.x, warp.target.y))
+
+    for map_spec in episode.maps:
+        layout = compile_map(episode, map_spec)
+        queue = deque(entries[map_spec.slug])
+        reachable = set(queue)
+        while queue:
+            x, y = queue.popleft()
+            for cell in ((x - 1, y), (x + 1, y), (x, y - 1), (x, y + 1)):
+                cx, cy = cell
+                if not (0 <= cx < map_spec.width and 0 <= cy < map_spec.height):
+                    continue
+                if cell in layout.blocked or cell in reachable:
+                    continue
+                reachable.add(cell)
+                queue.append(cell)
+
+        for event in (item for item in map_spec.events if item.mandatory):
+            if event.trigger == EventTrigger.INIT:
+                continue
+            bounds = event.bounds.cells() if event.bounds else {(event.at.x, event.at.y)}
+            adjacent = {
+                neighbor
+                for x, y in bounds
+                for neighbor in ((x - 1, y), (x + 1, y), (x, y - 1), (x, y + 1))
+            }
+            assert reachable & (bounds | adjacent), f"{map_spec.slug}:{event.slug}"
+        for warp in (item for item in map_spec.warps if item.mandatory):
+            assert (warp.at.x, warp.at.y) in reachable, f"{map_spec.slug}:{warp.slug}"
 
 
 def test_all_interactions_declare_anchors() -> None:

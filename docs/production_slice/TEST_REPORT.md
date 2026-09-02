@@ -35,3 +35,14 @@ Ruff passed for the new package and test. Mypy passed for the new package.
 The real graphical launcher reached and continuously rendered the South
 Approach with the isolated database and corrected music slug; it was then
 stopped manually. This is launch evidence, not a complete playthrough claim.
+
+## Milestone 3 — content completion
+
+Twelve focused production tests now cover the seven authored combats, both
+optional quest completion paths, three secret flags, the three-step puzzle,
+paired optional shortcut warps, six-plus resolved village voices, side-quest
+independence and static reachability of every mandatory interaction and warp.
+The reachability check found blocked interior exit tiles in the first content
+build; explicit door openings were authored for both interiors and the test
+then passed. The real database overlay and all seven real TMX loads continue
+to pass.

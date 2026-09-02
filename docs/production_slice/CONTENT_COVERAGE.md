@@ -15,7 +15,7 @@ updated as implementation lands.
 | Old Bell Quarry Exterior | 34×36 | Survey evidence, Squabbit and optional pocket | Core outdoor/cave/set pieces: worked damaged stone |
 | Quarry Lower Works | 38×40 | Small dungeon, puzzle, hoist, boss and resolution | Existing cave/factory/core set pieces in one reviewed family |
 
-## Planned logical NPCs (16)
+## Implemented logical NPCs (17)
 
 | NPC | Declared function(s) |
 |---|---|
@@ -29,18 +29,19 @@ updated as implementation lands.
 | Alda | productive-world texture, ecology evidence, post-state |
 | Bren | material evidence, local texture, post-state |
 | Caro | rumour contrast, inhabited-world texture, post-state |
-| Demas | ecology evidence, regional livelihood, post-state |
-| Etti | memorial practice, names quest texture, post-state |
 | Pell | courier identity, outside-world ending hook |
 | Ren | optional South battle, tutorial reinforcement, reward |
 | Kesh | optional Pass battle, survey context, reward |
 | Quarry Squabbit | represented side-quest subject and interaction |
+| Garden Caper | represented displaced-creature encounter at productive edge |
+| Rockat guard | represented territorial encounter at lower-works gate |
+| Jemuar | represented climax creature in a real battle |
 
 Repeated appearances of a logical character do not inflate this count.
 
 ## Planned combat and ecology
 
-Six authored combat beats: frightened Shybulb tutorial, Ren, displaced garden
+Seven authored combat beats: frightened Shybulb tutorial, Ren, displaced garden
 encounter, Rook, Kesh, territorial Rockat, and the Jemuar climax. This is seven
 including all optional/scripted beats, within the locked budget. Random wild
 encounters are additional. Ten non-boss ecology candidates are reviewed in
@@ -76,6 +77,14 @@ required return for Tovin's knowledge, the lower works, a real Jemuar battle,
 a separate post-battle physical resolution, return-to-town closure, rewards
 and an episode-complete ending hook.
 
-Content completion remains intentionally open for Milestone 3: both optional
-quests, three curiosity secrets, four additional authored combat beats, the
-three-control puzzle, the hoist shortcut and richer post-state reactions.
+## Milestone 3 coverage
+
+Content completion is implemented. Jori's Squabbit can be found before or
+after accepting the quest and never gates the main story. Names of the Silent
+Shift has three independently collectable records and changes Mara and Tovin.
+South, Pass and Quarry dead ends each combine evidence or encounter context
+with a useful existing item. Ren, the garden Caper, Kesh and the Rockat gate
+bring the authored combat total to seven. The labelled runoff–cradle–hoist
+sequence unlocks a persistent bidirectional shortcut while leaving the
+ordinary route open. Nine logical village/key characters have resolved-state
+dialogue branches, including complete/incomplete side-quest reactions.

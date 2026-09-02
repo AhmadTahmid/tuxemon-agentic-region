@@ -31,3 +31,22 @@ Side quests, the full three-control puzzle, optional trainer beats and the
 shortcut are deliberately absent from the Milestone 2 runtime. This follows
 the mandated implementation order and is not a scope reduction; they are the
 next commit's work.
+
+## Milestone 3 — puzzle error handling
+
+The design lock proposed resetting local puzzle progress after an incorrect
+control. With ordinary Tiled button conditions, correct and reset events on
+one anchor can both observe the same held input after the correct event mutates
+state. To avoid a race and avoid adding an engine action for one puzzle, an
+out-of-order control now makes no state change. The visible labels and Tovin's
+causal clue still give the order, and the more forgiving behaviour cannot make
+the puzzle permanently inaccessible.
+
+Squabbit, the garden Caper and the Rockat gate use the same existing
+`landrace` overworld proxy as the Jemuar staging because those monster species
+do not provide compatible overworld NPC sheets. Caper and Rockat enter real
+combat as NPC parties, so those two authored encounters are trainer-type under
+the hood and cannot be captured. The optional South wild zone remains the
+episode's real capture opportunity. A reusable distinct-ID scripted-wild
+battle would remove this presentation compromise, but adding it was not
+necessary for the episode's progression.

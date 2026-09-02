@@ -64,9 +64,33 @@ npcs:
   - {slug: low_bell_alda, sprite: florist, template: florist}
   - {slug: low_bell_bren, sprite: miner_green, combat_sheet: miner, template: miner}
   - {slug: low_bell_caro, sprite: barmaid, template: barmaid}
-  - {slug: low_bell_demas, sprite: picnicker, template: picnicker}
-  - {slug: low_bell_etti, sprite: monk, template: monk}
   - {slug: low_bell_pell, sprite: postboy, template: postboy}
+  - slug: low_bell_ren
+    sprite: postboy_green
+    combat_sheet: postboy
+    template: postboy
+    party:
+      - {slug: budaye, level: 5, gender: female}
+      - {slug: caper, level: 5, gender: male}
+  - slug: low_bell_kesh
+    sprite: picnicker
+    template: picnicker
+    party:
+      - {slug: corvix, level: 8, gender: female}
+      - {slug: baddrscratch, level: 8, gender: male}
+  - {slug: low_bell_squabbit, sprite: landrace, combat_sheet: snugglepot, template: snugglepot}
+  - slug: low_bell_garden_caper
+    sprite: landrace
+    combat_sheet: snugglepot
+    template: snugglepot
+    party:
+      - {slug: caper, level: 5, gender: neuter}
+  - slug: low_bell_rockat_guard
+    sprite: landrace
+    combat_sheet: snugglepot
+    template: snugglepot
+    party:
+      - {slug: rockat, level: 9, gender: neuter, exp_req_mod: 1.5}
   - slug: low_bell_jemuar
     sprite: landrace
     combat_sheet: snugglepot
@@ -137,6 +161,7 @@ maps:
       - {slug: south_sign, at: {x: 20, y: 38}, visual: sign, blocks_movement: true, interaction_anchor: {x: 20, y: 38}}
       - {slug: track_rail, at: {x: 10, y: 29}, visual: metal, blocks_movement: true, interaction_anchor: {x: 10, y: 29}}
       - {slug: overlook_rock, at: {x: 29, y: 10}, visual: boulder, blocks_movement: true}
+      - {slug: stream_cache_marker, at: {x: 6, y: 20}, visual: shrub, blocks_movement: true, interaction_anchor: {x: 6, y: 20}}
     warps:
       - slug: south_to_village
         at: {x: 17, y: 0}
@@ -146,6 +171,7 @@ maps:
         conditions: [is variable_set low_bell_tutorial_won:yes]
     npcs:
       - {slug: low_bell_nera, at: {x: 16, y: 39}}
+      - {slug: low_bell_ren, at: {x: 7, y: 24}}
     encounters:
       - {slug: south_capture_zone, bounds: {x: 3, y: 17, width: 7, height: 8}, table: low_bell_south_wild, probability: 14}
       - {slug: south_upper_zone, bounds: {x: 19, y: 15, width: 8, height: 8}, table: low_bell_south_wild, probability: 9}
@@ -233,6 +259,53 @@ maps:
         actions:
           - translated_dialog low_bell_settlement_reveal
           - set_variable low_bell_settlement_revealed:yes
+      - slug: ren_challenge
+        at: {x: 7, y: 24}
+        trigger: talk
+        npc: low_bell_ren
+        purpose: optional courier battle with capture-pocket context
+        conditions:
+          - is variable_set low_bell_tutorial_won:yes
+          - not battle_outcome player,won,low_bell_ren
+        actions:
+          - translated_dialog low_bell_ren_challenge
+          - start_battle player,low_bell_ren
+      - slug: ren_victory
+        at: {x: 0, y: 0}
+        trigger: init
+        anchor_required: false
+        purpose: reward optional early practice
+        conditions:
+          - is battle_outcome player,won,low_bell_ren
+          - not variable_set low_bell_ren_rewarded:yes
+        actions:
+          - translated_dialog low_bell_ren_victory
+          - add_item potion,1
+          - set_variable low_bell_ren_rewarded:yes
+      - slug: ren_after
+        at: {x: 7, y: 24}
+        trigger: talk
+        npc: low_bell_ren
+        purpose: post-battle capture hint
+        conditions: [is variable_set low_bell_ren_rewarded:yes]
+        actions: [translated_dialog low_bell_ren_after]
+      - slug: silent_shift_south_record
+        at: {x: 29, y: 10}
+        trigger: interact
+        purpose: optional worker-name evidence on a landmark spur
+        conditions: [not variable_set low_bell_name_south:yes]
+        actions:
+          - translated_dialog low_bell_name_south_found
+          - set_variable low_bell_name_south:yes
+      - slug: south_stream_cache
+        at: {x: 6, y: 20}
+        trigger: interact
+        purpose: curiosity reward in capture pocket
+        conditions: [not variable_set low_bell_secret_south:yes]
+        actions:
+          - translated_dialog low_bell_secret_south
+          - add_item super_potion,1
+          - set_variable low_bell_secret_south:yes
 
   - slug: low_bell_ashenbell
     title: Ashenbell
@@ -297,9 +370,10 @@ maps:
       - {slug: low_bell_alda, at: {x: 8, y: 31}}
       - {slug: low_bell_bren, at: {x: 32, y: 25}}
       - {slug: low_bell_caro, at: {x: 13, y: 14}}
-      - {slug: low_bell_demas, at: {x: 15, y: 33}}
-      - {slug: low_bell_etti, at: {x: 18, y: 18}}
       - {slug: low_bell_pell, at: {x: 27, y: 28}}
+      - slug: low_bell_garden_caper
+        at: {x: 10, y: 34}
+        conditions: [not battle_outcome player,won,low_bell_garden_caper]
     events:
       - slug: village_arrival_scene
         at: {x: 22, y: 37}
@@ -321,9 +395,39 @@ maps:
         at: {x: 19, y: 20}
         trigger: talk
         npc: low_bell_mara
-        purpose: historical boundary and main objective
-        conditions: [is variable_set low_bell_story:investigation]
-        actions: [translated_dialog low_bell_mara_investigation]
+        purpose: historical boundary, main objective and optional names quest
+        conditions:
+          - is variable_set low_bell_story:investigation
+          - not variable_set low_bell_sq_names_accepted:yes
+        actions:
+          - translated_dialog low_bell_mara_investigation
+          - translated_dialog low_bell_mara_names_offer
+          - set_variable low_bell_sq_names_accepted:yes
+      - slug: mara_names_progress
+        at: {x: 19, y: 20}
+        trigger: talk
+        npc: low_bell_mara
+        purpose: concise optional record reminder
+        conditions:
+          - is variable_set low_bell_sq_names_accepted:yes
+          - not variable_set low_bell_name_quarry:yes
+          - not variable_set low_bell_sq_names_complete:yes
+        actions: [translated_dialog low_bell_mara_names_progress]
+      - slug: mara_names_complete
+        at: {x: 19, y: 20}
+        trigger: talk
+        npc: low_bell_mara
+        purpose: complete Names of the Silent Shift without gating main story
+        conditions:
+          - is variable_set low_bell_sq_names_accepted:yes
+          - is variable_set low_bell_name_south:yes
+          - is variable_set low_bell_name_pass:yes
+          - is variable_set low_bell_name_quarry:yes
+          - not variable_set low_bell_sq_names_complete:yes
+        actions:
+          - translated_dialog low_bell_mara_names_complete
+          - add_item bivouac,1
+          - set_variable low_bell_sq_names_complete:yes
       - slug: iven_investigation
         at: {x: 24, y: 19}
         trigger: talk
@@ -342,9 +446,44 @@ maps:
         at: {x: 12, y: 20}
         trigger: talk
         npc: low_bell_jori
-        purpose: personal consequence and future optional quest
-        conditions: [not variable_set low_bell_story:resolved]
-        actions: [translated_dialog low_bell_jori_intro]
+        purpose: begin optional Squabbit quest
+        conditions:
+          - not variable_set low_bell_sq_squabbit_accepted:yes
+          - not variable_set low_bell_sq_squabbit_complete:yes
+        actions:
+          - translated_dialog low_bell_jori_intro
+          - set_variable low_bell_sq_squabbit_accepted:yes
+      - slug: jori_searching
+        at: {x: 12, y: 20}
+        trigger: talk
+        npc: low_bell_jori
+        purpose: optional quest clue toward quarry dry ledges
+        conditions:
+          - is variable_set low_bell_sq_squabbit_accepted:yes
+          - not variable_set low_bell_sq_squabbit_found:yes
+          - not variable_set low_bell_story:resolved
+        actions: [translated_dialog low_bell_jori_searching]
+      - slug: jori_squabbit_return
+        at: {x: 12, y: 20}
+        trigger: talk
+        npc: low_bell_jori
+        purpose: complete optional companion rescue and reward player
+        conditions:
+          - is variable_set low_bell_sq_squabbit_found:yes
+          - not variable_set low_bell_sq_squabbit_complete:yes
+        actions:
+          - translated_dialog low_bell_jori_return
+          - add_item tuxeball_hearty,2
+          - set_variable low_bell_sq_squabbit_complete:yes
+      - slug: jori_squabbit_complete
+        at: {x: 12, y: 20}
+        trigger: talk
+        npc: low_bell_jori
+        purpose: persistent optional quest consequence
+        conditions:
+          - is variable_set low_bell_sq_squabbit_complete:yes
+          - not variable_set low_bell_story:resolved
+        actions: [translated_dialog low_bell_jori_complete]
       - slug: sela_investigation
         at: {x: 24, y: 7}
         trigger: talk
@@ -386,8 +525,19 @@ maps:
         trigger: talk
         npc: low_bell_mara
         purpose: changed memorial interpretation
-        conditions: [is variable_set low_bell_story:resolved]
+        conditions:
+          - is variable_set low_bell_story:resolved
+          - not variable_set low_bell_sq_names_complete:yes
         actions: [translated_dialog low_bell_mara_resolved]
+      - slug: mara_resolved_names
+        at: {x: 19, y: 20}
+        trigger: talk
+        npc: low_bell_mara
+        purpose: memorial incorporates recovered worker names
+        conditions:
+          - is variable_set low_bell_story:resolved
+          - is variable_set low_bell_sq_names_complete:yes
+        actions: [translated_dialog low_bell_mara_resolved_names]
       - slug: iven_resolved
         at: {x: 24, y: 19}
         trigger: talk
@@ -407,8 +557,19 @@ maps:
         trigger: talk
         npc: low_bell_jori
         purpose: unresolved optional personal stake before content completion
-        conditions: [is variable_set low_bell_story:resolved]
+        conditions:
+          - is variable_set low_bell_story:resolved
+          - not variable_set low_bell_sq_squabbit_complete:yes
         actions: [translated_dialog low_bell_jori_resolved_pending]
+      - slug: jori_resolved_complete
+        at: {x: 12, y: 20}
+        trigger: talk
+        npc: low_bell_jori
+        purpose: resolved reaction depends on optional rescue
+        conditions:
+          - is variable_set low_bell_story:resolved
+          - is variable_set low_bell_sq_squabbit_complete:yes
+        actions: [translated_dialog low_bell_jori_resolved_complete]
       - slug: alda_intro
         at: {x: 8, y: 31}
         trigger: talk
@@ -451,6 +612,44 @@ maps:
         purpose: changed public mood
         conditions: [is variable_set low_bell_story:resolved]
         actions: [translated_dialog low_bell_caro_resolved]
+      - slug: pell_intro
+        at: {x: 27, y: 28}
+        trigger: talk
+        npc: low_bell_pell
+        purpose: courier identity and regional connection
+        conditions: [not variable_set low_bell_story:resolved]
+        actions: [translated_dialog low_bell_pell_intro]
+      - slug: pell_resolved
+        at: {x: 27, y: 28}
+        trigger: talk
+        npc: low_bell_pell
+        purpose: forward hook and changed courier work
+        conditions: [is variable_set low_bell_story:resolved]
+        actions: [translated_dialog low_bell_pell_resolved]
+      - slug: garden_caper_challenge
+        at: {x: 10, y: 34}
+        trigger: talk
+        npc: low_bell_garden_caper
+        purpose: optional displaced-creature battle tied to productive edge
+        conditions:
+          - is variable_set low_bell_story:investigation
+          - not battle_outcome player,won,low_bell_garden_caper
+        actions:
+          - translated_dialog low_bell_garden_caper
+          - start_battle player,low_bell_garden_caper
+      - slug: garden_caper_victory
+        at: {x: 0, y: 0}
+        trigger: init
+        anchor_required: false
+        purpose: settle garden incursion and reward ecology attention
+        conditions:
+          - is battle_outcome player,won,low_bell_garden_caper
+          - not variable_set low_bell_garden_calmed:yes
+        actions:
+          - remove_npc low_bell_garden_caper
+          - translated_dialog low_bell_alda_garden_thanks
+          - add_item tuxeball,2
+          - set_variable low_bell_garden_calmed:yes
 
   - slug: low_bell_mara_archive
     title: Mara's Archive
@@ -461,7 +660,10 @@ maps:
     base_tile: stone_floor
     environment: interior
     music: music_23_inn
-    boundary: {depth: 1, tile: worked_stone}
+    boundary:
+      depth: 1
+      tile: worked_stone
+      openings: [{x: 7, y: 11, width: 3, height: 1}]
     paths:
       - {slug: archive_aisle, width: 3, points: [{x: 8, y: 11}, {x: 8, y: 3}]}
     props:
@@ -488,7 +690,10 @@ maps:
     base_tile: stone_floor
     environment: interior
     music: music_23_inn
-    boundary: {depth: 1, tile: worked_stone}
+    boundary:
+      depth: 1
+      tile: worked_stone
+      openings: [{x: 7, y: 11, width: 3, height: 1}]
     paths:
       - {slug: workshop_aisle, width: 3, points: [{x: 8, y: 11}, {x: 8, y: 4}]}
     props:
@@ -531,8 +736,19 @@ maps:
         trigger: talk
         npc: low_bell_tovin
         purpose: changed guilt state
-        conditions: [is variable_set low_bell_story:resolved]
+        conditions:
+          - is variable_set low_bell_story:resolved
+          - not variable_set low_bell_sq_names_complete:yes
         actions: [translated_dialog low_bell_tovin_resolved]
+      - slug: tovin_resolved_names
+        at: {x: 9, y: 5}
+        trigger: talk
+        npc: low_bell_tovin
+        purpose: recovered names deepen Tovin's resolution
+        conditions:
+          - is variable_set low_bell_story:resolved
+          - is variable_set low_bell_sq_names_complete:yes
+        actions: [translated_dialog low_bell_tovin_resolved_names]
 
   - slug: low_bell_highland_pass
     title: Highland Pass
@@ -549,6 +765,7 @@ maps:
       openings:
         - {x: 16, y: 46, width: 5, height: 2}
         - {x: 34, y: 22, width: 2, height: 5}
+        - {x: 0, y: 11, width: 2, height: 5}
     paths:
       - slug: pass_main
         width: 3
@@ -566,12 +783,18 @@ maps:
       - slug: split_crown_view
         width: 2
         points: [{x: 18, y: 14}, {x: 27, y: 10}]
+      - slug: hoist_shortcut_path
+        width: 2
+        points: [{x: 18, y: 14}, {x: 8, y: 13}, {x: 0, y: 13}]
     fills:
       - {slug: exposed_stone_band, bounds: {x: 4, y: 16, width: 28, height: 9}, tile: forest_floor, layer: Ground}
     props:
       - {slug: split_crown_left, at: {x: 27, y: 7}, visual: boulder, blocks_movement: true}
       - {slug: split_crown_right, at: {x: 29, y: 7}, visual: boulder, blocks_movement: true}
       - {slug: quarry_fork_sign, at: {x: 27, y: 25}, visual: sign, blocks_movement: true, interaction_anchor: {x: 27, y: 25}}
+      - {slug: pass_name_marker, at: {x: 30, y: 10}, visual: metal, blocks_movement: true, interaction_anchor: {x: 30, y: 10}}
+      - {slug: pass_wind_cache, at: {x: 31, y: 12}, visual: shrub, blocks_movement: true, interaction_anchor: {x: 31, y: 12}}
+      - {slug: pass_hoist_frame, at: {x: 1, y: 11}, visual: hoist, blocks_movement: true}
     warps:
       - {slug: pass_to_village, at: {x: 18, y: 47}, facing: down, target_map: low_bell_ashenbell, target: {x: 22, y: 2}}
       - slug: pass_to_quarry
@@ -580,11 +803,20 @@ maps:
         target_map: low_bell_quarry_exterior
         target: {x: 2, y: 18}
         conditions: [is variable_set low_bell_pass_trace:yes]
+      - slug: pass_shortcut_to_lower
+        at: {x: 0, y: 13}
+        facing: left
+        target_map: low_bell_quarry_lower
+        target: {x: 2, y: 30}
+        conditions: [is variable_set low_bell_shortcut_unlocked:yes]
+        mandatory: false
     npcs:
       - {slug: low_bell_rook, at: {x: 13, y: 31}}
+      - {slug: low_bell_kesh, at: {x: 26, y: 11}}
     encounters:
       - {slug: highland_lower_wild, bounds: {x: 7, y: 34, width: 10, height: 8}, table: low_bell_highland_wild, probability: 10}
       - {slug: highland_upper_wild, bounds: {x: 15, y: 15, width: 10, height: 8}, table: low_bell_highland_wild, probability: 12}
+      - {slug: highland_shelf_rare, bounds: {x: 25, y: 8, width: 8, height: 7}, table: low_bell_highland_wild, probability: 8}
     events:
       - slug: rook_challenge
         at: {x: 13, y: 31}
@@ -638,6 +870,53 @@ maps:
         purpose: clear quarry decision and recent track evidence
         conditions: [is variable_set low_bell_pass_trace:yes]
         actions: [translated_dialog low_bell_quarry_fork]
+      - slug: kesh_challenge
+        at: {x: 26, y: 11}
+        trigger: talk
+        npc: low_bell_kesh
+        purpose: optional surveyor battle guarding an exposed evidence shelf
+        conditions:
+          - is variable_set low_bell_rook_defeated:yes
+          - not battle_outcome player,won,low_bell_kesh
+        actions:
+          - translated_dialog low_bell_kesh_challenge
+          - start_battle player,low_bell_kesh
+      - slug: kesh_victory
+        at: {x: 0, y: 0}
+        trigger: init
+        anchor_required: false
+        purpose: optional trainer reward and rare-shelf context
+        conditions:
+          - is battle_outcome player,won,low_bell_kesh
+          - not variable_set low_bell_kesh_rewarded:yes
+        actions:
+          - translated_dialog low_bell_kesh_victory
+          - add_item super_potion,1
+          - set_variable low_bell_kesh_rewarded:yes
+      - slug: kesh_after
+        at: {x: 26, y: 11}
+        trigger: talk
+        npc: low_bell_kesh
+        purpose: evidence-driven optional route hint
+        conditions: [is variable_set low_bell_kesh_rewarded:yes]
+        actions: [translated_dialog low_bell_kesh_after]
+      - slug: silent_shift_pass_record
+        at: {x: 30, y: 10}
+        trigger: interact
+        purpose: optional survey rubbing names evidence
+        conditions: [not variable_set low_bell_name_pass:yes]
+        actions:
+          - translated_dialog low_bell_name_pass_found
+          - set_variable low_bell_name_pass:yes
+      - slug: pass_wind_cache_secret
+        at: {x: 31, y: 12}
+        trigger: interact
+        purpose: useful reward at exposed dead end
+        conditions: [not variable_set low_bell_secret_pass:yes]
+        actions:
+          - translated_dialog low_bell_secret_pass
+          - add_item tuxeball_earth,2
+          - set_variable low_bell_secret_pass:yes
 
   - slug: low_bell_quarry_exterior
     title: Old Bell Quarry
@@ -661,6 +940,12 @@ maps:
       - slug: survey_runnel_path
         width: 2
         points: [{x: 10, y: 19}, {x: 14, y: 11}, {x: 23, y: 9}]
+      - slug: squabbit_ledge_path
+        width: 2
+        points: [{x: 23, y: 9}, {x: 29, y: 6}]
+      - slug: collapse_pocket_path
+        width: 2
+        points: [{x: 16, y: 24}, {x: 25, y: 28}, {x: 29, y: 29}]
     fills:
       - {slug: disturbed_runnel, bounds: {x: 12, y: 9, width: 13, height: 3}, tile: water, layer: Terrain}
       - {slug: worked_floor, bounds: {x: 8, y: 16, width: 18, height: 12}, tile: stone_floor, layer: Ground}
@@ -669,6 +954,7 @@ maps:
     props:
       - {slug: survey_stake, at: {x: 23, y: 12}, visual: sign, blocks_movement: true, interaction_anchor: {x: 23, y: 12}}
       - {slug: collapsed_fitting, at: {x: 15, y: 25}, visual: metal, blocks_movement: true, interaction_anchor: {x: 15, y: 25}}
+      - {slug: quarry_name_strip, at: {x: 29, y: 29}, visual: metal, blocks_movement: true, interaction_anchor: {x: 29, y: 29}}
     warps:
       - {slug: quarry_to_pass, at: {x: 0, y: 18}, facing: left, target_map: low_bell_highland_pass, target: {x: 33, y: 24}}
       - slug: quarry_to_lower
@@ -676,9 +962,17 @@ maps:
         facing: down
         target_map: low_bell_quarry_lower
         target: {x: 19, y: 2}
-        conditions: [is variable_set low_bell_tovin_briefed:yes]
+        conditions:
+          - is variable_set low_bell_tovin_briefed:yes
+          - is battle_outcome player,won,low_bell_rockat_guard
     npcs:
       - {slug: low_bell_sela, at: {x: 8, y: 20}}
+      - slug: low_bell_squabbit
+        at: {x: 29, y: 6}
+        conditions: [not variable_set low_bell_sq_squabbit_found:yes]
+      - slug: low_bell_rockat_guard
+        at: {x: 17, y: 31}
+        conditions: [not battle_outcome player,won,low_bell_rockat_guard]
     encounters:
       - {slug: quarry_edge_wild, bounds: {x: 20, y: 16, width: 9, height: 10}, table: low_bell_quarry_wild, probability: 10}
     events:
@@ -712,6 +1006,52 @@ maps:
         trigger: interact
         purpose: old metal and fractured stone evidence
         actions: [translated_dialog low_bell_quarry_fitting]
+      - slug: find_jori_squabbit
+        at: {x: 29, y: 6}
+        trigger: talk
+        npc: low_bell_squabbit
+        purpose: represent and resolve the optional quarry discovery
+        conditions: [not variable_set low_bell_sq_squabbit_found:yes]
+        actions:
+          - translated_dialog low_bell_squabbit_found
+          - set_variable low_bell_sq_squabbit_found:yes
+          - remove_npc low_bell_squabbit
+      - slug: rockat_guard_challenge
+        at: {x: 17, y: 31}
+        trigger: talk
+        npc: low_bell_rockat_guard
+        purpose: mandatory territorial quarry encounter before lower works
+        mandatory: true
+        conditions:
+          - is variable_set low_bell_tovin_briefed:yes
+          - not battle_outcome player,won,low_bell_rockat_guard
+        actions:
+          - translated_dialog low_bell_rockat_guard
+          - start_battle player,low_bell_rockat_guard
+      - slug: rockat_guard_victory
+        at: {x: 0, y: 0}
+        trigger: init
+        anchor_required: false
+        purpose: clear lower-works gate after a real battle
+        mandatory: true
+        conditions:
+          - is battle_outcome player,won,low_bell_rockat_guard
+          - not variable_set low_bell_rockat_gate_clear:yes
+        actions:
+          - remove_npc low_bell_rockat_guard
+          - translated_dialog low_bell_rockat_after
+          - modify_monster_health
+          - set_variable low_bell_rockat_gate_clear:yes
+      - slug: silent_shift_quarry_record
+        at: {x: 29, y: 29}
+        trigger: interact
+        purpose: optional final name record and useful collapsed-pocket reward
+        conditions: [not variable_set low_bell_name_quarry:yes]
+        actions:
+          - translated_dialog low_bell_name_quarry_found
+          - add_item revive,1
+          - set_variable low_bell_name_quarry:yes
+          - set_variable low_bell_secret_quarry:yes
 
   - slug: low_bell_quarry_lower
     title: Quarry Lower Works
@@ -727,6 +1067,7 @@ maps:
       tile: worked_stone
       openings:
         - {x: 17, y: 0, width: 5, height: 2}
+        - {x: 0, y: 28, width: 2, height: 5}
     paths:
       - slug: lower_gallery
         width: 3
@@ -740,6 +1081,9 @@ maps:
       - slug: assembly_loop
         width: 2
         points: [{x: 12, y: 23}, {x: 23, y: 20}, {x: 28, y: 28}, {x: 27, y: 34}]
+      - slug: lower_hoist_shortcut
+        width: 2
+        points: [{x: 12, y: 24}, {x: 7, y: 29}, {x: 0, y: 30}]
     fills:
       - {slug: runoff_crack, bounds: {x: 7, y: 17, width: 18, height: 2}, tile: water, layer: Terrain}
       - {slug: resonant_chamber, bounds: {x: 22, y: 27, width: 11, height: 9}, tile: forest_floor, layer: Ground}
@@ -752,8 +1096,18 @@ maps:
       - {slug: old_hoist, at: {x: 9, y: 21}, visual: hoist, blocks_movement: true, interaction_anchor: {x: 10, y: 23}}
       - {slug: buried_assembly, at: {x: 29, y: 33}, visual: plinth, blocks_movement: true, interaction_anchor: {x: 29, y: 33}}
       - {slug: collapse_marker, at: {x: 12, y: 10}, visual: sign, blocks_movement: true, interaction_anchor: {x: 12, y: 10}}
+      - {slug: runoff_control_marker, at: {x: 11, y: 20}, visual: metal, blocks_movement: true, interaction_anchor: {x: 11, y: 20}}
+      - {slug: cradle_brace_marker, at: {x: 17, y: 25}, visual: metal, blocks_movement: true, interaction_anchor: {x: 17, y: 25}}
+      - {slug: lower_shortcut_frame, at: {x: 1, y: 28}, visual: hoist, blocks_movement: true}
     warps:
       - {slug: lower_to_quarry, at: {x: 19, y: 0}, facing: up, target_map: low_bell_quarry_exterior, target: {x: 17, y: 33}}
+      - slug: lower_shortcut_to_pass
+        at: {x: 0, y: 30}
+        facing: left
+        target_map: low_bell_highland_pass
+        target: {x: 2, y: 13}
+        conditions: [is variable_set low_bell_shortcut_unlocked:yes]
+        mandatory: false
     npcs:
       - slug: low_bell_jemuar
         at: {x: 27, y: 33}
@@ -766,18 +1120,46 @@ maps:
         trigger: interact
         purpose: environmental account of collapse and silent shift
         actions: [translated_dialog low_bell_lower_collapse]
-      - slug: hoist_knowledge
-        at: {x: 10, y: 23}
+      - slug: puzzle_runoff_first
+        at: {x: 11, y: 20}
         trigger: interact
-        purpose: apply Tovin's knowledge to reach the resonant chamber
+        purpose: first observed-order puzzle control diverts runoff
         mandatory: true
         conditions:
           - is variable_set low_bell_tovin_briefed:yes
-          - not variable_set low_bell_hoist_stabilized:yes
+          - not variable_set low_bell_puzzle_stage
+          - not variable_set low_bell_puzzle_solved:yes
         actions:
-          - translated_dialog low_bell_hoist_apply
+          - translated_dialog low_bell_puzzle_runoff
+          - play_sound sound_misc_07_metal,0.45
+          - set_variable low_bell_puzzle_stage:runoff
+      - slug: puzzle_cradle_correct
+        at: {x: 17, y: 25}
+        trigger: interact
+        purpose: second observed-order puzzle control braces cradle
+        mandatory: true
+        conditions:
+          - is variable_set low_bell_puzzle_stage:runoff
+          - not variable_set low_bell_puzzle_solved:yes
+        actions:
+          - translated_dialog low_bell_puzzle_cradle
           - play_sound sound_misc_07_metal,0.55
+          - set_variable low_bell_puzzle_stage:brace
+      - slug: puzzle_hoist_correct
+        at: {x: 10, y: 23}
+        trigger: interact
+        purpose: final control stabilizes hoist and unlocks shortcut
+        mandatory: true
+        conditions:
+          - is variable_set low_bell_puzzle_stage:brace
+          - not variable_set low_bell_puzzle_solved:yes
+        actions:
+          - translated_dialog low_bell_puzzle_hoist
+          - play_sound sound_misc_07_metal,0.55
+          - set_variable low_bell_puzzle_solved:yes
+          - set_variable low_bell_shortcut_unlocked:yes
           - set_variable low_bell_hoist_stabilized:yes
+          - clear_variable low_bell_puzzle_stage
       - slug: jemuar_climax
         at: {x: 27, y: 33}
         trigger: talk
@@ -875,3 +1257,34 @@ dialogue:
   low_bell_jemuar_after: "Jemuar backs into a dry fissure. Without its weight, the note thins—but water still runs across the buried fitting."
   low_bell_assembly_action: "You close the survey cut and wedge the loose tongue clear of the fractured bell stone. Water returns to the old drain."
   low_bell_return_objective: "The chamber falls quiet. Return to Ashenbell; the village needs the whole account."
+  low_bell_ren_challenge: "Ren: I am carrying medicine uphill, but the wet pocket is full of skittish creatures. A short match will show whether your partner is ready to help."
+  low_bell_ren_victory: "Ren: Steady enough. Take this potion; a courier who arrives empty-handed has only delivered a problem."
+  low_bell_ren_after: "Ren: The grass here gives creatures an exit. Weaken one, then offer a Tuxeball—do not corner it."
+  low_bell_name_south_found: "A weathered shift token is wedged behind the overlook stone: INA VEL, DRAIN CREW. The ridge line matches Mara's memorial map."
+  low_bell_secret_south: "Under the stream marker, a courier's waxed pouch still holds a Super Potion."
+  low_bell_mara_names_offer: "Mara: Three names on the silent-shift roll are weathered away. If you find marked tokens or rubbings, bring the facts—not guesses."
+  low_bell_mara_names_progress: "Mara: The pass survey shelf and the old quarry pockets carried duplicate shift marks. Record only what you can read."
+  low_bell_mara_names_complete: "Mara aligns the three records. 'Ina Vel. Oren Pike. Mett Saro. The memorial will not leave blank spaces where people stood.'"
+  low_bell_mara_resolved_names: "Mara: The maintenance oath will be read beneath all the names—including the three you returned. Memory must include what the work demanded."
+  low_bell_jori_searching: "Jori: Squabbit likes dry ledges where a low noise tickles its feet. It hates running water, so look above the quarry runnel."
+  low_bell_jori_return: "Squabbit bounds from behind you. Jori laughs once, then grips its ears. 'No more following underground songs. These are for you.'"
+  low_bell_jori_complete: "Jori: Squabbit sleeps beside the warm wall now. If the stones hum, it comes to find me first."
+  low_bell_jori_resolved_complete: "Jori: Squabbit did not chase the tone last night. We both heard ordinary rain, which is much better."
+  low_bell_pell_intro: "Pell: The north post is closed, so every courier is sharing the South Approach. Find the cause and you will reopen more than a road."
+  low_bell_pell_resolved: "Pell: The north post wants a field report from the western valley. Nera already put your name beside mine."
+  low_bell_garden_caper: "A displaced Caper has nested between the seed rows. It stamps at every vibration from the north."
+  low_bell_alda_garden_thanks: "Alda: It chose the upper pasture once it had room. Good—gardens should feed creatures, not trap them."
+  low_bell_kesh_challenge: "Kesh: Corvix keep striking my survey flags. Help me test their pattern; if you hold your ground, I can finish the rubbing."
+  low_bell_kesh_victory: "Kesh: They broke east on the same gust that carried the tone. Take the medicine—I have the observation I needed."
+  low_bell_kesh_after: "Kesh: The old rubbing is beside the high marker. The wind cache beyond it was left for crews caught above cloud."
+  low_bell_name_pass_found: "A charcoal rubbing preserves a second line: OREN PIKE, HOIST WATCH. The paper is recent; the carved mark is not."
+  low_bell_secret_pass: "The wind cache contains two Earth Tuxeballs, wrapped against grit and rain."
+  low_bell_squabbit_found: "A mud-streaked Squabbit crouches on the dry ledge. At Jori's name it chirps, then follows at a careful distance."
+  low_bell_rockat_guard: "A Rockat claws at the lower gate whenever the runoff touches stone. It is cornered between the tone and the open track."
+  low_bell_rockat_after: "The Rockat retreats to a dry shelf. The lower gate is clear, and its old brace marks match Tovin's sequence."
+  low_bell_name_quarry_found: "A brass strip reads METT SARO, CRADLE RIGGER. A sealed emergency wrap behind it still contains a Revive."
+  low_bell_puzzle_runoff: "You turn the labelled RUNOFF gate. Water leaves the fractured shelf and enters the old drain."
+  low_bell_puzzle_cradle: "You seat the CRADLE brace into the unloaded frame. The resonant slab stops shifting."
+  low_bell_puzzle_hoist: "You ease the HOIST brake last. The frame settles, and its service cage opens a route back to the pass."
+  low_bell_puzzle_wrong: "The control will not move safely in this state. The three labels repeat the maintenance order: RUNOFF — CRADLE — HOIST."
+  low_bell_tovin_resolved_names: "Tovin: Mett Saro set that cradle beside me. Seeing his name restored does not excuse my signature. It tells me who my silence excluded."

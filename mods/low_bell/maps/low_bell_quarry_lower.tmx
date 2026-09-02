@@ -72,12 +72,12 @@
 0,0,0,0,0,0,0,0,0,0,0,194,194,194,194,194,194,194,0,0,0,0,0,0,194,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,194,194,194,0,0,0,0,0,0,0,0,0,0,0,194,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,194,194,194,194,0,0,0,0,0,0,0,0,0,0,0,194,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,194,194,194,194,194,0,0,0,0,0,0,0,0,0,194,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,194,194,194,194,194,194,0,0,0,0,0,0,0,0,194,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,194,194,194,194,194,194,0,0,0,0,0,0,194,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,194,194,194,194,194,0,0,0,0,0,0,194,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,194,194,194,194,0,0,0,0,0,194,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,194,194,194,0,0,0,0,194,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,194,194,194,194,194,194,0,0,0,0,0,0,0,0,0,194,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,194,0,0,194,194,194,194,194,194,0,0,0,0,0,0,0,0,194,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,194,0,0,0,0,0,194,194,194,194,194,194,0,0,0,0,0,0,194,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,194,0,0,0,0,0,0,0,0,194,194,194,194,194,0,0,0,0,0,0,194,0,0,0,0,0,0,0,0,0,
+0,0,0,0,194,194,194,194,0,0,0,0,0,0,0,0,0,0,0,194,194,194,194,0,0,0,0,0,194,0,0,0,0,0,0,0,0,0,
+194,194,194,194,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,194,194,194,0,0,0,0,194,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,194,194,194,194,0,194,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,194,194,194,194,194,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,194,194,194,194,0,0,0,0,0,0,0,0,0,0,
@@ -111,19 +111,19 @@
 51,51,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,51,51,
 51,51,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,51,51,
 51,51,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,51,51,
-51,51,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,51,51,
+51,51,0,0,0,0,0,0,0,0,0,211,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,51,51,
 51,51,0,0,0,0,0,0,0,211,211,211,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,51,51,
 51,51,0,0,0,0,0,0,0,243,51,243,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,51,51,
 51,51,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,51,51,
 51,51,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,51,51,
+51,51,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,211,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,51,51,
 51,51,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,51,51,
 51,51,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,51,51,
-51,51,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,51,51,
-51,51,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,51,51,
-51,51,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,51,51,
-51,51,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,51,51,
-51,51,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,51,51,
-51,51,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,51,51,
+0,211,211,211,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,51,51,
+0,243,51,243,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,51,51,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,51,51,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,51,51,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,51,51,
 51,51,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,51,51,0,0,0,0,0,51,51,
 51,51,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,55,55,0,0,0,0,0,51,51,
 51,51,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,51,51,
@@ -180,19 +180,23 @@
  <objectgroup id="5" name="Collisions" color="#ff0000">
   <object id="1" type="collision" x="0" y="0" width="272" height="32" />
   <object id="2" type="collision" x="352" y="0" width="256" height="32" />
-  <object id="3" type="collision" x="0" y="32" width="32" height="608" />
+  <object id="3" type="collision" x="0" y="32" width="32" height="416" />
   <object id="4" type="collision" x="576" y="32" width="32" height="608" />
   <object id="5" type="collision" x="48" y="112" width="112" height="64" />
   <object id="6" type="collision" x="432" y="144" width="112" height="80" />
   <object id="7" type="collision" x="192" y="160" width="16" height="48" />
   <object id="8" type="collision" x="112" y="272" width="80" height="32" />
   <object id="9" type="collision" x="240" y="272" width="160" height="32" />
-  <object id="10" type="collision" x="144" y="336" width="48" height="32" />
-  <object id="11" type="collision" x="464" y="528" width="32" height="32" />
-  <object id="12" type="collision" x="32" y="608" width="544" height="32" />
+  <object id="10" type="collision" x="176" y="320" width="16" height="48" />
+  <object id="11" type="collision" x="144" y="336" width="32" height="32" />
+  <object id="12" type="collision" x="272" y="400" width="16" height="16" />
+  <object id="13" type="collision" x="16" y="448" width="48" height="32" />
+  <object id="14" type="collision" x="0" y="528" width="32" height="112" />
+  <object id="15" type="collision" x="464" y="528" width="32" height="32" />
+  <object id="16" type="collision" x="32" y="608" width="544" height="32" />
  </objectgroup>
  <objectgroup id="6" name="Events" color="#ffff00">
-  <object id="13" name="lower_to_quarry" type="event" x="304" y="0" width="16" height="16">
+  <object id="17" name="lower_to_quarry" type="event" x="304" y="0" width="16" height="16">
    <properties>
     <property name="act10" value="transition_teleport player,low_bell_quarry_exterior.tmx,17,33,0.3" />
     <property name="act20" value="char_face player,up" />
@@ -200,37 +204,72 @@
     <property name="cond20" value="is char_facing player,up" />
    </properties>
   </object>
-  <object id="14" name="lower_works_wild" type="event" x="144" y="160" width="160" height="256">
+  <object id="18" name="lower_shortcut_to_pass" type="event" x="0" y="480" width="16" height="16">
+   <properties>
+    <property name="act10" value="transition_teleport player,low_bell_highland_pass.tmx,2,13,0.3" />
+    <property name="act20" value="char_face player,left" />
+    <property name="cond10" value="is char_at player" />
+    <property name="cond20" value="is char_facing player,left" />
+    <property name="cond30" value="is variable_set low_bell_shortcut_unlocked:yes" />
+   </properties>
+  </object>
+  <object id="19" name="lower_works_wild" type="event" x="144" y="160" width="160" height="256">
    <properties>
     <property name="act1" value="random_encounter low_bell_quarry_wild,8" />
    </properties>
   </object>
-  <object id="15" name="Create low_bell_jemuar" type="event" x="432" y="528" width="16" height="16">
+  <object id="20" name="Create low_bell_jemuar" type="event" x="432" y="528" width="16" height="16">
    <properties>
     <property name="act1" value="create_npc low_bell_jemuar,27,33,stand" />
     <property name="cond1" value="not char_exists low_bell_jemuar" />
     <property name="cond10" value="not variable_set low_bell_boss_defeated:yes" />
    </properties>
   </object>
-  <object id="16" name="collapse_evidence" type="event" x="192" y="160" width="16" height="16">
+  <object id="21" name="collapse_evidence" type="event" x="192" y="160" width="16" height="16">
    <properties>
     <property name="act1" value="translated_dialog low_bell_lower_collapse" />
     <property name="cond10" value="is char_facing_tile player" />
     <property name="cond20" value="is button_pressed INTERACT" />
    </properties>
   </object>
-  <object id="17" name="hoist_knowledge" type="event" x="160" y="368" width="16" height="16">
+  <object id="22" name="puzzle_runoff_first" type="event" x="176" y="320" width="16" height="16">
    <properties>
-    <property name="act1" value="translated_dialog low_bell_hoist_apply" />
-    <property name="act2" value="play_sound sound_misc_07_metal,0.55" />
-    <property name="act3" value="set_variable low_bell_hoist_stabilized:yes" />
+    <property name="act1" value="translated_dialog low_bell_puzzle_runoff" />
+    <property name="act2" value="play_sound sound_misc_07_metal,0.45" />
+    <property name="act3" value="set_variable low_bell_puzzle_stage:runoff" />
     <property name="cond10" value="is char_facing_tile player" />
     <property name="cond20" value="is button_pressed INTERACT" />
     <property name="cond30" value="is variable_set low_bell_tovin_briefed:yes" />
-    <property name="cond31" value="not variable_set low_bell_hoist_stabilized:yes" />
+    <property name="cond31" value="not variable_set low_bell_puzzle_stage" />
+    <property name="cond32" value="not variable_set low_bell_puzzle_solved:yes" />
    </properties>
   </object>
-  <object id="18" name="jemuar_climax" type="event" x="432" y="528" width="16" height="16">
+  <object id="23" name="puzzle_cradle_correct" type="event" x="272" y="400" width="16" height="16">
+   <properties>
+    <property name="act1" value="translated_dialog low_bell_puzzle_cradle" />
+    <property name="act2" value="play_sound sound_misc_07_metal,0.55" />
+    <property name="act3" value="set_variable low_bell_puzzle_stage:brace" />
+    <property name="cond10" value="is char_facing_tile player" />
+    <property name="cond20" value="is button_pressed INTERACT" />
+    <property name="cond30" value="is variable_set low_bell_puzzle_stage:runoff" />
+    <property name="cond31" value="not variable_set low_bell_puzzle_solved:yes" />
+   </properties>
+  </object>
+  <object id="24" name="puzzle_hoist_correct" type="event" x="160" y="368" width="16" height="16">
+   <properties>
+    <property name="act1" value="translated_dialog low_bell_puzzle_hoist" />
+    <property name="act2" value="play_sound sound_misc_07_metal,0.55" />
+    <property name="act3" value="set_variable low_bell_puzzle_solved:yes" />
+    <property name="act4" value="set_variable low_bell_shortcut_unlocked:yes" />
+    <property name="act5" value="set_variable low_bell_hoist_stabilized:yes" />
+    <property name="act6" value="clear_variable low_bell_puzzle_stage" />
+    <property name="cond10" value="is char_facing_tile player" />
+    <property name="cond20" value="is button_pressed INTERACT" />
+    <property name="cond30" value="is variable_set low_bell_puzzle_stage:brace" />
+    <property name="cond31" value="not variable_set low_bell_puzzle_solved:yes" />
+   </properties>
+  </object>
+  <object id="25" name="jemuar_climax" type="event" x="432" y="528" width="16" height="16">
    <properties>
     <property name="act1" value="play_sound japanese_temple_bell_small,0.8" />
     <property name="act2" value="camera_shake 1.2,1.2" />
@@ -241,7 +280,7 @@
     <property name="cond31" value="not battle_outcome player,won,low_bell_jemuar" />
    </properties>
   </object>
-  <object id="19" name="jemuar_victory" type="event" x="0" y="0" width="16" height="16">
+  <object id="26" name="jemuar_victory" type="event" x="0" y="0" width="16" height="16">
    <properties>
     <property name="act1" value="translated_dialog low_bell_jemuar_after" />
     <property name="act2" value="modify_monster_health" />
@@ -251,7 +290,7 @@
     <property name="cond31" value="not variable_set low_bell_boss_defeated:yes" />
    </properties>
   </object>
-  <object id="20" name="damp_resonant_assembly" type="event" x="464" y="528" width="16" height="16">
+  <object id="27" name="damp_resonant_assembly" type="event" x="464" y="528" width="16" height="16">
    <properties>
     <property name="act1" value="translated_dialog low_bell_assembly_action" />
     <property name="act2" value="play_sound sound_misc_06_wood_and_metal,0.5" />
@@ -264,13 +303,13 @@
     <property name="cond31" value="not variable_set low_bell_story:resolved" />
    </properties>
   </object>
-  <object id="21" name="Set environment" type="event" x="0" y="0" width="16" height="16">
+  <object id="28" name="Set environment" type="event" x="0" y="0" width="16" height="16">
    <properties>
     <property name="act1" value="set_environment cave" />
     <property name="cond1" value="not environment_is cave" />
    </properties>
   </object>
-  <object id="22" name="Play music" type="event" x="0" y="0" width="16" height="16">
+  <object id="29" name="Play music" type="event" x="0" y="0" width="16" height="16">
    <properties>
     <property name="act1" value="play_music music_dungeon_loop_slow,0.55" />
     <property name="cond1" value="not music_playing music_dungeon_loop_slow" />

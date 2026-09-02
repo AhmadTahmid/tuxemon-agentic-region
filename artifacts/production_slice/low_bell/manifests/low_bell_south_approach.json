@@ -4,7 +4,7 @@
   "map": "low_bell_south_approach",
   "source": "content/production_slice/low_bell/episode.yaml",
   "revision": 1,
-  "tmx_sha256": "77358ce75ba3b6a3c8d24b9ac2f0f2cd6e3542e28c151f6a20d04c6dff23e28e",
+  "tmx_sha256": "59c768c1a181986771b5cd9f4e544b6aae79c236d398b48d5aad0ec4d09a532c",
   "blocked_cells": [
     [
       0,
@@ -544,6 +544,10 @@
     ],
     [
       1,
+      20
+    ],
+    [
+      6,
       20
     ],
     [
@@ -2014,6 +2018,18 @@
     ]
   ],
   "interaction_anchors": [
+    [
+      29,
+      10
+    ],
+    [
+      6,
+      20
+    ],
+    [
+      7,
+      24
+    ],
     [
       10,
       29

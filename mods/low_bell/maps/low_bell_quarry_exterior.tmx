@@ -49,9 +49,9 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,194,194,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,194,194,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,194,194,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,46,46,46,46,46,46,46,46,46,194,194,194,46,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,46,46,46,46,46,194,194,194,194,46,46,46,46,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,46,46,194,194,194,46,46,46,46,46,46,46,46,0,0,0,0,0,0,0,0,0,
@@ -67,12 +67,12 @@
 0,0,0,0,0,0,0,0,0,0,194,194,194,194,194,194,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,194,194,194,194,194,194,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,194,194,194,194,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,194,194,194,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,194,194,194,194,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,194,194,194,194,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,194,194,194,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,194,194,194,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,194,194,194,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,194,194,194,194,194,194,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,194,194,194,194,0,0,194,194,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,194,194,194,0,0,0,0,194,194,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,194,194,194,0,0,0,0,0,0,194,194,194,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,194,194,194,0,0,0,0,0,0,0,0,0,194,194,194,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,194,194,194,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,194,194,194,194,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,194,194,194,194,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -112,7 +112,7 @@
 51,51,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,51,51,
 51,51,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,51,51,
 51,51,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,51,51,
-51,51,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,51,51,
+51,51,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,211,0,0,51,51,
 51,51,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,51,51,
 51,51,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,51,51,
 51,51,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,51,51,
@@ -169,11 +169,12 @@
   <object id="5" type="collision" x="368" y="192" width="16" height="48" />
   <object id="6" type="collision" x="0" y="336" width="32" height="240" />
   <object id="7" type="collision" x="240" y="400" width="16" height="16" />
-  <object id="8" type="collision" x="32" y="544" width="208" height="32" />
-  <object id="9" type="collision" x="320" y="544" width="192" height="32" />
+  <object id="8" type="collision" x="464" y="464" width="16" height="16" />
+  <object id="9" type="collision" x="32" y="544" width="208" height="32" />
+  <object id="10" type="collision" x="320" y="544" width="192" height="32" />
  </objectgroup>
  <objectgroup id="6" name="Events" color="#ffff00">
-  <object id="10" name="quarry_to_pass" type="event" x="0" y="288" width="16" height="16">
+  <object id="11" name="quarry_to_pass" type="event" x="0" y="288" width="16" height="16">
    <properties>
     <property name="act10" value="transition_teleport player,low_bell_highland_pass.tmx,33,24,0.3" />
     <property name="act20" value="char_face player,left" />
@@ -181,27 +182,44 @@
     <property name="cond20" value="is char_facing player,left" />
    </properties>
   </object>
-  <object id="11" name="quarry_to_lower" type="event" x="272" y="560" width="16" height="16">
+  <object id="12" name="quarry_to_lower" type="event" x="272" y="560" width="16" height="16">
    <properties>
     <property name="act10" value="transition_teleport player,low_bell_quarry_lower.tmx,19,2,0.3" />
     <property name="act20" value="char_face player,down" />
     <property name="cond10" value="is char_at player" />
     <property name="cond20" value="is char_facing player,down" />
     <property name="cond30" value="is variable_set low_bell_tovin_briefed:yes" />
+    <property name="cond31" value="is battle_outcome player,won,low_bell_rockat_guard" />
    </properties>
   </object>
-  <object id="12" name="quarry_edge_wild" type="event" x="320" y="256" width="144" height="160">
+  <object id="13" name="quarry_edge_wild" type="event" x="320" y="256" width="144" height="160">
    <properties>
     <property name="act1" value="random_encounter low_bell_quarry_wild,10" />
    </properties>
   </object>
-  <object id="13" name="Create low_bell_sela" type="event" x="128" y="320" width="16" height="16">
+  <object id="14" name="Create low_bell_sela" type="event" x="128" y="320" width="16" height="16">
    <properties>
     <property name="act1" value="create_npc low_bell_sela,8,20,stand" />
     <property name="cond1" value="not char_exists low_bell_sela" />
    </properties>
   </object>
-  <object id="14" name="survey_disturbance" type="event" x="368" y="192" width="16" height="16">
+  <object id="15" name="Create low_bell_squabbit" type="event" x="464" y="96" width="16" height="16">
+   <properties>
+    <property name="act1" value="create_npc low_bell_squabbit,29,6,stand" />
+    <property name="cond1" value="not char_exists low_bell_squabbit" />
+    <property name="cond10" value="not variable_set low_bell_sq_squabbit_found:yes" />
+   </properties>
+  </object>
+  <object id="16" name="Create low_bell_rockat_guard" type="event" x="272" y="496" width="16" height="16">
+   <properties>
+    <property name="act1" value="create_npc low_bell_rockat_guard,17,31,stand" />
+    <property name="cond1" value="not char_exists low_bell_rockat_guard" />
+    <property name="cond10" value="not battle_outcome player" />
+    <property name="cond11" value="won" />
+    <property name="cond12" value="low_bell_rockat_guard" />
+   </properties>
+  </object>
+  <object id="17" name="survey_disturbance" type="event" x="368" y="192" width="16" height="16">
    <properties>
     <property name="act1" value="translated_dialog low_bell_survey_disturbance" />
     <property name="act2" value="set_variable low_bell_story:quarry_discovered" />
@@ -210,7 +228,7 @@
     <property name="cond30" value="is variable_set low_bell_story:investigation" />
    </properties>
   </object>
-  <object id="15" name="sela_before_tovin" type="event" x="128" y="320" width="16" height="16">
+  <object id="18" name="sela_before_tovin" type="event" x="128" y="320" width="16" height="16">
    <properties>
     <property name="act1" value="translated_dialog low_bell_sela_need_tovin" />
     <property name="behav1" value="talk low_bell_sela" />
@@ -218,27 +236,66 @@
     <property name="cond31" value="not variable_set low_bell_tovin_briefed:yes" />
    </properties>
   </object>
-  <object id="16" name="sela_after_tovin" type="event" x="128" y="320" width="16" height="16">
+  <object id="19" name="sela_after_tovin" type="event" x="128" y="320" width="16" height="16">
    <properties>
     <property name="act1" value="translated_dialog low_bell_sela_enter" />
     <property name="behav1" value="talk low_bell_sela" />
     <property name="cond30" value="is variable_set low_bell_tovin_briefed:yes" />
    </properties>
   </object>
-  <object id="17" name="fitting_evidence" type="event" x="240" y="400" width="16" height="16">
+  <object id="20" name="fitting_evidence" type="event" x="240" y="400" width="16" height="16">
    <properties>
     <property name="act1" value="translated_dialog low_bell_quarry_fitting" />
     <property name="cond10" value="is char_facing_tile player" />
     <property name="cond20" value="is button_pressed INTERACT" />
    </properties>
   </object>
-  <object id="18" name="Set environment" type="event" x="0" y="0" width="16" height="16">
+  <object id="21" name="find_jori_squabbit" type="event" x="464" y="96" width="16" height="16">
+   <properties>
+    <property name="act1" value="translated_dialog low_bell_squabbit_found" />
+    <property name="act2" value="set_variable low_bell_sq_squabbit_found:yes" />
+    <property name="act3" value="remove_npc low_bell_squabbit" />
+    <property name="behav1" value="talk low_bell_squabbit" />
+    <property name="cond30" value="not variable_set low_bell_sq_squabbit_found:yes" />
+   </properties>
+  </object>
+  <object id="22" name="rockat_guard_challenge" type="event" x="272" y="496" width="16" height="16">
+   <properties>
+    <property name="act1" value="translated_dialog low_bell_rockat_guard" />
+    <property name="act2" value="start_battle player,low_bell_rockat_guard" />
+    <property name="behav1" value="talk low_bell_rockat_guard" />
+    <property name="cond30" value="is variable_set low_bell_tovin_briefed:yes" />
+    <property name="cond31" value="not battle_outcome player,won,low_bell_rockat_guard" />
+   </properties>
+  </object>
+  <object id="23" name="rockat_guard_victory" type="event" x="0" y="0" width="16" height="16">
+   <properties>
+    <property name="act1" value="remove_npc low_bell_rockat_guard" />
+    <property name="act2" value="translated_dialog low_bell_rockat_after" />
+    <property name="act3" value="modify_monster_health" />
+    <property name="act4" value="set_variable low_bell_rockat_gate_clear:yes" />
+    <property name="cond30" value="is battle_outcome player,won,low_bell_rockat_guard" />
+    <property name="cond31" value="not variable_set low_bell_rockat_gate_clear:yes" />
+   </properties>
+  </object>
+  <object id="24" name="silent_shift_quarry_record" type="event" x="464" y="464" width="16" height="16">
+   <properties>
+    <property name="act1" value="translated_dialog low_bell_name_quarry_found" />
+    <property name="act2" value="add_item revive,1" />
+    <property name="act3" value="set_variable low_bell_name_quarry:yes" />
+    <property name="act4" value="set_variable low_bell_secret_quarry:yes" />
+    <property name="cond10" value="is char_facing_tile player" />
+    <property name="cond20" value="is button_pressed INTERACT" />
+    <property name="cond30" value="not variable_set low_bell_name_quarry:yes" />
+   </properties>
+  </object>
+  <object id="25" name="Set environment" type="event" x="0" y="0" width="16" height="16">
    <properties>
     <property name="act1" value="set_environment cave" />
     <property name="cond1" value="not environment_is cave" />
    </properties>
   </object>
-  <object id="19" name="Play music" type="event" x="0" y="0" width="16" height="16">
+  <object id="26" name="Play music" type="event" x="0" y="0" width="16" height="16">
    <properties>
     <property name="act1" value="play_music music_15_dungeon,0.55" />
     <property name="cond1" value="not music_playing music_15_dungeon" />

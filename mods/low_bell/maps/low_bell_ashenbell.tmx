@@ -273,25 +273,22 @@
     <property name="cond1" value="not char_exists low_bell_caro" />
    </properties>
   </object>
-  <object id="25" name="Create low_bell_demas" type="event" x="240" y="528" width="16" height="16">
-   <properties>
-    <property name="act1" value="create_npc low_bell_demas,15,33,stand" />
-    <property name="cond1" value="not char_exists low_bell_demas" />
-   </properties>
-  </object>
-  <object id="26" name="Create low_bell_etti" type="event" x="288" y="288" width="16" height="16">
-   <properties>
-    <property name="act1" value="create_npc low_bell_etti,18,18,stand" />
-    <property name="cond1" value="not char_exists low_bell_etti" />
-   </properties>
-  </object>
-  <object id="27" name="Create low_bell_pell" type="event" x="432" y="448" width="16" height="16">
+  <object id="25" name="Create low_bell_pell" type="event" x="432" y="448" width="16" height="16">
    <properties>
     <property name="act1" value="create_npc low_bell_pell,27,28,stand" />
     <property name="cond1" value="not char_exists low_bell_pell" />
    </properties>
   </object>
-  <object id="28" name="village_arrival_scene" type="event" x="320" y="576" width="80" height="48">
+  <object id="26" name="Create low_bell_garden_caper" type="event" x="160" y="544" width="16" height="16">
+   <properties>
+    <property name="act1" value="create_npc low_bell_garden_caper,10,34,stand" />
+    <property name="cond1" value="not char_exists low_bell_garden_caper" />
+    <property name="cond10" value="not battle_outcome player" />
+    <property name="cond11" value="won" />
+    <property name="cond12" value="low_bell_garden_caper" />
+   </properties>
+  </object>
+  <object id="27" name="village_arrival_scene" type="event" x="320" y="576" width="80" height="48">
    <properties>
     <property name="act1" value="translated_dialog low_bell_village_arrival" />
     <property name="act2" value="translated_dialog low_bell_mara_intro" />
@@ -304,42 +301,96 @@
     <property name="cond31" value="not variable_set low_bell_story" />
    </properties>
   </object>
-  <object id="29" name="mara_investigation" type="event" x="304" y="320" width="16" height="16">
+  <object id="28" name="mara_investigation" type="event" x="304" y="320" width="16" height="16">
    <properties>
     <property name="act1" value="translated_dialog low_bell_mara_investigation" />
+    <property name="act2" value="translated_dialog low_bell_mara_names_offer" />
+    <property name="act3" value="set_variable low_bell_sq_names_accepted:yes" />
     <property name="behav1" value="talk low_bell_mara" />
     <property name="cond30" value="is variable_set low_bell_story:investigation" />
+    <property name="cond31" value="not variable_set low_bell_sq_names_accepted:yes" />
    </properties>
   </object>
-  <object id="30" name="iven_investigation" type="event" x="384" y="304" width="16" height="16">
+  <object id="29" name="mara_names_progress" type="event" x="304" y="320" width="16" height="16">
+   <properties>
+    <property name="act1" value="translated_dialog low_bell_mara_names_progress" />
+    <property name="behav1" value="talk low_bell_mara" />
+    <property name="cond30" value="is variable_set low_bell_sq_names_accepted:yes" />
+    <property name="cond31" value="not variable_set low_bell_name_quarry:yes" />
+    <property name="cond32" value="not variable_set low_bell_sq_names_complete:yes" />
+   </properties>
+  </object>
+  <object id="30" name="mara_names_complete" type="event" x="304" y="320" width="16" height="16">
+   <properties>
+    <property name="act1" value="translated_dialog low_bell_mara_names_complete" />
+    <property name="act2" value="add_item bivouac,1" />
+    <property name="act3" value="set_variable low_bell_sq_names_complete:yes" />
+    <property name="behav1" value="talk low_bell_mara" />
+    <property name="cond30" value="is variable_set low_bell_sq_names_accepted:yes" />
+    <property name="cond31" value="is variable_set low_bell_name_south:yes" />
+    <property name="cond32" value="is variable_set low_bell_name_pass:yes" />
+    <property name="cond33" value="is variable_set low_bell_name_quarry:yes" />
+    <property name="cond34" value="not variable_set low_bell_sq_names_complete:yes" />
+   </properties>
+  </object>
+  <object id="31" name="iven_investigation" type="event" x="384" y="304" width="16" height="16">
    <properties>
     <property name="act1" value="translated_dialog low_bell_iven_investigation" />
     <property name="behav1" value="talk low_bell_iven" />
     <property name="cond30" value="is variable_set low_bell_story:investigation" />
    </properties>
   </object>
-  <object id="31" name="nera_investigation" type="event" x="384" y="352" width="16" height="16">
+  <object id="32" name="nera_investigation" type="event" x="384" y="352" width="16" height="16">
    <properties>
     <property name="act1" value="translated_dialog low_bell_nera_town" />
     <property name="behav1" value="talk low_bell_nera" />
     <property name="cond30" value="is variable_set low_bell_story:investigation" />
    </properties>
   </object>
-  <object id="32" name="jori_intro" type="event" x="192" y="320" width="16" height="16">
+  <object id="33" name="jori_intro" type="event" x="192" y="320" width="16" height="16">
    <properties>
     <property name="act1" value="translated_dialog low_bell_jori_intro" />
+    <property name="act2" value="set_variable low_bell_sq_squabbit_accepted:yes" />
     <property name="behav1" value="talk low_bell_jori" />
-    <property name="cond30" value="not variable_set low_bell_story:resolved" />
+    <property name="cond30" value="not variable_set low_bell_sq_squabbit_accepted:yes" />
+    <property name="cond31" value="not variable_set low_bell_sq_squabbit_complete:yes" />
    </properties>
   </object>
-  <object id="33" name="sela_investigation" type="event" x="384" y="112" width="16" height="16">
+  <object id="34" name="jori_searching" type="event" x="192" y="320" width="16" height="16">
+   <properties>
+    <property name="act1" value="translated_dialog low_bell_jori_searching" />
+    <property name="behav1" value="talk low_bell_jori" />
+    <property name="cond30" value="is variable_set low_bell_sq_squabbit_accepted:yes" />
+    <property name="cond31" value="not variable_set low_bell_sq_squabbit_found:yes" />
+    <property name="cond32" value="not variable_set low_bell_story:resolved" />
+   </properties>
+  </object>
+  <object id="35" name="jori_squabbit_return" type="event" x="192" y="320" width="16" height="16">
+   <properties>
+    <property name="act1" value="translated_dialog low_bell_jori_return" />
+    <property name="act2" value="add_item tuxeball_hearty,2" />
+    <property name="act3" value="set_variable low_bell_sq_squabbit_complete:yes" />
+    <property name="behav1" value="talk low_bell_jori" />
+    <property name="cond30" value="is variable_set low_bell_sq_squabbit_found:yes" />
+    <property name="cond31" value="not variable_set low_bell_sq_squabbit_complete:yes" />
+   </properties>
+  </object>
+  <object id="36" name="jori_squabbit_complete" type="event" x="192" y="320" width="16" height="16">
+   <properties>
+    <property name="act1" value="translated_dialog low_bell_jori_complete" />
+    <property name="behav1" value="talk low_bell_jori" />
+    <property name="cond30" value="is variable_set low_bell_sq_squabbit_complete:yes" />
+    <property name="cond31" value="not variable_set low_bell_story:resolved" />
+   </properties>
+  </object>
+  <object id="37" name="sela_investigation" type="event" x="384" y="112" width="16" height="16">
    <properties>
     <property name="act1" value="translated_dialog low_bell_sela_investigation" />
     <property name="behav1" value="talk low_bell_sela" />
     <property name="cond30" value="is variable_set low_bell_story:investigation" />
    </properties>
   </object>
-  <object id="34" name="village_quarry_discovered_notice" type="event" x="304" y="400" width="112" height="32">
+  <object id="38" name="village_quarry_discovered_notice" type="event" x="304" y="400" width="112" height="32">
    <properties>
     <property name="act1" value="translated_dialog low_bell_return_for_tovin" />
     <property name="act2" value="set_variable low_bell_return_prompt_seen:yes" />
@@ -349,7 +400,7 @@
     <property name="cond32" value="not variable_set low_bell_return_prompt_seen:yes" />
    </properties>
   </object>
-  <object id="35" name="resolution_prompt" type="event" x="336" y="320" width="16" height="16">
+  <object id="39" name="resolution_prompt" type="event" x="336" y="320" width="16" height="16">
    <properties>
     <property name="act1" value="translated_dialog low_bell_return_mara" />
     <property name="act2" value="translated_dialog low_bell_return_iven" />
@@ -365,83 +416,134 @@
     <property name="cond31" value="not variable_set low_bell_episode_complete:yes" />
    </properties>
   </object>
-  <object id="36" name="mara_resolved" type="event" x="304" y="320" width="16" height="16">
+  <object id="40" name="mara_resolved" type="event" x="304" y="320" width="16" height="16">
    <properties>
     <property name="act1" value="translated_dialog low_bell_mara_resolved" />
     <property name="behav1" value="talk low_bell_mara" />
     <property name="cond30" value="is variable_set low_bell_story:resolved" />
+    <property name="cond31" value="not variable_set low_bell_sq_names_complete:yes" />
    </properties>
   </object>
-  <object id="37" name="iven_resolved" type="event" x="384" y="304" width="16" height="16">
+  <object id="41" name="mara_resolved_names" type="event" x="304" y="320" width="16" height="16">
+   <properties>
+    <property name="act1" value="translated_dialog low_bell_mara_resolved_names" />
+    <property name="behav1" value="talk low_bell_mara" />
+    <property name="cond30" value="is variable_set low_bell_story:resolved" />
+    <property name="cond31" value="is variable_set low_bell_sq_names_complete:yes" />
+   </properties>
+  </object>
+  <object id="42" name="iven_resolved" type="event" x="384" y="304" width="16" height="16">
    <properties>
     <property name="act1" value="translated_dialog low_bell_iven_resolved" />
     <property name="behav1" value="talk low_bell_iven" />
     <property name="cond30" value="is variable_set low_bell_story:resolved" />
    </properties>
   </object>
-  <object id="38" name="nera_resolved" type="event" x="384" y="352" width="16" height="16">
+  <object id="43" name="nera_resolved" type="event" x="384" y="352" width="16" height="16">
    <properties>
     <property name="act1" value="translated_dialog low_bell_nera_resolved" />
     <property name="behav1" value="talk low_bell_nera" />
     <property name="cond30" value="is variable_set low_bell_story:resolved" />
    </properties>
   </object>
-  <object id="39" name="jori_resolved" type="event" x="192" y="320" width="16" height="16">
+  <object id="44" name="jori_resolved" type="event" x="192" y="320" width="16" height="16">
    <properties>
     <property name="act1" value="translated_dialog low_bell_jori_resolved_pending" />
     <property name="behav1" value="talk low_bell_jori" />
     <property name="cond30" value="is variable_set low_bell_story:resolved" />
+    <property name="cond31" value="not variable_set low_bell_sq_squabbit_complete:yes" />
    </properties>
   </object>
-  <object id="40" name="alda_intro" type="event" x="128" y="496" width="16" height="16">
+  <object id="45" name="jori_resolved_complete" type="event" x="192" y="320" width="16" height="16">
+   <properties>
+    <property name="act1" value="translated_dialog low_bell_jori_resolved_complete" />
+    <property name="behav1" value="talk low_bell_jori" />
+    <property name="cond30" value="is variable_set low_bell_story:resolved" />
+    <property name="cond31" value="is variable_set low_bell_sq_squabbit_complete:yes" />
+   </properties>
+  </object>
+  <object id="46" name="alda_intro" type="event" x="128" y="496" width="16" height="16">
    <properties>
     <property name="act1" value="translated_dialog low_bell_alda_intro" />
     <property name="behav1" value="talk low_bell_alda" />
     <property name="cond30" value="not variable_set low_bell_story:resolved" />
    </properties>
   </object>
-  <object id="41" name="alda_resolved" type="event" x="128" y="496" width="16" height="16">
+  <object id="47" name="alda_resolved" type="event" x="128" y="496" width="16" height="16">
    <properties>
     <property name="act1" value="translated_dialog low_bell_alda_resolved" />
     <property name="behav1" value="talk low_bell_alda" />
     <property name="cond30" value="is variable_set low_bell_story:resolved" />
    </properties>
   </object>
-  <object id="42" name="bren_intro" type="event" x="512" y="400" width="16" height="16">
+  <object id="48" name="bren_intro" type="event" x="512" y="400" width="16" height="16">
    <properties>
     <property name="act1" value="translated_dialog low_bell_bren_intro" />
     <property name="behav1" value="talk low_bell_bren" />
     <property name="cond30" value="not variable_set low_bell_story:resolved" />
    </properties>
   </object>
-  <object id="43" name="bren_resolved" type="event" x="512" y="400" width="16" height="16">
+  <object id="49" name="bren_resolved" type="event" x="512" y="400" width="16" height="16">
    <properties>
     <property name="act1" value="translated_dialog low_bell_bren_resolved" />
     <property name="behav1" value="talk low_bell_bren" />
     <property name="cond30" value="is variable_set low_bell_story:resolved" />
    </properties>
   </object>
-  <object id="44" name="caro_intro" type="event" x="208" y="224" width="16" height="16">
+  <object id="50" name="caro_intro" type="event" x="208" y="224" width="16" height="16">
    <properties>
     <property name="act1" value="translated_dialog low_bell_caro_intro" />
     <property name="behav1" value="talk low_bell_caro" />
     <property name="cond30" value="not variable_set low_bell_story:resolved" />
    </properties>
   </object>
-  <object id="45" name="caro_resolved" type="event" x="208" y="224" width="16" height="16">
+  <object id="51" name="caro_resolved" type="event" x="208" y="224" width="16" height="16">
    <properties>
     <property name="act1" value="translated_dialog low_bell_caro_resolved" />
     <property name="behav1" value="talk low_bell_caro" />
     <property name="cond30" value="is variable_set low_bell_story:resolved" />
    </properties>
   </object>
-  <object id="46" name="Set environment" type="event" x="0" y="0" width="16" height="16">
+  <object id="52" name="pell_intro" type="event" x="432" y="448" width="16" height="16">
+   <properties>
+    <property name="act1" value="translated_dialog low_bell_pell_intro" />
+    <property name="behav1" value="talk low_bell_pell" />
+    <property name="cond30" value="not variable_set low_bell_story:resolved" />
+   </properties>
+  </object>
+  <object id="53" name="pell_resolved" type="event" x="432" y="448" width="16" height="16">
+   <properties>
+    <property name="act1" value="translated_dialog low_bell_pell_resolved" />
+    <property name="behav1" value="talk low_bell_pell" />
+    <property name="cond30" value="is variable_set low_bell_story:resolved" />
+   </properties>
+  </object>
+  <object id="54" name="garden_caper_challenge" type="event" x="160" y="544" width="16" height="16">
+   <properties>
+    <property name="act1" value="translated_dialog low_bell_garden_caper" />
+    <property name="act2" value="start_battle player,low_bell_garden_caper" />
+    <property name="behav1" value="talk low_bell_garden_caper" />
+    <property name="cond30" value="is variable_set low_bell_story:investigation" />
+    <property name="cond31" value="not battle_outcome player,won,low_bell_garden_caper" />
+   </properties>
+  </object>
+  <object id="55" name="garden_caper_victory" type="event" x="0" y="0" width="16" height="16">
+   <properties>
+    <property name="act1" value="remove_npc low_bell_garden_caper" />
+    <property name="act2" value="translated_dialog low_bell_alda_garden_thanks" />
+    <property name="act3" value="add_item tuxeball,2" />
+    <property name="act4" value="set_variable low_bell_garden_calmed:yes" />
+    <property name="cond30" value="is battle_outcome player,won,low_bell_garden_caper" />
+    <property name="cond31" value="not variable_set low_bell_garden_calmed:yes" />
+   </properties>
+  </object>
+  <object id="56" name="Set environment" type="event" x="0" y="0" width="16" height="16">
    <properties>
     <property name="act1" value="set_environment grass" />
     <property name="cond1" value="not environment_is grass" />
    </properties>
   </object>
-  <object id="47" name="Play music" type="event" x="0" y="0" width="16" height="16">
+  <object id="57" name="Play music" type="event" x="0" y="0" width="16" height="16">
    <properties>
     <property name="act1" value="play_music music_07_town,0.55" />
     <property name="cond1" value="not music_playing music_07_town" />

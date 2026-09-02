@@ -123,7 +123,7 @@
 48,48,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,48,48,
 48,48,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,48,48,
 48,48,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,48,48,
-48,48,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,48,48,
+48,48,0,0,0,0,477,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,48,48,
 48,48,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,48,48,
 48,48,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,48,48,
 48,48,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,48,48,
@@ -207,15 +207,16 @@
   <object id="3" type="collision" x="0" y="32" width="32" height="704" />
   <object id="4" type="collision" x="512" y="32" width="32" height="704" />
   <object id="5" type="collision" x="464" y="160" width="16" height="16" />
-  <object id="6" type="collision" x="160" y="464" width="16" height="48" />
-  <object id="7" type="collision" x="32" y="480" width="128" height="32" />
-  <object id="8" type="collision" x="240" y="480" width="272" height="32" />
-  <object id="9" type="collision" x="320" y="608" width="16" height="48" />
-  <object id="10" type="collision" x="32" y="704" width="208" height="32" />
-  <object id="11" type="collision" x="304" y="704" width="208" height="32" />
+  <object id="6" type="collision" x="96" y="320" width="16" height="16" />
+  <object id="7" type="collision" x="160" y="464" width="16" height="48" />
+  <object id="8" type="collision" x="32" y="480" width="128" height="32" />
+  <object id="9" type="collision" x="240" y="480" width="272" height="32" />
+  <object id="10" type="collision" x="320" y="608" width="16" height="48" />
+  <object id="11" type="collision" x="32" y="704" width="208" height="32" />
+  <object id="12" type="collision" x="304" y="704" width="208" height="32" />
  </objectgroup>
  <objectgroup id="6" name="Events" color="#ffff00">
-  <object id="12" name="south_to_village" type="event" x="272" y="0" width="16" height="16">
+  <object id="13" name="south_to_village" type="event" x="272" y="0" width="16" height="16">
    <properties>
     <property name="act10" value="transition_teleport player,low_bell_ashenbell.tmx,22,38,0.3" />
     <property name="act20" value="char_face player,up" />
@@ -224,23 +225,29 @@
     <property name="cond30" value="is variable_set low_bell_tutorial_won:yes" />
    </properties>
   </object>
-  <object id="13" name="south_capture_zone" type="event" x="48" y="272" width="112" height="128">
+  <object id="14" name="south_capture_zone" type="event" x="48" y="272" width="112" height="128">
    <properties>
     <property name="act1" value="random_encounter low_bell_south_wild,14" />
    </properties>
   </object>
-  <object id="14" name="south_upper_zone" type="event" x="304" y="240" width="128" height="128">
+  <object id="15" name="south_upper_zone" type="event" x="304" y="240" width="128" height="128">
    <properties>
     <property name="act1" value="random_encounter low_bell_south_wild,9" />
    </properties>
   </object>
-  <object id="15" name="Create low_bell_nera" type="event" x="256" y="624" width="16" height="16">
+  <object id="16" name="Create low_bell_nera" type="event" x="256" y="624" width="16" height="16">
    <properties>
     <property name="act1" value="create_npc low_bell_nera,16,39,stand" />
     <property name="cond1" value="not char_exists low_bell_nera" />
    </properties>
   </object>
-  <object id="16" name="opening_low_tone" type="event" x="0" y="0" width="16" height="16">
+  <object id="17" name="Create low_bell_ren" type="event" x="112" y="384" width="16" height="16">
+   <properties>
+    <property name="act1" value="create_npc low_bell_ren,7,24,stand" />
+    <property name="cond1" value="not char_exists low_bell_ren" />
+   </properties>
+  </object>
+  <object id="18" name="opening_low_tone" type="event" x="0" y="0" width="16" height="16">
    <properties>
     <property name="act1" value="play_sound japanese_temple_bell_small,0.55" />
     <property name="act2" value="camera_shake 0.7,0.8" />
@@ -251,7 +258,7 @@
     <property name="cond30" value="not variable_set low_bell_tone_seen:yes" />
    </properties>
   </object>
-  <object id="17" name="choose_starter" type="event" x="256" y="624" width="16" height="16">
+  <object id="19" name="choose_starter" type="event" x="256" y="624" width="16" height="16">
    <properties>
     <property name="act1" value="translated_dialog low_bell_nera_starter" />
     <property name="act2" value="choice_monster anoleaf:flounce:rockitten,low_bell_starter_choice" />
@@ -263,7 +270,7 @@
     <property name="cond31" value="not variable_set low_bell_starter_chosen:yes" />
    </properties>
   </object>
-  <object id="18" name="nera_before_tutorial" type="event" x="256" y="624" width="16" height="16">
+  <object id="20" name="nera_before_tutorial" type="event" x="256" y="624" width="16" height="16">
    <properties>
     <property name="act1" value="translated_dialog low_bell_nera_clear_path" />
     <property name="behav1" value="talk low_bell_nera" />
@@ -271,7 +278,7 @@
     <property name="cond31" value="not variable_set low_bell_tutorial_won:yes" />
    </properties>
   </object>
-  <object id="19" name="frightened_shybulb_tutorial" type="event" x="176" y="544" width="80" height="32">
+  <object id="21" name="frightened_shybulb_tutorial" type="event" x="176" y="544" width="80" height="32">
    <properties>
     <property name="act1" value="translated_dialog low_bell_tutorial_creature" />
     <property name="act2" value="wild_encounter shybulb,3" />
@@ -280,7 +287,7 @@
     <property name="cond31" value="not battle_outcome player,won,wild_encounter" />
    </properties>
   </object>
-  <object id="20" name="tutorial_victory" type="event" x="0" y="0" width="16" height="16">
+  <object id="22" name="tutorial_victory" type="event" x="0" y="0" width="16" height="16">
    <properties>
     <property name="act1" value="translated_dialog low_bell_nera_after_tutorial" />
     <property name="act2" value="add_item tuxeball,5" />
@@ -290,7 +297,7 @@
     <property name="cond31" value="not variable_set low_bell_tutorial_won:yes" />
    </properties>
   </object>
-  <object id="21" name="vibrating_rail_evidence" type="event" x="160" y="464" width="16" height="16">
+  <object id="23" name="vibrating_rail_evidence" type="event" x="160" y="464" width="16" height="16">
    <properties>
     <property name="act1" value="translated_dialog low_bell_south_rail" />
     <property name="act2" value="set_variable low_bell_south_rail_seen:yes" />
@@ -299,7 +306,7 @@
     <property name="cond30" value="not variable_set low_bell_south_rail_seen:yes" />
    </properties>
   </object>
-  <object id="22" name="settlement_reveal" type="event" x="240" y="80" width="80" height="32">
+  <object id="24" name="settlement_reveal" type="event" x="240" y="80" width="80" height="32">
    <properties>
     <property name="act1" value="translated_dialog low_bell_settlement_reveal" />
     <property name="act2" value="set_variable low_bell_settlement_revealed:yes" />
@@ -308,13 +315,57 @@
     <property name="cond31" value="not variable_set low_bell_settlement_revealed:yes" />
    </properties>
   </object>
-  <object id="23" name="Set environment" type="event" x="0" y="0" width="16" height="16">
+  <object id="25" name="ren_challenge" type="event" x="112" y="384" width="16" height="16">
+   <properties>
+    <property name="act1" value="translated_dialog low_bell_ren_challenge" />
+    <property name="act2" value="start_battle player,low_bell_ren" />
+    <property name="behav1" value="talk low_bell_ren" />
+    <property name="cond30" value="is variable_set low_bell_tutorial_won:yes" />
+    <property name="cond31" value="not battle_outcome player,won,low_bell_ren" />
+   </properties>
+  </object>
+  <object id="26" name="ren_victory" type="event" x="0" y="0" width="16" height="16">
+   <properties>
+    <property name="act1" value="translated_dialog low_bell_ren_victory" />
+    <property name="act2" value="add_item potion,1" />
+    <property name="act3" value="set_variable low_bell_ren_rewarded:yes" />
+    <property name="cond30" value="is battle_outcome player,won,low_bell_ren" />
+    <property name="cond31" value="not variable_set low_bell_ren_rewarded:yes" />
+   </properties>
+  </object>
+  <object id="27" name="ren_after" type="event" x="112" y="384" width="16" height="16">
+   <properties>
+    <property name="act1" value="translated_dialog low_bell_ren_after" />
+    <property name="behav1" value="talk low_bell_ren" />
+    <property name="cond30" value="is variable_set low_bell_ren_rewarded:yes" />
+   </properties>
+  </object>
+  <object id="28" name="silent_shift_south_record" type="event" x="464" y="160" width="16" height="16">
+   <properties>
+    <property name="act1" value="translated_dialog low_bell_name_south_found" />
+    <property name="act2" value="set_variable low_bell_name_south:yes" />
+    <property name="cond10" value="is char_facing_tile player" />
+    <property name="cond20" value="is button_pressed INTERACT" />
+    <property name="cond30" value="not variable_set low_bell_name_south:yes" />
+   </properties>
+  </object>
+  <object id="29" name="south_stream_cache" type="event" x="96" y="320" width="16" height="16">
+   <properties>
+    <property name="act1" value="translated_dialog low_bell_secret_south" />
+    <property name="act2" value="add_item super_potion,1" />
+    <property name="act3" value="set_variable low_bell_secret_south:yes" />
+    <property name="cond10" value="is char_facing_tile player" />
+    <property name="cond20" value="is button_pressed INTERACT" />
+    <property name="cond30" value="not variable_set low_bell_secret_south:yes" />
+   </properties>
+  </object>
+  <object id="30" name="Set environment" type="event" x="0" y="0" width="16" height="16">
    <properties>
     <property name="act1" value="set_environment grass" />
     <property name="cond1" value="not environment_is grass" />
    </properties>
   </object>
-  <object id="24" name="Play music" type="event" x="0" y="0" width="16" height="16">
+  <object id="31" name="Play music" type="event" x="0" y="0" width="16" height="16">
    <properties>
     <property name="act1" value="play_music music_approaching_the_green_grass,0.55" />
     <property name="cond1" value="not music_playing music_approaching_the_green_grass" />

@@ -64,7 +64,7 @@ puzzle:
   slug: low_bell_resonant_controls
   clue: "divert runoff, brace the cradle, release the hoist"
   controls: [runoff, cradle, hoist]
-  wrong_order: reset_progress_only
+  wrong_order: no_state_change
   unlocks: low_bell_shortcut_unlocked
 
 ecology:

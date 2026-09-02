@@ -119,28 +119,6 @@
     sprite_name: barmaid
     combat_sheet: barmaid
     slug: barmaid
-- slug: low_bell_demas
-  persistence: false
-  speech:
-    profile:
-      default: {}
-  combat: {}
-  audio: {}
-  template:
-    sprite_name: picnicker
-    combat_sheet: picnicker
-    slug: picnicker
-- slug: low_bell_etti
-  persistence: false
-  speech:
-    profile:
-      default: {}
-  combat: {}
-  audio: {}
-  template:
-    sprite_name: monk
-    combat_sheet: monk
-    slug: monk
 - slug: low_bell_pell
   persistence: false
   speech:
@@ -152,6 +130,95 @@
     sprite_name: postboy
     combat_sheet: postboy
     slug: postboy
+- slug: low_bell_ren
+  persistence: false
+  speech:
+    profile:
+      default: {}
+  combat: {}
+  audio: {}
+  template:
+    sprite_name: postboy_green
+    combat_sheet: postboy
+    slug: postboy
+  monsters:
+  - slug: budaye
+    level: 5
+    money_mod: 1
+    exp_req_mod: 1
+    gender: female
+  - slug: caper
+    level: 5
+    money_mod: 1
+    exp_req_mod: 1
+    gender: male
+- slug: low_bell_kesh
+  persistence: false
+  speech:
+    profile:
+      default: {}
+  combat: {}
+  audio: {}
+  template:
+    sprite_name: picnicker
+    combat_sheet: picnicker
+    slug: picnicker
+  monsters:
+  - slug: corvix
+    level: 8
+    money_mod: 1
+    exp_req_mod: 1
+    gender: female
+  - slug: baddrscratch
+    level: 8
+    money_mod: 1
+    exp_req_mod: 1
+    gender: male
+- slug: low_bell_squabbit
+  persistence: false
+  speech:
+    profile:
+      default: {}
+  combat: {}
+  audio: {}
+  template:
+    sprite_name: landrace
+    combat_sheet: snugglepot
+    slug: snugglepot
+- slug: low_bell_garden_caper
+  persistence: false
+  speech:
+    profile:
+      default: {}
+  combat: {}
+  audio: {}
+  template:
+    sprite_name: landrace
+    combat_sheet: snugglepot
+    slug: snugglepot
+  monsters:
+  - slug: caper
+    level: 5
+    money_mod: 1
+    exp_req_mod: 1
+    gender: neuter
+- slug: low_bell_rockat_guard
+  persistence: false
+  speech:
+    profile:
+      default: {}
+  combat: {}
+  audio: {}
+  template:
+    sprite_name: landrace
+    combat_sheet: snugglepot
+    slug: snugglepot
+  monsters:
+  - slug: rockat
+    level: 9
+    money_mod: 1
+    exp_req_mod: 1.5
+    gender: neuter
 - slug: low_bell_jemuar
   persistence: false
   speech:

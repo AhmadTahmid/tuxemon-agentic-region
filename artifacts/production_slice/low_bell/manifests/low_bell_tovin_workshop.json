@@ -4,7 +4,7 @@
   "map": "low_bell_tovin_workshop",
   "source": "content/production_slice/low_bell/episode.yaml",
   "revision": 1,
-  "tmx_sha256": "5d01d227b6e2d4186c24a82c0e3b5c01a0100145027f244ebb6f5f8c52dd5d79",
+  "tmx_sha256": "759f56aac8f3a19959ab1883509b370adbadea749ed1325f61db24dc70064c0d",
   "blocked_cells": [
     [
       0,
@@ -200,18 +200,6 @@
     ],
     [
       6,
-      11
-    ],
-    [
-      7,
-      11
-    ],
-    [
-      8,
-      11
-    ],
-    [
-      9,
       11
     ],
     [

@@ -5,6 +5,9 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+msgid "low_bell_alda_garden_thanks"
+msgstr "Alda: It chose the upper pasture once it had room. Good—gardens should feed creatures, not trap them."
+
 msgid "low_bell_alda_intro"
 msgstr "Alda: Caper ate seedlings before. They never slept under my tool bench until that tone began."
 
@@ -35,6 +38,9 @@ msgstr "Caro: Tonight's wager is whether the inn can be quiet enough for anyone 
 msgid "low_bell_ending_hook"
 msgstr "Nera pins a courier note beside the revised memorial notice: the western valley has reported the same displaced Corvix flight."
 
+msgid "low_bell_garden_caper"
+msgstr "A displaced Caper has nested between the seed rows. It stamps at every vibration from the north."
+
 msgid "low_bell_hoist_apply"
 msgstr "You divert the trickle, seat the cradle brace, then ease the hoist brake. The chamber floor settles instead of ringing."
 
@@ -53,11 +59,32 @@ msgstr "Jemuar backs into a dry fissure. Without its weight, the note thins—bu
 msgid "low_bell_jemuar_reveal"
 msgstr "A massive Jemuar rises beside the buried assembly. Each frightened step drives a lower note through stone and metal."
 
+msgid "low_bell_jori_complete"
+msgstr "Jori: Squabbit sleeps beside the warm wall now. If the stones hum, it comes to find me first."
+
 msgid "low_bell_jori_intro"
 msgstr "Jori: Squabbit follows noises under the floor. It ran north last night and did not come back."
 
+msgid "low_bell_jori_resolved_complete"
+msgstr "Jori: Squabbit did not chase the tone last night. We both heard ordinary rain, which is much better."
+
 msgid "low_bell_jori_resolved_pending"
 msgstr "Jori: The quarry path is safer now. I am going to keep watching for Squabbit's tracks."
+
+msgid "low_bell_jori_return"
+msgstr "Squabbit bounds from behind you. Jori laughs once, then grips its ears. 'No more following underground songs. These are for you.'"
+
+msgid "low_bell_jori_searching"
+msgstr "Jori: Squabbit likes dry ledges where a low noise tickles its feet. It hates running water, so look above the quarry runnel."
+
+msgid "low_bell_kesh_after"
+msgstr "Kesh: The old rubbing is beside the high marker. The wind cache beyond it was left for crews caught above cloud."
+
+msgid "low_bell_kesh_challenge"
+msgstr "Kesh: Corvix keep striking my survey flags. Help me test their pattern; if you hold your ground, I can finish the rubbing."
+
+msgid "low_bell_kesh_victory"
+msgstr "Kesh: They broke east on the same gust that carried the tone. Take the medicine—I have the observation I needed."
 
 msgid "low_bell_lower_collapse"
 msgstr "Broken shift boards remain where the roof fell. The final line is smeared, but the inspection boxes were never signed."
@@ -68,8 +95,29 @@ msgstr "Mara: It is not one of our warning bells. Say that clearly before a rumo
 msgid "low_bell_mara_investigation"
 msgstr "Mara: The old bells were measured, named and maintained. This tone is lower. Ask Sela what the ridge is carrying."
 
+msgid "low_bell_mara_names_complete"
+msgstr "Mara aligns the three records. 'Ina Vel. Oren Pike. Mett Saro. The memorial will not leave blank spaces where people stood.'"
+
+msgid "low_bell_mara_names_offer"
+msgstr "Mara: Three names on the silent-shift roll are weathered away. If you find marked tokens or rubbings, bring the facts—not guesses."
+
+msgid "low_bell_mara_names_progress"
+msgstr "Mara: The pass survey shelf and the old quarry pockets carried duplicate shift marks. Record only what you can read."
+
 msgid "low_bell_mara_resolved"
 msgstr "Mara: The silent memorial remains. This year we will also read the maintenance oath—the part everyone stopped reading."
+
+msgid "low_bell_mara_resolved_names"
+msgstr "Mara: The maintenance oath will be read beneath all the names—including the three you returned. Memory must include what the work demanded."
+
+msgid "low_bell_name_pass_found"
+msgstr "A charcoal rubbing preserves a second line: OREN PIKE, HOIST WATCH. The paper is recent; the carved mark is not."
+
+msgid "low_bell_name_quarry_found"
+msgstr "A brass strip reads METT SARO, CRADLE RIGGER. A sealed emergency wrap behind it still contains a Revive."
+
+msgid "low_bell_name_south_found"
+msgstr "A weathered shift token is wedged behind the overlook stone: INA VEL, DRAIN CREW. The ridge line matches Mara's memorial map."
 
 msgid "low_bell_nera_after_tutorial"
 msgstr "Nera: Good. You gave it room to retreat. Take these Tuxeballs—some displaced creatures may accept a calmer approach."
@@ -95,11 +143,38 @@ msgstr "Nera: Garden species moved first, then woodland species. Whatever change
 msgid "low_bell_opening_tone"
 msgstr "A low note rolls under the rain. Leaves jump; frightened creatures spill onto the path."
 
+msgid "low_bell_pell_intro"
+msgstr "Pell: The north post is closed, so every courier is sharing the South Approach. Find the cause and you will reopen more than a road."
+
+msgid "low_bell_pell_resolved"
+msgstr "Pell: The north post wants a field report from the western valley. Nera already put your name beside mine."
+
+msgid "low_bell_puzzle_cradle"
+msgstr "You seat the CRADLE brace into the unloaded frame. The resonant slab stops shifting."
+
+msgid "low_bell_puzzle_hoist"
+msgstr "You ease the HOIST brake last. The frame settles, and its service cage opens a route back to the pass."
+
+msgid "low_bell_puzzle_runoff"
+msgstr "You turn the labelled RUNOFF gate. Water leaves the fractured shelf and enters the old drain."
+
+msgid "low_bell_puzzle_wrong"
+msgstr "The control will not move safely in this state. The three labels repeat the maintenance order: RUNOFF — CRADLE — HOIST."
+
 msgid "low_bell_quarry_fitting"
 msgstr "A bent metal tongue lies pinned under resonant stone. Rust is old; bright scrapes around the drainage bolt are recent."
 
 msgid "low_bell_quarry_fork"
 msgstr "Fresh cart ruts cut across the abandoned track. Blue survey cloth is caught on a stone pointing east."
+
+msgid "low_bell_ren_after"
+msgstr "Ren: The grass here gives creatures an exit. Weaken one, then offer a Tuxeball—do not corner it."
+
+msgid "low_bell_ren_challenge"
+msgstr "Ren: I am carrying medicine uphill, but the wet pocket is full of skittish creatures. A short match will show whether your partner is ready to help."
+
+msgid "low_bell_ren_victory"
+msgstr "Ren: Steady enough. Take this potion; a courier who arrives empty-handed has only delivered a problem."
 
 msgid "low_bell_return_for_tovin"
 msgstr "The fresh survey marks match Tovin's hoist sketch. His workshop may hold the safe way into the lower works."
@@ -119,6 +194,12 @@ msgstr "The chamber falls quiet. Return to Ashenbell; the village needs the whol
 msgid "low_bell_return_tovin"
 msgstr "Tovin: I approved that last shift. Silence did not change it. I can still teach the next crew where to stop."
 
+msgid "low_bell_rockat_after"
+msgstr "The Rockat retreats to a dry shelf. The lower gate is clear, and its old brace marks match Tovin's sequence."
+
+msgid "low_bell_rockat_guard"
+msgstr "A Rockat claws at the lower gate whenever the runoff touches stone. It is cornered between the tone and the open track."
+
 msgid "low_bell_rook_after"
 msgstr "Rook: Corvix have left the west face. Rockitten are climbing out of cracks they normally sleep in. That is a direction, not bad luck."
 
@@ -127,6 +208,12 @@ msgstr "Rook: The upper pass has nowhere to hide from wind or a panicked monster
 
 msgid "low_bell_rook_victory"
 msgstr "Rook: Good footing. Split Crown is loudest on the east shelf; follow the rock, not the echo."
+
+msgid "low_bell_secret_pass"
+msgstr "The wind cache contains two Earth Tuxeballs, wrapped against grit and rain."
+
+msgid "low_bell_secret_south"
+msgstr "Under the stream marker, a courier's waxed pouch still holds a Super Potion."
 
 msgid "low_bell_sela_enter"
 msgstr "Sela: That matches the old maintenance marks. I will watch the runnel; use Tovin's order in the lower works."
@@ -146,6 +233,9 @@ msgstr "The old guide rail hums against the stream stones. Tiny tracks point uph
 msgid "low_bell_split_crown_tone"
 msgstr "The low tone arrives through the ridge before it reaches the air. Loose stones chatter toward the quarry fork."
 
+msgid "low_bell_squabbit_found"
+msgstr "A mud-streaked Squabbit crouches on the dry ledge. At Jori's name it chirps, then follows at a careful distance."
+
 msgid "low_bell_survey_disturbance"
 msgstr "The survey stake bears Iven's trade mark. A freshly cleared runnel sends rainwater beneath a slab labelled LOWER RESONANCE BAY."
 
@@ -160,6 +250,9 @@ msgstr "Tovin: Water first. Brace second. Hoist last. The order kept weight off 
 
 msgid "low_bell_tovin_resolved"
 msgstr "Tovin: I kept the procedure and buried the reason. Mara was right: facts cannot protect anyone if we refuse to speak them."
+
+msgid "low_bell_tovin_resolved_names"
+msgstr "Tovin: Mett Saro set that cradle beside me. Seeing his name restored does not excuse my signature. It tells me who my silence excluded."
 
 msgid "low_bell_tutorial_creature"
 msgstr "The Shybulb shivers, then plants itself across the path."

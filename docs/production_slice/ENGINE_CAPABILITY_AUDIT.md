@@ -17,7 +17,7 @@ Low Bell build.
 | Persistent variables | NPC save state serializes and restores `game_variables` | Source-confirmed | Namespace every flag `low_bell_*` |
 | Battle persistence | NPC save state serializes battle history; `battle_outcome` queries it | Source-confirmed | Victory flags are explicit; battle history provides secondary validation |
 | Optional shortcut | Conditional `transition_teleport` and persistent variables | Source-confirmed | Unlock a bidirectional hoist link while retaining the ordinary path |
-| Puzzle switches | Conditional interactions plus `set_variable`/`clear_variable` | Source-confirmed | Three observed-order controls; wrong order resets only puzzle progress |
+| Puzzle switches | Conditional interactions plus `set_variable`/`clear_variable` | Source-confirmed | Three observed-order controls; out-of-order use makes no state change |
 | Save/reload | `SaveManager`; NPC save contains variables, battles, missions, party and inventory | Source-confirmed | Add round-trip state tests and exercise a real save in Milestone 5 |
 | Music/SFX | `play_music` and `play_sound`; existing wind, stone, metal and bell audio | Source-confirmed | Select existing tracks/SFX after in-client volume review |
 | Ending transition | Dialogue, state mutation, reward, save, teleport and `quit_world` all exist | Source-confirmed | End in resolved Ashenbell with `low_bell_episode_complete`; do not force `quit_world` before post-story exploration |
@@ -71,4 +71,3 @@ It must describe arbitrary episodes and may not branch on Low Bell map IDs.
 
 No upstream engine change is authorized by this audit. Every capability still
 requires real-client exercise before the final report can call it working.
-

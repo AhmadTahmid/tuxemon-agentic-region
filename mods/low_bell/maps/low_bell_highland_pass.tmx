@@ -68,8 +68,8 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,194,194,194,0,0,0,0,0,0,0,194,194,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,194,194,194,0,0,0,0,0,194,194,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,194,194,194,0,0,0,194,194,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,194,194,194,194,194,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,194,194,194,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+194,194,194,194,194,194,194,194,194,194,194,194,194,194,0,0,0,194,194,194,194,194,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,194,194,194,194,194,194,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,194,194,194,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,194,194,194,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,194,194,194,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -117,12 +117,12 @@
 51,51,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,51,0,51,0,0,0,0,51,51,
 51,51,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,51,51,
 51,51,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,51,51,
-51,51,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,51,51,
-51,51,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,51,51,
-51,51,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,51,51,
-51,51,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,51,51,
-51,51,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,51,51,
-51,51,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,51,51,
+51,51,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,211,0,0,0,51,51,
+0,211,211,211,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,51,51,
+0,243,51,243,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,477,0,0,51,51,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,51,51,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,51,51,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,51,51,
 51,51,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,51,51,
 51,51,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,51,51,
 51,51,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,51,51,
@@ -211,17 +211,21 @@
  </layer>
  <objectgroup id="5" name="Collisions" color="#ff0000">
   <object id="1" type="collision" x="0" y="0" width="576" height="32" />
-  <object id="2" type="collision" x="0" y="32" width="32" height="736" />
+  <object id="2" type="collision" x="0" y="32" width="32" height="144" />
   <object id="3" type="collision" x="544" y="32" width="32" height="320" />
   <object id="4" type="collision" x="432" y="112" width="16" height="16" />
   <object id="5" type="collision" x="464" y="112" width="16" height="16" />
-  <object id="6" type="collision" x="432" y="400" width="16" height="48" />
-  <object id="7" type="collision" x="544" y="432" width="32" height="336" />
-  <object id="8" type="collision" x="32" y="736" width="224" height="32" />
-  <object id="9" type="collision" x="336" y="736" width="208" height="32" />
+  <object id="6" type="collision" x="480" y="160" width="16" height="16" />
+  <object id="7" type="collision" x="16" y="176" width="48" height="32" />
+  <object id="8" type="collision" x="496" y="192" width="16" height="16" />
+  <object id="9" type="collision" x="0" y="256" width="32" height="512" />
+  <object id="10" type="collision" x="432" y="400" width="16" height="48" />
+  <object id="11" type="collision" x="544" y="432" width="32" height="336" />
+  <object id="12" type="collision" x="32" y="736" width="224" height="32" />
+  <object id="13" type="collision" x="336" y="736" width="208" height="32" />
  </objectgroup>
  <objectgroup id="6" name="Events" color="#ffff00">
-  <object id="10" name="pass_to_village" type="event" x="288" y="752" width="16" height="16">
+  <object id="14" name="pass_to_village" type="event" x="288" y="752" width="16" height="16">
    <properties>
     <property name="act10" value="transition_teleport player,low_bell_ashenbell.tmx,22,2,0.3" />
     <property name="act20" value="char_face player,down" />
@@ -229,7 +233,7 @@
     <property name="cond20" value="is char_facing player,down" />
    </properties>
   </object>
-  <object id="11" name="pass_to_quarry" type="event" x="560" y="384" width="16" height="16">
+  <object id="15" name="pass_to_quarry" type="event" x="560" y="384" width="16" height="16">
    <properties>
     <property name="act10" value="transition_teleport player,low_bell_quarry_exterior.tmx,2,18,0.3" />
     <property name="act20" value="char_face player,right" />
@@ -238,23 +242,43 @@
     <property name="cond30" value="is variable_set low_bell_pass_trace:yes" />
    </properties>
   </object>
-  <object id="12" name="highland_lower_wild" type="event" x="112" y="544" width="160" height="128">
+  <object id="16" name="pass_shortcut_to_lower" type="event" x="0" y="208" width="16" height="16">
+   <properties>
+    <property name="act10" value="transition_teleport player,low_bell_quarry_lower.tmx,2,30,0.3" />
+    <property name="act20" value="char_face player,left" />
+    <property name="cond10" value="is char_at player" />
+    <property name="cond20" value="is char_facing player,left" />
+    <property name="cond30" value="is variable_set low_bell_shortcut_unlocked:yes" />
+   </properties>
+  </object>
+  <object id="17" name="highland_lower_wild" type="event" x="112" y="544" width="160" height="128">
    <properties>
     <property name="act1" value="random_encounter low_bell_highland_wild,10" />
    </properties>
   </object>
-  <object id="13" name="highland_upper_wild" type="event" x="240" y="240" width="160" height="128">
+  <object id="18" name="highland_upper_wild" type="event" x="240" y="240" width="160" height="128">
    <properties>
     <property name="act1" value="random_encounter low_bell_highland_wild,12" />
    </properties>
   </object>
-  <object id="14" name="Create low_bell_rook" type="event" x="208" y="496" width="16" height="16">
+  <object id="19" name="highland_shelf_rare" type="event" x="400" y="128" width="128" height="112">
+   <properties>
+    <property name="act1" value="random_encounter low_bell_highland_wild,8" />
+   </properties>
+  </object>
+  <object id="20" name="Create low_bell_rook" type="event" x="208" y="496" width="16" height="16">
    <properties>
     <property name="act1" value="create_npc low_bell_rook,13,31,stand" />
     <property name="cond1" value="not char_exists low_bell_rook" />
    </properties>
   </object>
-  <object id="15" name="rook_challenge" type="event" x="208" y="496" width="16" height="16">
+  <object id="21" name="Create low_bell_kesh" type="event" x="416" y="176" width="16" height="16">
+   <properties>
+    <property name="act1" value="create_npc low_bell_kesh,26,11,stand" />
+    <property name="cond1" value="not char_exists low_bell_kesh" />
+   </properties>
+  </object>
+  <object id="22" name="rook_challenge" type="event" x="208" y="496" width="16" height="16">
    <properties>
     <property name="act1" value="translated_dialog low_bell_rook_challenge" />
     <property name="act2" value="start_battle player,low_bell_rook" />
@@ -263,7 +287,7 @@
     <property name="cond31" value="not battle_outcome player,won,low_bell_rook" />
    </properties>
   </object>
-  <object id="16" name="rook_victory" type="event" x="0" y="0" width="16" height="16">
+  <object id="23" name="rook_victory" type="event" x="0" y="0" width="16" height="16">
    <properties>
     <property name="act1" value="translated_dialog low_bell_rook_victory" />
     <property name="act2" value="modify_monster_health" />
@@ -272,14 +296,14 @@
     <property name="cond31" value="not variable_set low_bell_rook_defeated:yes" />
    </properties>
   </object>
-  <object id="17" name="rook_after" type="event" x="208" y="496" width="16" height="16">
+  <object id="24" name="rook_after" type="event" x="208" y="496" width="16" height="16">
    <properties>
     <property name="act1" value="translated_dialog low_bell_rook_after" />
     <property name="behav1" value="talk low_bell_rook" />
     <property name="cond30" value="is variable_set low_bell_rook_defeated:yes" />
    </properties>
   </object>
-  <object id="18" name="split_crown_resonance" type="event" x="256" y="256" width="112" height="48">
+  <object id="25" name="split_crown_resonance" type="event" x="256" y="256" width="112" height="48">
    <properties>
     <property name="act1" value="play_sound japanese_temple_bell_small,0.7" />
     <property name="act2" value="camera_shake 0.9,1.0" />
@@ -290,7 +314,7 @@
     <property name="cond31" value="not variable_set low_bell_pass_trace:yes" />
    </properties>
   </object>
-  <object id="19" name="quarry_fork_read" type="event" x="432" y="400" width="16" height="16">
+  <object id="26" name="quarry_fork_read" type="event" x="432" y="400" width="16" height="16">
    <properties>
     <property name="act1" value="translated_dialog low_bell_quarry_fork" />
     <property name="cond10" value="is char_facing_tile player" />
@@ -298,13 +322,57 @@
     <property name="cond30" value="is variable_set low_bell_pass_trace:yes" />
    </properties>
   </object>
-  <object id="20" name="Set environment" type="event" x="0" y="0" width="16" height="16">
+  <object id="27" name="kesh_challenge" type="event" x="416" y="176" width="16" height="16">
+   <properties>
+    <property name="act1" value="translated_dialog low_bell_kesh_challenge" />
+    <property name="act2" value="start_battle player,low_bell_kesh" />
+    <property name="behav1" value="talk low_bell_kesh" />
+    <property name="cond30" value="is variable_set low_bell_rook_defeated:yes" />
+    <property name="cond31" value="not battle_outcome player,won,low_bell_kesh" />
+   </properties>
+  </object>
+  <object id="28" name="kesh_victory" type="event" x="0" y="0" width="16" height="16">
+   <properties>
+    <property name="act1" value="translated_dialog low_bell_kesh_victory" />
+    <property name="act2" value="add_item super_potion,1" />
+    <property name="act3" value="set_variable low_bell_kesh_rewarded:yes" />
+    <property name="cond30" value="is battle_outcome player,won,low_bell_kesh" />
+    <property name="cond31" value="not variable_set low_bell_kesh_rewarded:yes" />
+   </properties>
+  </object>
+  <object id="29" name="kesh_after" type="event" x="416" y="176" width="16" height="16">
+   <properties>
+    <property name="act1" value="translated_dialog low_bell_kesh_after" />
+    <property name="behav1" value="talk low_bell_kesh" />
+    <property name="cond30" value="is variable_set low_bell_kesh_rewarded:yes" />
+   </properties>
+  </object>
+  <object id="30" name="silent_shift_pass_record" type="event" x="480" y="160" width="16" height="16">
+   <properties>
+    <property name="act1" value="translated_dialog low_bell_name_pass_found" />
+    <property name="act2" value="set_variable low_bell_name_pass:yes" />
+    <property name="cond10" value="is char_facing_tile player" />
+    <property name="cond20" value="is button_pressed INTERACT" />
+    <property name="cond30" value="not variable_set low_bell_name_pass:yes" />
+   </properties>
+  </object>
+  <object id="31" name="pass_wind_cache_secret" type="event" x="496" y="192" width="16" height="16">
+   <properties>
+    <property name="act1" value="translated_dialog low_bell_secret_pass" />
+    <property name="act2" value="add_item tuxeball_earth,2" />
+    <property name="act3" value="set_variable low_bell_secret_pass:yes" />
+    <property name="cond10" value="is char_facing_tile player" />
+    <property name="cond20" value="is button_pressed INTERACT" />
+    <property name="cond30" value="not variable_set low_bell_secret_pass:yes" />
+   </properties>
+  </object>
+  <object id="32" name="Set environment" type="event" x="0" y="0" width="16" height="16">
    <properties>
     <property name="act1" value="set_environment grass" />
     <property name="cond1" value="not environment_is grass" />
    </properties>
   </object>
-  <object id="21" name="Play music" type="event" x="0" y="0" width="16" height="16">
+  <object id="33" name="Play music" type="event" x="0" y="0" width="16" height="16">
    <properties>
     <property name="act1" value="play_music music_08_overworld,0.55" />
     <property name="cond1" value="not music_playing music_08_overworld" />

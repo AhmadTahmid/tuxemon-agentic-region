@@ -17,8 +17,8 @@ core character knows, wants and may say; it is not final prose.
 
 At least six village NPCs change across the episode. Alda the grower reports
 garden incursions; Bren the mason reads cracks without claiming a cause; Caro
-the host tracks rumours; Demas the shepherd tracks upland herd movement; Etti
-the memorial keeper discusses ritual practice; Pell the courier represents
-outside connections. Each contributes one distinct fact, function or
+the host tracks rumours; Pell the courier represents outside connections.
+Ren is a working courier whose optional battle reinforces capture practice;
+Kesh is a survey assistant whose optional battle produces evidence rather than
+blocking the main route. Each contributes one distinct fact, function or
 consequence and does not repeat the central exposition.
-

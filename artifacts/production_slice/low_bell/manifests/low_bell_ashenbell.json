@@ -4,7 +4,7 @@
   "map": "low_bell_ashenbell",
   "source": "content/production_slice/low_bell/episode.yaml",
   "revision": 1,
-  "tmx_sha256": "9dd28035420989692602f08b2631aae7ab7e096172ead09722bfdf87ed0ef674",
+  "tmx_sha256": "a440886defeb27f01cc945c3376a9ae96f0fc28e05787e483e0e214a32138e46",
   "blocked_cells": [
     [
       0,
@@ -1991,8 +1991,16 @@
       25
     ],
     [
+      27,
+      28
+    ],
+    [
       8,
       31
+    ],
+    [
+      10,
+      34
     ]
   ]
 }

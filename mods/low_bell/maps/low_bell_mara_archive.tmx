@@ -46,7 +46,7 @@
 51,0,0,0,0,0,0,0,0,0,0,0,0,0,0,51,
 51,0,0,0,0,0,0,0,0,0,0,0,0,0,0,51,
 51,0,0,0,0,0,0,0,0,0,0,0,0,0,0,51,
-51,51,51,51,51,51,51,51,51,51,51,51,51,51,51,51
+51,51,51,51,51,51,51,0,0,0,51,51,51,51,51,51
 </data>
  </layer>
  <layer id="4" name="Above Player" width="16" height="12">
@@ -72,10 +72,11 @@
   <object id="4" type="collision" x="128" y="32" width="16" height="48" />
   <object id="5" type="collision" x="48" y="48" width="16" height="16" />
   <object id="6" type="collision" x="192" y="48" width="16" height="16" />
-  <object id="7" type="collision" x="16" y="176" width="224" height="16" />
+  <object id="7" type="collision" x="16" y="176" width="96" height="16" />
+  <object id="8" type="collision" x="160" y="176" width="80" height="16" />
  </objectgroup>
  <objectgroup id="6" name="Events" color="#ffff00">
-  <object id="8" name="archive_exit" type="event" x="128" y="176" width="16" height="16">
+  <object id="9" name="archive_exit" type="event" x="128" y="176" width="16" height="16">
    <properties>
     <property name="act10" value="transition_teleport player,low_bell_ashenbell.tmx,6,14,0.3" />
     <property name="act20" value="char_face player,down" />
@@ -83,7 +84,7 @@
     <property name="cond20" value="is char_facing player,down" />
    </properties>
   </object>
-  <object id="9" name="inspect_bell_diagram" type="event" x="128" y="32" width="16" height="16">
+  <object id="10" name="inspect_bell_diagram" type="event" x="128" y="32" width="16" height="16">
    <properties>
     <property name="act1" value="translated_dialog low_bell_archive_diagram" />
     <property name="act2" value="set_variable low_bell_bell_diagram_seen:yes" />
@@ -91,13 +92,13 @@
     <property name="cond20" value="is button_pressed INTERACT" />
    </properties>
   </object>
-  <object id="10" name="Set environment" type="event" x="0" y="0" width="16" height="16">
+  <object id="11" name="Set environment" type="event" x="0" y="0" width="16" height="16">
    <properties>
     <property name="act1" value="set_environment interior" />
     <property name="cond1" value="not environment_is interior" />
    </properties>
   </object>
-  <object id="11" name="Play music" type="event" x="0" y="0" width="16" height="16">
+  <object id="12" name="Play music" type="event" x="0" y="0" width="16" height="16">
    <properties>
     <property name="act1" value="play_music music_23_inn,0.55" />
     <property name="cond1" value="not music_playing music_23_inn" />
